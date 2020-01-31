@@ -1,0 +1,28 @@
+[options]
+font = canele 9
+cursor_blink    = off
+mouse_autohide  = true
+allow_bold      = false
+clickable_url   = true
+scrollback_lines = 100000
+
+[colors]
+foreground      = #EBDBB2
+foreground_bold = #EBDBB2
+background      = #292D3E
+color0  = #292D3E
+color1  = #f07178
+color2  = #c3e88d
+color3  = #ffcb6b
+color4  = #82aaff
+color5  = #c792ea
+color6  = #89ddff
+color7  = #d0d0d0
+color8  = #434758
+color9  = #ff8b92
+color10 = #ddffa7
+color11 = #ffe585
+color12 = #9cc4ff
+color13 = #e1acff
+color14 = #a3f7ff
+color15 = #ffffff

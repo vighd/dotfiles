@@ -1,0 +1,30 @@
+highlight clear
+
+highlight Win cterm=none ctermfg=244 ctermbg=none "
+highlight Directory cterm=none ctermfg=32 ctermbg=none "
+highlight Link cterm=bold ctermfg=43 ctermbg=none "
+highlight BrokenLink cterm=reverse ctermfg=0 ctermbg=red "
+
+highlight Socket cterm=bold ctermfg=125 ctermbg=default
+highlight Device cterm=bold ctermfg=red ctermbg=default
+highlight Fifo cterm=bold ctermfg=cyan ctermbg=default
+highlight Executable cterm=bold ctermfg=70 ctermbg=none "
+
+highlight Selected cterm=bold ctermfg=166 ctermbg=none "
+highlight CurrLine cterm=bold ctermfg=none ctermbg=25 "
+
+highlight TopLine cterm=none ctermfg=247 ctermbg=none "
+highlight TopLineSel cterm=bold ctermfg=148 ctermbg=none "
+highlight StatusLine cterm=bold ctermfg=253 ctermbg=none "
+highlight WildMenu cterm=underline,reverse ctermfg=white ctermbg=black " don't know
+highlight CmdLine cterm=none ctermfg=148 ctermbg=none "
+highlight ErrorMsg cterm=none ctermfg=red ctermbg=none "
+highlight Border cterm=none ctermfg=none ctermbg=none "
+highlight OtherLine cterm=none ctermbg=none "
+highlight SuggestBox cterm=none ctermfg=white  ctermbg=none "
+highlight /^.*\.(jpg|jpeg|png|gif|tiff|webp|bmp|svg|svgz)$/ ctermfg=136
+highlight /^.*\.(pcm|mp3|wav|ogg|aiff|aac|wma|flac)$/ cterm=none ctermfg=166
+highlight /^.*\.(avi|mkv|mp4|wmv|3gp|mov|flv|mpg)$/ cterm=bold ctermfg=166
+highlight /^.*\.(csv|xls|xlsx|doc|docx|odt|odp|ppt|pptx|pps|ods|pdf)$/ cterm=none ctermfg=107
+highlight /^.*\.(zip|gz|bz2|xz|tar|tgz|tbz2|7z|rar|iso|rpm|deb)$/ cterm=bold ctermfg=60
+highlight /^.*\.(json|js|jsx|c|class|ccp|cs|html|css|sql)$/ cterm=none ctermfg=106

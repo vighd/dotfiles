@@ -1,0 +1,12 @@
+[header]
+header_visibility = "no"
+header_window_color = "default"
+volume_color = "default"
+state_line_color = "black"
+
+[statusbar]
+progressbar_look = "─╼ "
+
+[playlist]
+playlist_shorten_total_times = "yes"
+allow_for_physical_item_deletion = "yes"

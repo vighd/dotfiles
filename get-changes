@@ -1,0 +1,52 @@
+#!/bin/bash
+# shellcheck disable=SC2015
+# shellcheck disable=SC2235
+# shellcheck disable=SC2181
+# shellcheck disable=SC2162
+# shellcheck disable=SC2199
+#
+# Author Daniel Vigh #
+echo -e "Creating backup from packages..."
+pacman -Qmq > "aur.pkgs"
+pacman -Qeq | grep -v "$(pacman -Qmq)" > "pacman.pkgs"
+echo -e "Creating backup from configs...\n"
+CONFIGS=(
+  "$HOME/.bashrc"
+  "$HOME/.bash_profile"
+  "$HOME/.dircolors"
+  "$HOME/.dircolors_256"
+  "$HOME/.fonts.conf"
+  "$HOME/.gitconfig"
+  "$HOME/.gtkrc-2.0"
+  "$HOME/.inputrc"
+  "$HOME/.mopidy"
+  "$HOME/.ncmpcpp"
+  "$HOME/.vifm"
+  "$HOME/.vimrc"
+  "$HOME/.xinitrc"
+  "$HOME/.config/chromium-flags.conf"
+  "$HOME/.config/mopidy"
+  "$HOME/.config/termite"
+  /etc/bluetooth/
+  /etc/makepkg.conf
+  /etc/mkinitcpio.conf
+  /etc/modprobe.d/
+  /etc/pacman.conf
+  /etc/pacman.d/
+  /etc/pulse/
+  /etc/thinkfan.conf
+)
+[ ! -e "configs" ] && mkdir "configs"
+for f in "${CONFIGS[@]}"; do echo "Creating copy of $f..."; rsync -Rr "$f" "configs/"; done
+[ -d "configs/home/$USER/.local/share/vifm/Trash" ] && rm -rf configs/home/$USER/.local/share/vifm/Trash
+[ -f "configs/home/$USER/.vifm/vifminfo" ] && rm configs/home/$USER/.vifm/vifminfo
+[ -f "configs/home/$USER/.config/mopidy/mopidy.conf" ] && \
+  sed -i 's/password = .*/password =/' "configs/home/$USER/.config/mopidy/mopidy.conf" &&\
+  sed -i 's/username = .*/username =/' "configs/home/$USER/.config/mopidy/mopidy.conf" &&\
+  sed -i 's/client_id = .*/client_id =/' "configs/home/$USER/.config/mopidy/mopidy.conf" &&\
+  sed -i 's/client_secret = .*/client_secert =/' "configs/home/$USER/.config/mopidy/mopidy.conf"
+[ -f "configs/home/$USER/.bashrc" ] && \
+  sed -i '/2233/d' "configs/home/$USER/.bashrc" &&\
+  sed -i '/vighd/d' "configs/home/$USER/.bashrc"
+
+echo -e "\nDone."
