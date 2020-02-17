@@ -27,6 +27,7 @@ alias less='less -R'                                                    # Autoco
 alias jq="jq -C"                                                        # Autocoloring jq
 alias xclip="xclip -sel clip"                                           # Set xclip default selection
 alias src="cd $HOME/Digital/ecdms/src"
+alias sqls="cd $HOME/Digital/sqls && vim"
 alias migr="cd $HOME/Digital/ecdms/src/ap-data-migration"
 alias dumps="cd $HOME/Digital/ecdms/dumps"
 alias vimrc="vim $HOME/.vimrc"

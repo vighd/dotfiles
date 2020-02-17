@@ -14,26 +14,30 @@ call plug#begin('~/.vim/plugins')
   Plug 'heavenshell/vim-jsdoc'
   Plug 'drewtempelmeyer/palenight.vim'
   Plug 'vim-scripts/colorizer'
-  Plug 'w0rp/ale', { 'do': 'sudo pacman -S shellcheck'}
+  Plug 'w0rp/ale', { 'do': 'sudo pacman -S shellcheck typescript'}
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'alvan/vim-closetag'
   Plug 'Raimondi/delimitMate'
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-  Plug 'vighd/vim-pgsql-query'
+  Plug 'vighd/vim-pgsql-query', { 'branch': 'development' }
 call plug#end()
-
 " ------------------------------------- PLUGIN SETTINGS ------------------------------------- "
 
 " ALE
 let g:ale_completion_enabled = 1
 let g:ale_lint_delay = 800
 let g:ale_javascript_prettier_options = '--jsx-single-quote --single-quote --tab-width 2 --no-semi --print-width 100'
+let g:ale_sql_pgformatter_options = '-B -f 2 -g -s 2 -t -u 2 -W 1 -p ''(LANGUAGE)|(RETURNS)'''
 let g:ale_go_langserver_executable = '/home/vighd/go/bin/go-langserver'
+let g:ale_sql_pgformatter_executable = '/usr/local/bin/pg_format'
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
+\   'typescript': ['prettier'],
 \   'json': ['prettier'],
 \   'go': ['gofmt'],
+\   'sql': ['pgformatter'],
+\   'sh': ['shfmt'],
 \} 
 let b:ale_linters = {'javascript': ['eslint']}
 
@@ -82,6 +86,10 @@ function! _mode()
     hi Mode  guifg=#292D3E guibg=#C3E88D
     hi Sline guifg=#C3E88D guibg=#3E4452
     return 'RPLACE'
+  elseif mode() =~ 't'
+    hi Mode  guifg=#292D3E guibg=#FFE585
+    hi Sline guifg=#FFE585 guibg=#3E4452
+    return ' TERM '
   else
     hi Mode  guifg=#292D3E guibg=#89DDFF
     hi Sline guifg=#89DDFF guibg=#3E4452
@@ -125,7 +133,7 @@ set wildchar=9                      " tab as completion character
 set guitablabel=%t
 set complete-=i
 set completeopt+=menuone,noselect,noinsert,longest
-set completeopt-=preview
+"set completeopt-=preview
 set pumheight=10
 set path=**                         " Add all files and folders to the path
 set wildmode=longest:full,list:full
@@ -191,11 +199,10 @@ nnoremap <silent> <C-l> :nohlsearch<CR> :syntax sync fromstart<CR><C-l>
 nnoremap <M-Right> :tabn<CR>
 nnoremap <M-Left> :tabp<CR>
 " Call psql with the current buffer
-"nnoremap <F9> :!clear && PAGER="pspg -s 6 --no-commandbar --force-uniborder" psql -U $(cat % \| head -1 \| cut -c8-) -f % -d $(cat % \| head -2  \| tail -1 \| cut -c12-) <CR>
-"xnoremap <F9> :'<,'>w! /tmp/vim_psql.sql<CR> :!clear && PAGER="pspg -s 6 --no-commandbar --force-uniborder" psql -U $(cat % \| head -1 \| cut -c8-) -f /tmp/vim_psql.sql -d $(cat % \| head -2  \| tail -1 \| cut -c12-) <CR>
 nnoremap <F9> :call RunPGSQLQuery()<CR>
-xnoremap <F9> :call RunPGSQLQueryVisual()<CR>
+xnoremap <F9> :call RunPGSQLVisualQuery()<CR>
 xnoremap <S-F9> :call RunPGSQLQueryToCsv()<CR>
+xnoremap <C-F9> :call RunPGSQLVisualQueryAsJSON()<CR>
 " Run macro in visual mode with .
 xnoremap . :normal @q<CR>
 " Reload vimrc with F5
@@ -227,7 +234,6 @@ xnoremap ` c`<c-r>"`<Esc>
 xnoremap { c{<c-r>"}<Esc>
 xnoremap ( c(<c-r>")<Esc>
 xnoremap [ c[<c-r>"]<Esc>
-"xnoremap < c<<c-r>"><Esc>
 
 " ------------------------------------- AUTOCOMMANDS ------------------------------------- "
 

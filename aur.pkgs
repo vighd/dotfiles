@@ -8,6 +8,7 @@ enpass-bin
 fuse-zip
 geteltorito
 gifcast
+gtm-bin
 libldac
 libspotify
 megacmd-bin
@@ -15,7 +16,6 @@ mopidy-mpd
 networkmanager-dmenu-git
 numix-gtk-theme-git
 numix-icon-theme-git
-pspg
 pulseaudio-modules-bt-git
 sconsify
 thinkfan

@@ -32,7 +32,6 @@ CONFIGS=(
   /etc/mkinitcpio.conf
   /etc/modprobe.d/
   /etc/pacman.conf
-  /etc/pacman.d/
   /etc/pulse/
   /etc/thinkfan.conf
 )

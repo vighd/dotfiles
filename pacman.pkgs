@@ -5,6 +5,7 @@ android-udev
 autoconf
 automake
 aws-cli
+babel-cli
 bash
 bind-tools
 bison
@@ -56,6 +57,7 @@ httpie
 inetutils
 intel-ucode
 iotop
+ipcalc
 iproute2
 iputils
 jadx
@@ -91,6 +93,7 @@ ncmpcpp
 net-tools
 netctl
 networkmanager
+ngrep
 nitrogen
 nm-connection-editor
 nodejs-lts-erbium
@@ -103,12 +106,14 @@ pavucontrol
 pciutils
 perl
 perl-cgi
+picom
 pkgconf
 postgresql
 procps-ng
 psmisc
 pulseaudio
 pulseaudio-alsa
+pv
 python-aiofiles
 python-async_generator
 python-click
@@ -116,6 +121,7 @@ python-eyed3
 python-jinja
 python-jsonschema
 python-pip
+python-pywal
 rdesktop
 reaver
 reiserfsprogs
@@ -126,16 +132,19 @@ s3fs-fuse
 sed
 shadow
 shellcheck
+shfmt
 stress
 sudo
 sysfsutils
 systemd-sysvcompat
+tabbed
 tar
 tcpdump
 tcpflow
 termite
 texinfo
 transmission-gtk
+typescript
 udiskie
 unclutter
 unzip
@@ -146,6 +155,7 @@ vi
 vifm
 vim
 vimb
+vlc
 wget
 which
 whois
@@ -208,4 +218,6 @@ xorg-xwininfo
 xorg-xwud
 yaml-cpp
 yarn
+youtube-dl
+zerotier-one
 zip
