@@ -30,6 +30,7 @@ let g:ale_lint_delay = 800
 let g:ale_javascript_prettier_options = '--jsx-single-quote --single-quote --tab-width 2 --no-semi --print-width 100'
 let g:ale_sql_pgformatter_options = '-B -f 2 -g -s 2 -t -u 2 -W 1 -p ''(LANGUAGE)|(RETURNS)'''
 let g:ale_go_langserver_executable = '/home/vighd/go/bin/go-langserver'
+let g:ale_go_golangci_lint_executable = '/home/vighd/go/bin/golangci-lint'
 let g:ale_sql_pgformatter_executable = '/usr/local/bin/pg_format'
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
@@ -69,7 +70,7 @@ let g:branch=system("cd ". expand('%:p:h') ." && git rev-parse --abbrev-ref HEAD
 
 function! _mode()
   hi MatchParen  guibg=#5E5F63 guifg=#82b1ff 
-  hi NormFont    guifg=#5E5F63 guibg=#292D3E
+  hi NormFont    guifg=#5E5F63
   if mode() == 'i'
     hi Mode  guifg=#292D3E guibg=#82B1FF
     hi SLine guifg=#82B1FF guibg=#3E4452
@@ -135,9 +136,10 @@ set complete-=i
 set completeopt+=menuone,noselect,noinsert,longest
 "set completeopt-=preview
 set pumheight=10
-set path=**                         " Add all files and folders to the path
+set path=.,**                         " Add all files and folders to the path
 set wildmode=longest:full,list:full
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,.svn,*.gem,*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.swp,*~,._*,*/node_modules/*,*/data/*,*/.git/*,*/dist/*,*/build/*
+set wildignorecase
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pdf,.exe
 set termguicolors                   " Enables 24bit coloring
 set background=dark
@@ -191,13 +193,8 @@ map <F1> <Esc>
 imap <F1> <Esc>
 " Search and replace with rr
 noremap rr :%s/
-" JSDOC with <F4>
-nmap <silent> <F4> <Plug>(jsdoc)
 " Clear search highlighting
 nnoremap <silent> <C-l> :nohlsearch<CR> :syntax sync fromstart<CR><C-l>
-" Change tabs with LAlt+Left/Right
-nnoremap <M-Right> :tabn<CR>
-nnoremap <M-Left> :tabp<CR>
 " Call psql with the current buffer
 nnoremap <F9> :call RunPGSQLQuery()<CR>
 xnoremap <F9> :call RunPGSQLVisualQuery()<CR>
@@ -207,6 +204,8 @@ xnoremap <C-F9> :call RunPGSQLVisualQueryAsJSON()<CR>
 xnoremap . :normal @q<CR>
 " Reload vimrc with F5
 nnoremap <F5> :source $HOME/.vimrc<CR>
+" JSDOC
+nnoremap <F6> :JsDoc<CR>
 " ALEFix
 nnoremap <F4> :ALEFix<CR>
 " Remap file finder base on the buffer name
@@ -221,9 +220,6 @@ noremap <Left> <Nop>
 noremap <Right> <Nop>
 " Git blame
 nnoremap gb :echomsg system("git blame -L ".line(".").",".line(".")." ".expand("%"))[:-2]<CR>
-" Select autocompletion with j-k
-inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
-inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 " Remap TAB to change tab o.O
 noremap <TAB> gt
 noremap <S-TAB> gT
@@ -247,7 +243,7 @@ au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
 
-" Fix styled components syntax hl at start
+" Fix styled components (ReactJS) syntax hl at start
 au BufEnter * :syntax sync fromstart
 
 " ECDMS Filetype

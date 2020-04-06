@@ -27,6 +27,7 @@ CONFIGS=(
   "$HOME/.config/chromium-flags.conf"
   "$HOME/.config/mopidy"
   "$HOME/.config/termite"
+  "$HOME/.config/qutebrowser"
   /etc/bluetooth/
   /etc/makepkg.conf
   /etc/mkinitcpio.conf

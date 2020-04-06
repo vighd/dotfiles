@@ -7,9 +7,10 @@ clickable_url   = true
 scrollback_lines = 100000
 
 [colors]
-foreground      = #EBDBB2
-foreground_bold = #EBDBB2
+foreground      = #d0d0d0
+foreground_bold = #d0d0d0
 background      = #292D3E
+#background      = rgba(53, 57, 74, 0.8)
 color0  = #292D3E
 color1  = #f07178
 color2  = #c3e88d
