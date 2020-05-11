@@ -7,5 +7,4 @@
 config_version: 2
 settings:
   content.notifications:
-    http://0.0.0.0:8025: false
-    https://www.youtube.com: false
+    https://www.reddit.com: false

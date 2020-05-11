@@ -16,6 +16,7 @@ CONFIGS=(
   "$HOME/.dircolors"
   "$HOME/.dircolors_256"
   "$HOME/.fonts.conf"
+  "$HOME/.fonts/"
   "$HOME/.gitconfig"
   "$HOME/.gtkrc-2.0"
   "$HOME/.inputrc"

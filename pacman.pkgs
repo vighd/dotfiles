@@ -1,3 +1,4 @@
+adriconf
 alsa-firmware
 alsa-plugins
 alsa-tools
@@ -11,11 +12,13 @@ automake
 aws-cli
 babel-cli
 bash
+bashtop
 bind-tools
 bison
 bluez
 bluez-utils
 bzip2
+chromium
 clang
 cmake
 coreutils
@@ -35,13 +38,12 @@ e2fsprogs
 efibootmgr
 fakeroot
 feh
-ffmpegthumbnailer
 file
 filesystem
 findutils
 flex
+fontforge
 fprintd
-freerdp
 freetds
 fuse2
 gawk
@@ -55,8 +57,6 @@ glibc
 go
 goaccess
 grep
-gst-libav
-gst-plugins-bad
 gtk-engine-murrine
 gucharmap
 gvfs-mtp
@@ -64,7 +64,9 @@ gzip
 hplip
 htop
 httpie
+hunspell-hu
 inetutils
+inkscape
 intel-ucode
 iotop
 ipcalc
@@ -90,6 +92,7 @@ lib32-util-linux
 lib32-zlib
 libmilter
 libreoffice-fresh
+libva-mesa-driver
 libvncserver
 licenses
 linux-firmware
@@ -109,15 +112,15 @@ make
 man-db
 man-pages
 mdadm
+mesa-demos
+mesa-vdpau
 mopidy
 mpc
 mpv
-mutt
 ncmpcpp
 net-tools
 netctl
 networkmanager
-networkmanager-openvpn
 ngrep
 nitrogen
 nm-connection-editor
@@ -132,6 +135,7 @@ patch
 pavucontrol
 pciutils
 pdfjs
+pepper-flash
 perl
 perl-cgi
 picom
@@ -141,6 +145,7 @@ procps-ng
 psmisc
 pulseaudio
 pulseaudio-alsa
+putty
 pv
 pypy3
 python-aiofiles
@@ -151,14 +156,12 @@ python-jinja
 python-jsonschema
 python-pip
 python-pywal
-qutebrowser
 rdesktop
-reaver
 reiserfsprogs
 remmina
 rsync
 s-nail
-s3fs-fuse
+scrot
 sed
 shadow
 shellcheck
@@ -166,7 +169,6 @@ shfmt
 strace
 stress
 sudo
-sxhkd
 sysfsutils
 system-config-printer
 systemd-sysvcompat
@@ -177,6 +179,7 @@ termite
 texinfo
 transmission-gtk
 trash-cli
+typescript
 udiskie
 unace
 unclutter
@@ -189,8 +192,8 @@ vi
 viewnior
 vifm
 vim
-vlc
-w3m
+vulkan-intel
+vulkan-mesa-layer
 wget
 which
 whois
@@ -207,8 +210,6 @@ xfsprogs
 xorg-bdftopcf
 xorg-docs
 xorg-font-util
-xorg-fonts-100dpi
-xorg-fonts-75dpi
 xorg-fonts-encodings
 xorg-iceauth
 xorg-luit
@@ -226,11 +227,14 @@ xorg-smproxy
 xorg-x11perf
 xorg-xauth
 xorg-xbacklight
+xorg-xcalc
 xorg-xcmsdb
 xorg-xcursorgen
 xorg-xdpyinfo
 xorg-xdriinfo
 xorg-xev
+xorg-xfd
+xorg-xfontsel
 xorg-xgamma
 xorg-xhost
 xorg-xinit
@@ -241,6 +245,7 @@ xorg-xkbutils
 xorg-xkill
 xorg-xlsatoms
 xorg-xlsclients
+xorg-xlsfonts
 xorg-xmodmap
 xorg-xpr
 xorg-xprop
@@ -255,7 +260,5 @@ xorg-xwininfo
 xorg-xwud
 yaml-cpp
 yarn
-youtube-dl
 zenity
-zerotier-one
 zip

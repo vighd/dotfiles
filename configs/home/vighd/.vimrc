@@ -11,16 +11,16 @@ call plug#begin('~/.vim/plugins')
   Plug 'alcesleo/vim-uppercase-sql'
   Plug 'fatih/vim-go'
   Plug 'sheerun/vim-polyglot'
-  Plug 'heavenshell/vim-jsdoc'
+  Plug 'heavenshell/vim-jsdoc', { 'do': 'yarn global add lehre' }
   Plug 'drewtempelmeyer/palenight.vim'
   Plug 'vim-scripts/colorizer'
-  Plug 'w0rp/ale', { 'do': 'sudo pacman -S shellcheck typescript'}
+  Plug 'w0rp/ale', { 'do': 'sudo pacman -S shellcheck typescript' }
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-  Plug 'alvan/vim-closetag'
   Plug 'Raimondi/delimitMate'
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
   Plug 'vighd/vim-pgsql-query', { 'branch': 'development' }
+  Plug 'vifm/vifm.vim'
 call plug#end()
 " ------------------------------------- PLUGIN SETTINGS ------------------------------------- "
 
@@ -54,15 +54,12 @@ let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
 let g:go_fmt_autosave = 0
 
-" Closetag
-let g:closetag_filenames = '*.html,*.js'
-
-" DelimitMate
-let g:delimitMate_balance_matchpairs = 1
-
 " Polyglot
 let g:sql_type_default = 'pgsql'
 let g:pgsql_pl = ['javascript']
+
+" JSDOC
+let g:jsdoc_lehre_path = '/home/vighd/.yarn/bin/lehre'
 
 " ------------------------------------- FUNCTIONS ------------------------------------- "
 
@@ -136,7 +133,7 @@ set complete-=i
 set completeopt+=menuone,noselect,noinsert,longest
 "set completeopt-=preview
 set pumheight=10
-set path=.,**                         " Add all files and folders to the path
+set path=$PWD/**                         " Add all files and folders to the path
 set wildmode=longest:full,list:full
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,.svn,*.gem,*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.swp,*~,._*,*/node_modules/*,*/data/*,*/.git/*,*/dist/*,*/build/*
 set wildignorecase

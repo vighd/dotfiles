@@ -37,6 +37,7 @@ alias pacman="sudo pacman $@"
 alias start="sudo systemctl start $@"
 alias stop="sudo systemctl stop $@"
 alias rm="rm -I"
+alias virtdisplay="Xephyr -br -ac -noreset -screen 1366x768 :1 & echo 'To access display, use DISPLAY=:1 env'"
 export PAGER=less                                                       # Set default pager
 
 ## Custom functions

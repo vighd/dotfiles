@@ -293,6 +293,7 @@ c.colors.tabs.selected.even.bg = base05
 ## User configs ##
 
 c.fonts.default_family = 'canele'
+c.fonts.web.family.fixed = 'canele'
 c.content.autoplay = False
 c.content.ssl_strict = True
 c.content.headers.do_not_track = True
@@ -309,6 +310,9 @@ c.statusbar.widgets = [
     "progress"
 ]
 c.downloads.remove_finished = 1000
+c.tabs.background = True
+c.tabs.show = "multiple"
+c.content.plugins = True
 
 ## Jblock ##
 
@@ -322,5 +326,6 @@ c.content.host_blocking.lists = [
     'https://easylist.to/easylist/easyprivacy.txt',
     'https://easylist-downloads.adblockplus.org/easylist-cookie.txt',
     'https://easylist.to/easylist/fanboy-social.txt',
-    'https://easylist.to/easylist/fanboy-annoyance.txt'
+    'https://easylist.to/easylist/fanboy-annoyance.txt',
+    'https://raw.githubusercontent.com/hufilter/hufilter/master/hufilter.txt'
 ]
