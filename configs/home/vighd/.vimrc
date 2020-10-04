@@ -8,58 +8,59 @@ endif
 
 call plug#begin('~/.vim/plugins')
   Plug 'mhinz/vim-signify'
-  Plug 'alcesleo/vim-uppercase-sql'
-  Plug 'fatih/vim-go'
   Plug 'sheerun/vim-polyglot'
-  Plug 'heavenshell/vim-jsdoc', { 'do': 'yarn global add lehre' }
+  Plug 'joegesualdo/jsdoc.vim'
   Plug 'drewtempelmeyer/palenight.vim'
   Plug 'vim-scripts/colorizer'
-  Plug 'w0rp/ale', { 'do': 'sudo pacman -S shellcheck typescript' }
-  Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'iamcco/markdown-preview.nvim'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'Raimondi/delimitMate'
-  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
   Plug 'vighd/vim-pgsql-query', { 'branch': 'development' }
-  Plug 'vifm/vifm.vim'
+  Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+  Plug 'heavenshell/vim-jsdoc', { 'do': 'make install' }
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+  Plug 'dense-analysis/ale'
 call plug#end()
-" ------------------------------------- PLUGIN SETTINGS ------------------------------------- "
 
+" ------------------------------------- PLUGIN SETTINGS ------------------------------------- "
 " ALE
 let g:ale_completion_enabled = 1
 let g:ale_lint_delay = 800
 let g:ale_javascript_prettier_options = '--jsx-single-quote --single-quote --tab-width 2 --no-semi --print-width 100'
-let g:ale_sql_pgformatter_options = '-B -f 2 -g -s 2 -t -u 2 -W 1 -p ''(LANGUAGE)|(RETURNS)'''
-let g:ale_go_langserver_executable = '/home/vighd/go/bin/go-langserver'
-let g:ale_go_golangci_lint_executable = '/home/vighd/go/bin/golangci-lint'
-let g:ale_sql_pgformatter_executable = '/usr/local/bin/pg_format'
+let g:ale_go_langserver_executable = '/home/vighd/go/bin/gopls'
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
-\   'typescript': ['prettier'],
 \   'json': ['prettier'],
 \   'go': ['gofmt'],
-\   'sql': ['pgformatter'],
-\   'sh': ['shfmt'],
+\   'yaml': ['prettier'],
+\   'yaml.ansible': ['prettier'],
 \} 
 let b:ale_linters = {'javascript': ['eslint']}
-
-" Vim-GO
-let g:go_gocode_unimported_packages = 1
-let g:go_highlight_build_constraints = 1
+"
+" vim-go
+let g:go_highlight_array_whitespace_error = 1
+let g:go_highlight_chan_whitespace_error = 1
 let g:go_highlight_extra_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
+let g:go_highlight_space_tab_error = 1
+let g:go_highlight_trailing_whitespace_error = 1
 let g:go_highlight_operators = 1
-let g:go_highlight_structs = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
 let g:go_highlight_types = 1
-let g:go_fmt_autosave = 0
+let g:go_highlight_fields = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_string_spellcheck = 1
+let g:go_highlight_format_strings = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
+let g:go_highlight_diagnostic_errors = 1
+let g:go_highlight_diagnostic_warnings = 1
 
 " Polyglot
 let g:sql_type_default = 'pgsql'
 let g:pgsql_pl = ['javascript']
-
-" JSDOC
-let g:jsdoc_lehre_path = '/home/vighd/.yarn/bin/lehre'
 
 " ------------------------------------- FUNCTIONS ------------------------------------- "
 
@@ -105,7 +106,6 @@ set nocompatible
 filetype plugin indent on
 setglobal fileencoding=utf-8
 set viewoptions=cursor,folds,slash,unix
-"set mouse=a
 set encoding=utf-8
 set timeoutlen=500                  " time waited for key press(es) to complete. It makes for a faster key response
 set ttimeoutlen=0
@@ -130,18 +130,16 @@ set wildmenu                        " nice tab-completion on the command line
 set wildchar=9                      " tab as completion character
 set guitablabel=%t
 set complete-=i
-set completeopt+=menuone,noselect,noinsert,longest
-"set completeopt-=preview
+"set completeopt+=menuone,noselect,noinsert,longest
+set completeopt-=preview
 set pumheight=10
-set path=$PWD/**                         " Add all files and folders to the path
+set path=**                         " Add all files and folders to the path
 set wildmode=longest:full,list:full
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,.svn,*.gem,*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.swp,*~,._*,*/node_modules/*,*/data/*,*/.git/*,*/dist/*,*/build/*
-set wildignorecase
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pdf,.exe
 set termguicolors                   " Enables 24bit coloring
 set background=dark
 set redrawtime=10000
-set relativenumber
 set listchars=tab:\⎢\ ,trail:·,extends:…,precedes:…
 colorscheme palenight
 set nobackup                        " disables backup file
@@ -168,7 +166,6 @@ set hlsearch                        " highlight all matches...
 set ignorecase                      " select case-insenitiv search
 set incsearch                       " ...and also during entering the pattern
 set magic                           " change the way backslashes are used in search patterns
-"set matchpairs+=<:>                 " these tokens belong together
 set matchtime=2                     " How many tenths of a second to blink
 set showmatch                       " jump to matches during entering the pattern
 set smartcase                       " No ignorecase if Uppercase chars in search
@@ -182,6 +179,8 @@ set splitbelow                      " Puts new split windows to the bottom of th
 set splitright                      " Puts new vsplit windows to the right of the current
 set textwidth=0                     " Disables the maximum width of text that is being inserted
 set wrapscan                        " Searches wrap around end of file
+set signcolumn=yes
+set relativenumber
 
 " ------------------------------------- KEY MAPPINGS ------------------------------------- "
 
@@ -202,7 +201,7 @@ xnoremap . :normal @q<CR>
 " Reload vimrc with F5
 nnoremap <F5> :source $HOME/.vimrc<CR>
 " JSDOC
-nnoremap <F6> :JsDoc<CR>
+nnoremap <F6> :<C-u>call JSDocAdd()<CR>
 " ALEFix
 nnoremap <F4> :ALEFix<CR>
 " Remap file finder base on the buffer name
@@ -220,13 +219,6 @@ nnoremap gb :echomsg system("git blame -L ".line(".").",".line(".")." ".expand("
 " Remap TAB to change tab o.O
 noremap <TAB> gt
 noremap <S-TAB> gT
-" Surround
-xnoremap " c"<c-r>""<Esc>
-xnoremap ' c'<c-r>"'<Esc>
-xnoremap ` c`<c-r>"`<Esc>
-xnoremap { c{<c-r>"}<Esc>
-xnoremap ( c(<c-r>")<Esc>
-xnoremap [ c[<c-r>"]<Esc>
 
 " ------------------------------------- AUTOCOMMANDS ------------------------------------- "
 
@@ -246,13 +238,11 @@ au BufEnter * :syntax sync fromstart
 " ECDMS Filetype
 au BufRead,BufNewFile *.ecdms set filetype=ecdms
 
-"Omnifuncs
-au FileType sql set omnifunc=syntaxcomplete#Complete
-au FileType vim set omnifunc=syntaxcomplete#Complete
-au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-
 " Backup vimrc on write
 au BufWrite .vimrc execute system("cp $HOME/.vimrc $HOME/.local/.vimrc_bckp")
 
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+" Omni
+set omnifunc=ale#completion#OmniFunc

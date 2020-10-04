@@ -17,6 +17,7 @@ CONFIGS=(
   "$HOME/.dircolors_256"
   "$HOME/.fonts.conf"
   "$HOME/.fonts/"
+  "$HOME/.fonts.conf"
   "$HOME/.gitconfig"
   "$HOME/.gtkrc-2.0"
   "$HOME/.inputrc"
@@ -39,8 +40,8 @@ CONFIGS=(
 )
 [ ! -e "configs" ] && mkdir "configs"
 for f in "${CONFIGS[@]}"; do echo "Creating copy of $f..."; rsync -Rr "$f" "configs/"; done
-[ -d "configs/home/$USER/.local/share/vifm/Trash" ] && rm -rf configs/home/$USER/.local/share/vifm/Trash
-[ -f "configs/home/$USER/.vifm/vifminfo" ] && rm configs/home/$USER/.vifm/vifminfo
+[ -d "configs/home/$USER/.local/share/vifm/Trash" ] && "rm -rf configs/home/$USER/.local/share/vifm/Trash"
+[ -f "configs/home/$USER/.vifm/vifminfo" ] && rm "configs/home/$USER/.vifm/vifminfo"
 [ -f "configs/home/$USER/.config/mopidy/mopidy.conf" ] && \
   sed -i 's/password = .*/password =/' "configs/home/$USER/.config/mopidy/mopidy.conf" &&\
   sed -i 's/username = .*/username =/' "configs/home/$USER/.config/mopidy/mopidy.conf" &&\

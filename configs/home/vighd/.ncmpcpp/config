@@ -1,13 +1,27 @@
 [header]
 header_visibility = "no"
 header_window_color = "default"
-volume_color = "default"
+volume_color = "green"
 state_line_color = "black"
 
-[statusbar]
-progressbar_look = "─╼ "
-
 [playlist]
-playlist_shorten_total_times = "yes"
-allow_for_physical_item_deletion = "yes"
-song_list_format = "{$1►$3 %t}|{$1►$8 <untitled>}|{$1►$8 %f} $1$R{$8 %a}|{$8 <unknown artist>} {$1◀ %l}"
+playlist_display_mode = "classic"
+song_list_format = "$5%t $R$6%a"
+
+[statusbar]
+progressbar_look = "━━━"
+progressbar_color = "black"
+statusbar_visibility = "yes"
+progressbar_elapsed_color = "cyan"
+statusbar_color = "3"
+song_status_format = "{%t - %a}"
+display_bitrate = yes
+
+[library]
+song_library_format = "{{%a - %t}|{%f}}{$R%l}"
+empty_tag_color = "yellow"
+
+[global]
+main_window_color = "default"
+enable_window_title = "yes"
+external_editor = "vim"
