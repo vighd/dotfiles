@@ -1,0 +1,109 @@
+#!/usr/bin/env bash
+NORMAL="^d^"
+YELLOW="^c#FFCB6B^"
+BRIGHT_YELLOW="^c#FFDC89^"
+RED="^c#F07178^"
+LIME="^c#DDFFA7^"
+CYAN="^c#89DDFF^"
+GREY="^c#D0D0D0^"
+PURPLE="^c#C792EA^"
+ORANGE="^c#F78C6C^"
+GREEN="^c#C3E88D^"
+BROWN="^c#9B859D^"
+BLUE="^c#82AAFF^"
+
+if [[ "$1" == "kill" ]]; then
+  pkill -P $(pgrep -fx "bash /usr/local/bin/dwm-statusbar") -f sleep
+  exit 0
+fi
+
+cpufreq() {
+  local freq
+  
+  freq=$(($(</sys/bus/cpu/devices/cpu0/cpufreq/scaling_cur_freq)/1000))
+  [ $freq -le 1000 ] && echo -e "$YELLOW$freq  Mhz$NORMAL" || echo -e "$YELLOW$freq Mhz$NORMAL"
+}
+
+mem() {
+  local mem_used
+
+  mem_used=$(free -h | grep 'Mem')
+  echo -e "$GREEN${mem_used:26:4}/7.6G$NORMAL"
+}
+
+fanspeed() {
+  local fan_speed
+
+  fan_speed=$(</sys/class/hwmon/hwmon4/fan1_input)
+  [ "$fan_speed" -ne 0 ] && echo -e "$GREY$fan_speed RPM$NORMAL" || echo -e "$fan_speed    RPM"
+}
+
+cputemp() {
+  local cpu_temp=$(($(</sys/class/hwmon/hwmon1/temp1_input) / 1000 ))
+  echo -e "$CYAN$cpu_temp°C$NORMAL"
+}
+
+power() {
+  local perc
+
+  perc=$(</sys/class/power_supply/BAT1/capacity)
+  [ "$perc" -ge 0 ]  && [ "$perc" -lt 10 ] && echo -e "$RED$perc%$NORMAL"
+  [ "$perc" -ge 10 ] && [ "$perc" -lt 20 ] && echo -e "$RED$perc%$NORMAL"
+  [ "$perc" -ge 20 ] && [ "$perc" -lt 30 ] && echo -e "$ORANGE$perc%$NORMAL"
+  [ "$perc" -ge 30 ] && [ "$perc" -lt 40 ] && echo -e "$ORANGE$perc%$NORMAL"
+  [ "$perc" -ge 40 ] && [ "$perc" -lt 50 ] && echo -e "$ORANGE$perc%$NORMAL"
+  [ "$perc" -ge 50 ] && [ "$perc" -lt 60 ] && echo -e "$YELLOW$perc%$NORMAL"
+  [ "$perc" -ge 60 ] && [ "$perc" -lt 70 ] && echo -e "$YELLOW$perc%$NORMAL"
+  [ "$perc" -ge 70 ] && [ "$perc" -lt 80 ] && echo -e "$GREEN$perc%$NORMAL"
+  [ "$perc" -ge 80 ] && [ "$perc" -le 90 ] && echo -e "$GREEN$perc%$NORMAL"
+  [ "$perc" -gt 90 ]                       && echo -e "$GREEN$perc%$NORMAL"  
+}
+
+network() {
+  local ip ssid latency
+
+  ssid=$(iwgetid -r)
+  ip=$(ip route get 8.8.8.8 | grep -Eo '[0-9.]+' | tail -2 | head -1)
+  [[ -n $ip ]] && latency=$(ping -c1 8.8.8.8 | grep -Po "(?<=time=)(\d+\.\d+\ ms)")
+  [[ -n $ssid ]] && echo -e "$RED$ssid $ip - $latency$NORMAL" || echo -e "$REDNO CONNECTION$NORMAL"
+}
+
+vpn_ip() {
+  [[ -d /sys/class/net/tun0 ]] && echo -e "$RED- VPN $(ip a s tun0 | grep -Po "(?<=inet )\d+.\d+.\d+.\d+")$NORMAL" || echo -e ""
+}
+
+hddfree() {
+  local freespc
+
+  freespc=$(df -h --output='avail' / | tail -1 | tr -d ' ')
+  echo -e "$ORANGE$freespc$NORMAL"
+}
+
+volume() {
+  local mix vol
+
+  mix=$(amixer get Master)
+  vol=$([[ $mix =~ ([0-9]+%) ]] && echo "${BASH_REMATCH[0]}")
+  [[ $mix == *\[off\]* ]] && echo -e "$PURPLE OFF$NORMAL" || \
+    echo -e "$PURPLE $vol$NORMAL"
+}
+
+datetime() {
+  printf "$BRIGHT_YELLOW%(%a %d %b %H:%M)T$NORMAL" "-1"
+}
+
+current_song() {
+  local title
+  title=$(mpc current)
+  [[ -n $title ]] && echo -e "$BROWN$title$NORMAL" || echo -e "$BROWNNOT PLAYING$NORMAL"
+}
+
+kbd_layout() {
+  local layout
+
+  layout=$(setxkbmap -query | grep -Po "(?<=layout:     )..")
+
+  echo -e "$BLUE$layout$NORMAL"
+}
+
+while :; do xsetroot -name "$(kbd_layout) $(cpufreq) $(mem) $(cputemp) $(power) $(network) $(vpn_ip) $(hddfree) $(volume) $(datetime)"; sleep 30s; done

@@ -9,6 +9,7 @@
 echo -e "Creating backup from packages..."
 pacman -Qmq > "aur.pkgs"
 pacman -Qeq | grep -v "$(pacman -Qmq)" > "pacman.pkgs"
+systemctl list-unit-files --type=service --state=enabled --no-legend | cut -d ' ' -f1 | grep -v getty > "enabled_services"
 echo -e "Creating backup from configs...\n"
 CONFIGS=(
   "$HOME/.bashrc"
@@ -21,34 +22,30 @@ CONFIGS=(
   "$HOME/.gitconfig"
   "$HOME/.gtkrc-2.0"
   "$HOME/.inputrc"
-  "$HOME/.mopidy"
-  "$HOME/.ncmpcpp"
   "$HOME/.vifm"
   "$HOME/.vimrc"
   "$HOME/.xinitrc"
-  "$HOME/.config/chromium-flags.conf"
-  "$HOME/.config/mopidy"
+  "$HOME/.asoundrc"
   "$HOME/.config/termite"
-  "$HOME/.config/qutebrowser"
-  /etc/bluetooth/
+  /etc/iwd/main.conf
   /etc/makepkg.conf
   /etc/mkinitcpio.conf
   /etc/modprobe.d/
+  /etc/sysctl.d/
   /etc/pacman.conf
-  /etc/pulse/
-  /etc/thinkfan.conf
+  /etc/pacman.d/mirrorlist
+  /etc/X11/xorg.conf.d/99-input.conf
+  /etc/X11/xorg.conf.d/20-intel.conf
+  /etc/X11/xorg.conf.d/10-monitor.conf
+  /etc/systemd/system/trackpoint_parameters.service
+  /usr/local/bin/trackpoint_configuration.sh
+  /usr/local/bin/dwm-statusbar
 )
 [ ! -e "configs" ] && mkdir "configs"
-for f in "${CONFIGS[@]}"; do echo "Creating copy of $f..."; rsync -Rr "$f" "configs/"; done
+rm -rf "configs/*"
+for f in "${CONFIGS[@]}"; do echo "Backing up of $f..."; rsync -Rr "$f" "configs/"; done
 [ -d "configs/home/$USER/.local/share/vifm/Trash" ] && "rm -rf configs/home/$USER/.local/share/vifm/Trash"
-[ -f "configs/home/$USER/.vifm/vifminfo" ] && rm "configs/home/$USER/.vifm/vifminfo"
-[ -f "configs/home/$USER/.config/mopidy/mopidy.conf" ] && \
-  sed -i 's/password = .*/password =/' "configs/home/$USER/.config/mopidy/mopidy.conf" &&\
-  sed -i 's/username = .*/username =/' "configs/home/$USER/.config/mopidy/mopidy.conf" &&\
-  sed -i 's/client_id = .*/client_id =/' "configs/home/$USER/.config/mopidy/mopidy.conf" &&\
-  sed -i 's/client_secret = .*/client_secert =/' "configs/home/$USER/.config/mopidy/mopidy.conf"
 [ -f "configs/home/$USER/.bashrc" ] && \
-  sed -i '/2233/d' "configs/home/$USER/.bashrc" &&\
   sed -i '/vighd/d' "configs/home/$USER/.bashrc"
 
 echo -e "\nDone."
