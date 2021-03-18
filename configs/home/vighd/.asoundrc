@@ -1,3 +1,8 @@
+defaults.bluealsa.service "org.bluealsa"
+defaults.bluealsa.device "00:00:00:00:0B:C1"
+defaults.bluealsa.profile "a2dp"
+defaults.bluealsa.delay 10000
+
 pcm.!default {
     type plug
     slave.pcm "asymed"

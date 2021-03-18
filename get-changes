@@ -34,9 +34,7 @@ CONFIGS=(
   /etc/sysctl.d/
   /etc/pacman.conf
   /etc/pacman.d/mirrorlist
-  /etc/X11/xorg.conf.d/99-input.conf
-  /etc/X11/xorg.conf.d/20-intel.conf
-  /etc/X11/xorg.conf.d/10-monitor.conf
+  /etc/X11/xorg.conf
   /etc/systemd/system/trackpoint_parameters.service
   /usr/local/bin/trackpoint_configuration.sh
   /usr/local/bin/dwm-statusbar

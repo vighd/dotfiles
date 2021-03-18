@@ -38,6 +38,7 @@ alias stop="sudo systemctl stop $@"
 alias rm="rm -I"
 alias powersave="sudo cpupower frequency-set -g powersave"
 alias performance="sudo cpupower frequency-set -g performance"
+alias vimsql="vim ~/Digital/vimsql.sql"
 export PAGER=less                                                       # Set default pager
 
 ## Custom functions
@@ -55,6 +56,8 @@ GY='\[\e[1;38;5;242m\]'
 P='\[\e[1;38;5;161m\]'
 Y='\[\e[1;38;5;214m\]'
 W='\[\e[0m\]'
+
+[[ -f /etc/profile.d/grc.sh ]] && source /etc/profile.d/grc.sh
 
 if [[ $PS1 && -f /usr/share/git/git-prompt.sh ]]; then
   source /usr/share/git/completion/git-completion.bash
