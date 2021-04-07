@@ -30,6 +30,7 @@ grc
 groff
 gtk-engine-murrine
 gtk3
+gvfs-mtp
 hexedit
 htop
 i2c-tools
@@ -77,6 +78,8 @@ openal
 openssh
 openvpn
 p7zip
+pass
+pass-otp
 patch
 pdfjs
 picom
@@ -164,5 +167,6 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 yarn
+zbar
 zenity
 zip
