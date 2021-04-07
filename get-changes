@@ -1,11 +1,6 @@
 #!/bin/bash
-# shellcheck disable=SC2015
-# shellcheck disable=SC2235
-# shellcheck disable=SC2181
-# shellcheck disable=SC2162
-# shellcheck disable=SC2199
-#
 # Author Daniel Vigh #
+rm -rf configs
 echo -e "Creating backup from packages..."
 pacman -Qmq > "aur.pkgs"
 pacman -Qeq | grep -v "$(pacman -Qmq)" > "pacman.pkgs"
@@ -26,7 +21,7 @@ CONFIGS=(
   "$HOME/.vimrc"
   "$HOME/.xinitrc"
   "$HOME/.asoundrc"
-  "$HOME/.config/termite"
+  "$HOME/.config/termite/config"
   /etc/iwd/main.conf
   /etc/makepkg.conf
   /etc/mkinitcpio.conf

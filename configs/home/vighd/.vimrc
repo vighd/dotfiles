@@ -11,7 +11,6 @@ call plug#begin('~/.vim/plugins')
   Plug 'drewtempelmeyer/palenight.vim'
   Plug 'itchyny/lightline.vim'
   Plug 'Raimondi/delimitMate'
-  Plug 'dense-analysis/ale'
   Plug 'fatih/vim-go'
   Plug 'mhinz/vim-signify'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -25,6 +24,7 @@ call plug#begin('~/.vim/plugins')
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
   Plug 'vifm/vifm.vim'
   Plug 'vighd/vim-pgsql-query'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " ------------------------------------- PLUGIN CONFIGS --------------------------------------- "
@@ -50,19 +50,6 @@ let g:go_highlight_types = 1
 let g:go_fmt_autosave = 0
 let g:go_auto_type_info = 1
 
-" ALE
-" Installable packages - ruby-sqlint pgformatter-git prettier go shfmt
-let g:ale_lint_delay = 800
-let g:ale_javascript_prettier_options = '--jsx-single-quote --single-quote --tab-width 2 --no-semi --print-width 100'
-let g:ale_fixers = {
-\ 'css': ['prettier'],
-\ 'typescript': ['prettier'],
-\ 'javascript': ['prettier'],
-\ 'go': ['gofmt', 'goimports'],
-\ 'sh': ['shfmt'],
-\ 'sql': ['pgformatter'],
-\}
-
 " Closetag
 let g:closetag_filenames = '*.html,*.js'
 
@@ -72,6 +59,14 @@ let g:delimitMate_balance_matchpairs = 1
 " Polyglot
 let g:sql_type_default = 'pgsql'
 let g:pgsql_pl = ['javascript']
+
+" Coc
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ 'coc-prettier',
+  \ 'coc-sh',
+  \ 'coc-go'
+\]
 
 " ---------------------------------------- VIM CONFIG ----------------------------------------- "
 
@@ -102,14 +97,11 @@ set nocompatible
 set updatetime=100
 set splitbelow
 set completeopt=menu,menuone,popup,noselect,noinsert
-set omnifunc=ale#completion#OmniFunc
 set noswapfile
 syntax enable
 
 " ---------------------------------------- KEY MAPPINGS --------------------------------------- "
 
-" Format code with F4
-nmap <silent> <F4> :ALEFix<CR>
 " Clear search highlighting
 nnoremap <silent> <C-l> :nohlsearch<CR> :syntax sync fromstart<CR><C-l>
 " Run macro in visual mode with .
@@ -121,28 +113,34 @@ nnoremap gb :echomsg system("git blame -L ".line(".").",".line(".")." ".expand("
 " Remap TAB to change tab o.O
 noremap <TAB> gt
 noremap <S-TAB> gT
-" ALE rename with rn
-nnoremap rn :ALERename<CR>
-" ALE go to definiton with gd
-nnoremap gd :ALEGoToDefinition<CR>
-" ALE go to type definiton with gtd
-nnoremap gtd :ALEGoToTypeDefinition<CR>
-" ALE go references
-nnoremap gr :ALEFindReferences -tab<CR>
 " JSDOC with <F6>
 nmap <silent> <F6> <Plug>(jsdoc)
 " PGSQLQuery
 nnoremap <F9> :call RunPGSQLQuery()<CR>
 xnoremap <F9> :call RunPGSQLVisualQuery()<CR>
 xnoremap <S-F9> :call RunPGSQLQueryToCsv()<CR>
+xnoremap <C-F9> :call RunPGSQLVisualQueryAsJSON()<CR>
 " <F3> Open Vifm
 nnoremap <expr> <F3> bufname("%") == "" ? ':Vifm<CR>' : ':TabVifm<CR>'
 " Markdown Preview
 nmap <C-p> <Plug>MarkdownPreviewToggle
+" Window resize
+nnoremap <silent> <S-Right> :vertical resize +5<CR>
+nnoremap <silent> <S-Left> :vertical resize -5<CR>
+nnoremap <silent> <S-Up> :resize +5<CR>
+nnoremap <silent> <S-Down> :resize -5<CR>
+" Coc
+nmap <silent> gd :call CocAction('jumpDefinition', 'tab drop')<CR>
+nmap <silent> gtd <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> rn <Plug>(coc-rename)
+nmap <F4> :call CocAction('format')<CR>
+nnoremap <silent> K :call CocAction('doHover')<CR>
 
 " ------------------------------------- AUTOCOMMANDS ------------------------------------- "
 
 " Fix styled components syntax hl at start
-au BufEnter * :syntax sync fromstart
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
