@@ -93,7 +93,9 @@ scrot
 shfmt
 slock
 smartmontools
+strace
 sudo
+system-config-printer
 termite
 tk
 transmission-cli
@@ -112,11 +114,10 @@ vulkan-intel
 wget
 which
 whois
-wine-staging
-winetricks
 wireless_tools
 xclip
 xdotool
+xf86-input-evdev
 xf86-video-intel
 xf86-video-vesa
 xorg-bdftopcf

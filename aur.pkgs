@@ -1,8 +1,6 @@
 apulse
 downgrade
-dxvk-bin
 edid-decode-git
-enpass-bin
 grabc
 hdsentinel
 numix-gtk-theme-git
@@ -10,10 +8,12 @@ numix-icon-theme-git
 pass-import
 passmenu-otp-git
 pspg
+scrcpy
 teams
 vifmimg-git
 woeusb-ng
 xcursor-human
 xcursor-numix
+xerox-phaser-3020
 xlayoutdisplay
 yay
