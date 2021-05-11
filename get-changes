@@ -1,4 +1,6 @@
 #!/bin/bash
+shopt -s extglob
+
 # Author Daniel Vigh #
 rm -rf configs
 echo -e "Creating backup from packages..."
@@ -20,6 +22,7 @@ CONFIGS=(
   "$HOME/.vifm"
   "$HOME/.vimrc"
   "$HOME/.xinitrc"
+  "$HOME/.moc"
   "$HOME/.asoundrc"
   "$HOME/.config/termite/config"
   /etc/iwd/main.conf
@@ -40,5 +43,9 @@ for f in "${CONFIGS[@]}"; do echo "Backing up of $f..."; rsync -Rr "$f" "configs
 [ -d "configs/home/$USER/.local/share/vifm/Trash" ] && "rm -rf configs/home/$USER/.local/share/vifm/Trash"
 [ -f "configs/home/$USER/.bashrc" ] && \
   sed -i '/vighd/d' "configs/home/$USER/.bashrc"
+
+# Cleaning unneeded files
+find configs/home/vighd/.moc/ -mindepth 1 ! -name 'config' -exec 'rm' {} \;
+rm configs/home/vighd/.vifm/vifminfo.json
 
 echo -e "\nDone."

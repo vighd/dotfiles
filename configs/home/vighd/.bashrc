@@ -18,7 +18,6 @@ export LESS_TERMCAP_se=$'\E[0m'                                         # end st
 export LESS_TERMCAP_so=$'\E[48;5;1m\E[38;5;15m'                         # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m'                                         # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m'                               # begin underline
-export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"                  # Colorize less source, this function needs the source-highlight package
 alias headset="bluetoothctl connect FC:58:FA:51:D2:84"                  # Headset connection alias
 alias ls='ls --color=auto'                                              # Autocoloring ls
 alias grep='grep --color=auto'                                          # Autocoloring grep
@@ -35,10 +34,11 @@ alias startcups="sudo systemctl start org.cups.cupsd.service"
 alias pacman="sudo pacman $@"
 alias start="sudo systemctl start $@"
 alias stop="sudo systemctl stop $@"
-alias rm="rm -I"
+alias rm="rm -Iv"
 alias powersave="sudo cpupower frequency-set -g powersave"
 alias performance="sudo cpupower frequency-set -g performance"
 alias vimsql="vim ~/Digital/vimsql.sql"
+alias dvpn="sudo openvpn ~/Digital/digital.ovpn"
 export PAGER=less                                                       # Set default pager
 
 ## Custom functions

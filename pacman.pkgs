@@ -66,6 +66,7 @@ m4
 maim
 make
 mesa-demos
+moc
 mpg123
 mpv
 net-tools
@@ -87,6 +88,7 @@ pkgconf
 pkgfile
 postgresql
 prettier
+pwgen
 read-edid
 rsync
 scrot
@@ -98,7 +100,6 @@ sudo
 system-config-printer
 termite
 tk
-transmission-cli
 transmission-gtk
 typescript
 udftools

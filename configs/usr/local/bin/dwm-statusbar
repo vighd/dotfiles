@@ -94,7 +94,7 @@ datetime() {
 
 current_song() {
   local title
-  title=$(mpc current)
+  title=$(mocp --info | grep -Pow "(?<=Title: ).*" | head -1)
   [[ -n $title ]] && echo -e "$BROWN$title$NORMAL" || echo -e "$BROWNNOT PLAYING$NORMAL"
 }
 
@@ -106,4 +106,4 @@ kbd_layout() {
   echo -e "$BLUE$layout$NORMAL"
 }
 
-while :; do xsetroot -name "$(kbd_layout) $(cpufreq) $(mem) $(cputemp) $(power) $(network) $(vpn_ip) $(hddfree) $(volume) $(datetime)"; sleep 30s; done
+while :; do xsetroot -name "$(current_song) $(kbd_layout) $(cpufreq) $(mem) $(cputemp) $(power) $(network) $(vpn_ip) $(hddfree) $(volume) $(datetime)"; sleep 30s; done
