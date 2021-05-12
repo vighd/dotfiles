@@ -59,3 +59,6 @@ Theme = nightly_theme
 # could cause a screen upset.  In that situation you can use this option
 # to force screen titles off.
 SetScreenTitle = yes
+
+# Enable custom keymap
+Keymap = keymap

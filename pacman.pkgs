@@ -4,6 +4,7 @@ android-tools
 android-udev
 autoconf
 automake
+aws-cli
 base
 bind
 binutils
