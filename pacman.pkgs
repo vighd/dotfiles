@@ -3,6 +3,7 @@ alsa-utils
 android-tools
 android-udev
 autoconf
+autocutsel
 automake
 aws-cli
 base

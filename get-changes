@@ -36,6 +36,7 @@ CONFIGS=(
   /etc/systemd/system/trackpoint_parameters.service
   /usr/local/bin/trackpoint_configuration.sh
   /usr/local/bin/dwm-statusbar
+  /usr/local/bin/passm
 )
 [ ! -e "configs" ] && mkdir "configs"
 rm -rf "configs/*"

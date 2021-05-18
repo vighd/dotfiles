@@ -1,0 +1,10 @@
+#!/bin/bash
+# Clear clipboard first
+xclip -i /dev/null
+
+if [ "$1" == "otp" ]; then
+  shift 1
+  passmenu-otp $@
+else
+  passmenu $@
+fi
