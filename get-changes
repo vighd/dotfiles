@@ -44,8 +44,4 @@ for f in "${CONFIGS[@]}"; do echo "Backing up of $f..."; rsync -Rr "$f" "configs
 [ -f "configs/home/$USER/.bashrc" ] && \
   sed -i '/vighd/d' "configs/home/$USER/.bashrc"
 
-# Cleaning unneeded files
-find configs/home/vighd/.moc/ -mindepth 1 ! -name 'config' ! -name 'keymap' -exec 'rm' {} \;
-rm configs/home/vighd/.vifm/vifminfo.json
-
 echo -e "\nDone."

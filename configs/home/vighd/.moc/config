@@ -1,5 +1,9 @@
 # Show file titles (title, author, album) instead of file names?
-ReadTags = yes
+ReadTags = no
+TagsCacheSize = 0
+
+# Display full paths instead of just file names in the playlist.
+PlaylistFullPaths	= no
 
 # How to sort?  FileName is the option's only value for now.
 Sort = FileName

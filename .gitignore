@@ -1,1 +1,6 @@
-configs/home/vighd/.configs/vifm/vifminfo.json
+configs/home/vighd/.vifm/vifminfo.json
+configs/home/vighd/.vifm/vifminfo.json*
+configs/home/vighd/.moc/softmixer
+configs/home/vighd/.moc/playlist.m3u
+configs/home/vighd/.moc/last_directory
+configs/home/vighd/.moc/equalizer

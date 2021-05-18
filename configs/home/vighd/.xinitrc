@@ -14,4 +14,4 @@ exec unclutter -idle 1 -jitter 2 -root &
 exec udiskie -T -N &
 exec nitrogen --restore &
 exec dwm-statusbar &
-exec dwm
+exec dwm 2> ~/.dwm.log

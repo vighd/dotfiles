@@ -120,6 +120,8 @@ nnoremap <F9> :call RunPGSQLQuery()<CR>
 xnoremap <F9> :call RunPGSQLVisualQuery()<CR>
 xnoremap <S-F9> :call RunPGSQLQueryToCsv()<CR>
 xnoremap <C-F9> :call RunPGSQLVisualQueryAsJSON()<CR>
+" Replace visually selected text with confirmation
+vnoremap rr "hy:%s/<C-r>h//gc<left><left><left>
 " <F3> Open Vifm
 nnoremap <expr> <F3> bufname("%") == "" ? ':Vifm<CR>' : ':TabVifm<CR>'
 " Markdown Preview
