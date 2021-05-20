@@ -3,7 +3,6 @@ alsa-utils
 android-tools
 android-udev
 autoconf
-autocutsel
 automake
 aws-cli
 base
@@ -18,16 +17,17 @@ dmenu
 dmidecode
 docker
 docker-compose
+dunst
 efibootmgr
 exfat-utils
 fakeroot
 feh
-filezilla
 flex
 fuse-zip
 gcc
 gimp
 git
+go
 grc
 groff
 gtk-engine-murrine
@@ -62,6 +62,7 @@ libva-intel-driver
 linux-firmware
 linux-zen
 llvm
+lostfiles
 lxappearance
 lxrandr
 m4
@@ -107,6 +108,7 @@ udftools
 udiskie
 unclutter
 unrar
+unzip
 upx
 vi
 vifm

@@ -11,7 +11,6 @@ call plug#begin('~/.vim/plugins')
   Plug 'drewtempelmeyer/palenight.vim'
   Plug 'itchyny/lightline.vim'
   Plug 'Raimondi/delimitMate'
-  Plug 'fatih/vim-go'
   Plug 'mhinz/vim-signify'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'maxmellon/vim-jsx-pretty'
@@ -24,7 +23,8 @@ call plug#begin('~/.vim/plugins')
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
   Plug 'vifm/vifm.vim'
   Plug 'vighd/vim-pgsql-query'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release'},
+  Plug 'fatih/vim-go'
 call plug#end()
 
 " ------------------------------------- PLUGIN CONFIGS --------------------------------------- "
@@ -38,17 +38,28 @@ let g:lightline = {
 \}
 
 " Vim-GO
-let g:go_gocode_unimported_packages = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_extra_types = 1
+" disable all linters as that is taken care of by coc.nvim
+let g:go_diagnostics_enabled = 0
+let g:go_metalinter_enabled = []
+
+" don't jump to errors after metalinter is invoked
+let g:go_jump_to_error = 0
+
+" run go imports on file save
+let g:go_fmt_command = "goimports"
+
+" automatically highlight variable your cursor is on
+let g:go_auto_sameids = 0
+
+" Go Syntax
+let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
+let g:go_highlight_function_calls = 1
 let g:go_highlight_operators = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_types = 1
-let g:go_fmt_autosave = 0
-let g:go_auto_type_info = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
 
 " Closetag
 let g:closetag_filenames = '*.html,*.js'

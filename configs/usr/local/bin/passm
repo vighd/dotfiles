@@ -1,6 +1,9 @@
 #!/bin/bash
 # Clear clipboard first
-xclip -i /dev/null
+printf '' | xclip -sel primary
+printf '' | xclip -sel secondary
+printf '' | xclip -sel clipboard
+pkill -f xclip
 
 if [ "$1" == "otp" ]; then
   shift 1

@@ -9,34 +9,36 @@ pacman -Qeq | grep -v "$(pacman -Qmq)" > "pacman.pkgs"
 systemctl list-unit-files --type=service --state=enabled --no-legend | cut -d ' ' -f1 | grep -v getty > "enabled_services"
 echo -e "Creating backup from configs...\n"
 CONFIGS=(
-  "$HOME/.bashrc"
+  "$HOME/.asoundrc"
   "$HOME/.bash_profile"
+  "$HOME/.bashrc"
+  "$HOME/.config/dunst/dunstrc"
+  "$HOME/.config/termite/config"
   "$HOME/.dircolors"
   "$HOME/.dircolors_256"
   "$HOME/.fonts.conf"
-  "$HOME/.fonts/"
   "$HOME/.fonts.conf"
+  "$HOME/.fonts/"
   "$HOME/.gitconfig"
   "$HOME/.gtkrc-2.0"
   "$HOME/.inputrc"
+  "$HOME/.moc"
   "$HOME/.vifm"
+  "$HOME/.vim/coc-settings.json"
   "$HOME/.vimrc"
   "$HOME/.xinitrc"
-  "$HOME/.moc"
-  "$HOME/.asoundrc"
-  "$HOME/.config/termite/config"
+  /etc/X11/xorg.conf
   /etc/iwd/main.conf
   /etc/makepkg.conf
   /etc/mkinitcpio.conf
   /etc/modprobe.d/
-  /etc/sysctl.d/
   /etc/pacman.conf
   /etc/pacman.d/mirrorlist
-  /etc/X11/xorg.conf
+  /etc/sysctl.d/
   /etc/systemd/system/trackpoint_parameters.service
-  /usr/local/bin/trackpoint_configuration.sh
   /usr/local/bin/dwm-statusbar
   /usr/local/bin/passm
+  /usr/local/bin/trackpoint_configuration.sh
 )
 [ ! -e "configs" ] && mkdir "configs"
 rm -rf "configs/*"

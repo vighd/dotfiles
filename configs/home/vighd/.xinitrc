@@ -11,8 +11,8 @@ exec xset r rate 350 30 &
 exec xinput disable "SynPS/2 Synaptics TouchPad" &
 exec setxkbmap -option caps:none &
 exec unclutter -idle 1 -jitter 2 -root &
-exec autocutsel &
 exec udiskie -T -N &
 exec nitrogen --restore &
+exec dunst &
 exec dwm-statusbar &
 exec dwm
