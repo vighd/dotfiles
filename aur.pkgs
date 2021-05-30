@@ -1,5 +1,6 @@
 anydesk-bin
 apulse
+btmenu
 downgrade
 gifcast
 hdsentinel
@@ -7,6 +8,7 @@ numix-gtk-theme-git
 numix-icon-theme-git
 passmenu-otp-git
 pspg
+pulseaudio-modules-bt
 scrcpy
 teams
 vifmimg-git

@@ -9,7 +9,6 @@ pacman -Qeq | grep -v "$(pacman -Qmq)" > "pacman.pkgs"
 systemctl list-unit-files --type=service --state=enabled --no-legend | cut -d ' ' -f1 | grep -v getty > "enabled_services"
 echo -e "Creating backup from configs...\n"
 CONFIGS=(
-  "$HOME/.asoundrc"
   "$HOME/.bash_profile"
   "$HOME/.bashrc"
   "$HOME/.config/dunst/dunstrc"

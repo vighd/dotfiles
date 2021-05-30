@@ -82,10 +82,10 @@ hddfree() {
 volume() {
   local mix vol
 
-  mix=$(amixer get Master)
-  vol=$([[ $mix =~ ([0-9]+%) ]] && echo "${BASH_REMATCH[0]}")
-  [[ $mix == *\[off\]* ]] && echo -e "$PURPLE OFF$NORMAL" || \
-    echo -e "$PURPLE $vol$NORMAL"
+  muted=$(pulsemixer --get-mute)
+  vol=$(pulsemixer --get-volume | cut -d" " -f2)
+  [[ $muted -eq 1 ]] && echo -e "$PURPLE OFF$NORMAL" || \
+    echo -e "$PURPLE $vol%$NORMAL"
 }
 
 datetime() {

@@ -22,9 +22,9 @@ call plug#begin('~/.vim/plugins')
   Plug 'alvan/vim-closetag'
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
   Plug 'vifm/vifm.vim'
-  Plug 'vighd/vim-pgsql-query'
   Plug 'neoclide/coc.nvim', {'branch': 'release'},
-  Plug 'fatih/vim-go'
+  Plug 'fatih/vim-go',
+  Plug 'vighd/vim-pgsql-query',
 call plug#end()
 
 " ------------------------------------- PLUGIN CONFIGS --------------------------------------- "
@@ -76,7 +76,10 @@ let g:coc_global_extensions = [
   \ 'coc-tsserver',
   \ 'coc-prettier',
   \ 'coc-sh',
-  \ 'coc-go'
+  \ 'coc-go',
+  \ 'coc-dictionary',
+  \ 'coc-syntax',
+  \ 'coc-sql'
 \]
 
 " ---------------------------------------- VIM CONFIG ----------------------------------------- "
@@ -109,6 +112,7 @@ set updatetime=100
 set splitbelow
 set completeopt=menu,menuone,popup,noselect,noinsert
 set noswapfile
+set relativenumber
 syntax enable
 
 " ---------------------------------------- KEY MAPPINGS --------------------------------------- "

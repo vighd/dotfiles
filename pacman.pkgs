@@ -9,10 +9,11 @@ base
 bind
 binutils
 bison
+bluez
+bluez-utils
 chromium
 clang
 cpupower
-discord
 dmenu
 dmidecode
 docker
@@ -90,7 +91,12 @@ pkgconf
 pkgfile
 postgresql
 prettier
+pulseaudio
+pulseaudio-alsa
+pulseaudio-jack
+pulsemixer
 pwgen
+python-pip
 read-edid
 rsync
 scrot

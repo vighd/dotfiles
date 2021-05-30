@@ -1,3 +1,4 @@
+bluetooth.service
 iwd.service
 systemd-timesyncd.service
 trackpoint_parameters.service
