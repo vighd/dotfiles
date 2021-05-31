@@ -85,7 +85,7 @@ volume() {
   muted=$(pulsemixer --get-mute)
   vol=$(pulsemixer --get-volume | cut -d" " -f2)
   [[ $muted -eq 1 ]] && echo -e "$PURPLE OFF$NORMAL" || \
-    echo -e "$PURPLE $vol%$NORMAL"
+    echo -e "$PURPLE$vol%$NORMAL"
 }
 
 datetime() {

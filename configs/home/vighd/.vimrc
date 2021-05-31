@@ -79,7 +79,7 @@ let g:coc_global_extensions = [
   \ 'coc-go',
   \ 'coc-dictionary',
   \ 'coc-syntax',
-  \ 'coc-sql'
+  \ 'coc-eslint'
 \]
 
 " ---------------------------------------- VIM CONFIG ----------------------------------------- "

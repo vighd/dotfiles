@@ -1,11 +1,18 @@
 {
+  // COC
   "suggest.noselect": false,
   "diagnostic.errorSign": "✘",
   "diagnostic.warningSign": "!",
   "diagnostic.infoSign": "?",
   "diagnostic.checkCurrentLine": true,
   "coc.preferences.hoverTarget": "float",
+  // GOPLS
   "go.goplsOptions": {
     "staticcheck": true
-  }
+  },
+  // ESLINT
+  "eslint.showOutputChannel": true,
+  "eslint.format.enable": true,
+  // TSSERVER
+  "tsserver.enableJavascript": false
 }
