@@ -133,7 +133,6 @@ nmap <silent> <F6> <Plug>(jsdoc)
 " PGSQLQuery
 nnoremap <F9> :call RunPGSQLQuery()<CR>
 xnoremap <F9> :call RunPGSQLVisualQuery()<CR>
-xnoremap <S-F9> :call RunPGSQLQueryToCsv()<CR>
 xnoremap <C-F9> :call RunPGSQLVisualQueryAsJSON()<CR>
 " Replace visually selected text with confirmation
 vnoremap rr "hy:%s/<C-r>h//gc<left><left><left>
