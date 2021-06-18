@@ -103,7 +103,6 @@ pulsemixer
 pwgen
 python-pip
 python2
-read-edid
 rsync
 scrot
 shfmt
@@ -124,6 +123,7 @@ unclutter
 unrar
 unzip
 upx
+usbutils
 vi
 vifm
 vim
