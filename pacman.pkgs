@@ -1,3 +1,4 @@
+acpi_call
 alsa-plugins
 alsa-utils
 android-tools
@@ -8,6 +9,7 @@ autoconf
 automake
 aws-cli
 base
+bash-completion
 bind
 binutils
 bison
@@ -24,7 +26,6 @@ efibootmgr
 exfat-utils
 faad2
 fakeroot
-feh
 flex
 fuse-zip
 gcc
@@ -112,9 +113,12 @@ strace
 sudo
 system-config-printer
 taglib
+tcpdump
 telegram-desktop
 termite
 tk
+tlp
+tp_smapi
 transmission-gtk
 typescript
 udftools
@@ -127,6 +131,7 @@ usbutils
 vi
 vifm
 vim
+vimiv
 vkd3d
 vulkan-intel
 vulkan-tools
@@ -135,6 +140,7 @@ wget
 which
 whois
 wireless_tools
+x86_energy_perf_policy
 xclip
 xdotool
 xf86-input-evdev

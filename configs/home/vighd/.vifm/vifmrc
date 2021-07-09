@@ -252,8 +252,8 @@ fileviewer *.[1-8] man ./%c | col -b
 
 " Images
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*.svg
-\ {View in feh}
-\ feh -Zd %d --start-at %d/%c -., 2>/dev/null,
+\ {View in vimiv}
+\ vimiv %f%i,
 
   " Wine
   filextype *.exe
