@@ -26,6 +26,7 @@ CONFIGS=(
   "$HOME/.vim/coc-settings.json"
   "$HOME/.vimrc"
   "$HOME/.xinitrc"
+  /etc/sudoers
   /etc/tlp.conf
   /etc/X11/xorg.conf
   /etc/iwd/main.conf
