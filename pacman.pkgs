@@ -89,6 +89,7 @@ openal
 openssh
 openvpn
 p7zip
+pacutils
 pass
 pass-otp
 patch
@@ -115,7 +116,6 @@ system-config-printer
 taglib
 tcpdump
 telegram-desktop
-termite
 tk
 tlp
 tp_smapi
