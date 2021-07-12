@@ -65,5 +65,4 @@ else
   export PS1="$GY$Y\u$GY@$P\h$GY:$B\W$GY$W "
 fi
 
-source /etc/profile.d/vte.sh
 export PATH="$HOME/.yarn/bin:$HOME/go/bin:$PATH"

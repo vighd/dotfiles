@@ -12,7 +12,6 @@ CONFIGS=(
   "$HOME/.bash_profile"
   "$HOME/.bashrc"
   "$HOME/.config/dunst/dunstrc"
-  "$HOME/.config/termite/config"
   "$HOME/.dircolors"
   "$HOME/.dircolors_256"
   "$HOME/.fonts.conf"
@@ -26,6 +25,7 @@ CONFIGS=(
   "$HOME/.vim/coc-settings.json"
   "$HOME/.vimrc"
   "$HOME/.xinitrc"
+  "$HOME/.alacritty.yml"
   /etc/sudoers
   /etc/tlp.conf
   /etc/X11/xorg.conf
