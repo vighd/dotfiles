@@ -100,7 +100,7 @@ set incsearch
 set nobackup
 set path=**
 set wildmode=longest:full,list:full
-set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,.svn,*.gem,*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.swp,*~,._*,*/node_modules/*,*/data/*,*/.git/*,*/dist/*,*/build/*
+set wildignore+=*/node_modules/*,*/data/*,*/.git/*,*/dist/*,*/build/*
 set wildmenu
 set wildchar=9
 set number
@@ -113,6 +113,8 @@ set splitbelow
 set completeopt=menu,menuone,popup,noselect,noinsert
 set noswapfile
 set relativenumber
+set lazyredraw
+set viminfofile=NONE
 syntax enable
 
 " ---------------------------------------- KEY MAPPINGS --------------------------------------- "

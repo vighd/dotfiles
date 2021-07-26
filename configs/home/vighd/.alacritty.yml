@@ -5,12 +5,12 @@ font:
   normal:
     family: canele
     style: Regular
-    size: 9
   
   bold:
     family: canele
     style: Regular
-    size: 9
+  
+  size: 9
 
 # Base16 Material Palenight 256 - alacritty color config
 # Nate Peterson
@@ -22,7 +22,7 @@ colors:
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0xffffff'
+    text: '0x292d3e'
     cursor: '0xffffff'
 
   # Normal colors
@@ -56,6 +56,6 @@ colors:
     - { index: 21, color: '0x959dcb' }
 
 key_bindings:
-  - { key: Equals,         mods: Control|Shift,                   action: ResetFontSize    }
-  - { key: Plus,           mods: Control|Shift,                   action: IncreaseFontSize }
-  - { key: Minus,          mods: Control|Shift,                   action: DecreaseFontSize }
+  - { key: T,      mods: Control|Shift, action: SpawnNewInstance }
+  - { key: Insert, mods: Shift,         action: PasteSelection   }
+  - { key: Insert, mods: Control,       action: Copy             }
