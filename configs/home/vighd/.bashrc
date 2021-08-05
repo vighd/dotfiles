@@ -18,30 +18,53 @@ export LESS_TERMCAP_se=$'\E[0m'                                         # end st
 export LESS_TERMCAP_so=$'\E[48;5;1m\E[38;5;15m'                         # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m'                                         # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m'                               # begin underline
-alias headset="bluetoothctl connect FC:58:FA:51:D2:84"                  # Headset connection alias
 alias ls='ls --color=auto'                                              # Autocoloring ls
 alias grep='grep --color=auto'                                          # Autocoloring grep
 alias dmesg="dmesg --color=always"                                      # Autolocoring dmesg
-alias less='less -R'                                                    # Autocoloring less
+alias less='bat'                                                        # Autocoloring less
 alias jq="jq -C"                                                        # Autocoloring jq
 alias xclip="xclip -sel clip"                                           # Set xclip default selection
 alias src="cd $HOME/Digital/ecdms/src"
 alias dumps="cd $HOME/Digital/ecdms/dumps"
-alias vimrc="vim $HOME/.vimrc"
-alias vimreinstall="cp $HOME/.vim/coc-settings.json /tmp && rm -rf $HOME/.vim/* && mv /tmp/coc-settings.json $HOME/.vim && vim +PlugInstall +qall && vim"
 alias startcups="sudo systemctl start org.cups.cupsd.service"
 alias pacman="sudo pacman $@"
 alias rm="rm -I"
 alias vimsql="vim ~/Digital/vimsql.sql"
 alias dvpn="sudo openvpn ~/Digital/digital.ovpn"
+alias fonts="fc-list : family"
+alias scanhosts="sudo arp-scan --interface=wlan0 --localnet"
+alias dblogs="docker container logs postgres"
+alias vim="nvim"
+alias vimrc="nvim $HOME/.config/nvim/init.vim"
+alias vimreinstall="rm -rf .local/share/nvim && nvim +PlugInstall +qall && nvim"
 export PAGER=less                                                       # Set default pager
 
 ## Custom functions
 
-fd() { psql -AtU postgres -c "SELECT form_data FROM forms WHERE display_id = '$1'" ecdms_production | jq . | less; }
-restoredb() { DB=$2; BACKUP=$1; dropdb -U postgres "$DB"; createdb -U postgres "$DB"; pg_restore -U postgres -c --if-exists -d "$DB" "$BACKUP"; }
-dumpdb() { DB="$1"; OUT="$2"; pg_dump -U postgres -Fc "$DB" > "$OUT"; }
+fd() { psql -AtU postgres -H localhost -c "SELECT form_data FROM forms WHERE display_id = '$1'" ecdms_production | jq . | less; }
+restoredb() { DB=$2; BACKUP=$1; dropdb -U postgres -h localhost "$DB"; createdb -U postgres -h localhost "$DB"; pg_restore -U postgres -h localhost -c --if-exists -d "$DB" "$BACKUP"; }
+dumpdb() { DB="$1"; OUT="$2"; pg_dump -U postgres -h localhost -Fc "$DB" > "$OUT"; }
 genbootentry() { efibootmgr --disk /dev/sda --part 1 --create --label "Arch Linux Zen" --loader /vmlinuz-linux-zen --unicode 'root=PARTUUID=844a07de-a4e5-c447-9cb9-8bcb92b57d79 rw initrd=\intel-ucode.img initrd=\initramfs-linux-zen.img' --verbose;  }
+
+startdb() {
+  sudo systemctl start docker
+  if docker container ls -a | grep postgres > /dev/null; then
+    docker container start postgres
+  else
+    docker run -d -p 5432:5432 -e POSTGRES_PASSWORD=Asd..123 -e POSTGRES_HOST_AUTH_METHOD=trust --name=postgres digitalkft/ecdmsdb:latest postgres
+  fi
+}
+
+stopdb() {
+  docker container stop postgres
+  sudo systemctl stop docker.socket
+  sudo systemctl stop docker
+}
+
+dropddb() {
+  docker container stop postgres
+  docker container rm -v postgres
+}
 
 [[ -f "$HOME/.dircolors_256" ]] && eval "$(dircolors -b "$HOME/.dircolors_256")"
 

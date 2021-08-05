@@ -1,12 +1,12 @@
 " ------------------------------------ PLUGIN MANAGEMENT ------------------------------------ "
 
-let plug=expand($HOME.'/.vim/autoload/plug.vim')
+let plug=expand(stdpath('data') . '/site/autoload/plug.vim')
 if !filereadable(plug)
   echo "Installing Plugin manager.."
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  silent !sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 endif
 
-call plug#begin('~/.vim/plugins')
+call plug#begin(stdpath('data') . '/plugged')
   Plug 'sheerun/vim-polyglot'
   Plug 'drewtempelmeyer/palenight.vim'
   Plug 'itchyny/lightline.vim'
@@ -19,12 +19,11 @@ call plug#begin('~/.vim/plugins')
   \ 'for': ['javascript', 'typescript'],
   \ 'do': 'make install'
   \}
-  Plug 'alvan/vim-closetag'
-  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-  Plug 'vifm/vifm.vim'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'},
-  Plug 'fatih/vim-go',
-  Plug 'vighd/vim-pgsql-query',
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'fatih/vim-go'
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 " ------------------------------------- PLUGIN CONFIGS --------------------------------------- "
@@ -61,9 +60,6 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_generate_tags = 1
 
-" Closetag
-let g:closetag_filenames = '*.html,*.js'
-
 " DelimitMate
 let g:delimitMate_balance_matchpairs = 1
 
@@ -97,7 +93,6 @@ set smartcase
 set nohlsearch
 set hlsearch
 set incsearch
-set nobackup
 set path=**
 set wildmode=longest:full,list:full
 set wildignore+=*/node_modules/*,*/data/*,*/.git/*,*/dist/*,*/build/*
@@ -107,14 +102,18 @@ set number
 set equalalways
 set autoread
 set encoding=utf-8
-set nocompatible
-set updatetime=100
+"set nocompatible
+set updatetime=300
 set splitbelow
-set completeopt=menu,menuone,popup,noselect,noinsert
+"set completeopt=menu,menuone,popup,noselect,noinsert
 set noswapfile
 set relativenumber
 set lazyredraw
-set viminfofile=NONE
+set shortmess+=c
+set signcolumn=yes
+set hidden
+set nobackup
+set nowritebackup
 syntax enable
 
 " ---------------------------------------- KEY MAPPINGS --------------------------------------- "
@@ -123,8 +122,6 @@ syntax enable
 nnoremap <silent> <C-l> :nohlsearch<CR> :syntax sync fromstart<CR><C-l>
 " Run macro in visual mode with .
 xnoremap . :normal @q<CR>
-" Remap file finder base on the buffer name
-nnoremap <expr> ff bufname("%") == "" ? ':find ' : ':tabfind '
 " Git blame
 nnoremap gb :echomsg system("git blame -L ".line(".").",".line(".")." ".expand("%"))[:-2]<CR>
 " Remap TAB to change tab o.O
@@ -132,16 +129,6 @@ noremap <TAB> gt
 noremap <S-TAB> gT
 " JSDOC with <F6>
 nmap <silent> <F6> <Plug>(jsdoc)
-" PGSQLQuery
-nnoremap <F9> :call RunPGSQLQuery()<CR>
-xnoremap <F9> :call RunPGSQLVisualQuery()<CR>
-xnoremap <C-F9> :call RunPGSQLVisualQueryAsJSON()<CR>
-" Replace visually selected text with confirmation
-vnoremap rr "hy:%s/<C-r>h//gc<left><left><left>
-" <F3> Open Vifm
-nnoremap <expr> <F3> bufname("%") == "" ? ':Vifm<CR>' : ':TabVifm<CR>'
-" Markdown Preview
-nmap <C-p> <Plug>MarkdownPreviewToggle
 " Window resize
 nnoremap <silent> <S-Right> :vertical resize +5<CR>
 nnoremap <silent> <S-Left> :vertical resize -5<CR>
@@ -154,6 +141,12 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <silent> rn <Plug>(coc-rename)
 nmap <F4> :call CocAction('format')<CR>
 nnoremap <silent> K :call CocAction('doHover')<CR>
+" Fast movement
+nnoremap <C-j> 5jzz
+nnoremap <C-k> 5kzz
+" Find files using Telescope command-line sugar.
+nnoremap ff <cmd>Telescope find_files<cr>
+nnoremap fg <cmd>Telescope live_grep<cr>
 
 " ------------------------------------- AUTOCOMMANDS ------------------------------------- "
 

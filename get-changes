@@ -21,8 +21,7 @@ CONFIGS=(
   "$HOME/.inputrc"
   "$HOME/.moc"
   "$HOME/.vifm"
-  "$HOME/.vim/coc-settings.json"
-  "$HOME/.vimrc"
+  "$HOME/.config/nvim"
   "$HOME/.xinitrc"
   "$HOME/.alacritty.yml"
   /etc/tlp.conf

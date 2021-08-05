@@ -9,7 +9,6 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 eval $(ssh-agent)
 exec xinput disable "SynPS/2 Synaptics TouchPad" &
 exec setxkbmap -option caps:none &
-exec unclutter -idle 1 -jitter 2 -root &
 exec udiskie -T -N &
 exec nitrogen --restore &
 exec dunst &

@@ -47,6 +47,9 @@ colors:
     cyan:    '0x89ddff'
     white:   '0xffffff'
 
+mouse:
+  hide_when_typing: true
+
   indexed_colors:
     - { index: 16, color: '0xf78c6c' }
     - { index: 17, color: '0xff5370' }
