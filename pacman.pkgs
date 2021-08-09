@@ -5,11 +5,13 @@ alsa-utils
 android-tools
 android-udev
 arch-install-scripts
+arp-scan
 autoconf
 automake
 aws-cli
 base
 bash-completion
+bat
 bind
 binutils
 bison
@@ -27,6 +29,7 @@ efibootmgr
 exfat-utils
 faad2
 fakeroot
+ffmpegthumbnailer
 flex
 fuse-zip
 gcc
@@ -108,6 +111,7 @@ pulsemixer
 pwgen
 python-pip
 python2
+read-edid
 ripgrep
 rsync
 scrot
@@ -124,7 +128,6 @@ tk
 tlp
 tp_smapi
 transmission-gtk
-typescript
 udftools
 udiskie
 unrar

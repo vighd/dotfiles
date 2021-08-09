@@ -24,6 +24,7 @@ CONFIGS=(
   "$HOME/.config/nvim"
   "$HOME/.xinitrc"
   "$HOME/.alacritty.yml"
+  "$HOME/.config/bat"
   /etc/tlp.conf
   /etc/X11/xorg.conf
   /etc/iwd/main.conf

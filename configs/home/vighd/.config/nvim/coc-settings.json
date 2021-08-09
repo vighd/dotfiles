@@ -6,6 +6,12 @@
   "diagnostic.infoSign": "?",
   "diagnostic.checkCurrentLine": true,
   "coc.preferences.hoverTarget": "float",
+  // Coc-git
+  "git.addedSign.hlGroup": "GitGutterAdd",
+  "git.changedSign.hlGroup": "GitGutterChange",
+  "git.removedSign.hlGroup": "GitGutterDelete",
+  "git.topRemovedSign.hlGroup": "GitGutterDelete",
+  "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
   // GOPLS
   "go.goplsOptions": {
     "staticcheck": true

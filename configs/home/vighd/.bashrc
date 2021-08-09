@@ -29,15 +29,19 @@ alias dumps="cd $HOME/Digital/ecdms/dumps"
 alias startcups="sudo systemctl start org.cups.cupsd.service"
 alias pacman="sudo pacman $@"
 alias rm="rm -I"
-alias vimsql="vim ~/Digital/vimsql.sql"
 alias dvpn="sudo openvpn ~/Digital/digital.ovpn"
 alias fonts="fc-list : family"
 alias scanhosts="sudo arp-scan --interface=wlan0 --localnet"
 alias dblogs="docker container logs postgres"
+alias vimsql="vim +DBUIToggle"
 alias vim="nvim"
 alias vimrc="nvim $HOME/.config/nvim/init.vim"
-alias vimreinstall="rm -rf .local/share/nvim && nvim +PlugInstall +qall && nvim"
-export PAGER=less                                                       # Set default pager
+alias vimreinstall="rm -rf .local/share/nvim && sudo rm -rf .config/coc && nvim +PlugInstall +qall && nvim"
+alias vimdiff="nvim -d"
+alias bat="bat --theme='Material-Theme-Palenight'"
+export PAGER=bat                                                        # Set default pager
+export BAT_THEME="Material-Theme-Palenight"
+export EDITOR=vim
 
 ## Custom functions
 

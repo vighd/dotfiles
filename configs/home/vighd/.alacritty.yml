@@ -24,6 +24,7 @@ colors:
   cursor:
     text: '0x292d3e'
     cursor: '0xffffff'
+    blinking: off
 
   # Normal colors
   normal:
