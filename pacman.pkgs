@@ -85,7 +85,6 @@ mesa-demos
 moc
 mpg123
 mpv
-neovim
 net-tools
 nitrogen
 nmap
@@ -136,6 +135,7 @@ upx
 usbutils
 vi
 vifm
+vim
 vimiv
 vkd3d
 vulkan-intel
