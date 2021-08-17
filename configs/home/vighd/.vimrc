@@ -46,29 +46,29 @@ let g:coc_global_extensions = [
 
 " ---------------------------------------- VIM CONFIG ----------------------------------------- "
 
-set encoding=utf-8
-set laststatus=2
-set hidden
-set magic
-set smartcase
-set nobackup
-set nowritebackup
-set updatetime=300
-set signcolumn=number
-set completeopt=menuone,noinsert,noselect
-set shortmess+=c
-set guicursor=
-set termguicolors
 set background=dark
-set number
-set relativenumber
-set signcolumn=yes
-set magic
-set showmatch
-set smartcase
-set nohlsearch
+set completeopt=menuone,noinsert,noselect
+set encoding=utf-8
+set guicursor=
+set hidden
 set hlsearch
 set incsearch
+set laststatus=2
+set lazyredraw
+set magic
+set nobackup
+set nowritebackup
+set relativenumber
+set shortmess+=c
+set showmatch
+set signcolumn=yes
+set smartcase
+set smartindent
+set smarttab
+set termguicolors
+set updatetime=300
+set wildmenu
+set wildmode=full
 colorscheme palenight
 
 " ---------------------------------------- KEY MAPPINGS --------------------------------------- "
@@ -84,17 +84,22 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 " Coc symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
+" Coc rename current file
+nmap <leader>rnf :CocCommand workspace.renameCurrentFile<CR>
 " Coc formatting selected code.
 nmap <F4> <Plug>(coc-format)
 " Coc fuzzy file finder
 nnoremap ff :CocList gfiles<CR>
 nnoremap <leader>rg :CocList grep<CR>
+nnoremap gs :CocList gstatus<CR>
 " Fast movement
 nnoremap <C-j> 5jzz
 nnoremap <C-k> 5kzz
 " Remap TAB to change tab o.O
 noremap <TAB> gt
 noremap <S-TAB> gT
+" Always go file in new tab
+nnoremap gf <C-w>gf
 " Git blame
 nnoremap gb :echomsg system("git blame -L ".line(".").",".line(".")." ".expand("%"))[:-2]<CR>
 " <F3> Open Vifm
@@ -116,7 +121,7 @@ endfunction
 " ---------------------------------------- AUTOCOMMANDS --------------------------------------- "
 
 " Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
+"autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif

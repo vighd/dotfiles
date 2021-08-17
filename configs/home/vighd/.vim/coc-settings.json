@@ -6,6 +6,7 @@
   "diagnostic.infoSign": "?",
   "diagnostic.checkCurrentLine": true,
   "coc.preferences.hoverTarget": "float",
+  "coc.preferences.jumpCommand": "tabe",
   // Coc-git
   "git.addedSign.hlGroup": "GitGutterAdd",
   "git.changedSign.hlGroup": "GitGutterChange",

@@ -13,5 +13,5 @@ exec udiskie -T -N &
 exec nitrogen --restore &
 exec dunst &
 exec dwm-statusbar &
-exec xset r rate 350 30 &
+exec xset r rate 400 40 &
 exec dwm
