@@ -87,6 +87,7 @@ mesa-demos
 moc
 mpg123
 mpv
+neovim
 net-tools
 nitrogen
 nmap
@@ -101,6 +102,7 @@ pacutils
 pass
 pass-otp
 patch
+pdfjs
 picom
 pkgconf
 pkgfile
@@ -110,6 +112,7 @@ pulseaudio-bluetooth
 pulseaudio-jack
 pulsemixer
 pwgen
+python-adblock
 python-pip
 python2
 read-edid
@@ -137,7 +140,6 @@ upx
 usbutils
 vi
 vifm
-vim
 vimiv
 vkd3d
 vulkan-intel

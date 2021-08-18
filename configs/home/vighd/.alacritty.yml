@@ -60,6 +60,6 @@ mouse:
     - { index: 21, color: '0x959dcb' }
 
 key_bindings:
-  - { key: T,      mods: Control|Shift, action: SpawnNewInstance }
-  - { key: Insert, mods: Shift,         action: PasteSelection   }
-  - { key: Insert, mods: Control,       action: Copy             }
+  - { key: T,      mods: Control|Shift, action: SpawnNewInstance    }
+  - { key: Insert, mods: Shift,         action: PasteSelection      }
+  - { key: Insert, mods: Control,       action: Copy                }

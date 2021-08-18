@@ -1,12 +1,12 @@
 " ------------------------------------- PLUGIN MANAGEMENT ------------------------------------- "
 
-let plug=expand($HOME.'/.vim/autoload/plug.vim')
+let plug=expand(stdpath('data') . '/site/autoload/plug.vim')
 if !filereadable(plug)
   echo "Installing Plugin manager.."
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  silent !sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 endif
 
-call plug#begin('~/.vim/plugins')
+call plug#begin(stdpath('data') . '/plugged')
   Plug 'sheerun/vim-polyglot'
   Plug 'drewtempelmeyer/palenight.vim'
   Plug 'itchyny/lightline.vim'
@@ -38,7 +38,6 @@ let g:coc_global_extensions = [
   \ 'coc-db',
   \ 'coc-go',
   \ 'coc-dictionary',
-  \ 'coc-syntax',
   \ 'coc-eslint',
   \ 'coc-git',
   \ 'coc-lists',
@@ -121,7 +120,7 @@ endfunction
 " ---------------------------------------- AUTOCOMMANDS --------------------------------------- "
 
 " Highlight the symbol and its references when holding the cursor.
-"autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -129,4 +128,4 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " -------------------------------------- CUSTOM HIGHLIGHTS ------------------------------------ "
 
 " Coc text hightlight background color on cursor hold
-hi CocHighlightText guibg=#3e4452
+hi CocHighlightText guibg=#32374d

@@ -33,13 +33,15 @@ alias dvpn="sudo openvpn ~/Digital/digital.ovpn"
 alias fonts="fc-list : family"
 alias scanhosts="sudo arp-scan --interface=wlan0 --localnet"
 alias dblogs="docker container logs postgres"
-alias vimsql="vim +DBUIToggle"
-alias vimrc="vim $HOME/.vimrc"
-alias vimreinstall="cp $HOME/.vim/coc-settings.json /tmp && rm -rf $HOME/.vim/* && mv /tmp/coc-settings.json $HOME/.vim && vim +PlugInstall +qall && vim"
+alias vim="nvim"
+alias vimsql="nvim +DBUIToggle"
+alias vimrc="nvim $HOME/.config/nvim/init.vim"
+alias vimreinstall="rm -rf .local/share/nvim && sudo rm -rf .config/coc && nvim +PlugInstall +qall && nvim"
+alias vimdiff="nvim -d"
 alias bat="bat --theme='Material-Theme-Palenight'"
 export PAGER=bat                                                        # Set default pager
 export BAT_THEME="Material-Theme-Palenight"
-export EDITOR=vim
+export EDITOR=nvim
 
 ## Custom functions
 
