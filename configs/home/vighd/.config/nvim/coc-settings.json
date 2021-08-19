@@ -1,14 +1,13 @@
 {
   // COC
   "suggest.noselect": false,
-  "diagnostic.errorSign": "x",
+  "diagnostic.errorSign": ">>",
   "diagnostic.warningSign": "!",
   "diagnostic.infoSign": "?",
   "diagnostic.checkCurrentLine": true,
   "coc.preferences.hoverTarget": "float",
   "coc.preferences.jumpCommand": "tabe",
   "coc.source.db.priority": 1,
-  "suggest.autoTrigger": true,
   // Coc-git
   "git.addedSign.hlGroup": "GitGutterAdd",
   "git.changedSign.hlGroup": "GitGutterChange",
