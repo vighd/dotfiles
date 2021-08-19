@@ -1,0 +1,131 @@
+#!/bin/bash
+shopt -s extglob
+# Strict mode
+set -euo pipefail
+IFS=$'\n\t'
+VERSION="1.0"
+
+function get() {
+  shift 1
+
+  CONFIGS=$(cat ./dotfiles)
+
+  # Remove old configs
+  rm -rf configs
+
+  # Creating backup from packages
+  cecho "Creating backup from packages..." green
+  pacman -Qmq > "aur.pkgs"
+  pacman -Qeq | grep -v "$(pacman -Qmq)" > "pacman.pkgs"
+
+  # Creating backup from enabled services
+  cecho "Creating backup from packages..." green
+  systemctl list-unit-files --type=service --state=enabled --no-legend | cut -d ' ' -f1 | grep -v getty > "enabled_services"
+
+  # Creating backup from dotfiles
+  cecho "\nCreating backup from configs...\n" green
+
+  # Create new configs directory
+  [ ! -e "configs" ] && mkdir "configs"
+
+  # Backing up dotfiles
+  for f in $CONFIGS; do echo "Backing up $f..."; rsync -Rr "$f" "configs/"; done
+
+  # Removing unnecessary leftover files
+  [ -d "configs/home/$USER/.local/share/vifm/Trash" ] && "rm -rf configs/home/$USER/.local/share/vifm/Trash"
+
+  # Removing sensitive data from bashrc
+  [ -f "configs/home/$USER/.bashrc" ] && \
+    sed -i '/vighd/d' "configs/home/$USER/.bashrc"
+
+  # Copy sudoers
+  sudo cp /etc/sudoers configs/etc/sudoers
+  sudo chown vighd:vighd configs/etc/sudoers
+  sudo chmod 440 configs/etc/sudoers
+  
+  cecho "\nDone." green
+}
+
+function restore() {
+  ([[ -z ${2+x} ]] || [[ "$2" =~ (-h|--help) ]]) && show_help
+
+  USER=$2
+
+  # Restore dots
+  cecho "Restoring home dots" yellow
+  find "./configs/home/$USER/" -maxdepth 1 -name ".[^.]*" -exec cp -r {} "/home/$USER/" \;
+  cecho "Restoring home permissions" yellow
+  find "./configs/home/$USER/" -maxdepth 1 -name ".[^.]*" -exec chown -R $(id -u $USER):$(id -g $USER) {} \;
+  cecho "Restoring etc files" yellow
+  find "./configs/etc/" -maxdepth 1 -exec sudo cp -r {} "/etc" \;
+  cecho "Restoring usr files" yellow
+  find "./configs/usr/local/bin/" -maxdepth 1 -exec sudo cp -r {} "/usr/local/bin/" \;
+  cecho "Done." green 
+}
+
+# Help of the main command
+function show_help() {
+  cat <<EOF
+Usage:
+  dots [[COMMAND]...] [OPTION]...
+Commands:
+  get                               collect dots
+  restore [USERNAME TO RESTORE TO]  restores dots to the given user
+Options:
+  -h, --help                show this help
+  -v, --version             show version and exit
+Author: Daniel Vigh, Digital KFT 2020
+EOF
+exit 0
+}
+
+# Use it to print colored text
+function cecho() {
+  local exp=$1
+  local color=$2
+  if ! [[ $color =~ ^[0-9]$ ]] ; then
+    case $(echo "$color" | tr '[:upper:]' '[:lower:]') in
+      black) color=0;;
+      red) color=1;;
+      green) color=2;;
+      yellow) color=3;;
+      blue) color=4;;
+      magenta) color=5;;
+      cyan) color=6;;
+      white|*) color=7;; # white or invalid color
+    esac
+  fi
+  tput setaf $color
+  echo -e "$exp"
+  tput sgr0
+}
+
+# Throws an error and exits with status code
+function throw_error() {
+  # ARGS
+  local EXIT_CODE=$2
+  local EXIT_MESSAGE=$1
+
+  cecho "$EXIT_MESSAGE" red
+  exit "$EXIT_CODE"
+}
+
+# Parsion options 
+function main() {
+  # Show help if no argument
+  [[ "$@" == "" ]] && show_help && return 0
+  case $1 in
+    get )
+      get "$@";;
+    restore )
+      restore "$@";;
+    -h | --help )
+      show_help;;
+    -v | --version )
+      echo $VERSION
+      return 0;;
+    * )
+      throw_error "$1 is invalid or missing argument!" 1;;
+  esac
+}
+main "$@"
