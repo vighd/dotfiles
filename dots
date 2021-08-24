@@ -57,9 +57,9 @@ function restore() {
   cecho "Restoring home permissions" yellow
   find "./configs/home/$USER/" -maxdepth 1 -name ".[^.]*" -exec chown -R $(id -u $USER):$(id -g $USER) {} \;
   cecho "Restoring etc files" yellow
-  find "./configs/etc/" -maxdepth 1 -exec sudo cp -r {} "/etc" \;
+  find "./configs/etc/" -maxdepth 1 -not -path "./configs/etc/" -exec sudo cp -r {} "/etc" \;
   cecho "Restoring usr files" yellow
-  find "./configs/usr/local/bin/" -maxdepth 1 -exec sudo cp -r {} "/usr/local/bin/" \;
+  find "./configs/usr/local/bin/" -maxdepth 1 -not -path "./configs/usr/local/bin/" -exec sudo cp -r {} "/usr/local/bin/" \;
   cecho "Done." green 
 }
 
