@@ -35,6 +35,7 @@ fuse-zip
 gcc
 gimp
 git
+gnome-disk-utility
 gnu-free-fonts
 go
 grc
@@ -73,6 +74,7 @@ libmpcdec
 libreoffice-fresh
 libudev0-shim
 libva-intel-driver
+linux
 linux-firmware
 linux-zen
 llvm
@@ -95,6 +97,7 @@ nodejs-lts-erbium
 ntfs-3g
 ocl-icd
 openal
+openresolv
 openssh
 openvpn
 p7zip
@@ -115,10 +118,13 @@ pwgen
 python-pip
 python2
 read-edid
+reflector
 ripgrep
 rsync
 scrot
+shellcheck
 shfmt
+signal-desktop
 slock
 smartmontools
 strace
@@ -129,7 +135,6 @@ tcpdump
 termshark
 tk
 tlp
-tp_smapi
 transmission-gtk
 udftools
 udiskie
@@ -147,6 +152,7 @@ wavpack
 wget
 which
 whois
+wine-staging
 wireless_tools
 x86_energy_perf_policy
 xclip

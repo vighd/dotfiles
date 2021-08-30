@@ -88,4 +88,4 @@ kbd_layout() {
   layout=$(setxkbmap -query | grep -Po "(?<=layout:     )..")
   printf "$BLUE$layout$NORMAL"
 }
-while :; do xsetroot -name "$(current_song) $(kbd_layout) $(cpufreq) $(mem) $(cputemp) $(power) $(network) $(hddfree) $(volume) $(datetime)"; sleep 30s; done
+while :; do xsetroot -name "$(kbd_layout) $(cpufreq) $(mem) $(cputemp) $(power) $(network) $(hddfree) $(volume) $(datetime)"; sleep 30s; done

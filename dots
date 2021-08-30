@@ -19,7 +19,7 @@ function get() {
   pacman -Qeq | grep -v "$(pacman -Qmq)" > "pacman.pkgs"
 
   # Creating backup from enabled services
-  cecho "Creating backup from packages..." green
+  cecho "Creating backup enabled services..." green
   systemctl list-unit-files --type=service --state=enabled --no-legend | cut -d ' ' -f1 | grep -v getty > "enabled_services"
 
   # Creating backup from dotfiles
