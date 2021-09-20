@@ -15,6 +15,13 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'tpope/vim-dadbod'
   Plug 'kristijanhusak/vim-dadbod-ui'
   Plug 'vifm/vifm.vim'
+  Plug 'Jorengarenar/vim-SQL-UPPER'
+  Plug 'lifepillar/pgsql.vim'
+  Plug 'heavenshell/vim-jsdoc', {
+    \ 'for': ['javascript', 'javascript.jsx','typescript'],
+    \ 'do': 'make install'
+  \}
+  Plug 'styled-components/vim-styled-components'
 call plug#end()
 
 " ------------------------------------- PLUGIN CONFIGS ---------------------------------------- "
@@ -42,7 +49,15 @@ let g:coc_global_extensions = [
   \ 'coc-git',
   \ 'coc-lists',
   \ 'coc-diagnostic',
+  \ 'coc-styled-components'
 \]
+
+" Default to static completion for SQL
+let g:omni_sql_default_compl_type = 'syntax'
+
+" Psql
+let g:sql_type_default = 'pgsql'
+let g:pgsql_pl = ['javascript']
 
 " ---------------------------------------- VIM CONFIG ----------------------------------------- "
 
@@ -104,6 +119,16 @@ nnoremap gf <C-w>gf
 nnoremap gb :echomsg system("git blame -L ".line(".").",".line(".")." ".expand("%"))[:-2]<CR>
 " <F3> Open Vifm
 nnoremap <expr> <F3> bufname("%") == "" ? ':Vifm<CR>' : ':TabVifm<CR>'
+" <F6> JSDoc
+nmap <silent> <F6> <Plug>(jsdoc)
+" <F7> Save current session
+nmap <F7> :mks ~/.vim/sessions/rooster.vim!<CR>
+" <F8> Reload last session
+nmap <F8> :source ~/.vim/sessions/rooster.vim<CR>
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " ----------------------------------------- FUNCTIONS ----------------------------------------- "
 
@@ -125,6 +150,10 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+" Fix styled-components syntax highlighting
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 " -------------------------------------- CUSTOM HIGHLIGHTS ------------------------------------ "
 

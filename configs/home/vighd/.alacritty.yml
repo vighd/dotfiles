@@ -4,14 +4,13 @@ scrolling:
 font:
   normal:
     family: canele
-    style: Regular
+    style: regular
   
   bold:
     family: canele
-    style: Regular
+    style: regular
   
   size: 9
-
 # Base16 Material Palenight 256 - alacritty color config
 # Nate Peterson
 colors:
@@ -60,6 +59,9 @@ mouse:
     - { index: 21, color: '0x959dcb' }
 
 key_bindings:
-  - { key: T,      mods: Control|Shift, action: SpawnNewInstance    }
-  - { key: Insert, mods: Shift,         action: PasteSelection      }
-  - { key: Insert, mods: Control,       action: Copy                }
+  - { key: T,         mods: Control|Shift, action: SpawnNewInstance    }
+  - { key: Insert,    mods: Shift,         action: PasteSelection      }
+  - { key: Insert,    mods: Control,       action: Copy                }
+  - { key: Key0,      mods: Control,       action: ResetFontSize       }
+  - { key: Plus,      mods: Control,       action: IncreaseFontSize    }
+  - { key: Minus,     mods: Control,       action: DecreaseFontSize    }

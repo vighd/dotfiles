@@ -26,6 +26,7 @@ docker
 docker-compose
 dunst
 efibootmgr
+entr
 exfat-utils
 faad2
 fakeroot
@@ -38,6 +39,7 @@ git
 gnome-disk-utility
 gnu-free-fonts
 go
+gopls
 grc
 groff
 gtk-engine-murrine
@@ -71,6 +73,7 @@ lib32-vkd3d
 lib32-vulkan-icd-loader
 lib32-vulkan-intel
 libmpcdec
+libpng12
 libreoffice-fresh
 libudev0-shim
 libva-intel-driver
@@ -152,7 +155,6 @@ wavpack
 wget
 which
 whois
-wine-staging
 wireless_tools
 x86_energy_perf_policy
 xclip
