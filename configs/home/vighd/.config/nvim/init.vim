@@ -59,6 +59,9 @@ let g:omni_sql_default_compl_type = 'syntax'
 let g:sql_type_default = 'pgsql'
 let g:pgsql_pl = ['javascript']
 
+" DBUI
+let g:db_ui_execute_on_save = 0
+
 " ---------------------------------------- VIM CONFIG ----------------------------------------- "
 
 set background=dark

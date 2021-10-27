@@ -1,6 +1,7 @@
 anydesk-bin
 apulse
 bluez-utils-compat
+bottles
 btmenu
 downgrade
 gifcast
@@ -10,6 +11,7 @@ numix-gtk-theme-git
 numix-icon-theme-git
 openvpn-update-systemd-resolved
 passmenu-otp-git
+patool
 pgformatter-git
 pspg
 scrcpy

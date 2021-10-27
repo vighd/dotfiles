@@ -33,6 +33,7 @@ fakeroot
 ffmpegthumbnailer
 flex
 fuse-zip
+gamemode
 gcc
 gimp
 git
@@ -79,7 +80,6 @@ libudev0-shim
 libva-intel-driver
 linux
 linux-firmware
-linux-zen
 llvm
 lostfiles
 lxappearance
@@ -88,6 +88,7 @@ lzip
 m4
 maim
 make
+mdp
 mesa-demos
 moc
 mpg123
@@ -147,6 +148,7 @@ upx
 usbutils
 vi
 vifm
+vim
 vimiv
 vkd3d
 vulkan-intel
@@ -155,6 +157,8 @@ wavpack
 wget
 which
 whois
+wine-staging
+winetricks
 wireless_tools
 x86_energy_perf_policy
 xclip
