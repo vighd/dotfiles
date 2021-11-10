@@ -4,6 +4,7 @@ alsa-plugins
 alsa-utils
 android-tools
 android-udev
+arandr
 arch-install-scripts
 arp-scan
 autoconf
@@ -40,6 +41,7 @@ git
 gnome-disk-utility
 gnu-free-fonts
 go
+gocr
 gopls
 grc
 groff
@@ -57,6 +59,7 @@ iwd
 jq
 lib32-alsa-lib
 lib32-alsa-plugins
+lib32-gamemode
 lib32-giflib
 lib32-gnutls
 lib32-gst-plugins-base-libs
@@ -76,6 +79,7 @@ lib32-vulkan-intel
 libmpcdec
 libpng12
 libreoffice-fresh
+libtool
 libudev0-shim
 libva-intel-driver
 linux
@@ -83,7 +87,6 @@ linux-firmware
 llvm
 lostfiles
 lxappearance
-lxrandr
 lzip
 m4
 maim
@@ -137,9 +140,12 @@ system-config-printer
 taglib
 tcpdump
 termshark
+texinfo
 tk
 tlp
 transmission-gtk
+trayer
+ttf-input
 udftools
 udiskie
 unrar

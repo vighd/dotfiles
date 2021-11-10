@@ -13,6 +13,7 @@
   "git.removedSign.hlGroup": "GitGutterDelete",
   "git.topRemovedSign.hlGroup": "GitGutterDelete",
   "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
+  "git.enableGlobalStatus": false,
   // GOPLS
   "go.goplsOptions": {
     "staticcheck": true

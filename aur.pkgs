@@ -1,9 +1,9 @@
 anydesk-bin
 apulse
 bluez-utils-compat
-bottles
 btmenu
 downgrade
+dxvk-bin
 gifcast
 hdsentinel
 mailhog-bin
@@ -15,6 +15,7 @@ patool
 pgformatter-git
 pspg
 scrcpy
+tmetric-desktop
 vifmimg-git
 xcursor-human
 xerox-phaser-3020
