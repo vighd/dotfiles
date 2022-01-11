@@ -19,6 +19,7 @@ bison
 bluez
 chromium
 clang
+cpulimit
 cpupower
 dhclient
 dmenu
@@ -31,9 +32,11 @@ entr
 exfat-utils
 faad2
 fakeroot
+falkon
 ffmpegthumbnailer
 flex
 fuse-zip
+fuseiso
 gamemode
 gcc
 gimp
@@ -47,6 +50,7 @@ grc
 groff
 gtk-engine-murrine
 gtk3
+gucharmap
 gvfs-mtp
 hexedit
 htop
@@ -128,6 +132,8 @@ read-edid
 reflector
 ripgrep
 rsync
+schedtool
+scrcpy
 scrot
 shellcheck
 shfmt

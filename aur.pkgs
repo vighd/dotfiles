@@ -4,6 +4,7 @@ bluez-utils-compat
 btmenu
 downgrade
 dxvk-bin
+geteltorito
 gifcast
 hdsentinel
 mailhog-bin
@@ -12,10 +13,8 @@ numix-icon-theme-git
 openvpn-update-systemd-resolved
 passmenu-otp-git
 patool
-pgformatter-git
 pspg
-scrcpy
-tmetric-desktop
+unigine-heaven
 vifmimg-git
 xcursor-human
 xerox-phaser-3020

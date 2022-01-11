@@ -1,4 +1,6 @@
 {
+  // Snippets
+  "snippets.ultisnips.directories": ["UltiSnips", "gosnippets/UltiSnips"],
   // COC
   "suggest.removeDuplicateItems": true,
   "diagnostic.errorSign": ">>",
@@ -66,7 +68,7 @@
         "--keyword-case",
         "2",
         "--type-case",
-        "2",
+        "2"
       ]
     }
   }
