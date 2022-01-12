@@ -17,6 +17,8 @@ bind
 binutils
 bison
 bluez
+bluez-libs
+bluez-utils
 chromium
 clang
 cpulimit
@@ -90,6 +92,7 @@ linux
 linux-firmware
 llvm
 lostfiles
+lsp-plugins
 lxappearance
 lzip
 m4
@@ -118,12 +121,11 @@ pass-otp
 patch
 pdfjs
 picom
+pipewire
+pipewire-alsa
+pipewire-pulse
 pkgconf
 pkgfile
-pulseaudio
-pulseaudio-alsa
-pulseaudio-bluetooth
-pulseaudio-jack
 pulsemixer
 pwgen
 python-pip
@@ -142,6 +144,7 @@ slock
 smartmontools
 strace
 sudo
+swh-plugins
 system-config-printer
 taglib
 tcpdump

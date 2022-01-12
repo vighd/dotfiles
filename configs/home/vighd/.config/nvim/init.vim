@@ -148,11 +148,7 @@ nnoremap gb :echomsg system("git blame -L ".line(".").",".line(".")." ".expand("
 " <F3> Open Vifm
 nnoremap <expr> <F3> bufname("%") == "" ? ':Vifm<CR>' : ':TabVifm<CR>'
 " <F6> JSDoc
-nmap <silent> <F6> <Plug>(jsdoc)
-" <F7> Save current session
-nmap <F7> :mks ~/.vim/sessions/rooster.vim!<CR>
-" <F8> Reload last session
-nmap <F8> :source ~/.vim/sessions/rooster.vim<CR>
+nmap <silent> <F6> <Plug>(jsdc)
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
