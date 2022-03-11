@@ -1,5 +1,6 @@
 bluetooth.service
 iwd.service
+sshd.service
 systemd-timesyncd.service
 tlp.service
 trackpoint_parameters.service

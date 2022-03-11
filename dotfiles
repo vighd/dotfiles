@@ -3,8 +3,7 @@
 /home/vighd/.config/dunst/dunstrc
 /home/vighd/.dircolors
 /home/vighd/.dircolors_256
-/home/vighd/.fonts.conf
-/home/vighd/.fonts/
+/home/vighd/.config/fontconfig/fonts.conf
 /home/vighd/.gitconfig
 /home/vighd/.gtkrc-2.0
 /home/vighd/.inputrc
@@ -12,6 +11,7 @@
 /home/vighd/.vifm
 /home/vighd/.config/nvim
 /home/vighd/.xinitrc
+/home/vighd/.Xresources
 /home/vighd/.alacritty.yml
 /home/vighd/.config/bat
 /etc/tlp.conf

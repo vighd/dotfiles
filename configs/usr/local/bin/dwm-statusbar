@@ -17,38 +17,45 @@ if [[ "$1" == "kill" ]]; then
   exit 0
 fi
 
-cpufreq() {
-  local freq
-  freq=$(($(</sys/bus/cpu/devices/cpu0/cpufreq/scaling_cur_freq)/1000))
-  [ $freq -le 1000 ] && printf "$YELLOW$freq Mhz$NORMAL" || printf "$YELLOW$freq Mhz$NORMAL"
-}
-
 mem() {
   local mem_used
   mem_used=$(free -h | grep 'Mem')
-  echo -e "$GREEN${mem_used:27:4}/7.6G$NORMAL"
+  echo -e "$GREEN  ${mem_used:27:4}/7.6G$NORMAL"
 }
 
 cputemp() {
   local cpu_temp=$(($(</sys/class/hwmon/hwmon1/temp1_input) / 1000 ))
-  printf "$CYAN$cpu_temp°C$NORMAL"
+  printf "$CYAN $cpu_temp糖$NORMAL"
 }
 
 power() {
   local perc profile
   perc=$(</sys/class/power_supply/BAT1/capacity)
   profile=$(</sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
-  [ "$profile" == "performance" ] && profile="AC" || profile="BAT"
-  [ "$perc" -ge 0 ]  && [ "$perc" -lt 10 ] && printf "$RED$perc%% $profile$NORMAL"
-  [ "$perc" -ge 10 ] && [ "$perc" -lt 20 ] && printf "$RED$perc%% $profile$NORMAL"
-  [ "$perc" -ge 20 ] && [ "$perc" -lt 30 ] && printf "$ORANGE$perc%% $profile$NORMAL"
-  [ "$perc" -ge 30 ] && [ "$perc" -lt 40 ] && printf "$ORANGE$perc%% $profile$NORMAL"
-  [ "$perc" -ge 40 ] && [ "$perc" -lt 50 ] && printf "$ORANGE$perc%% $profile$NORMAL"
-  [ "$perc" -ge 50 ] && [ "$perc" -lt 60 ] && printf "$YELLOW$perc%% $profile$NORMAL"
-  [ "$perc" -ge 60 ] && [ "$perc" -lt 70 ] && printf "$YELLOW$perc%% $profile$NORMAL"
-  [ "$perc" -ge 70 ] && [ "$perc" -lt 80 ] && printf "$GREEN$perc%% $profile$NORMAL"
-  [ "$perc" -ge 80 ] && [ "$perc" -le 90 ] && printf "$GREEN$perc%% $profile$NORMAL"
-  [ "$perc" -gt 90 ]                       && printf "$GREEN$perc%% $profile$NORMAL"  
+
+  if [[ "$profile" == "performance" ]]; then
+    [ "$perc" -ge 0 ]  && [ "$perc" -lt 10 ] && printf "$RED $perc $NORMAL"
+    [ "$perc" -ge 10 ] && [ "$perc" -lt 20 ] && printf "$RED $perc $NORMAL"
+    [ "$perc" -ge 20 ] && [ "$perc" -lt 30 ] && printf "$ORANGE $perc $NORMAL"
+    [ "$perc" -ge 30 ] && [ "$perc" -lt 40 ] && printf "$ORANGE $perc $NORMAL"
+    [ "$perc" -ge 40 ] && [ "$perc" -lt 50 ] && printf "$ORANGE $perc $NORMAL"
+    [ "$perc" -ge 50 ] && [ "$perc" -lt 60 ] && printf "$YELLOW $perc $NORMAL"
+    [ "$perc" -ge 60 ] && [ "$perc" -lt 70 ] && printf "$YELLOW $perc $NORMAL"
+    [ "$perc" -ge 70 ] && [ "$perc" -lt 80 ] && printf "$GREEN $perc $NORMAL"
+    [ "$perc" -ge 80 ] && [ "$perc" -le 90 ] && printf "$GREEN $perc $NORMAL"
+    [ "$perc" -gt 90 ]                       && printf "$GREEN $perc $NORMAL"
+  else
+    [ "$perc" -ge 0 ]  && [ "$perc" -lt 10 ] && printf "$RED $perc $NORMAL"
+    [ "$perc" -ge 10 ] && [ "$perc" -lt 20 ] && printf "$RED $perc $NORMAL"
+    [ "$perc" -ge 20 ] && [ "$perc" -lt 30 ] && printf "$ORANGE $perc $NORMAL"
+    [ "$perc" -ge 30 ] && [ "$perc" -lt 40 ] && printf "$ORANGE $perc $NORMAL"
+    [ "$perc" -ge 40 ] && [ "$perc" -lt 50 ] && printf "$ORANGE $perc $NORMAL"
+    [ "$perc" -ge 50 ] && [ "$perc" -lt 60 ] && printf "$YELLOW $perc $NORMAL"
+    [ "$perc" -ge 60 ] && [ "$perc" -lt 70 ] && printf "$YELLOW $perc $NORMAL"
+    [ "$perc" -ge 70 ] && [ "$perc" -lt 80 ] && printf "$GREEN $perc $NORMAL"
+    [ "$perc" -ge 80 ] && [ "$perc" -le 90 ] && printf "$GREEN $perc $NORMAL"
+    [ "$perc" -gt 90 ]                       && printf "$GREEN $perc $NORMAL"  
+  fi
 }
 
 network() {
@@ -56,25 +63,25 @@ network() {
   ssid=$(iwgetid -r)
   ip=$(ip route get 8.8.8.8 | grep -Eo '[0-9.]+' | tail -2 | head -1)
   [[ -n $ip ]] && latency=$(ping -c1 8.8.8.8 | grep -Po "(?<=time=)(\d+\.\d+\ ms)")
-  [[ -n $ssid ]] && printf "$RED$ssid $ip - $latency$NORMAL" || printf "$REDNO CONNECTION$NORMAL"
-  [[ -d /sys/class/net/tun0 ]] && printf "$RED - VPN $(ip a s tun0 | grep -Po "(?<=inet )\d+.\d+.\d+.\d+")$NORMAL" || printf ""
+  [[ -n $ssid ]] && printf "$RED直  $ssid $ip - $latency$NORMAL" || printf "$RED睊 NO CONNECTION$NORMAL"
+  [[ -d /sys/class/net/tun0 ]] && printf "$RED - VPN $(ip a s tun0 | grep -Po "(?<=inet )\d+.\d+.\d+.\d+")$NORMAL" || printf " "
 }
 
 hddfree() {
   local freespc
   freespc=$(df -h --output='avail' / | tail -1 | tr -d ' ')
-  printf "$ORANGE$freespc$NORMAL"
+  printf "$ORANGE  $freespc$NORMAL"
 }
 
 volume() {
   local mix vol
   muted=$(pulsemixer --get-mute)
   vol=$(pulsemixer --get-volume | cut -d" " -f2)
-  [[ $muted -eq 1 ]] && printf "$PURPLE OFF$NORMAL" || printf "$PURPLE$vol%%$NORMAL"
+  [[ $muted -eq 1 ]] && printf "$PURPLE婢  OFF$NORMAL" || printf "$PURPLE墳  $vol $NORMAL"
 }
 
 datetime() {
-  printf "$BRIGHT_YELLOW%(%a %d %b %H:%M)T$NORMAL" "-1"
+  printf "$BRIGHT_YELLOW  %(%a %d %b %H:%M)T$NORMAL" "-1"
 }
 
 current_song() {
@@ -86,6 +93,13 @@ current_song() {
 kbd_layout() {
   local layout
   layout=$(setxkbmap -query | grep -Po "(?<=layout:     )..")
-  printf "$BLUE$layout$NORMAL"
+  printf "$BLUE  $layout$NORMAL"
 }
-while :; do xsetroot -name "$(kbd_layout) $(cpufreq) $(mem) $(cputemp) $(power) $(network) $(hddfree) $(volume) $(datetime)"; sleep 30s; done
+
+cpu_usage() {
+  local usage
+  usage=$(awk '{u=$2+$4; t=$2+$4+$5; if (NR==1){u1=u; t1=t;} else print ($2+$4-u1) * 100 / (t-t1); }' <(grep 'cpu ' /proc/stat) <(sleep 0.5;grep 'cpu ' /proc/stat))
+  printf "%s  %.0f %s" $YELLOW "$usage" $NORMAL
+}
+
+while :; do xsetroot -name "$(kbd_layout) $(cpu_usage) $(mem) $(cputemp) $(power) $(network) $(hddfree) $(volume) $(datetime)"; sleep 30s; done

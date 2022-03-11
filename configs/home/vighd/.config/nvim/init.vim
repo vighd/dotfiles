@@ -7,36 +7,91 @@ if !filereadable(plug)
 endif
 
 call plug#begin(stdpath('data') . '/plugged')
-  Plug 'sheerun/vim-polyglot'
-  Plug 'drewtempelmeyer/palenight.vim'
-  Plug 'itchyny/lightline.vim'
-  Plug 'Raimondi/delimitMate'
+  Plug 'navarasu/onedark.nvim'
+  Plug 'nvim-lualine/lualine.nvim'
+	Plug 'kyazdani42/nvim-web-devicons'
+	Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'nvim-telescope/telescope.nvim'
+  Plug 'windwp/nvim-autopairs'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'tpope/vim-dadbod'
   Plug 'kristijanhusak/vim-dadbod-ui'
-  Plug 'vifm/vifm.vim'
-  Plug 'Jorengarenar/vim-SQL-UPPER'
-  Plug 'lifepillar/pgsql.vim'
-  Plug 'heavenshell/vim-jsdoc', {
-    \ 'for': ['javascript', 'javascript.jsx','typescript'],
-    \ 'do': 'make install'
-  \}
   Plug 'styled-components/vim-styled-components'
-  Plug 'fatih/vim-go'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 " ------------------------------------- PLUGIN CONFIGS ---------------------------------------- "
 
+lua <<EOF
+-- Treesitter
+
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {
+      "javascript",
+      "go",
+      "lua",
+      "vim",
+      "yaml",
+      "dockerfile",
+      "cmake",
+      "c", 
+      "bash",
+      "css",
+      "json",
+      "html",
+      "tsx",
+      "comment"
+  },
+  highlight = {
+    enable = {
+      "javascript",
+      "go",
+      "lua",
+      "vim",
+      "yaml",
+      "dockerfile",
+      "cmake",
+      "c", 
+      "bash",
+      "css",
+      "json",
+      "html",
+      "tsx",
+      "comment"
+    },
+    additional_vim_regex_highlighting = false,
+  },
+  indent = {
+    enable = true
+  }
+}
+
+-- Auto pairs
+
+require('nvim-autopairs').setup{}
+
+-- Lualine
+
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+		component_separators = {left = '', right = ''},
+    section_separators = {left = '', right = ''},
+  },
+	tabline = {
+  	lualine_a = {'buffers'},
+	}
+}
+EOF
+
+" Colorscheme
+let g:onedark_config = {
+  \ 'style': 'cool',
+\}
+
 " Set leader key
 let mapleader = ","
-
-" Lightline
-let g:lightline = {
-  \ 'colorscheme': 'palenight',
-  \ 'component': {
-  \   'filename': '%F',
-  \ }
-\}
 
 " Coc
 let g:coc_global_extensions = [
@@ -57,36 +112,11 @@ let g:coc_global_extensions = [
 " Default to static completion for SQL
 let g:omni_sql_default_compl_type = 'syntax'
 
-" Psql
-let g:sql_type_default = 'pgsql'
-let g:pgsql_pl = ['javascript']
-
 " DBUI
 let g:db_ui_execute_on_save = 0
 
-" VIM-GO
-" disable all linters as that is taken care of by coc.nvim
-let g:go_diagnostics_enabled = 0
-let g:go_metalinter_enabled = []
-
-" don't jump to errors after metalinter is invoked
-let g:go_jump_to_error = 0
-
-" run go imports on file save
-let g:go_fmt_command = "goimports"
-
-" automatically highlight variable your cursor is on
-let g:go_auto_sameids = 0
-
-" Set highlights
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_generate_tags = 1
+" Hexokinase
+let g:Hexokinase_highlighters = ['backgroundfull']
 
 " ---------------------------------------- VIM CONFIG ----------------------------------------- "
 
@@ -113,7 +143,10 @@ set termguicolors
 set updatetime=300
 set wildmenu
 set wildmode=full
-colorscheme palenight
+set shiftwidth=2
+set tabstop=2
+set showtabline=1
+colorscheme onedark
 
 " ---------------------------------------- KEY MAPPINGS --------------------------------------- "
 
@@ -132,23 +165,19 @@ nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>rnf :CocCommand workspace.renameCurrentFile<CR>
 " Coc formatting selected code.
 nmap <F4> <Plug>(coc-format)
-" Coc fuzzy file finder
-nnoremap ff :CocList files<CR>
-nnoremap <leader>rg :CocList grep<CR>
+" Telescope fuzzy file finder
+nnoremap <leader>ff <cmd>Telescope find_files theme=ivy<cr>
+nnoremap <leader>rg <cmd>Telescope live_grep theme=ivy<cr>
 " Fast movement
 nnoremap <C-j> 5jzz
 nnoremap <C-k> 5kzz
 " Remap TAB to change tab o.O
-noremap <TAB> gt
-noremap <S-TAB> gT
+noremap <TAB> :bnext<CR>
+noremap <S-TAB> :bprev<CR>
 " Always go file in new tab
 nnoremap gf <C-w>gf
 " Git blame
 nnoremap gb :echomsg system("git blame -L ".line(".").",".line(".")." ".expand("%"))[:-2]<CR>
-" <F3> Open Vifm
-nnoremap <expr> <F3> bufname("%") == "" ? ':Vifm<CR>' : ':TabVifm<CR>'
-" <F6> JSDoc
-nmap <silent> <F6> <Plug>(jsdc)
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
