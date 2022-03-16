@@ -24,7 +24,6 @@ chromium
 clang
 cpulimit
 cpupower
-curlftpfs
 dhclient
 dmenu
 dmidecode
@@ -37,8 +36,6 @@ exfat-utils
 faad2
 fakeroot
 ffmpegthumbnailer
-filezilla
-firefox
 flex
 fontforge
 fuse-zip
@@ -48,7 +45,6 @@ gcc
 gcolor3
 gimp
 git
-gnome-disk-utility
 gnu-free-fonts
 go
 gocr
@@ -76,7 +72,8 @@ lib32-gnutls
 lib32-gst-plugins-base-libs
 lib32-libpulse
 lib32-libudev0-shim
-lib32-libva
+lib32-libva-intel-driver
+lib32-libvpx1.3
 lib32-libxcomposite
 lib32-libxinerama
 lib32-libxslt
@@ -94,6 +91,8 @@ libreoffice-fresh-hu
 libtool
 libudev0-shim
 libva-intel-driver
+libva-utils
+libvpx1.3
 linux-firmware
 linux-zen
 linux-zen-headers
@@ -107,7 +106,9 @@ maim
 make
 mdp
 mesa-demos
+mesa-utils
 moc
+mono
 mpd
 mpg123
 mpv
@@ -149,15 +150,12 @@ shellcheck
 shfmt
 signal-desktop
 slock
-smartmontools
 strace
 stress
 sudo
 swh-plugins
 system-config-printer
 taglib
-tcpdump
-termshark
 texinfo
 tk
 tlp
@@ -183,12 +181,9 @@ which
 whois
 wine-staging
 wireless_tools
-x86_energy_perf_policy
 xclip
 xdotool
-xf86-input-evdev
 xf86-video-intel
-xf86-video-vesa
 xorg-bdftopcf
 xorg-docs
 xorg-font-util
@@ -236,7 +231,6 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 yarn
-youtube-dl
 zbar
 zenity
 zip

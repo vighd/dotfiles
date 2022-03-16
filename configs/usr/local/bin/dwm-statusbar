@@ -1,105 +1,129 @@
-#!/usr/bin/env bash
-NORMAL="^d^"
-YELLOW="^c#FFCB6B^"
-BRIGHT_YELLOW="^c#FFDC89^"
-RED="^c#F07178^"
-LIME="^c#DDFFA7^"
-CYAN="^c#89DDFF^"
-GREY="^c#D0D0D0^"
-PURPLE="^c#C792EA^"
-ORANGE="^c#F78C6C^"
-GREEN="^c#C3E88D^"
-BROWN="^c#9B859D^"
-BLUE="^c#82AAFF^"
+#!/bin/bash
+#shellcheck disable=SC2046,2086
 
 if [[ "$1" == "kill" ]]; then
-  pkill -P $(pgrep -fx "bash /usr/local/bin/dwm-statusbar") -f sleep
+  pkill -P $(pgrep -fx "/bin/bash /usr/local/bin/dwm-statusbar") -f sleep
   exit 0
 fi
 
-mem() {
-  local mem_used
-  mem_used=$(free -h | grep 'Mem')
-  echo -e "$GREEN  ${mem_used:27:4}/7.6G$NORMAL"
+printColoredText() {
+  prefix=$1
+  color=$2
+  text=$3
+  suffix=$4
+
+  echo -e "^c$color^$prefix $text$suffix^d^"
 }
 
-cputemp() {
-  local cpu_temp=$(($(</sys/class/hwmon/hwmon1/temp1_input) / 1000 ))
-  printf "$CYAN $cpu_temp糖$NORMAL"
+getBatIcon() {
+  percentage=$1
+  chargerState=$2
+
+  case $percentage in
+    0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10)
+      [ $chargerState -eq 1 ] && echo "" || echo ""
+      ;;
+    11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20)
+      [ $chargerState -eq 1 ] && echo "" || echo ""
+      ;;
+    21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30)
+      [ $chargerState -eq 1 ] && echo "" || echo ""
+      ;;
+    31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 40)
+      [ $chargerState -eq 1 ] && echo "" || echo ""
+      ;;
+    41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 | 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 | 60)
+      [ $chargerState -eq 1 ] && echo "" || echo ""
+      ;;
+    61 | 62 | 63 | 64 | 65 | 66 | 67 | 68 | 69 | 70 | 71 | 72 | 73 | 74 | 75 | 76 | 77 | 78 | 79 | 80)
+      [ $chargerState -eq 1 ] && echo "" || echo ""
+      ;;
+    81 | 82 | 83 | 84 | 85 | 86 | 87 | 88 | 89 | 90)
+      [ $chargerState -eq 1 ] && echo "" || echo ""
+      ;;
+    91 | 92 | 93 | 94 | 95 | 96 | 97 | 98 | 99)
+      [ $chargerState -eq 1 ] && echo "" || echo ""
+      ;;
+    *)
+      [ $chargerState -eq 1 ] && echo "" || echo ""
+      ;;
+  esac
+}
+
+round() {
+  printf "%.${2}f" "${1}"
+}
+
+mem() {
+  mem_used=$(free -h | grep 'Mem')
+  printColoredText "" "#E5C07A" "${mem_used:27:4}/7.6G"
+}
+
+cpuTemp() {
+  cpu_temp=$(($(< /sys/class/hwmon/hwmon1/temp1_input) / 1000))
+  printColoredText "" "#62AEEF" $cpu_temp "°C"
 }
 
 power() {
-  local perc profile
-  perc=$(</sys/class/power_supply/BAT1/capacity)
-  profile=$(</sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
-
-  if [[ "$profile" == "performance" ]]; then
-    [ "$perc" -ge 0 ]  && [ "$perc" -lt 10 ] && printf "$RED $perc $NORMAL"
-    [ "$perc" -ge 10 ] && [ "$perc" -lt 20 ] && printf "$RED $perc $NORMAL"
-    [ "$perc" -ge 20 ] && [ "$perc" -lt 30 ] && printf "$ORANGE $perc $NORMAL"
-    [ "$perc" -ge 30 ] && [ "$perc" -lt 40 ] && printf "$ORANGE $perc $NORMAL"
-    [ "$perc" -ge 40 ] && [ "$perc" -lt 50 ] && printf "$ORANGE $perc $NORMAL"
-    [ "$perc" -ge 50 ] && [ "$perc" -lt 60 ] && printf "$YELLOW $perc $NORMAL"
-    [ "$perc" -ge 60 ] && [ "$perc" -lt 70 ] && printf "$YELLOW $perc $NORMAL"
-    [ "$perc" -ge 70 ] && [ "$perc" -lt 80 ] && printf "$GREEN $perc $NORMAL"
-    [ "$perc" -ge 80 ] && [ "$perc" -le 90 ] && printf "$GREEN $perc $NORMAL"
-    [ "$perc" -gt 90 ]                       && printf "$GREEN $perc $NORMAL"
-  else
-    [ "$perc" -ge 0 ]  && [ "$perc" -lt 10 ] && printf "$RED $perc $NORMAL"
-    [ "$perc" -ge 10 ] && [ "$perc" -lt 20 ] && printf "$RED $perc $NORMAL"
-    [ "$perc" -ge 20 ] && [ "$perc" -lt 30 ] && printf "$ORANGE $perc $NORMAL"
-    [ "$perc" -ge 30 ] && [ "$perc" -lt 40 ] && printf "$ORANGE $perc $NORMAL"
-    [ "$perc" -ge 40 ] && [ "$perc" -lt 50 ] && printf "$ORANGE $perc $NORMAL"
-    [ "$perc" -ge 50 ] && [ "$perc" -lt 60 ] && printf "$YELLOW $perc $NORMAL"
-    [ "$perc" -ge 60 ] && [ "$perc" -lt 70 ] && printf "$YELLOW $perc $NORMAL"
-    [ "$perc" -ge 70 ] && [ "$perc" -lt 80 ] && printf "$GREEN $perc $NORMAL"
-    [ "$perc" -ge 80 ] && [ "$perc" -le 90 ] && printf "$GREEN $perc $NORMAL"
-    [ "$perc" -gt 90 ]                       && printf "$GREEN $perc $NORMAL"  
-  fi
+  perc=$(< /sys/class/power_supply/BAT1/capacity)
+  ac=$(< /sys/class/power_supply/AC/online)
+	batIcon=$(getBatIcon $perc $ac)
+  printColoredText $batIcon "#C678DD" "$perc%"
 }
 
 network() {
-  local ip ssid latency
   ssid=$(iwgetid -r)
   ip=$(ip route get 8.8.8.8 | grep -Eo '[0-9.]+' | tail -2 | head -1)
-  [[ -n $ip ]] && latency=$(ping -c1 8.8.8.8 | grep -Po "(?<=time=)(\d+\.\d+\ ms)")
-  [[ -n $ssid ]] && printf "$RED直  $ssid $ip - $latency$NORMAL" || printf "$RED睊 NO CONNECTION$NORMAL"
-  [[ -d /sys/class/net/tun0 ]] && printf "$RED - VPN $(ip a s tun0 | grep -Po "(?<=inet )\d+.\d+.\d+.\d+")$NORMAL" || printf " "
+  latency=$(ping -c1 8.8.8.8 | grep -Po "(?<=time=)(\d+\.\d+\ ms)")
+  if [[ -n $ssid ]]; then
+    if [[ -d /sys/class/net/tun0 ]]; then
+      vpnIp=$(ip a s tun0 | grep -Po "(?<=inet )\d+.\d+.\d+.\d+")
+      printColoredText "直" "#F9266A" "$ssid $ip - $latency" " 嬨 $vpnIp"
+    else
+      printColoredText "直" "#F9266A" "$ssid $ip - $latency"
+    fi
+  else
+    printColoredText "睊" "#F9266A" "NO CONNECTION"
+  fi
+
 }
 
-hddfree() {
-  local freespc
+hddFree() {
   freespc=$(df -h --output='avail' / | tail -1 | tr -d ' ')
-  printf "$ORANGE  $freespc$NORMAL"
+  printColoredText "" "#FE8019" $freespc
 }
 
 volume() {
-  local mix vol
   muted=$(pulsemixer --get-mute)
   vol=$(pulsemixer --get-volume | cut -d" " -f2)
-  [[ $muted -eq 1 ]] && printf "$PURPLE婢  OFF$NORMAL" || printf "$PURPLE墳  $vol $NORMAL"
+  if [ $muted -eq 1 ]; then
+    printColoredText "婢" "#B8BB26" "OFF"
+  else
+    if [ $vol -ge 20 ] && [ $vol -le 40 ]; then
+      printColoredText "奄" "#B8BB26" $vol "%"
+    elif [ $vol -gt 40 ] && [ $vol -lt 70 ]; then
+      printColoredText "奔" "#B8BB26" $vol "%"
+    else
+      printColoredText "墳" "#B8BB26" $vol "%"
+    fi
+  fi
 }
 
-datetime() {
-  printf "$BRIGHT_YELLOW  %(%a %d %b %H:%M)T$NORMAL" "-1"
+dateTime() {
+  printColoredText "" "#55B6C2" "$(date '+%d %b %H:%M')"
 }
 
-current_song() {
-  local title
-  title=$(mocp --info | grep -Pow "(?<=Title: ).*" | head -1)
-  [[ -n $title ]] && printf "$BROWN$title$NORMAL" || printf "$BROWNNOT PLAYING$NORMAL"
-}
-
-kbd_layout() {
-  local layout
+kbdLayout() {
   layout=$(setxkbmap -query | grep -Po "(?<=layout:     )..")
-  printf "$BLUE  $layout$NORMAL"
+  printColoredText "" "#E06B74" $layout
 }
 
-cpu_usage() {
-  local usage
-  usage=$(awk '{u=$2+$4; t=$2+$4+$5; if (NR==1){u1=u; t1=t;} else print ($2+$4-u1) * 100 / (t-t1); }' <(grep 'cpu ' /proc/stat) <(sleep 0.5;grep 'cpu ' /proc/stat))
-  printf "%s  %.0f %s" $YELLOW "$usage" $NORMAL
+cpuUsage() {
+  usage=$(awk '{u=$2+$4; t=$2+$4+$5; if (NR==1){u1=u; t1=t;} else print ($2+$4-u1) * 100 / (t-t1); }' <(grep 'cpu ' /proc/stat) <(
+    sleep 0.5
+    grep 'cpu ' /proc/stat
+  ))
+  printColoredText "" "#98C379" $(round ${usage} 0) "%"
 }
 
-while :; do xsetroot -name "$(kbd_layout) $(cpu_usage) $(mem) $(cputemp) $(power) $(network) $(hddfree) $(volume) $(datetime)"; sleep 30s; done
+while :; do xsetroot -name "$(kbdLayout) $(cpuUsage) $(mem) $(cpuTemp) $(power) $(network) $(hddFree) $(volume) $(dateTime)"; sleep 30s; done

@@ -8,6 +8,7 @@ endif
 
 call plug#begin(stdpath('data') . '/plugged')
   Plug 'navarasu/onedark.nvim'
+	Plug 'arcticicestudio/nord-vim'
   Plug 'nvim-lualine/lualine.nvim'
 	Plug 'kyazdani42/nvim-web-devicons'
 	Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
