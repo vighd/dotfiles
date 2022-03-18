@@ -29,7 +29,7 @@ function get() {
   [ ! -e "configs" ] && mkdir "configs"
 
   # Backing up dotfiles
-  for f in $CONFIGS; do echo "Backing up $f..."; rsync -Rr "$f" "configs/"; done
+  for f in $CONFIGS; do echo "Backing up $f..."; rsync -Rrl "$f" "configs/"; done
 
   # Removing unnecessary leftover files
   [ -d "configs/home/$USER/.local/share/vifm/Trash" ] && "rm -rf configs/home/$USER/.local/share/vifm/Trash"
