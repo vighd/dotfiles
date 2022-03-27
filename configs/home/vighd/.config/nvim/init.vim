@@ -11,20 +11,83 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'arcticicestudio/nord-vim'
   Plug 'nvim-lualine/lualine.nvim'
 	Plug 'kyazdani42/nvim-web-devicons'
-	Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim'
   Plug 'windwp/nvim-autopairs'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'tpope/vim-dadbod'
   Plug 'kristijanhusak/vim-dadbod-ui'
   Plug 'styled-components/vim-styled-components'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+	Plug 'lewis6991/gitsigns.nvim'
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'williamboman/nvim-lsp-installer'
+	Plug 'hrsh7th/cmp-nvim-lsp'
+	Plug 'hrsh7th/cmp-buffer'
+	Plug 'hrsh7th/cmp-path'
+	Plug 'hrsh7th/nvim-cmp'
+	Plug 'hrsh7th/cmp-vsnip'
+	Plug 'hrsh7th/vim-vsnip'
 call plug#end()
 
 " ------------------------------------- PLUGIN CONFIGS ---------------------------------------- "
 
 lua <<EOF
+-- Setup gitsigns
+
+require('gitsigns').setup {
+	signs = {
+    add          = {hl = 'GitSignsAdd'   , text = '+', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
+    change       = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+    delete       = {hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+    topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+    changedelete = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+  },	
+}
+
+-- Setup nvim-cmp.
+local cmp = require'cmp'
+
+cmp.setup({
+	snippet = {
+		expand = function(args)
+			vim.fn["vsnip#anonymous"](args.body)
+		end,
+	},
+	mapping = {
+		['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+		['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+		['<CR>'] = cmp.mapping.confirm({ select = true }),
+	},
+	sources = cmp.config.sources({
+		{ name = 'nvim_lsp' },
+		{ name = 'vsnip' }, -- For vsnip users.
+	}, {
+		{ name = 'buffer' },
+	}, {
+		{ name= 'path' },
+	})
+})
+
+-- Set configuration for specific filetype.
+cmp.setup.filetype('gitcommit', {
+	{ name = 'buffer' },
+})
+
+-- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline('/', {
+	sources = {
+		{ name = 'buffer' }
+	}
+})
+
+-- LSP Installer
+
+local lsp_installer = require("nvim-lsp-installer")
+lsp_installer.on_server_ready(function(server)
+    local opts = {}
+    server:setup(opts)
+end)
+
 -- Treesitter
 
 require'nvim-treesitter.configs'.setup {
@@ -94,30 +157,11 @@ let g:onedark_config = {
 " Set leader key
 let mapleader = ","
 
-" Coc
-let g:coc_global_extensions = [
-  \ 'coc-tsserver',
-  \ 'coc-prettier',
-  \ 'coc-sh',
-  \ 'coc-db',
-  \ 'coc-go',
-  \ 'coc-dictionary',
-  \ 'coc-eslint',
-  \ 'coc-git',
-  \ 'coc-lists',
-  \ 'coc-diagnostic',
-  \ 'coc-styled-components',
-  \ 'coc-snippets'
-\]
-
 " Default to static completion for SQL
 let g:omni_sql_default_compl_type = 'syntax'
 
 " DBUI
 let g:db_ui_execute_on_save = 0
-
-" Hexokinase
-let g:Hexokinase_highlighters = ['backgroundfull']
 
 " ---------------------------------------- VIM CONFIG ----------------------------------------- "
 
@@ -147,25 +191,17 @@ set wildmode=full
 set shiftwidth=2
 set tabstop=2
 set showtabline=1
+set expandtab
 colorscheme onedark
 
 " ---------------------------------------- KEY MAPPINGS --------------------------------------- "
 
 " Clear search highlighting
 nnoremap <silent> <C-l> :nohlsearch<CR> :syntax sync fromstart<CR><C-l>
-" Coc GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
 " Coc use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-" Coc symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
 " Coc rename current file
 nmap <leader>rnf :CocCommand workspace.renameCurrentFile<CR>
-" Coc formatting selected code.
-nmap <F4> <Plug>(coc-format)
 " Telescope fuzzy file finder
 nnoremap <leader>ff <cmd>Telescope find_files theme=ivy<cr>
 nnoremap <leader>rg <cmd>Telescope live_grep theme=ivy<cr>
@@ -177,39 +213,19 @@ noremap <TAB> :bnext<CR>
 noremap <S-TAB> :bprev<CR>
 " Always go file in new tab
 nnoremap gf <C-w>gf
-" Git blame
-nnoremap gb :echomsg system("git blame -L ".line(".").",".line(".")." ".expand("%"))[:-2]<CR>
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-" ----------------------------------------- FUNCTIONS ----------------------------------------- "
-
-" Coc show documentation on <K>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
+" Autoformat with <F4>
+nnoremap <F4> <cmd>lua vim.lsp.buf.formatting()<CR>
+" LSP keybindings
+nnoremap <leader>gr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
+nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <leader>gtd <cmd>lua vim.lsp.buf.type_definition()<CR>
+nnoremap <leader>gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <leader>gD <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <leader>gi <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap K <cmd>lua vim.lsp.buf.hover()<CR>
 
 " ---------------------------------------- AUTOCOMMANDS --------------------------------------- "
 
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
-" Fix styled-components syntax highlighting
-autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-
-" -------------------------------------- CUSTOM HIGHLIGHTS ------------------------------------ "
-
-" Coc text hightlight background color on cursor hold
-hi CocHighlightText guibg=#32374d

@@ -12,7 +12,6 @@ automake
 aws-cli
 base
 bash-completion
-bash-language-server
 bat
 bind
 binutils
@@ -116,7 +115,8 @@ neovim
 net-tools
 nitrogen
 nmap
-nodejs-lts-erbium
+nodejs-lts-fermium
+npm
 ntfs-3g
 ocl-icd
 openal

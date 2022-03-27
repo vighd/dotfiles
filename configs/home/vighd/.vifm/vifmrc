@@ -11,7 +11,7 @@
 " If you would like to use another vi clone such as Elvis or Vile
 " you will need to change this setting.
 
-set vicmd=vim
+set vicmd=nvim
 " set vicmd=elvis\ -G\ termcap
 " set vicmd=vile
 
@@ -139,7 +139,7 @@ mark a /run/user/1000/gvfs/
 " %m run the command in a menu window
 
 command! df df -h %m 2> /dev/null
-command! diff vim -d %f%i %f%i
+command! diff nvim -d %f%i %f%i
 command! zip zip -r %f%i.zip %f%i
 command! unzip unzip %f%i
 command! tar tar -cvzf %f%i.tar.gz %f%i
@@ -147,7 +147,7 @@ command! untar tar -xvzf %f%i
 command! run !! ./%f%i
 command! make !!make %a
 command! mkcd :mkdir %a | cd %a
-command! vgrep vim "+grep %a"
+command! vgrep nvim "+grep %a"
 command! reload :write | restart
 command! imgedit gimp %f%i > /dev/null &
 command! amount gio mount -li | awk -F= '{if(index($2,"mtp") == 1)system("gio mount "$2)}' &
