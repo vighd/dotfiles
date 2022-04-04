@@ -255,6 +255,11 @@ filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*.svg
 \ {View in vimiv}
 \ vimiv %f%i,
 
+" Apply icm profiles
+filextype *.icc,*.icm
+\ {Apply icm profiles}
+\ xcalib %f%i,
+
   " Wine
   filextype *.exe
   \ {Open with Wine}

@@ -16,18 +16,23 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'windwp/nvim-autopairs'
   Plug 'tpope/vim-dadbod'
   Plug 'kristijanhusak/vim-dadbod-ui'
+  Plug 'kristijanhusak/vim-dadbod-completion'
   Plug 'styled-components/vim-styled-components'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'lewis6991/gitsigns.nvim'
 	Plug 'neovim/nvim-lspconfig'
-	Plug 'williamboman/nvim-lsp-installer'
+  Plug 'williamboman/nvim-lsp-installer'
 	Plug 'hrsh7th/cmp-nvim-lsp'
 	Plug 'hrsh7th/cmp-buffer'
 	Plug 'hrsh7th/cmp-path'
 	Plug 'hrsh7th/nvim-cmp'
 	Plug 'hrsh7th/cmp-vsnip'
 	Plug 'hrsh7th/vim-vsnip'
+  Plug 'rafamadriz/friendly-snippets'
 call plug#end()
+
+" Installed lsps jsonls vimls tsserver bashls gopls eslint dockerls ansiblels
+" cssls html rust_analyzer sqls yamlls
 
 " ------------------------------------- PLUGIN CONFIGS ---------------------------------------- "
 
@@ -157,9 +162,6 @@ let g:onedark_config = {
 " Set leader key
 let mapleader = ","
 
-" Default to static completion for SQL
-let g:omni_sql_default_compl_type = 'syntax'
-
 " DBUI
 let g:db_ui_execute_on_save = 0
 
@@ -192,6 +194,7 @@ set shiftwidth=2
 set tabstop=2
 set showtabline=1
 set expandtab
+set noswapfile
 colorscheme onedark
 
 " ---------------------------------------- KEY MAPPINGS --------------------------------------- "
@@ -209,8 +212,13 @@ nnoremap <leader>rg <cmd>Telescope live_grep theme=ivy<cr>
 nnoremap <C-j> 5jzz
 nnoremap <C-k> 5kzz
 " Remap TAB to change tab o.O
-noremap <TAB> :bnext<CR>
-noremap <S-TAB> :bprev<CR>
+map <TAB> :bnext<CR>
+map <S-TAB> :bprev<CR>
+" Jump forward or backward in vsnip
+imap <expr> <Tab>   vsnip#jumpable(1)  ? '<Plug>(vsnip-jump-next)' : '<Tab>'
+smap <expr> <Tab>   vsnip#jumpable(1)  ? '<Plug>(vsnip-jump-next)' : '<Tab>'
+imap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
+smap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
 " Always go file in new tab
 nnoremap gf <C-w>gf
 " Autoformat with <F4>
@@ -229,3 +237,6 @@ nnoremap K <cmd>lua vim.lsp.buf.hover()<CR>
 
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+" Set up sql completion
+autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
