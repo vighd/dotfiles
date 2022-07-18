@@ -5,7 +5,6 @@ if !filereadable(plug)
   echo "Installing Plugin manager.."
   silent !sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 endif
-
 call plug#begin(stdpath('data') . '/plugged')
   Plug 'navarasu/onedark.nvim'
 	Plug 'arcticicestudio/nord-vim'
@@ -16,7 +15,6 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'windwp/nvim-autopairs'
   Plug 'tpope/vim-dadbod'
   Plug 'kristijanhusak/vim-dadbod-ui'
-  Plug 'kristijanhusak/vim-dadbod-completion'
   Plug 'styled-components/vim-styled-components'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'lewis6991/gitsigns.nvim'
@@ -25,10 +23,13 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'hrsh7th/cmp-nvim-lsp'
 	Plug 'hrsh7th/cmp-buffer'
 	Plug 'hrsh7th/cmp-path'
-	Plug 'hrsh7th/nvim-cmp'
+  Plug 'hrsh7th/nvim-cmp'
+  ", { 'commit': '3192a0c57837c1ec5bf298e4f3ec984c7d2d60c0'}
 	Plug 'hrsh7th/cmp-vsnip'
 	Plug 'hrsh7th/vim-vsnip'
   Plug 'rafamadriz/friendly-snippets'
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+  Plug 'FooSoft/vim-argwrap'
 call plug#end()
 
 " Installed lsps jsonls vimls tsserver bashls gopls eslint dockerls ansiblels
@@ -61,7 +62,11 @@ cmp.setup({
 	mapping = {
 		['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
 		['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-		['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm({ select = false }),
+    ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), {'i','c'}),
+    ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), {'i','c'}),
 	},
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
@@ -168,7 +173,7 @@ let g:db_ui_execute_on_save = 0
 " ---------------------------------------- VIM CONFIG ----------------------------------------- "
 
 set background=dark
-set completeopt=menuone,noinsert,noselect
+set completeopt=menu,menuone,noselect
 set encoding=utf-8
 set guicursor=
 set hidden
@@ -232,11 +237,10 @@ nnoremap <leader>gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <leader>gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <leader>gi <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap K <cmd>lua vim.lsp.buf.hover()<CR>
+" Split arguments
+nnoremap <silent> <leader>s :ArgWrap<CR>
 
 " ---------------------------------------- AUTOCOMMANDS --------------------------------------- "
 
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
-" Set up sql completion
-autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })

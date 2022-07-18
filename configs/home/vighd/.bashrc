@@ -42,6 +42,9 @@ alias bat="bat --theme='OneHalfDark'"
 alias start="sudo systemctl start $@"
 alias stop="sudo systemctl stop $@"
 alias fonticons="xfd -fa waffle"
+alias startlampp="sudo /opt/lampp/ctlscript.sh start mysql && sudo /opt/lampp/ctlscript.sh start apache"
+alias stoplampp="sudo /opt/lampp/ctlscript.sh stop mysql && sudo /opt/lampp/ctlscript.sh stop apache"
+alias router="ssh root@192.168.2.1"
 export PAGER=bat                                                        # Set default pager
 export BAT_THEME="Material-Theme-Palenight"
 export EDITOR=nvim
@@ -95,4 +98,4 @@ else
   export PS1="$GY$Y\u$GY@$P\h$GY:$B\W$GY$W "
 fi
 
-export PATH="$HOME/.yarn/bin:$HOME/go/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/go/bin:$HOME/.local/bin:$PATH"

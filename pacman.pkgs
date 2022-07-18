@@ -21,6 +21,7 @@ bluez-libs
 bluez-utils
 chromium
 clang
+cmake
 cpulimit
 cpupower
 dhclient
@@ -54,6 +55,7 @@ gtk-engine-murrine
 gtk3
 gucharmap
 gvfs-mtp
+gvfs-smb
 hexedit
 htop
 httpie
@@ -61,6 +63,7 @@ i2c-tools
 imagemagick
 intel-ucode
 iotop
+iperf3
 iwd
 jq
 lib32-alsa-lib
@@ -106,16 +109,14 @@ make
 mdp
 mesa-demos
 mesa-utils
-moc
 mono
-mpd
 mpg123
 mpv
 neovim
 net-tools
 nitrogen
 nmap
-nodejs-lts-fermium
+nodejs-lts-gallium
 npm
 ntfs-3g
 ocl-icd
@@ -129,6 +130,7 @@ pass
 pass-otp
 patch
 pdfjs
+pgformatter
 picom
 pipewire
 pipewire-alsa
@@ -140,7 +142,6 @@ pwgen
 python-pip
 python2
 read-edid
-reflector
 ripgrep
 rsync
 schedtool
@@ -148,8 +149,8 @@ scrcpy
 scrot
 shellcheck
 shfmt
-signal-desktop
 slock
+smbclient
 strace
 stress
 sudo
@@ -183,6 +184,7 @@ wine-staging
 wireless_tools
 xcalib
 xclip
+xdg-user-dirs
 xdotool
 xf86-video-intel
 xorg-bdftopcf
