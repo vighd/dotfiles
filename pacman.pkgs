@@ -1,4 +1,3 @@
-acpi_call
 alacritty
 alsa-plugins
 alsa-utils
@@ -61,7 +60,6 @@ htop
 httpie
 i2c-tools
 imagemagick
-intel-ucode
 iotop
 iperf3
 iwd
@@ -115,6 +113,7 @@ mpv
 neovim
 net-tools
 nitrogen
+nix
 nmap
 nodejs-lts-gallium
 npm
@@ -144,6 +143,7 @@ python2
 read-edid
 ripgrep
 rsync
+rust
 schedtool
 scrcpy
 scrot
