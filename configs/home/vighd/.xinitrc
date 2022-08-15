@@ -10,8 +10,8 @@ export WINIT_X11_SCALE_FACTOR=1
 eval "$(ssh-agent)"
 xset r rate 400 40
 exec xinput disable "SynPS/2 Synaptics TouchPad" &
-exec xinput --set-prop "TPPS/2 IBM TrackPoint" "libinput Accel Profile Enabled" 0, 1 &
-#exec xinput --set-prop 'TPPS/2 IBM TrackPoint' 'libinput Accel Speed' 1 &
+exec xinput --set-prop "PS/2 Generic Mouse" "Coordinate Transformation Matrix" 2 0 0 0 2 0 0 0 1 &
+exe xinput set-prop "PS/2 Generic Mouse" "Accel Speed" 0.5 &
 exec setxkbmap -option caps:none &
 exec udiskie -T -N &
 exec nitrogen --restore &

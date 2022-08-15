@@ -1,9 +1,0 @@
-[Unit]
-Description=Set TrackPoint attributes and fix drifting
-PartOf=graphical-session.target
-
-[Service]
-ExecStart=/usr/local/bin/trackpoint_configuration.sh
-
-[Install]
-WantedBy=multi-user.target

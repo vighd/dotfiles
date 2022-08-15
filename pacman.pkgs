@@ -112,6 +112,7 @@ mpg123
 mpv
 neovim
 net-tools
+nginx
 nitrogen
 nix
 nmap
@@ -136,6 +137,7 @@ pipewire-alsa
 pipewire-pulse
 pkgconf
 pkgfile
+postgresql
 pulsemixer
 pwgen
 python-pip
@@ -145,7 +147,6 @@ ripgrep
 rsync
 rust
 schedtool
-scrcpy
 scrot
 shellcheck
 shfmt

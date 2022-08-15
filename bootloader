@@ -1,0 +1,3 @@
+#!/bin/bash
+
+efibootmgr --disk /dev/sda --part 1 --create --label "Arch Linux Zen" --loader /vmlinuz-linux-zen --unicode 'root=PARTUUID=79df7f4a-f846-bd4d-be12-6b89c5f73093 rw initrd=\initramfs-linux-zen.img i915.enable_psr=0 loglevel=3 psmouse.proto=bare' --verbose
