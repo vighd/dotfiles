@@ -93,6 +93,7 @@ libudev0-shim
 libva-intel-driver
 libva-utils
 libvpx1.3
+linux
 linux-firmware
 linux-zen
 linux-zen-headers
@@ -182,6 +183,7 @@ wget
 which
 whois
 wine-staging
+winetricks
 wireless_tools
 xcalib
 xclip

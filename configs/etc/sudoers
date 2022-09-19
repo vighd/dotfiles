@@ -95,7 +95,5 @@ root ALL=(ALL) ALL
 ## Read drop-in files from /etc/sudoers.d
 @includedir /etc/sudoers.d
 
-# Execute tpfix without password
-vighd ALL = NOPASSWD: /usr/local/bin/tpfix
 # Execute tlp without password
 vighd ALL = NOPASSWD: /usr/bin/tlp

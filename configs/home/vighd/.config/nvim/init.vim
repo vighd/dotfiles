@@ -239,6 +239,8 @@ nnoremap <leader>gi <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap K <cmd>lua vim.lsp.buf.hover()<CR>
 " Split arguments
 nnoremap <silent> <leader>s :ArgWrap<CR>
+" Split words into new lines by space
+vnoremap S :s/\ /\r/g<CR>
 
 " ---------------------------------------- AUTOCOMMANDS --------------------------------------- "
 
