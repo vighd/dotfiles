@@ -45,7 +45,7 @@ alias fonticons="xfd -fa waffle"
 alias startlampp="sudo /opt/lampp/ctlscript.sh start mysql && sudo /opt/lampp/ctlscript.sh start apache"
 alias stoplampp="sudo /opt/lampp/ctlscript.sh stop mysql && sudo /opt/lampp/ctlscript.sh stop apache"
 alias router="ssh skulltus@192.168.50.1"
-alias cat="bat $@"
+alias cat="bat --paging=never $@"
 export PAGER=bat                                                        # Set default pager
 export BAT_THEME="Material-Theme-Palenight"
 export EDITOR=nvim
