@@ -30,6 +30,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'rafamadriz/friendly-snippets'
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
   Plug 'FooSoft/vim-argwrap'
+  Plug 'vifm/vifm.vim'
 call plug#end()
 
 " Installed lsps jsonls vimls tsserver bashls gopls eslint dockerls ansiblels

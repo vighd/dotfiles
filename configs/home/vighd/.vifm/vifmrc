@@ -114,6 +114,7 @@ mark s /home/vighd/Digital/ecdms/src
 mark m /run/media/vighd/
 mark a /run/user/1000/gvfs/
 mark r /var/run/media/router/
+mark t ~/.local/share/Trash/files
 
 " ------------------------------------------------------------------------------
 

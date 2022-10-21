@@ -43,6 +43,7 @@ fakeroot
 ffmpegthumbnailer
 flex
 fontforge
+freerdp
 fuse-zip
 fuseiso
 gamemode
@@ -62,6 +63,7 @@ gucharmap
 gvfs-mtp
 gvfs-smb
 hexedit
+hplip
 hspell
 htop
 httpie
@@ -94,7 +96,6 @@ lib32-vulkan-icd-loader
 lib32-vulkan-intel
 libmpcdec
 libpng12
-libreoffice-fresh
 libreoffice-fresh-hu
 libtool
 libudev0-shim
@@ -156,18 +157,20 @@ pwgen
 python-capstone
 python-opengl
 python-pip
-qemu-full
 read-edid
+remmina
 ripgrep
 rsync
 rust
 samba
+sane
 schedtool
 scrcpy
 screen
 scrot
 shellcheck
 shfmt
+simple-scan
 sleuthkit
 slock
 smbclient
@@ -184,7 +187,6 @@ tk
 tlp
 traceroute
 transmission-gtk
-trash-cli
 trayer
 udftools
 udiskie
@@ -196,7 +198,6 @@ vi
 vifm
 vim
 vimiv
-vivaldi-ffmpeg-codecs
 vkd3d
 vulkan-intel
 vulkan-tools
@@ -204,10 +205,6 @@ wavpack
 wget
 which
 whois
-wine-gecko
-wine-mono
-wine-staging
-winetricks
 wireless_tools
 xcalib
 xclip
@@ -261,6 +258,7 @@ xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
+xsane
 yarn
 zbar
 zenity
