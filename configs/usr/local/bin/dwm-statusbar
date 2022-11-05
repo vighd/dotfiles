@@ -100,9 +100,8 @@ hddFree() {
 }
 
 volume() {
-  muted=$(pulsemixer --get-mute)
-  vol=$(pulsemixer --get-volume | cut -d" " -f2)
-  if [ $muted -eq 1 ]; then
+  vol=$(round $(echo "$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d ' ' -f 2) * 100" | bc))
+  if wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED; then
     printColoredText "婢" "#B8BB26" "OFF"
   else
     if [ $vol -ge 20 ] && [ $vol -le 40 ]; then
@@ -121,7 +120,7 @@ dateTime() {
 
 kbdLayout() {
   layout=$(setxkbmap -query | grep -Po "(?<=layout:     )..")
-  printColoredText "" "#E06B74" $layout
+  printColoredText "" "#E06B74" $layout
 }
 
 cpuUsage() {

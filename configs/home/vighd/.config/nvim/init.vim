@@ -217,6 +217,9 @@ nnoremap <leader>rg <cmd>Telescope live_grep theme=ivy<cr>
 " Fast movement
 nnoremap <C-j> 5jzz
 nnoremap <C-k> 5kzz
+" Remap 0 and $
+nnoremap <C-A> 0
+nnoremap <C-E> $
 " Remap TAB to change tab o.O
 map <TAB> :bnext<CR>
 map <S-TAB> :bprev<CR>

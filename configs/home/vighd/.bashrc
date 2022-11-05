@@ -39,11 +39,7 @@ alias vimrc="nvim $HOME/.config/nvim/init.vim"
 alias vimreinstall="rm -rf .local/share/nvim && sudo rm -rf .config/coc && nvim +PlugInstall +qall && nvim"
 alias vimdiff="nvim -d"
 alias bat="bat --theme='OneHalfDark'"
-alias start="sudo systemctl start $@"
-alias stop="sudo systemctl stop $@"
 alias fonticons="xfd -fa waffle"
-alias startlampp="sudo /opt/lampp/ctlscript.sh start mysql && sudo /opt/lampp/ctlscript.sh start apache"
-alias stoplampp="sudo /opt/lampp/ctlscript.sh stop mysql && sudo /opt/lampp/ctlscript.sh stop apache"
 alias router="ssh skulltus@192.168.50.1"
 alias cat="bat --paging=never $@"
 export PAGER=bat                                                        # Set default pager
@@ -55,7 +51,7 @@ export EDITOR=nvim
 fd() { psql -AtU postgres -H localhost -c "SELECT form_data FROM forms WHERE display_id = '$1'" ecdms_production | jq . | less; }
 restoredb() { DB=$2; BACKUP=$1; dropdb -U postgres -h localhost "$DB"; createdb -U postgres -h localhost "$DB"; pg_restore -U postgres -h localhost -c --if-exists -d "$DB" "$BACKUP"; }
 dumpdb() { DB="$1"; OUT="$2"; pg_dump -U postgres -h localhost -Fc "$DB" > "$OUT"; }
-genbootentry() { efibootmgr --disk /dev/sda --part 1 --create --label "Arch Linux Zen" --loader /vmlinuz-linux-zen --unicode 'root=PARTUUID=844a07de-a4e5-c447-9cb9-8bcb92b57d79 rw initrd=\intel-ucode.img initrd=\initramfs-linux-zen.img' --verbose;  }
+genbootentry() { sudo efibootmgr -B -b 0 && sudo efibootmgr --create --disk /dev/sda --part 1 --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=/dev/sda3 rw initrd=\initramfs-linux.img initrd=\intel-ucode.img i915.enable_psr=0 psmouse.proto=bare'; }
 
 startdb() {
   sudo systemctl start docker
