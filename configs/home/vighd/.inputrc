@@ -1,2 +1,2 @@
-"\C-[[A": history-search-backward
-"\C-[[B": history-search-forward
+"\C-p": history-search-backward
+"\C-n": history-search-forward

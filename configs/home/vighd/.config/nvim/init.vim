@@ -14,6 +14,7 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'nvim-telescope/telescope.nvim'
   Plug 'windwp/nvim-autopairs'
   Plug 'tpope/vim-dadbod'
+  Plug 'kristijanhusak/vim-dadbod-completion'
   Plug 'kristijanhusak/vim-dadbod-ui'
   Plug 'styled-components/vim-styled-components'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -24,7 +25,6 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'hrsh7th/cmp-buffer'
 	Plug 'hrsh7th/cmp-path'
   Plug 'hrsh7th/nvim-cmp'
-  ", { 'commit': '3192a0c57837c1ec5bf298e4f3ec984c7d2d60c0'}
 	Plug 'hrsh7th/cmp-vsnip'
 	Plug 'hrsh7th/vim-vsnip'
   Plug 'rafamadriz/friendly-snippets'
@@ -231,7 +231,7 @@ smap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
 " Always go file in new tab
 nnoremap gf <C-w>gf
 " Autoformat with <F4>
-nnoremap <F4> <cmd>lua vim.lsp.buf.formatting()<CR>
+nnoremap <F4> <cmd>lua vim.lsp.buf.format({async = true})<CR>
 " LSP keybindings
 nnoremap <leader>gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
@@ -250,3 +250,5 @@ vnoremap S :s/\ /\r/g<CR>
 
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni
+autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })

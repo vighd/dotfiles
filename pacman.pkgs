@@ -28,16 +28,19 @@ cmake
 cpio
 cpulimit
 cpupower
+cups
 curlftpfs
 debugedit
 dhclient
 dmenu
 dmidecode
 docker
+docker-buildx
 docker-compose
 dunst
 efibootmgr
 entr
+ethtool
 exfat-utils
 faad2
 fakeroot
@@ -52,6 +55,7 @@ gcc
 gcolor3
 gimp
 git
+gitlab-runner
 gnu-free-fonts
 go
 gocr
@@ -93,6 +97,7 @@ lib32-libxslt
 lib32-mpg123
 lib32-ocl-icd
 lib32-openal
+lib32-openssl-1.1
 lib32-v4l-utils
 lib32-vkd3d
 lib32-vulkan-icd-loader
@@ -137,6 +142,7 @@ ocl-icd
 openal
 openresolv
 openssh
+openssl-1.1
 openvpn
 p7zip
 pacutils
@@ -151,7 +157,8 @@ pipewire-alsa
 pipewire-pulse
 pkgconf
 pkgfile
-postgresql
+postgresql-libs
+powertop
 pulsemixer
 putty
 pwgen
@@ -186,6 +193,7 @@ taglib
 texinfo
 tk
 tlp
+tmux
 traceroute
 transmission-gtk
 trayer

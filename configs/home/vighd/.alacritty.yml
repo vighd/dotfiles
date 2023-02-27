@@ -66,6 +66,6 @@ key_bindings:
   - { key: T,         mods: Control|Shift, action: SpawnNewInstance    }
   - { key: Insert,    mods: Shift,         action: PasteSelection      }
   - { key: Insert,    mods: Control,       action: Copy                }
-  - { key: Key0,      mods: Control,       action: ResetFontSize       }
+  - { key: R,         mods: Control|Shift, action: ResetFontSize       }
   - { key: PageUp,    mods: Control,       action: IncreaseFontSize    }
   - { key: PageDown,  mods: Control,       action: DecreaseFontSize    }

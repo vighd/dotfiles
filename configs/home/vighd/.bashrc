@@ -42,16 +42,18 @@ alias bat="bat --theme='OneHalfDark'"
 alias fonticons="xfd -fa waffle"
 alias router="ssh skulltus@192.168.50.1"
 alias cat="bat --paging=never $@"
+alias ip="ip -c"
 export PAGER=bat                                                        # Set default pager
 export BAT_THEME="Material-Theme-Palenight"
 export EDITOR=nvim
+xset r rate 400 40
 
 ## Custom functions
 
 fd() { psql -AtU postgres -H localhost -c "SELECT form_data FROM forms WHERE display_id = '$1'" ecdms_production | jq . | less; }
 restoredb() { DB=$2; BACKUP=$1; dropdb -U postgres -h localhost "$DB"; createdb -U postgres -h localhost "$DB"; pg_restore -U postgres -h localhost -c --if-exists -d "$DB" "$BACKUP"; }
 dumpdb() { DB="$1"; OUT="$2"; pg_dump -U postgres -h localhost -Fc "$DB" > "$OUT"; }
-genbootentry() { sudo efibootmgr -B -b 0 && sudo efibootmgr --create --disk /dev/sda --part 1 --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=/dev/sda3 rw initrd=\initramfs-linux.img initrd=\intel-ucode.img i915.enable_psr=0 psmouse.proto=bare'; }
+genbootentry() { sudo efibootmgr -B -b 0 && sudo efibootmgr --create --disk /dev/sda --part 1 --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=/dev/sda3 rw initrd=\initramfs-linux.img initrd=\intel-ucode.img i915.enable_psr=0 i915.enable_dc=0 psmouse.proto=bare'; }
 
 startdb() {
   sudo systemctl start docker
