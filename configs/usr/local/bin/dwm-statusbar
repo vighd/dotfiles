@@ -12,7 +12,7 @@ printColoredText() {
   text=$3
   suffix=$4
 
-  echo -e "^c$color^$prefix $text$suffix^d^"
+  echo -e "^c$color^$prefix  $text$suffix^d^"
 }
 
 getBatIcon() {
@@ -32,7 +32,7 @@ getBatIcon() {
     3[0-9])
       [[ $chargerState -eq 1 ]]  && echo "" || echo ""
       ;;
-    4[0-9] | 5[0-9])
+    4[0-9] | 5[0-9]) 
       [[ $chargerState -eq 1 ]]  && echo "" || echo ""
       ;;
     6[0-9] | 7[0-9])

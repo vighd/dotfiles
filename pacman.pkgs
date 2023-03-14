@@ -126,7 +126,6 @@ mdp
 mesa-demos
 mesa-utils
 minicom
-mono
 mpg123
 mpv
 mtd-utils
@@ -165,6 +164,7 @@ pwgen
 python-capstone
 python-opengl
 python-pip
+qemu-desktop
 read-edid
 reflector
 remmina
@@ -187,6 +187,7 @@ squashfs-tools
 strace
 stress
 sudo
+sway
 swh-plugins
 system-config-printer
 taglib
@@ -197,6 +198,7 @@ tmux
 traceroute
 transmission-gtk
 trayer
+ttf-terminus-nerd
 udftools
 unrar
 unzip
@@ -212,6 +214,7 @@ wavpack
 wget
 which
 whois
+wine
 wireless_tools
 wireplumber
 wpa_supplicant

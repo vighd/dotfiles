@@ -39,7 +39,7 @@ alias vimrc="nvim $HOME/.config/nvim/init.vim"
 alias vimreinstall="rm -rf .local/share/nvim && sudo rm -rf .config/coc && nvim +PlugInstall +qall && nvim"
 alias vimdiff="nvim -d"
 alias bat="bat --theme='OneHalfDark'"
-alias fonticons="xfd -fa waffle"
+alias fonticons="xfd -fa Cozette"
 alias router="ssh skulltus@192.168.50.1"
 alias cat="bat --paging=never $@"
 alias ip="ip -c"
@@ -50,7 +50,7 @@ xset r rate 400 40
 
 ## Custom functions
 
-fd() { psql -AtU postgres -H localhost -c "SELECT form_data FROM forms WHERE display_id = '$1'" ecdms_production | jq . | less; }
+fd() { psql -AtU postgres -h localhost --port=5432 -d ecdms_production -c "SELECT form_data FROM forms WHERE display_id = '$1'"; }
 restoredb() { DB=$2; BACKUP=$1; dropdb -U postgres -h localhost "$DB"; createdb -U postgres -h localhost "$DB"; pg_restore -U postgres -h localhost -c --if-exists -d "$DB" "$BACKUP"; }
 dumpdb() { DB="$1"; OUT="$2"; pg_dump -U postgres -h localhost -Fc "$DB" > "$OUT"; }
 genbootentry() { sudo efibootmgr -B -b 0 && sudo efibootmgr --create --disk /dev/sda --part 1 --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=/dev/sda3 rw initrd=\initramfs-linux.img initrd=\intel-ucode.img i915.enable_psr=0 i915.enable_dc=0 psmouse.proto=bare'; }

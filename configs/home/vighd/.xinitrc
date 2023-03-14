@@ -14,4 +14,4 @@ exec setxkbmap -option caps:none &
 exec nitrogen --restore &
 exec dunst &
 exec dwm-statusbar &
-exec dwm
+exec dwm 2> ~/.dwm.log

@@ -3,12 +3,12 @@ scrolling:
 
 font:
   normal:
-    family: UbuntuMono Nerd Font
+    family: TerminessTTF Nerd Font
     style: Regular
   bold:
-    family: UbuntuMono Nerd Font
+    family: TerminessTTF Nerd Font
     style: Regular
-  size: 10
+  size: 9
 
 window:
   decorations: none
