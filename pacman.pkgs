@@ -29,7 +29,6 @@ cpio
 cpupower
 cups
 curlftpfs
-dbeaver
 debugedit
 dhclient
 dmenu
@@ -41,18 +40,13 @@ dunst
 efibootmgr
 entr
 ethtool
-evolution
-evolution-ews
 exfat-utils
 faad2
 fakeroot
 ffmpegthumbnailer
 firefox
 flex
-freerdp
 fuse-zip
-fuseiso
-gamemode
 gcc
 gcolor3
 gimp
@@ -151,7 +145,6 @@ pass
 pass-otp
 patch
 pdfjs
-perl-image-exiftool
 pgformatter
 picom
 pipewire
@@ -167,8 +160,6 @@ pwgen
 python-capstone
 python-opengl
 python-pip
-qemu-desktop
-qemu-system-arm
 read-edid
 reflector
 remmina
@@ -176,14 +167,12 @@ ripgrep
 rsync
 rust
 samba
-sane
 schedtool
 scrcpy
 screen
 scrot
 shellcheck
 shfmt
-simple-scan
 sleuthkit
 slock
 smbclient
@@ -191,7 +180,6 @@ squashfs-tools
 strace
 stress
 sudo
-sway
 swh-plugins
 system-config-printer
 taglib
@@ -199,10 +187,8 @@ texinfo
 thunar
 tk
 tlp
-tmux
 traceroute
 transmission-gtk
-trayer
 ttf-droid
 ttf-terminus-nerd
 udftools
@@ -275,7 +261,6 @@ xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
-xsane
 yarn
 zbar
 zenity

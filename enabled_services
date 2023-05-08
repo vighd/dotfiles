@@ -1,7 +1,6 @@
 bluetooth.service
 haveged.service
 iwd.service
-ldm.service
 systemd-resolved.service
 systemd-timesyncd.service
 tlp.service
