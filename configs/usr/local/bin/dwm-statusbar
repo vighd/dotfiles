@@ -21,31 +21,37 @@ getBatIcon() {
 
   case $percentage in
     [0-9])
-      [[ $chargerState -eq 1 ]] && echo "" || echo ""
+      [[ $chargerState -eq 1 ]] && echo "󰢟" || echo "󰂎"
       ;;
     1[0-9])
-      [[ $chargerState -eq 1 ]]  && echo "" || echo ""
+      [[ $chargerState -eq 1 ]]  && echo "󰢜" || echo "󰁺"
       ;;
     2[0-9])
-      [[ $chargerState -eq 1 ]]  && echo "" || echo ""
+      [[ $chargerState -eq 1 ]]  && echo "󰂆" || echo "󰁻"
       ;;
     3[0-9])
-      [[ $chargerState -eq 1 ]]  && echo "" || echo ""
+      [[ $chargerState -eq 1 ]]  && echo "󰂇" || echo "󰁼"
       ;;
-    4[0-9] | 5[0-9]) 
-      [[ $chargerState -eq 1 ]]  && echo "" || echo ""
+    4[0-9]) 
+      [[ $chargerState -eq 1 ]]  && echo "󰂈" || echo "󰁽"
       ;;
-    6[0-9] | 7[0-9])
-      [[ $chargerState -eq 1 ]]  && echo "" || echo ""
+    5[0-9]) 
+      [[ $chargerState -eq 1 ]]  && echo "󰢝" || echo "󰁾"
+      ;;
+    6[0-9])
+      [[ $chargerState -eq 1 ]]  && echo "󰂉" || echo "󰁿"
+      ;;
+    7[0-9])
+      [[ $chargerState -eq 1 ]]  && echo "󰢞" || echo "󰂀"
       ;;
     8[0-9])
-      [[ $chargerState -eq 1 ]] && echo "" || echo ""
+      [[ $chargerState -eq 1 ]] && echo "󰂊" || echo "󰂁"
       ;;
     9[0-9])
-      [[ $chargerState -eq 1 ]] && echo "" || echo ""
+      [[ $chargerState -eq 1 ]] && echo "󰂋" || echo "󰂂"
       ;;
     *)
-      [[ $chargerState -eq 1 ]] && echo "" || echo ""
+      [[ $chargerState -eq 1 ]] && echo "󰂅" || echo "󰁹"
       ;;
   esac
 }
@@ -67,7 +73,7 @@ cpuTemp() {
 power() {
   perc=$(< /sys/class/power_supply/BAT1/capacity)
   ac=$(< /sys/class/power_supply/AC/online)
-  governorIcon=$(grep -q performance /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor && echo " ﮣ")
+  governorIcon=$(grep -q performance /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor && echo " 󰓅 " || echo " 󰾆 ")
 	batIcon=$(getBatIcon $perc $ac)
 
   if [[ -f /sys/class/power_supply/BAT1/capacity ]]; then
@@ -84,12 +90,12 @@ network() {
   if [[ -n $ssid ]]; then
     if [[ -d /sys/class/net/tun0 ]]; then
       vpnIp=$(ip a s tun0 | grep -Po "(?<=inet )\d+.\d+.\d+.\d+")
-      printColoredText "直" "#F9266A" "$ssid $ip - $latency" " 嬨 $vpnIp"
+      printColoredText "󱚿" "#F9266A" "$ssid $ip - $latency" " - $vpnIp"
     else
-      printColoredText "直" "#F9266A" "$ssid $ip - $latency"
+      printColoredText "󰖩" "#F9266A" "$ssid $ip - $latency"
     fi
   else
-    printColoredText "睊" "#F9266A" "NO CONNECTION"
+    printColoredText "󱚼" "#F9266A" "NO CONNECTION"
   fi
 
 }
@@ -102,25 +108,25 @@ hddFree() {
 volume() {
   vol=$(round $(echo "$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d ' ' -f 2) * 100" | bc))
   if wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED; then
-    printColoredText "婢" "#B8BB26" "OFF"
+    printColoredText "󰖁" "#B8BB26" "OFF"
   else
     if [ $vol -ge 20 ] && [ $vol -le 40 ]; then
-      printColoredText "奄" "#B8BB26" $vol "%"
+      printColoredText "" "#B8BB26" $vol "%"
     elif [ $vol -gt 40 ] && [ $vol -lt 70 ]; then
-      printColoredText "奔" "#B8BB26" $vol "%"
+      printColoredText "󰕾" "#B8BB26" $vol "%"
     else
-      printColoredText "墳" "#B8BB26" $vol "%"
+      printColoredText "" "#B8BB26" $vol "%"
     fi
   fi
 }
 
 dateTime() {
-  printColoredText "" "#55B6C2" "$(date '+%a %d %b %H:%M')"
+  printColoredText "󱑏" "#55B6C2" "$(date '+%a %d %b %H:%M')"
 }
 
 kbdLayout() {
   layout=$(setxkbmap -query | grep -Po "(?<=layout:     )..")
-  printColoredText "" "#E06B74" $layout
+  printColoredText "󰌌" "#E06B74" $layout
 }
 
 cpuUsage() {
@@ -128,7 +134,7 @@ cpuUsage() {
     sleep 0.5
     grep 'cpu ' /proc/stat
   ))
-  printColoredText "" "#98C379" $(round ${usage} 0) "%"
+  printColoredText "󰻠" "#98C379" $(round ${usage} 0) "%"
 }
 
 while :; do xsetroot -name "$(kbdLayout) $(cpuUsage) $(mem) $(cpuTemp) $(power) $(network) $(hddFree) $(volume) $(dateTime)"; sleep 30s; done

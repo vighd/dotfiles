@@ -3,11 +3,13 @@ scrolling:
 
 font:
   normal:
-    family: TerminessTTF Nerd Font
+    family: Terminess Nerd Font
     style: Regular
+    antialiasing: false
   bold:
-    family: TerminessTTF Nerd Font
+    family: Terminess Nerd Font
     style: Regular
+    antialiasing: false
   size: 9
 
 window:

@@ -9,7 +9,6 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'navarasu/onedark.nvim'
 	Plug 'arcticicestudio/nord-vim'
   Plug 'nvim-lualine/lualine.nvim'
-	Plug 'kyazdani42/nvim-web-devicons'
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim'
   Plug 'windwp/nvim-autopairs'
@@ -19,22 +18,16 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'styled-components/vim-styled-components'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'lewis6991/gitsigns.nvim'
-	Plug 'neovim/nvim-lspconfig'
-  Plug 'williamboman/nvim-lsp-installer'
-	Plug 'hrsh7th/cmp-nvim-lsp'
 	Plug 'hrsh7th/cmp-buffer'
 	Plug 'hrsh7th/cmp-path'
   Plug 'hrsh7th/nvim-cmp'
-	Plug 'hrsh7th/cmp-vsnip'
-	Plug 'hrsh7th/vim-vsnip'
-  Plug 'rafamadriz/friendly-snippets'
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
   Plug 'FooSoft/vim-argwrap'
-  Plug 'vifm/vifm.vim'
+	Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'williamboman/mason.nvim'
+  Plug 'williamboman/mason-lspconfig.nvim'
+  Plug 'neovim/nvim-lspconfig'
 call plug#end()
-
-" Installed lsps jsonls vimls tsserver bashls gopls eslint dockerls ansiblels
-" cssls html rust_analyzer sqls yamlls
 
 " ------------------------------------- PLUGIN CONFIGS ---------------------------------------- "
 
@@ -51,15 +44,53 @@ require('gitsigns').setup {
   },	
 }
 
+-- Setup mason
+
+require("mason").setup()
+require("mason-lspconfig").setup()
+
+require("mason-lspconfig").setup_handlers {
+    function (server_name)
+        require("lspconfig")[server_name].setup {}
+    end,
+    ["yamlls"] = function ()
+      require("lspconfig")["yamlls"].setup {
+        settings = {
+          yaml = {
+            keyOrdering = false
+          }     
+        }
+      }
+    end,
+    vim.api.nvim_create_autocmd("CursorHold", {
+      buffer = bufnr,
+      callback = function()
+        local opts = {
+          focusable = false,
+          close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+          border = 'rounded',
+          source = 'always',
+          prefix = ' ',
+          scope = 'cursor',
+        }
+        vim.diagnostic.open_float(nil, opts)
+      end
+    }),
+    vim.diagnostic.config({
+      virtual_text = false,
+    })
+}
+
+local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
 -- Setup nvim-cmp.
 local cmp = require'cmp'
 
 cmp.setup({
-	snippet = {
-		expand = function(args)
-			vim.fn["vsnip#anonymous"](args.body)
-		end,
-	},
 	mapping = {
 		['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
 		['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
@@ -71,7 +102,6 @@ cmp.setup({
 	},
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
-		{ name = 'vsnip' }, -- For vsnip users.
 	}, {
 		{ name = 'buffer' },
 	}, {
@@ -90,14 +120,6 @@ cmp.setup.cmdline('/', {
 		{ name = 'buffer' }
 	}
 })
-
--- LSP Installer
-
-local lsp_installer = require("nvim-lsp-installer")
-lsp_installer.on_server_ready(function(server)
-    local opts = {}
-    server:setup(opts)
-end)
 
 -- Treesitter
 
@@ -201,16 +223,15 @@ set tabstop=2
 set showtabline=1
 set expandtab
 set noswapfile
+set mouse=
+set colorcolumn=80
+set ruler
 colorscheme onedark
 
 " ---------------------------------------- KEY MAPPINGS --------------------------------------- "
 
 " Clear search highlighting
 nnoremap <silent> <C-l> :nohlsearch<CR> :syntax sync fromstart<CR><C-l>
-" Coc use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-" Coc rename current file
-nmap <leader>rnf :CocCommand workspace.renameCurrentFile<CR>
 " Telescope fuzzy file finder
 nnoremap <leader>ff <cmd>Telescope find_files theme=ivy<cr>
 nnoremap <leader>rg <cmd>Telescope live_grep theme=ivy<cr>
@@ -223,11 +244,6 @@ nnoremap <C-E> $
 " Remap TAB to change tab o.O
 map <TAB> :bnext<CR>
 map <S-TAB> :bprev<CR>
-" Jump forward or backward in vsnip
-imap <expr> <Tab>   vsnip#jumpable(1)  ? '<Plug>(vsnip-jump-next)' : '<Tab>'
-smap <expr> <Tab>   vsnip#jumpable(1)  ? '<Plug>(vsnip-jump-next)' : '<Tab>'
-imap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
-smap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
 " Always go file in new tab
 nnoremap gf <C-w>gf
 " Autoformat with <F4>

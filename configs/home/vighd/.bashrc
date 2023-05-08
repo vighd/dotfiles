@@ -46,7 +46,6 @@ alias ip="ip -c"
 export PAGER=bat                                                        # Set default pager
 export BAT_THEME="Material-Theme-Palenight"
 export EDITOR=nvim
-xset r rate 400 40
 
 ## Custom functions
 
@@ -96,5 +95,7 @@ if [[ $PS1 && -f /usr/share/git/git-prompt.sh ]]; then
 else
   export PS1="$GY$Y\u$GY@$P\h$GY:$B\W$GY$W "
 fi
+
+xset r rate 250 45
 
 export PATH="$HOME/.yarn/bin:$HOME/go/bin:$HOME/.local/bin:$PATH"

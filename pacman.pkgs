@@ -26,10 +26,10 @@ chromium
 clang
 cmake
 cpio
-cpulimit
 cpupower
 cups
 curlftpfs
+dbeaver
 debugedit
 dhclient
 dmenu
@@ -41,6 +41,8 @@ dunst
 efibootmgr
 entr
 ethtool
+evolution
+evolution-ews
 exfat-utils
 faad2
 fakeroot
@@ -149,6 +151,7 @@ pass
 pass-otp
 patch
 pdfjs
+perl-image-exiftool
 pgformatter
 picom
 pipewire
@@ -165,6 +168,7 @@ python-capstone
 python-opengl
 python-pip
 qemu-desktop
+qemu-system-arm
 read-edid
 reflector
 remmina
@@ -192,12 +196,14 @@ swh-plugins
 system-config-printer
 taglib
 texinfo
+thunar
 tk
 tlp
 tmux
 traceroute
 transmission-gtk
 trayer
+ttf-droid
 ttf-terminus-nerd
 udftools
 unrar
@@ -214,7 +220,6 @@ wavpack
 wget
 which
 whois
-wine
 wireless_tools
 wireplumber
 wpa_supplicant
