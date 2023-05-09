@@ -17,5 +17,4 @@ vim.opt.showtabline = 1
 vim.opt.expandtab = true
 vim.opt.swapfile = true
 vim.opt.mouse = ''
-vim.opt.colorcolumn = '80'
 vim.opt.list = true
