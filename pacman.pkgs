@@ -47,6 +47,7 @@ ffmpegthumbnailer
 firefox
 flex
 fuse-zip
+gamemode
 gcc
 gcolor3
 gimp
@@ -178,6 +179,7 @@ sleuthkit
 slock
 smbclient
 squashfs-tools
+steam-native-runtime
 strace
 stress
 sudo
@@ -192,6 +194,7 @@ traceroute
 transmission-gtk
 ttf-droid
 ttf-terminus-nerd
+typescript
 udftools
 unrar
 unzip

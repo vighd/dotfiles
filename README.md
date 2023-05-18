@@ -1,2 +1,2 @@
 # dotfiles
-Dotfiles of my workspace e.g.: Vim, Termite, Vifm etc..
+Dotfiles of my workspace e.g.: Vim, Alacritty, Vifm etc..

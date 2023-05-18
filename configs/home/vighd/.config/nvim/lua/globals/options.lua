@@ -18,3 +18,4 @@ vim.opt.expandtab = true
 vim.opt.swapfile = true
 vim.opt.mouse = ''
 vim.opt.list = true
+vim.opt.swapfile = false

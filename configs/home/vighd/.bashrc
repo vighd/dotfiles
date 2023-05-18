@@ -95,6 +95,4 @@ else
   export PS1="$GY$Y\u$GY@$P\h$GY:$B\W$GY$W "
 fi
 
-xset r rate 250 45
-
 export PATH="$HOME/.yarn/bin:$HOME/go/bin:$HOME/.local/bin:$PATH"

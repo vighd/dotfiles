@@ -3,6 +3,7 @@
 # Remap fonts
 #xset +fp ~/.fonts/misc/
 #xset fp rehash
+xset r rate 250 45
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
@@ -13,4 +14,4 @@ exec setxkbmap -option caps:none &
 exec nitrogen --restore &
 exec dunst &
 exec dwm-statusbar &
-exec dwm 2> ~/.dwm.log
+exec dwm
