@@ -33,6 +33,8 @@ return require('packer').startup(function(use)
   use 'tpope/vim-dadbod'
   use 'kristijanhusak/vim-dadbod-completion'
   use 'kristijanhusak/vim-dadbod-ui'
+  use 'kkoomen/vim-doge'
+  use 'jose-elias-alvarez/null-ls.nvim'
 
   -- Sync if we have packer
   if packer_bootstrap then

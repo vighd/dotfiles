@@ -1,3 +1,4 @@
+acpilight
 alacritty
 alsa-plugins
 alsa-utils
@@ -30,6 +31,7 @@ cpupower
 cups
 curlftpfs
 debugedit
+devtools
 dhclient
 dmenu
 dmidecode
@@ -154,6 +156,7 @@ pipewire-alsa
 pipewire-pulse
 pkgconf
 pkgfile
+pnpm
 postgresql-libs
 powertop
 pulsemixer
@@ -167,7 +170,8 @@ reflector
 remmina
 ripgrep
 rsync
-rust
+rust-musl
+rustup
 samba
 schedtool
 scrcpy
@@ -235,7 +239,6 @@ xorg-setxkbmap
 xorg-smproxy
 xorg-x11perf
 xorg-xauth
-xorg-xbacklight
 xorg-xcmsdb
 xorg-xcursorgen
 xorg-xdpyinfo

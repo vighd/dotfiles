@@ -1,20 +1,5 @@
 require("mason").setup()
-require("mason-lspconfig").setup {
-  ensure_installed = {
-    "lua_ls",
-    "tsserver",
-    "gopls",
-    "yamlls",
-    "dockerls",
-    "docker_compose_language_service",
-    "cmake",
-    "clangd",
-    "bashls",
-    "cssls",
-    "jsonls",
-    "html"
-  }
-}
+require("mason-lspconfig").setup {}
 require("mason-lspconfig").setup_handlers {
   function(server_name)
     require("lspconfig")[server_name].setup {}
