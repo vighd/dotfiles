@@ -56,6 +56,7 @@ gimp
 git
 gitlab-runner
 gnu-free-fonts
+gnu-netcat
 go
 gocr
 gopls
@@ -74,6 +75,7 @@ htop
 httpie
 i2c-tools
 imagemagick
+inetutils
 intel-ucode
 iotop
 iperf3
@@ -183,13 +185,13 @@ sleuthkit
 slock
 smbclient
 squashfs-tools
-steam-native-runtime
 strace
 stress
 sudo
 swh-plugins
 system-config-printer
 taglib
+termshark
 texinfo
 thunar
 tk
@@ -200,6 +202,7 @@ ttf-droid
 ttf-terminus-nerd
 typescript
 udftools
+udiskie
 unrar
 unzip
 upx
@@ -210,10 +213,13 @@ vimiv
 vkd3d
 vulkan-intel
 vulkan-tools
+w3m
 wavpack
 wget
 which
 whois
+winetricks
+wireguard-tools
 wireless_tools
 wireplumber
 wpa_supplicant

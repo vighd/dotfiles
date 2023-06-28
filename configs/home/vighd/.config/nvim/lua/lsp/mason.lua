@@ -13,6 +13,13 @@ require("mason-lspconfig").setup_handlers {
       }
     }
   end,
+  ["tsserver"] = function()
+    require("lspconfig")["tsserver"].setup({
+      handlers = {
+        ['textDocument/publishDiagnostics'] = function() end
+      }
+    })
+  end,
   vim.api.nvim_create_autocmd("CursorHold", {
     buffer = bufnr,
     callback = function()

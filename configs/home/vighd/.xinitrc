@@ -13,5 +13,6 @@ exec xinput disable "SynPS/2 Synaptics TouchPad" &
 exec setxkbmap -option caps:none &
 exec nitrogen --restore &
 exec dunst &
+exec udiskie -q &
 exec dwm-statusbar &
 exec dwm

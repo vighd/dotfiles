@@ -1,4 +1,12 @@
 require('lualine').setup {
+  sections = {
+    lualine_c = {
+      {
+        'filename',
+        path = 1,
+      }
+    }
+  },
   options = {
     icons_enabled = true,
     component_separators = { left = '', right = '' },
