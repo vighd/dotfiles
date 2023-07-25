@@ -12,13 +12,13 @@ aspell
 atool
 autoconf
 automake
+autorandr
 aws-cli
 base
 bash-completion
 bat
 bc
 bind
-binwalk
 bison
 bluez
 bluez-libs
@@ -46,7 +46,6 @@ exfat-utils
 faad2
 fakeroot
 ffmpegthumbnailer
-firefox
 flex
 fuse-zip
 gamemode
@@ -76,6 +75,7 @@ httpie
 i2c-tools
 imagemagick
 inetutils
+intel-media-driver
 intel-ucode
 iotop
 iperf3
@@ -99,10 +99,12 @@ lib32-mpg123
 lib32-ocl-icd
 lib32-openal
 lib32-openssl-1.1
+lib32-procps-ng
 lib32-v4l-utils
 lib32-vkd3d
 lib32-vulkan-icd-loader
 lib32-vulkan-intel
+libmicrodns
 libmpcdec
 libpng12
 libreoffice-fresh-hu
@@ -112,8 +114,8 @@ libva-intel-driver
 libva-utils
 libvoikko
 libvpx1.3
-linux
 linux-firmware
+linux-zen
 linux-zen-headers
 llvm
 lostfiles
@@ -191,9 +193,7 @@ sudo
 swh-plugins
 system-config-printer
 taglib
-termshark
 texinfo
-thunar
 tk
 tlp
 traceroute
@@ -213,7 +213,6 @@ vimiv
 vkd3d
 vulkan-intel
 vulkan-tools
-w3m
 wavpack
 wget
 which

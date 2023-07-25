@@ -1,8 +1,6 @@
 bluetooth.service
-docker.service
 haveged.service
 iwd.service
 systemd-resolved.service
 systemd-timesyncd.service
 tlp.service
-vgpu-init.service

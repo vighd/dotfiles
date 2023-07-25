@@ -94,11 +94,6 @@ _G.packer_plugins = {
     path = "/home/vighd/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  ["hardtime.nvim"] = {
-    loaded = true,
-    path = "/home/vighd/.local/share/nvim/site/pack/packer/start/hardtime.nvim",
-    url = "https://github.com/m4xshen/hardtime.nvim"
-  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/vighd/.local/share/nvim/site/pack/packer/start/lualine.nvim",
