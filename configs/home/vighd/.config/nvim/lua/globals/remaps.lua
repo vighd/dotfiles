@@ -33,4 +33,3 @@ vim.keymap.set('n', '<leader>gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', o
 vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', options)
 vim.keymap.set('n', '<leader>p', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>n', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
-
