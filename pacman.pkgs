@@ -30,6 +30,7 @@ cpio
 cpupower
 cups
 curlftpfs
+dbus-glib
 debugedit
 devtools
 dhclient
@@ -45,12 +46,14 @@ ethtool
 exfat-utils
 faad2
 fakeroot
+falkon
 ffmpegthumbnailer
 flex
 fuse-zip
 gamemode
 gcc
 gcolor3
+geoclue
 gimp
 git
 gitlab-runner
@@ -87,7 +90,6 @@ lib32-alsa-plugins
 lib32-gamemode
 lib32-giflib
 lib32-gnutls
-lib32-gst-plugins-base-libs
 lib32-libpulse
 lib32-libudev0-shim
 lib32-libva-intel-driver
@@ -112,6 +114,7 @@ libtool
 libudev0-shim
 libva-intel-driver
 libva-utils
+libvdpau-va-gl
 libvoikko
 libvpx1.3
 linux-firmware
@@ -129,6 +132,7 @@ make
 mdp
 mesa-demos
 mesa-utils
+mesa-vdpau
 minicom
 mpg123
 mpv
@@ -141,6 +145,7 @@ nodejs-lts-gallium
 npm
 ntfs-3g
 nuspell
+nyancat
 ocl-icd
 openal
 openresolv
@@ -163,6 +168,7 @@ pkgfile
 pnpm
 postgresql-libs
 powertop
+procps-ng
 pulsemixer
 putty
 pwgen
@@ -187,18 +193,22 @@ sleuthkit
 slock
 smbclient
 squashfs-tools
+steam
 strace
 stress
 sudo
 swh-plugins
+sysbench
 system-config-printer
 taglib
 texinfo
+thunar
 tk
 tlp
 traceroute
 transmission-gtk
 ttf-droid
+ttf-nerd-fonts-symbols
 ttf-terminus-nerd
 typescript
 udftools
@@ -217,7 +227,6 @@ wavpack
 wget
 which
 whois
-winetricks
 wireguard-tools
 wireless_tools
 wireplumber

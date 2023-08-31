@@ -61,8 +61,9 @@ round() {
 }
 
 mem() {
-  mem_used=$(free -h | grep 'Mem')
-  printColoredText "" "#E5C07A" "${mem_used:27:4}/7.6G"
+  mem_used=$(free -h | awk '/Mem:/ { print $3 }')
+  mem_total=$(free -h | awk '/Mem:/ { print $2 }')
+  printColoredText "" "#E5C07A" "${mem_used}/${mem_total}"
 }
 
 cpuTemp() {

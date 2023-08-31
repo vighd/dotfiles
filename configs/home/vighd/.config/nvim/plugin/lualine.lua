@@ -3,7 +3,7 @@ require('lualine').setup {
     lualine_c = {
       {
         'filename',
-        path = 1,
+        path = 2,
       }
     }
   },
