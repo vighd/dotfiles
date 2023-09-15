@@ -18,7 +18,7 @@ require("lazy").setup({
   -- Onedark colorscheme
   {
     "navarasu/onedark.nvim",
-    lauzy = false,
+    lazy = false,
     priority = 1000,
     config = function()
       require('onedark').setup {
@@ -94,6 +94,13 @@ require("lazy").setup({
                 keyOrdering = false
               }
             }
+          }
+        end,
+        ["cssls"] = function()
+          local capabilities = vim.lsp.protocol.make_client_capabilities()
+          capabilities.textDocument.completion.completionItem.snippetSupport = true
+          require("lspconfig")["cssls"].setup {
+            capabilities = capabilities,
           }
         end,
         vim.api.nvim_create_autocmd("CursorHold", {
@@ -224,5 +231,19 @@ require("lazy").setup({
   {
     'tpope/vim-dadbod',
     dependencies = { 'kristijanhusak/vim-dadbod-completion', 'kristijanhusak/vim-dadbod-ui' }
+  },
+
+  -- conform
+  {
+    'stevearc/conform.nvim',
+    config = function()
+      require("conform").setup({
+        formatters_by_ft = {
+          javascript = { "prettier" },
+          typescript = { "prettier" },
+          typescriptreact = { "prettier" },
+        },
+      })
+    end
   },
 })

@@ -20,7 +20,7 @@ vim.keymap.set('n', '<TAB>', ':bnext<CR>', options)
 vim.keymap.set('n', '<S-TAB>', ':bprev<CR>', options)
 
 -- Autoformat with <F4>
-vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.format({async = true})<CR>', options)
+vim.keymap.set('n', '<F4>', '<cmd>lua require("conform").format({async = true, lsp_fallback = "always"})<CR>', options)
 
 -- LSP keybindings
 vim.keymap.set('n', '<leader>gr', '<cmd>lua vim.lsp.buf.references()<CR>', options)
