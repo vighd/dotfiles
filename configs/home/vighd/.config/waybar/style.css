@@ -1,0 +1,86 @@
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: Terminess Nerd Font;
+  min-height: 0;
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  transition: none; /* Disable predefined animations */
+}
+
+window#waybar {
+  background-color: #242b38;
+  color: #ABB2BF;
+}
+
+#workspaces button:hover {
+  border-color: transparent;
+  background: transparent;
+}
+
+#workspaces button {
+  color: #C678DD;
+  border: none;
+}
+
+#workspaces button.focused {
+  background-color: #62AEEF;
+  color: #242b38;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
+
+#window {
+  color: #bf68d9;
+}
+
+#mode {
+  color: #eb4d4b;
+}
+
+#clock {
+  color: #55B6C2;
+  margin-right: 3px;
+}
+
+#battery {
+  color: #C678DD;
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+#cpu {
+  color: #98C379;
+}
+
+#memory {
+  color: #E5C07A;
+}
+
+#disk {
+  color: #FE8019;
+}
+
+#network, #custom-vpn {
+  color: #F9266A;
+}
+
+#pulseaudio {
+  color: #B8BB26;
+}
+
+#wireplumber {
+  color: #B8BB26;
+}
+
+#temperature {
+  color: #62AEEF;
+}
+
+#custom-pacman {
+  color: #89ddff;
+}

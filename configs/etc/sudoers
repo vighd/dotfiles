@@ -96,4 +96,4 @@ root ALL=(ALL) ALL
 @includedir /etc/sudoers.d
 
 # Execute tlp without password
-vighd ALL = NOPASSWD: /usr/bin/tlp
+vighd ALL = NOPASSWD: /usr/bin/tlp,/usr/bin/reboot,/usr/bin/poweroff

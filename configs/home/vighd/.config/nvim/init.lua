@@ -246,4 +246,9 @@ require("lazy").setup({
       })
     end
   },
+
+  -- colorizer
+  {
+    "norcalli/nvim-colorizer.lua",
+  },
 })

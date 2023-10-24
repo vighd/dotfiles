@@ -1,0 +1,109 @@
+{
+  "height": 19, // Waybar height (to be removed for auto height)
+  "spacing": 5, // Gaps between modules (4px)
+  "modules-left": [
+    "sway/workspaces",
+    "sway/mode",
+    "sway/window"
+  ],
+  "modules-right": [
+    "custom/pacman",
+    "cpu",
+    "memory",
+    "temperature",
+    "battery",
+    "network",
+    "custom/vpn",
+    "disk",
+    "pulseaudio",
+    "clock"
+  ],
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "sort-by-number": true,
+    "format": "{name}"
+  },
+  "sway/mode": {
+    "format": "{}"
+  },
+  "sway/window": {
+    "format": "{title} {shell}"
+  },
+  "clock": {
+    "timezone": "Europe/Budapest",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "󱑏  {:%a %d %b %H:%M}"
+  },
+  "cpu": {
+    "interval": 5,
+    "format": "󰻠  {usage}%",
+    "tooltip": false
+  },
+  "memory": {
+    "interval": 5,
+    "format": "  {used:.1f}Gi/{total:.1f}Gi"
+  },
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+    "critical-threshold": 80,
+    "format": " {temperatureC}°C"
+  },
+  "battery": {
+    "interval": 5,
+    "format": "{icon} {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-icons": [
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ]
+  },
+  "network": {
+    "format-wifi": "  {essid} ({signalStrength}%) {ipaddr}",
+    "format-ethernet": "  {ipaddr}",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "format-disconnected": "  NO CONNECTION"
+  },
+  "disk": {
+    "interval": 30,
+    "format": "  {free}",
+    "path": "/"
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "󰖁  OFF",
+    "format-bluetooth": "  {volume}%",
+    "format-bluetooth-muted": "  OFF",
+    "format-icons": {
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    }
+  },
+  "custom/pacman": {
+    "format": "  {}",
+    "interval": 3600, // every hour
+    "exec": "checkupdates | wc -l", // # of updates
+    "exec-if": "exit 0", // always run; consider advanced run conditions
+    "signal": 8
+  },
+  "custom/vpn": {
+    "format": " VPN",
+    "exec": "echo '{\"class\": \"connected\"}'",
+    "exec-if": "test -d /proc/sys/net/ipv4/conf/tun0",
+    "return-type": "json",
+    "interval": 5
+  }
+}

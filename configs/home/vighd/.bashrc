@@ -21,7 +21,7 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m'                               # begin 
 alias ls='ls --color=auto'                                              # Autocoloring ls
 alias grep='grep --color=auto'                                          # Autocoloring grep
 alias dmesg="dmesg --color=always"                                      # Autolocoring dmesg
-alias less='bat'                                                        # Autocoloring less
+#alias less='bat'                                                        # Autocoloring less
 alias jq="jq -C"                                                        # Autocoloring jq
 alias xclip="xclip -sel clip"                                           # Set xclip default selection
 alias src="cd $HOME/Digital/ecdms/src"
@@ -37,13 +37,12 @@ alias vim="nvim"
 alias vimsql="nvim +DBUIToggle"
 alias vimrc="cd $HOME/.config/nvim && nvim lua/globals/options.lua"
 alias vimdiff="nvim -d"
-alias bat="bat --theme='OneHalfDark'"
 alias fonticons="xfd -fa Cozette"
 alias router="ssh skulltus@192.168.50.1"
 alias cat="bat --paging=never $@"
 alias ip="ip -c"
 export PAGER=bat                                                        # Set default pager
-export BAT_THEME="Material-Theme-Palenight"
+export BAT_THEME="TwoDark"
 export EDITOR=nvim
 
 ## Custom functions
@@ -73,7 +72,17 @@ dropddb() {
   docker container rm -v postgres
 }
 
-## for opening terminal in current working directory
+[[ -f "$HOME/.dircolors_256" ]] && eval "$(dircolors -b "$HOME/.dircolors_256")"
+
+B='\[\e[1;38;5;33m\]'
+LB='\[\e[1;38;5;81m\]'
+GY='\[\e[1;38;5;242m\]'
+P='\[\e[1;38;5;161m\]'
+Y='\[\e[1;38;5;214m\]'
+W='\[\e[0m\]'
+
+[[ -f /etc/profile.d/grc.sh ]] && source /etc/profile.d/grc.sh
+
 osc7_cwd() {
     local strlen=${#PWD}
     local encoded=""
@@ -89,18 +98,6 @@ osc7_cwd() {
     printf '\e]7;file://%s%s\e\\' "${HOSTNAME}" "${encoded}"
 }
 PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }osc7_cwd
-
-
-[[ -f "$HOME/.dircolors_256" ]] && eval "$(dircolors -b "$HOME/.dircolors_256")"
-
-B='\[\e[1;38;5;33m\]'
-LB='\[\e[1;38;5;81m\]'
-GY='\[\e[1;38;5;242m\]'
-P='\[\e[1;38;5;161m\]'
-Y='\[\e[1;38;5;214m\]'
-W='\[\e[0m\]'
-
-[[ -f /etc/profile.d/grc.sh ]] && source /etc/profile.d/grc.sh
 
 if [[ $PS1 && -f /usr/share/git/git-prompt.sh ]]; then
   source /usr/share/git/completion/git-completion.bash
