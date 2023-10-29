@@ -41,6 +41,7 @@ docker
 docker-buildx
 docker-compose
 dunst
+ecryptfs-utils
 efibootmgr
 ethtool
 exfat-utils
@@ -211,6 +212,7 @@ wireless_tools
 wireplumber
 wl-clipboard
 wlroots
+xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
 xdg-user-dirs
 xorg-xwayland

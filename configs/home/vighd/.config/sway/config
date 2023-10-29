@@ -1,5 +1,5 @@
 # Enable xwayland
-xwayland disable
+xwayland enable
 
 #
 # Variables
@@ -18,8 +18,8 @@ set $normbg "#242b38"
 set $normfg "#ABB2BF"
 set $selbg "#4fa6ed"
 set $selfg "#242b38"
-set $normborder "#425B80"
-set $selborder "#4fa6ed"
+set $normborder "#3E4452"
+set $selborder "#425B80"
 set $opaque "#00000000"
 set $occupiedfg "#bf68d9"
 
@@ -43,11 +43,11 @@ input type:keyboard {
 #
 # Mouse
 #
-mouse_warping "container"
-focus_follows_mouse "always"
+mouse_warping none
+focus_follows_mouse always
 input 2:1:PS/2_Generic_Mouse {
   accel_profile adaptive
-  pointer_accel 0.1
+  pointer_accel 0.2
 }
 
 #
@@ -97,7 +97,7 @@ bindsym $mod+b splith
 bindsym $mod+v splitv
 bindsym $mod+s layout toggle split
 bindsym $mod+f floating toggle
-bindsym $mod+m floating toggle; exec sleep 0.1 && swaymsg resize set 100ppt 100ppt
+bindsym $mod+m layout stacking toggle
 
 floating_modifier $mod normal
 
@@ -126,8 +126,10 @@ bindsym $mod+Shift+6 move container to workspace number 6
 #
 # Layout stuff:
 #
-default_orientation "horizontal"
-exec_always autotiling-rs -w 1 2 3 4 5 6
+default_orientation horizontal
+#exec autotiling-rs -w 1 2 3 4 5 6
+for_window [title="Open File"] toggle floating
+for_window [title="Save File"] toggle floating
 
 #
 # Resizing containers:
@@ -151,6 +153,16 @@ default_border pixel 1
 smart_borders on
 title_align center
 
+# Disable titlebar in stacking and tabbed mode
+font pango:monospace 0
+titlebar_border_thickness 0
+titlebar_padding 0
+
+# Enable titlebar for floating windows
+for_window [floating] font $font
+for_window [floating] titlebar_border_thickness 1
+for_window [floating] titlebar_padding 5
+
 # GTK Theme
 exec_always {
   gsettings set $gnome-schema gtk-theme "OneDarkCool"
@@ -160,9 +172,9 @@ exec_always {
 }
 
 # Client colors
-client.focused $normborder #3E4452 $normfg #3E4452
-client.focused_inactive $normbg #3E4452 $normfg
-client.unfocused $normbg #3E4452 $normfg
+client.focused          $opaque $selborder  $normfg $selbg
+client.focused_inactive $normbg $normborder $normfg
+client.unfocused        $normbg $normborder $normfg
 
 #
 # Bar configuration

@@ -19,7 +19,7 @@ window#waybar {
 }
 
 #workspaces button {
-  color: #C678DD;
+  color: #ABB2BF;
   border: none;
 }
 
@@ -29,7 +29,7 @@ window#waybar {
 }
 
 #workspaces button.urgent {
-  background-color: #eb4d4b;
+  color: #eb4d4b;
 }
 
 #window {
@@ -45,7 +45,7 @@ window#waybar {
   margin-right: 3px;
 }
 
-#battery {
+#battery, #custom-governor {
   color: #C678DD;
 }
 
@@ -65,7 +65,7 @@ label:focus {
   color: #FE8019;
 }
 
-#network, #custom-vpn {
+#network, #custom-vpn, #custom-latency {
   color: #F9266A;
 }
 

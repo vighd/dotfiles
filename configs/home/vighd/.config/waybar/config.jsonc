@@ -12,7 +12,9 @@
     "memory",
     "temperature",
     "battery",
+    "custom/governor",
     "network",
+    "custom/latency",
     "custom/vpn",
     "disk",
     "pulseaudio",
@@ -39,6 +41,11 @@
     "interval": 5,
     "format": "󰻠  {usage}%",
     "tooltip": false
+  },
+  "custom/governor": {
+    "format": "{}",
+    "exec": "grep -q performance /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor && echo '󰓅 ' || echo '󰾆 '",
+    "interval": 5
   },
   "memory": {
     "interval": 5,
@@ -70,9 +77,14 @@
   },
   "network": {
     "format-wifi": "  {essid} ({signalStrength}%) {ipaddr}",
-    "format-ethernet": "  {ipaddr}",
+    "format-ethernet": "  {ipaddr}",
     "tooltip-format": "{ifname} via {gwaddr}",
     "format-disconnected": "  NO CONNECTION"
+  },
+  "custom/latency": {
+    "format": "- {}",
+    "exec": "ping -c1 8.8.8.8 | grep -Po '(?<=time=)(\\d+\\.\\d+\\ ms)'",
+    "interval": 5
   },
   "disk": {
     "interval": 30,
@@ -82,8 +94,8 @@
   "pulseaudio": {
     "format": "{icon}  {volume}%",
     "format-muted": "󰖁  OFF",
-    "format-bluetooth": "  {volume}%",
-    "format-bluetooth-muted": "  OFF",
+    "format-bluetooth": " {desc} {volume}%",
+    "format-bluetooth-muted": " {desc} OFF",
     "format-icons": {
       "default": [
         "",
