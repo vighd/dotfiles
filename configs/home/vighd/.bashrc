@@ -41,9 +41,10 @@ alias fonticons="xfd -fa Cozette"
 alias router="ssh skulltus@192.168.50.1"
 alias cat="bat --paging=never $@"
 alias ip="ip -c"
-alias swaz="sway > .sway.log 2>&1"
-alias sway="sway > .sway.log 2>&1"
-export WLR_DRM_NO_ATOMIC=1
+alias swaz="dbus-run-session sway > .sway.log 2>&1"
+alias sway="dbus-run-session sway > .sway.log 2>&1"
+alias river="dbus-run-session river > .river.log 2>&1"
+export XDG_CURRENT_DESKTOP=river
 export PAGER=bat                                                        # Set default pager
 export BAT_THEME="TwoDark"
 export EDITOR=nvim

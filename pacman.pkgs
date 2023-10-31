@@ -161,6 +161,7 @@ python-pip
 read-edid
 reflector
 ripgrep
+river
 rsync
 rust-musl
 rustup
@@ -175,11 +176,7 @@ squashfs-tools
 strace
 stress
 sudo
-sway
 swaybg
-swayidle
-swayimg
-swaylock
 sysbench
 system-config-printer
 taglib
@@ -202,8 +199,11 @@ vimiv
 vkd3d
 vulkan-intel
 vulkan-tools
+vulkan-validation-layers
 wavpack
 waybar
+waylock
+wf-recorder
 wget
 which
 whois

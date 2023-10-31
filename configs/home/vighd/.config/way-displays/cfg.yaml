@@ -1,0 +1,21 @@
+SCALING: off
+ORDER:
+    - 'Chimei Innolux Corporation 0x1242'
+    - 'LG Electronics LG ULTRAWIDE 0x00002B55'
+    - 'Acer Technologies EK240Y TJEEE0053W01'
+
+MODE:
+    - NAME_DESC: 'Chimei Innolux Corporation 0x1242'
+      WIDTH: 1920
+      HEIGHT: 1080
+      HZ: 60
+    - NAME_DESC: 'LG Electronics LG ULTRAWIDE 0x00002B55'
+      WIDTH: 2560
+      HEIGHT: 1080
+    - NAME_DESC: 'Acer Technologies EK240Y TJEEE0053W01'
+      WIDTH: 1920
+      HEIGHT: 1080
+      HZ: 75
+
+# One of: ERROR, WARNING, INFO (default), DEBUG
+LOG_THRESHOLD: INFO

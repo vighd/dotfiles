@@ -1,0 +1,93 @@
+#!/bin/sh
+#
+# Input configuration
+#
+riverctl keyboard-layout hu
+riverctl focus-follows-cursor always
+riverctl set-repeat 45 250
+
+
+#
+# Key bindings
+#
+riverctl map normal Alt P spawn 'bemenu-run -p "RUN" -H 19 --hp 7 --ch 14 --fn "Terminess Nerd Font 9" --nb "#242b38" --fb "#242b38" --cb "#242b38" --ab "#242b38" --tb "#242b38" --nf "#abb2bf" --ff "#abb2bf" --cf "#abb2bf" --af "#abb2bf" --tf "#abb2bf" --hb "#4fa6ed" --hf "#242b38"'
+riverctl map normal Alt+Shift B spawn 'bemenu-bluetooth -p "BLUETOOTH" -H 19 --hp 7 --ch 14 --fn "Terminess Nerd Font 9" --nb "#242b38" --fb "#242b38" --cb "#242b38" --ab "#242b38" --tb "#242b38" --nf "#abb2bf" --ff "#abb2bf" --cf "#abb2bf" --af "#abb2bf" --tf "#abb2bf" --hb "#4fa6ed" --hf "#242b38"'
+riverctl map normal Alt I spawn 'pass-bemenu -p "PASSWORD" -H 19 --hp 7 --ch 14 --fn "Terminess Nerd Font 9" --nb "#242b38" --fb "#242b38" --cb "#242b38" --ab "#242b38" --tb "#242b38" --nf "#abb2bf" --ff "#abb2bf" --cf "#abb2bf" --af "#abb2bf" --tf "#abb2bf" --hb "#4fa6ed" --hf "#242b38"'
+riverctl map normal Alt O spawn 'pass-bemenu --otp -p "OTP" -H 19 --hp 7 --ch 14 --fn "Terminess Nerd Font 9" --nb "#242b38" --fb "#242b38" --cb "#242b38" --ab "#242b38" --tb "#242b38" --nf "#abb2bf" --ff "#abb2bf" --cf "#abb2bf" --af "#abb2bf" --tf "#abb2bf" --hb "#4fa6ed" --hf "#242b38"'
+riverctl map normal Alt+Shift Return spawn foot
+riverctl map normal Alt+Shift N spawn 'foot -e iwctl'
+riverctl map normal Alt+Shift F spawn 'foot -e vifm'
+riverctl map normal Alt+Shift S spawn 'foot -e pulsemixer'
+riverctl map normal Alt+Shift W spawn 'chromium'
+riverctl map normal Super L spawn 'waylock -init-color 0x000000'
+riverctl map normal Alt+Shift C close
+riverctl map normal Alt+Shift Q exit
+riverctl map normal Alt Return zoom
+riverctl map normal Alt M toggle-fullscreen
+riverctl map normal Alt J focus-view next
+riverctl map normal Alt K focus-view previous
+riverctl map normal Alt Period focus-output next
+riverctl map normal Alt Comma focus-output previous
+riverctl map normal Alt+Shift Period send-to-output next
+riverctl map normal Alt+Shift Comma send-to-output previous
+riverctl map normal Alt H send-layout-cmd rivertile "main-ratio -0.05"
+riverctl map normal Alt L send-layout-cmd rivertile "main-ratio +0.05"
+riverctl map normal Alt S  send-layout-cmd rivertile "main-location bottom"
+riverctl map normal Alt T  send-layout-cmd rivertile "main-location left"
+for i in $(seq 1 6)
+do
+    tags=$((1 << ($i - 1)))
+    # Alt+[1-6] to focus tag [0-5]
+    riverctl map normal Alt $i set-focused-tags $tags
+    # Alt+Shift+[1-6] to tag focused view with tag [0-5]
+    riverctl map normal Alt+Shift $i set-view-tags $tags
+done
+
+#
+# Mouse bindings
+#
+riverctl map-pointer normal Alt BTN_LEFT move-view
+riverctl map-pointer normal Alt BTN_RIGHT resize-view
+riverctl map-pointer normal Alt BTN_MIDDLE toggle-float
+
+#
+# Colors
+#
+riverctl background-color 0x242b38
+riverctl border-color-focused 0x425b80
+riverctl border-color-unfocused 0x3e4452
+
+#
+# Ui
+#
+riverctl border-width 1
+riverctl default-layout rivertile
+gsettings set org.gnome.desktop.interface gtk-theme "OneDarkCool"
+gsettings set org.gnome.desktop.interface icon-theme "Numix"
+gsettings set org.gnome.desktop.interface cursor-theme "X11-Default-Black"
+gsettings set org.gnome.desktop.interface font-name "Source Code Pro 10"
+
+#
+# Filters
+#
+riverctl float-filter-add title "Open File"
+riverctl float-filter-add title "Save File"
+riverctl float-filter-add title "Save As"
+riverctl float-filter-add title "Open Folder"
+riverctl float-filter-add title "Open As"
+
+# Start layout generator
+rivertile -view-padding 4 -outer-padding 4 &
+
+# Start Waybar
+waybar &
+
+# Output manger
+#kanshi &
+way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1 &
+
+# Set wallpaper
+swaybg -i /home/vighd/Pictures/wp.png --mode fill &
+
+# Fix pientry
+dbus-update-activation-environment WAYLAND_DISPLAY

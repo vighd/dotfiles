@@ -59,9 +59,8 @@ exec swayidle -w \
 	resume 'swaymsg "output * power on"'
 
 
-### Key bindings
 #
-# Basics:
+# Key bindings
 #
 bindsym $mod+p exec bemenu-run -p "RUN" -H 19 --hp 7 --ch 14 --fn $font --nb $normbg --fb $normbg --cb $normbg --ab $normbg --tb $normbg --nf $normfg --ff $normfg --cf $normfg --af $normfg --tf $normfg --hb $selbg --hf $normbg | xargs swaymsg exec --
 bindsym $mod+Shift+b exec bemenu-bluetooth -p "BLUETOOTH" -H 19 --hp 7 --ch 14 --fn $font --nb $normbg --fb $normbg --cb $normbg --ab $normbg --tb $normbg --nf $normfg --ff $normfg --cf $normfg --af $normfg --tf $normfg --hb $selbg --hf $normbg | xargs swaymsg exec --
@@ -95,9 +94,11 @@ bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
 bindsym $mod+b splith
 bindsym $mod+v splitv
-bindsym $mod+s layout toggle split
+bindsym $mod+s layout splith
+bindsym $mod+t layout splitv
 bindsym $mod+f floating toggle
-bindsym $mod+m layout stacking toggle
+bindsym $mod+m fullscreen
+bindsym $mod+a focus parent
 
 floating_modifier $mod normal
 
@@ -126,10 +127,9 @@ bindsym $mod+Shift+6 move container to workspace number 6
 #
 # Layout stuff:
 #
+workspace_layout default
 default_orientation horizontal
-#exec autotiling-rs -w 1 2 3 4 5 6
-for_window [title="Open File"] toggle floating
-for_window [title="Save File"] toggle floating
+for_window [title="(?:Open|Save) (?:File|Folder|As)"] toggle floating
 
 #
 # Resizing containers:
@@ -152,16 +152,7 @@ font $font
 default_border pixel 1
 smart_borders on
 title_align center
-
-# Disable titlebar in stacking and tabbed mode
-font pango:monospace 0
-titlebar_border_thickness 0
-titlebar_padding 0
-
-# Enable titlebar for floating windows
-for_window [floating] font $font
-for_window [floating] titlebar_border_thickness 1
-for_window [floating] titlebar_padding 5
+default_floating_border pixel 1
 
 # GTK Theme
 exec_always {
@@ -172,7 +163,7 @@ exec_always {
 }
 
 # Client colors
-client.focused          $opaque $selborder  $normfg $selbg
+client.focused          $normbg $selborder  $normfg $selbg
 client.focused_inactive $normbg $normborder $normfg
 client.unfocused        $normbg $normborder $normfg
 
@@ -180,24 +171,8 @@ client.unfocused        $normbg $normborder $normfg
 # Bar configuration
 #
 bar {
-#  pango_markup enabled
-#  font $font
    position top
-#  height 19
-#
-#  status_command waybar
    swaybar_command waybar
-#
-#  colors {
-#    statusline $normfg
-#    background $normbg
-#                       # border  bg     fg
-#    urgent_workspace   $opaque $normbg #e55561
-#    focused_workspace  $opaque $selbg  $normbg
-#    active_workspace   $opaque $normbg $normfg
-#    inactive_workspace $opaque $opaque $occupiedfg
-#  }
 }
-
 
 include /etc/sway/config.d/*

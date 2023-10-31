@@ -2,9 +2,11 @@
   "height": 19, // Waybar height (to be removed for auto height)
   "spacing": 5, // Gaps between modules (4px)
   "modules-left": [
-    "sway/workspaces",
-    "sway/mode",
-    "sway/window"
+    //"sway/workspaces",
+    //"sway/mode",
+    //"sway/window"
+    "river/tags",
+    "river/window"
   ],
   "modules-right": [
     "custom/pacman",
@@ -20,17 +22,8 @@
     "pulseaudio",
     "clock"
   ],
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": false,
-    "sort-by-number": true,
-    "format": "{name}"
-  },
-  "sway/mode": {
-    "format": "{}"
-  },
-  "sway/window": {
-    "format": "{title} {shell}"
+  "river/tags": {
+    "num-tags": 6
   },
   "clock": {
     "timezone": "Europe/Budapest",
