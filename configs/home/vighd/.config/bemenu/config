@@ -1,0 +1,12 @@
+#!/bin/bash
+
+bar_height=19
+horizontal_padding=7
+cursor_height=14
+font="Terminess Nerd Font 9"
+normbg="#242b38"
+normfg="#abb2bf"
+selbg="#4fa6ed"
+selfg="#242b38"
+
+export BEMENU_OPTS="-H $bar_height --hp $horizontal_padding --ch $cursor_height --fn '$font' --nb $normbg --fb $normbg --cb $normbg --ab $normbg --tb $normbg --nf $normfg --ff $normfg --cf $normfg --af $normfg --tf $normfg --hb $selbg --hf $selfg"

@@ -2,9 +2,6 @@
   "height": 19, // Waybar height (to be removed for auto height)
   "spacing": 5, // Gaps between modules (4px)
   "modules-left": [
-    //"sway/workspaces",
-    //"sway/mode",
-    //"sway/window"
     "river/tags",
     "river/window"
   ],

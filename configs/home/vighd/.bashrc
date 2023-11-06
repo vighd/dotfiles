@@ -11,6 +11,10 @@ export HISTSIZE=1000                                                    # bash h
 export HISTFILESIZE=${HISTSIZE}                                         # bash will remember N commands
 export HISTCONTROL=ignoreboth                                           # ingore duplicates and spaces
 export HISTIGNORE='&:ls:exit:clear:history'                             # Ignore commands from history
+export XDG_CURRENT_DESKTOP=river                                        # Set te default desktop environment
+export PAGER=bat                                                        # Set default pager
+export BAT_THEME="TwoDark"                                              # Set bat theme
+export EDITOR=nvim                                                      # Set the default editor
 export LESS_TERMCAP_mb=$'\E[01;31m'                                     # begin blinking
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'                                # begin bold
 export LESS_TERMCAP_me=$'\E[0m'                                         # end mode
@@ -21,9 +25,7 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m'                               # begin 
 alias ls='ls --color=auto'                                              # Autocoloring ls
 alias grep='grep --color=auto'                                          # Autocoloring grep
 alias dmesg="dmesg --color=always"                                      # Autolocoring dmesg
-#alias less='bat'                                                        # Autocoloring less
 alias jq="jq -C"                                                        # Autocoloring jq
-alias xclip="xclip -sel clip"                                           # Set xclip default selection
 alias src="cd $HOME/Digital/ecdms/src"
 alias dumps="cd $HOME/Digital/ecdms/dumps"
 alias startcups="sudo systemctl start org.cups.cupsd.service"
@@ -37,17 +39,12 @@ alias vim="nvim"
 alias vimsql="nvim +DBUIToggle"
 alias vimrc="cd $HOME/.config/nvim && nvim lua/globals/options.lua"
 alias vimdiff="nvim -d"
-alias fonticons="xfd -fa Cozette"
 alias router="ssh skulltus@192.168.50.1"
 alias cat="bat --paging=never $@"
 alias ip="ip -c"
-alias swaz="dbus-run-session sway > .sway.log 2>&1"
-alias sway="dbus-run-session sway > .sway.log 2>&1"
 alias river="dbus-run-session river > .river.log 2>&1"
-export XDG_CURRENT_DESKTOP=river
-export PAGER=bat                                                        # Set default pager
-export BAT_THEME="TwoDark"
-export EDITOR=nvim
+alias r="dbus-run-session river > .river.log 2>&1"
+alias rivercfg="vim .config/river/init"
 
 ## Custom functions
 

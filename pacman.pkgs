@@ -47,8 +47,10 @@ ethtool
 exfat-utils
 faad2
 fakeroot
+filezilla
 flex
 foot
+freerdp
 fuse-zip
 gcc
 geoclue
@@ -80,6 +82,7 @@ less
 lhasa
 lib32-alsa-lib
 lib32-alsa-plugins
+lib32-fontconfig
 lib32-gamemode
 lib32-giflib
 lib32-gnutls
@@ -160,6 +163,7 @@ python-capstone
 python-pip
 read-edid
 reflector
+remmina
 ripgrep
 river
 rsync
@@ -173,10 +177,12 @@ sleuthkit
 slurp
 smbclient
 squashfs-tools
+steam
 strace
 stress
 sudo
 swaybg
+swayidle
 sysbench
 system-config-printer
 taglib
@@ -189,6 +195,7 @@ ttf-droid
 ttf-nerd-fonts-symbols
 ttf-terminus-nerd
 udftools
+udiskie
 unrar
 unzip
 upx
