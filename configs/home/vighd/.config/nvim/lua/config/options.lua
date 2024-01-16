@@ -17,5 +17,6 @@ vim.opt.showtabline = 1
 vim.opt.expandtab = true
 vim.opt.swapfile = true
 vim.opt.mouse = ''
-vim.opt.list = true
+vim.opt.list = false
 vim.opt.swapfile = false
+vim.opt.cursorline = true

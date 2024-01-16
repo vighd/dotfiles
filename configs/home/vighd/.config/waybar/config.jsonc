@@ -30,7 +30,7 @@
   "cpu": {
     "interval": 5,
     "format": "󰻠  {usage}%",
-    "tooltip": false
+    "tooltip": true
   },
   "custom/governor": {
     "format": "{}",
@@ -96,9 +96,10 @@
   },
   "custom/pacman": {
     "format": "  {}",
-    "interval": 3600, // every hour
+    "interval": 3600,
     "exec": "checkupdates | wc -l", // # of updates
     "exec-if": "exit 0", // always run; consider advanced run conditions
+    "on-click": "checkupdates | wc -l",
     "signal": 8
   },
   "custom/vpn": {

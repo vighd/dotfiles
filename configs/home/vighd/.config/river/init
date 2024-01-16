@@ -22,6 +22,7 @@ riverctl map normal Alt+Shift   F                       spawn 'foot -e vifm'
 riverctl map normal Alt+Shift   S                       spawn 'foot -e pulsemixer'
 riverctl map normal Alt+Shift   W                       spawn 'chromium'
 riverctl map normal Super       L                       spawn 'waylock -init-color 0x000000'
+riverctl map normal Super       G                       spawn 'grep performance /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor > /dev/null && sudo tlp bat || sudo tlp ac'
 riverctl map normal None        Print                   spawn 'grim -g "$(slurp)"'
 riverctl map normal None        XF86AudioMute           spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'
 riverctl map normal None        XF86AudioLowerVolume    spawn 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- -l 1.2'
@@ -58,9 +59,10 @@ done
 #
 # Mouse bindings
 #
-riverctl map-pointer normal Alt  BTN_LEFT    move-view
-riverctl map-pointer normal Alt  BTN_RIGHT   resize-view
-riverctl map-pointer normal Alt  BTN_MIDDLE  toggle-float
+riverctl map-pointer normal Alt         BTN_LEFT    move-view
+riverctl map-pointer normal Alt         BTN_RIGHT   resize-view
+riverctl map-pointer normal Alt         BTN_MIDDLE  toggle-float
+riverctl map-pointer normal Alt+Shift   BTN_MIDDLE send-to-output next
 
 #
 # Colors
@@ -84,6 +86,8 @@ gsettings set org.gnome.desktop.wm.preferences  button-layout   " "
 #
 # Filters
 #
+# !!!float-filter will be deprecated in the future!!!
+#
 riverctl float-filter-add title "Open File"
 riverctl float-filter-add title "Save File"
 riverctl float-filter-add title "Save As"
@@ -100,10 +104,11 @@ waybar &
 way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1 &
 
 # Ilde manager
-swayidle -w timeout 600 'waylock -init-color 0x000000' &
+#sway-audio-idle-inhibit &
+#swayidle -w timeout 600 'waylock -init-color 0x000000' &
 
 # Set wallpaper
-swaybg -i /home/vighd/Pictures/wp.png -m fill &
+wpaperd &
 
 # Fix interop
 systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP PATH
