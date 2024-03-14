@@ -62,6 +62,15 @@ startdb() {
   fi
 }
 
+startlatestdb() {
+  sudo systemctl start docker
+  if docker container ls -a | grep postgres > /dev/null; then
+    docker container start postgres
+  else
+    docker run -d -p 5432:5432 -e POSTGRES_PASSWORD=Asd..123 -e POSTGRES_HOST_AUTH_METHOD=trust --name=postgres postgres:15-alpine postgres
+  fi
+}
+
 stopdb() {
   docker container stop postgres
   sudo systemctl stop docker.socket

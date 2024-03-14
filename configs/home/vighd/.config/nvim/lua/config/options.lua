@@ -20,3 +20,5 @@ vim.opt.mouse = ''
 vim.opt.list = false
 vim.opt.swapfile = false
 vim.opt.cursorline = true
+vim.opt.hidden = true
+vim.filetype.add({ extension = { templ = "templ" } })

@@ -4,8 +4,12 @@ options = { noremap = true }
 vim.keymap.set('n', '<C-l>', ':nohlsearch<CR> :syntax sync fromstart<CR><C-l>', options)
 
 -- Telescope fuzzy file finder
+vim.keymap.set('n', '<leader>FF', '<cmd>Telescope git_status theme=ivy<cr>', options)
 vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files theme=ivy<cr>', options)
 vim.keymap.set('n', '<leader>rg', '<cmd>Telescope live_grep theme=ivy<cr>', options)
+
+-- Vexplore
+vim.keymap.set('n', '<leader>ve', '<cmd>Vexplore<cr>', options)
 
 -- Fast movement up and down
 vim.keymap.set('n', '<C-j>', '5jzz', options)

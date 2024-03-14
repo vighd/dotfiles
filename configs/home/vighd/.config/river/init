@@ -93,6 +93,8 @@ riverctl float-filter-add title "Save File"
 riverctl float-filter-add title "Save As"
 riverctl float-filter-add title "Open Folder"
 riverctl float-filter-add title "Open As"
+riverctl float-filter-add title "anydesk"
+riverctl float-filter-add title "AnyDesk"
 
 # Start layout generator(s)
 rivercarro -outer-gaps 0 -inner-gaps 0 &

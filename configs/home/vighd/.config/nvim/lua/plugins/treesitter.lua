@@ -16,7 +16,8 @@ return {
         "json",
         "html",
         "tsx",
-        "comment"
+        "comment",
+        "templ"
       },
       highlight = {
         enable = true,

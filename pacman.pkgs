@@ -81,7 +81,6 @@ iotop
 iperf3
 iwd
 jq
-kdenlive
 less
 lhasa
 lib32-alsa-lib
@@ -152,6 +151,7 @@ pacutils
 pass
 pass-otp
 patch
+pcmanfm
 pipewire
 pipewire-alsa
 pipewire-jack
@@ -167,7 +167,6 @@ pwgen
 python-capstone
 python-pip
 python-pynvim
-rawtherapee
 read-edid
 reflector
 remmina

@@ -19,7 +19,11 @@ return {
         "lua_ls",
         "yamlls",
         "cssls",
-        "tsserver"
+        "tsserver",
+        "sqls",
+        "templ",
+        "htmx",
+        "html"
       },
     }
     require("mason-lspconfig").setup_handlers {
@@ -50,6 +54,31 @@ return {
       lspconfig.cssls.setup {
         capabilities = capabilities,
       },
+      lspconfig.sqls.setup {
+        settings = {
+          sqls = {
+            connections = {
+              {
+                driver = 'postgresql',
+              },
+            },
+          },
+        },
+      },
+      lspconfig.html.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+        filetypes = { "html", "templ" },
+      }),
+      lspconfig.htmx.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+        filetypes = { "html", "templ" },
+      }),
+      lspconfig.templ.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+      }),
     }
   end
 }
