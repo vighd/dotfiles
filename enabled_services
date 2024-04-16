@@ -1,5 +1,4 @@
 bluetooth.service
-haveged.service
 iwd.service
 seatd.service
 systemd-resolved.service

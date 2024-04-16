@@ -15,6 +15,7 @@
 /home/vighd/.themes/
 /home/vighd/.icons/
 /home/vighd/.config/bat
+/home/vighd/.gnupg/gpg-agent.conf
 /etc/tlp.conf
 /etc/iwd/main.conf
 /etc/makepkg.conf

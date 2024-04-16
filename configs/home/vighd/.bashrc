@@ -122,6 +122,8 @@ fi
 
 export PATH="$HOME/.yarn/bin:$HOME/go/bin:$HOME/.local/bin:$PATH"
 
+#source /usr/share/nvm/init-nvm.sh
+
 # pnpm
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;

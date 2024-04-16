@@ -111,7 +111,7 @@ set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 
 mark h ~/
 mark s /home/vighd/Digital/ecdms/src
-mark m /mnt
+mark m /run/media/vighd
 mark a /run/user/1000/gvfs/
 mark r /var/run/media/router/
 mark t ~/.local/share/Trash/files

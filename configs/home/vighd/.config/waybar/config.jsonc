@@ -42,7 +42,7 @@
     "format": "  {used:.1f}Gi/{total:.1f}Gi"
   },
   "temperature": {
-    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 80,
     "format": " {temperatureC}°C"
   },
