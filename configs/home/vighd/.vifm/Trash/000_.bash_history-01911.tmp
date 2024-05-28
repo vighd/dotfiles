@@ -1,0 +1,1000 @@
+go tool pprof http://localhost:8080/debug/pprof/profile
+go tool pprof http://127.0.0.1:8080/debug/pprof/profile
+lsusb
+fwupd
+fwupdmgr --help
+lsusb | grep -qi mouse && synclient TouchpadOff=1
+pacman -S fwupd
+sudo dmesg | grep synap
+sudo dmesg | grep Synap
+fwupdmgr --help
+fwupdmgr get-updates
+sudo dmesg | grep Synap
+pacman -S gnome-firmware
+vim
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+go run main.go 
+make api
+go get -u github.com/wk8/go-ordered-map/v2
+make api
+go build .
+pprof -web pm-treasury profile.pb.gz
+s
+make api
+go get github.com/gin-contrib/pprof
+make api
+./pm-treasury 
+rm pm-treasury 
+cat Dockerfile 
+go build -o treasury
+./treasury 
+rm treasury 
+make api
+go mod tidy
+make api
+sudo dmidecode 
+sudo dmidecode | grep BIOS
+fwupdmgr get-updates
+fwupdmgr --help
+fwupdmgr get-upgrades
+fwupdmgr upgrade
+sudo fwupdmgr upgrade
+yay
+bluetoothctl 
+sudo -i
+ip a s
+vim
+git staus
+git status
+git diff
+git status
+git add .
+git commit -m
+git commit
+git push origin development 
+vim
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+make api
+yay
+vim
+vimrc
+vim
+cd
+vim
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+git checkout -b highlight
+vim .gitattributes
+git push origin highlight 
+git add .
+git commit -m "Add syntax highlighting for templ"
+git push origin highlight 
+git checkout -b development 
+git checkout development 
+git merge highlight 
+git push origin development 
+cat .gitattributes 
+git reset HEAD~1
+git status
+rm .gitattributes 
+git status
+git log --pretty=oneline 
+git checkout e85e165607c3b168b00c34efa34ad25e4e704e71
+git push -f origin development 
+git checkout development 
+git fetch 
+git pull origin development 
+git log --pretty=oneline 
+git branch -D highlight 
+git push origin :highlight 
+vimsql 
+cat .bashrc 
+yarn
+rm yarn.lock 
+yayrn global add babel-node
+yarn global add babel-node
+ls .yarn/bin/
+yarn --help
+yarn add --help
+yarn global add @babel-node
+yarn global add @babel/node
+vimrc
+cd
+src
+node -v
+cd api-server/
+sudo ./scripts/ecdms-tool install
+yarn global add db-migrate @babel/node
+yarn global add json-diff
+sudo ./scripts/ecdms-tool install
+ecdms-tool 
+cd ..
+cd formdef/
+cd pcn/
+cd pcn-x/
+ecdms-tool load pcn-x-v003.ecdms 
+yarn global add @babel/core
+ecdms-tool load pcn-x-v003.ecdms 
+pwd
+src
+cd formdef/
+ecdms-tool load pcn-x-v003.ecdms 
+cd pcn/pcn-x/
+ecdms-tool load pcn-x-v003.ecdms 
+sudo ecdms-tool uninstall
+ecdms-tool 
+sudo rm -rf ~/.config/ecdms-tool/
+ecdms-tool 
+ecdms-tool load pcn-x-v003.ecdms 
+src
+cd api-server/
+git checkout ecdms-tool-compile-fix 
+sudo ./scripts/ecdms-tool install
+make web
+vimsql 
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+vim
+yaya
+yaay
+rivercfg 
+yay
+vim
+vimrc
+templ fmt --help
+lss
+vim navbar.templ 
+rm navbar.templ 
+vim table.templ 
+templ fmt table.templ 
+vim table.templ 
+rivercfg 
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+cp layout/navbar.templ ~/
+cp components/table.templ ~/
+riverctl set-repeat               45 300
+vimrc
+cd
+vim
+vim
+yay eset linux
+yay eset
+yay nod32
+uptime 
+sudo dmidecode 
+sudo dmidecode | less
+lsusb
+sudo lsusb -s 004 -v|grep -i iserial
+sudo lsusb -s 003 -v|grep -i iserial
+sudo dmesg -w
+rm table.templ 
+yay
+vim
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+conn2fw 
+vim
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+make web
+conn2db 
+conn2prod 
+conn2fw 
+conn2prod 
+conn2applog 
+conn2stg 
+uuidgen -r
+vim Jelszavak
+conn2db 
+conn2stg 
+cat .bashrc 
+conn2db 
+conn2fw 
+ssh root@172.104.151.151
+conn2fw 
+ping 94.237.80.130/
+ping 94.237.80.130
+ssh root@172.104.151.151
+conn2fw 
+conn2stg 
+conn2prod 
+ping 94.237.80.130
+conn2stg 
+ssh vighd@94.237.99.104:2233
+cat .bashrc 
+ping registry.tm-centre.org 
+ssh vighd@94.237.99.104:2222
+ssh -p 2222 vighd@94.237.99.104
+ip a s
+ssh -p 2222 vighd@94.237.99.104
+conn2stg 
+conn2fw 
+conn2prod 
+ssh -p 2222 vighd@94.237.99.104
+ssh -p 2222 vighd@94.237.99.104
+conn2db 
+conn2prod 
+man ecryptfs
+man 7 ecryptfs
+man ecryptfs.7
+conn2prod 
+ssh -p 2222 vighd@94.237.99.104
+conn2db 
+ssh -p 2222 vighd@94.237.99.104
+conn2prod 
+conn2db 
+ssh root@94.237.86.6
+dvpn
+yay
+conn2db 
+conn2fw 
+cd handlers/
+cp put_bank_settings_form.go put_invoices.go
+vim
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+git diff
+yay
+aspődsjloé-asdléj-ajlsékljkd - 
+ÚP Ő
+vim
+startlatestdb 
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+make api
+make web
+yay
+vim
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+make web
+go install github.com/a-h/templ/cmd/templ@latest
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+vim
+yay
+vimsql 
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+vim
+make web
+go get -u github.com/a-h/templ
+make web
+vim
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+make api
+vimsql 
+conn2prod 
+conn2fw 
+conn2prod 
+dvpn
+conn2fw 
+conn2db 
+conn2db 
+conn2prod 
+conn2prod
+conn2fw 
+conn2prod 
+conn2fw 
+conn2db 
+vim table.templ 
+templ fmt table.templ 
+yay code
+vim table.templ 
+pacman -Rsncu code 
+vim table.templ 
+vimrc
+vim
+vimrc
+vim
+yay
+vimsql 
+ssh root@94.237.86.6
+ssh root@172.104.151.151
+scp root@172.104.151.151:~/pm_treasury_dump.sql .
+rm pm_treasury_dump.sql 
+scp root@172.104.151.151:~/pm_treasury_dump.sql .
+docker cp pm_treasury_dump.sql postgres:/var/lib/postgresql/
+docker container exec -it postgres sh
+yay
+vim
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+make api
+go run main.go 
+startlatestdb 
+make api
+migrate -database ${POSTGRESQL_URL} -path db/migrations up 1
+cat README.md 
+export POSTGRESQL_URL='postgres://postgres:Asd..123@localhost:5432/pm_treasury?sslmode=disable'
+make api
+git checkout -b table_inplace_editor
+git status
+rm components/expanded_table_row*
+git status
+make api
+git status
+git add .
+git commit -m "WIP: Inplace editor in table"
+git push origin table_inplace_editor 
+make web
+conn2db 
+conn2db 
+dvpn
+cd g
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+journalctl -xeu docker.service
+reboot 
+yay
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+git status
+cat README.md 
+export POSTGRESQL_URL='postgres://postgres:Asd..123@localhost:5432/pm_treasury?sslmode=disable'
+migrate create -ext sql -dir db/migrations -seq update_liquidity_calculations
+migrate -database ${POSTGRESQL_URL} -path db/migrations up 1
+migrate -database ${POSTGRESQL_URL} -path db/migrations down 1
+migrate -database ${POSTGRESQL_URL} -path db/migrations up 1
+migrate -database ${POSTGRESQL_URL} -path db/migrations down 1
+migrate -database ${POSTGRESQL_URL} -path db/migrations up 1
+migrate -database ${POSTGRESQL_URL} -path db/migrations down 1
+make api
+migrate -database ${POSTGRESQL_URL} -path db/migrations up 1
+make api
+git status
+git add .
+git commit -m "WIP: Fix liquidity calculations"
+git push origin t
+git push origin table_inplace_editor 
+vimsql 
+cat /home/vighd/.local/share/db_ui/pm_treasury/query
+docker container exec -it postgres sh
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+vim
+vim
+git status
+git checkout development
+git checkout table_inplace_editor 
+git rebase -i development 
+git log --pretty=oneline 
+git rebase -i development 
+git push origin table_inplace_editor 
+git push -f origin table_inplace_editor 
+git log --pretty=oneline 
+make web
+make api
+git checkout development 
+git merge table_inplace_editor 
+git push origin development 
+git log --pretty=oneline 
+ssh root@172.104.151.151
+vim
+way-displays -s DISABLED 'InfoVision Optoelectronics (Kunshan) Co.,Ltd China 0x0536'
+pacman -Rsncu waylock tesseract tesseract-data-eng termshark radeontop remmina nitrogen 
+pacman -Qmq
+yay
+paacman -Rsncu python2-shibroken2
+pacman -Rsncu python2-shibroken2
+pacman -Rsncu python2
+cat /var/log/pacman.log 
+pacman -Rsncu $(pacman -Qdtq)
+pacman -Rsncu qt5
+pacman -Rsncu qt6
+pacman -Rsncu kdenlive 
+pacman -Syyu
+pacman -Syy
+pacman -Qe
+yay -Qe
+cd Dev/
+cd dotfiles/
+cat dots
+pacman -Rsncu woeusb
+ssh root@172.104.151.151
+yay
+conn2db 
+conn2db 
+conn2mon 
+dvpn 
+lscpu 
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+vim
+make web
+startlatestdb 
+make dev
+make api
+pass Others/netflixszandi 
+yay
+nvim --help
+vim
+vimrc
+rm lua/plugins/catppuccin.lua 
+vimrc
+mkdir ~/.config/nvim_tes
+mv ~/.config/nvim_tes ~/.config/nvim_test
+cd ~/.config/nvim_test
+vim init.lua
+NVIM_APPNAME=nvim_test nvim
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+vim
+NVIM_APPNAME=nvim_test nvim
+NVIM_APPNAME=nvim_test nvim pages/invoices.templ 
+yay
+NVIM_APPNAME=nvim_test nvim pages/invoices.templ 
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+NVIM_APPNAME=nvim_test nvim pages/invoices.templ 
+yay
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+vim
+cat components/select.templ 
+cat components/field_control.templ 
+vim components/field_control.templ
+cat components/field_control.templ
+vim
+htop 
+cd Games/WoW/
+way-displays -s DISABLED 'InfoVision Optoelectronics (Kunshan) Co.,Ltd China 0x0536'
+proton WoW.exe 
+pkill -F WoW.exre
+pkill -F WoW.exe
+pkill -f WoW.exe
+proton WoW.exe 
+yay
+vim .config/chromium-flags.conf 
+tlp stat -b
+sudo tlp-stat -b
+yay
+cd .local/share/nvim_test/
+cd lazy/
+cd tree-sitter-templ/
+vim grammar.js 
+cat package.json 
+yay just
+just gen
+yay tree-sitter
+pnpm install
+just gen
+vim Justfile 
+just install-tools
+rm -rf node_modules/
+git status
+git checkout pnpm-lock.yaml
+git status
+rm pnpm-lock.yaml 
+just install-tools
+pacman -Rsncu node-gyp
+cat Justfile 
+npm install -g tree-sitter-cli
+pnpm install --help
+pnpm global add tree-sitter-cli
+yay tree-sitter
+pacman -S tree-sitter-cli
+just gen
+pacman -S tree-sitter-go
+pnpm install
+just gen
+just build
+just gen
+just build
+git status
+rm build/
+ls lua/
+cat lua/tree-sitter-templ/init.lua 
+pwd
+cd ..
+ls tree-sitter-vim/
+rm -rf tree-sitter-vim/
+cd lazy/
+vim tree-sitter-templ/
+cd tree-sitter-templ/
+just build
+just gen
+just build
+ls ../../lazy/
+cd ..
+cd lazy/tree-sitter-templ/
+just gen
+just build
+NVIM_APPNAME=nvim_test nvim pages/invoices.templ 
+cp go/src/gitlab.digital.co.hu/pm-treasury/pages/invoices.templ .
+NVIM_APPNAME=nvim_test nvim pages/invoices.templ 
+cat invoices.templ 
+NVIM_APPNAME=nvim_test nvim invoices.templ 
+conn2prod 
+sudo -i
+unaame -a
+uname -a
+cd /var/lib/iwd/
+sudo -i
+vim
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+cpufreq-bench
+cpupower 
+cpupower frequency-info 
+vim /etc/tlp.conf
+su - ecd
+sudo -i
+cpupower frequency-info 
+cpupower
+cpupower set
+cpupower set --help
+tlp
+tlp-stat
+sudo tlp-stat
+modprobe amd_pstate
+cat /<sysfs_path>/cpu{1..$(nproc)}
+cat /sys/devices/system/cpu/cpu[N]/cpufreq/energy_performance_available_preferences
+cat /sys/devices/system/cpu/cpu1/cpufreq/energy_performance_available_preferences
+cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_driver
+systemctl disable tlp
+reboot 
+htop 
+upower 
+upower --help
+upower -i
+cpupower 
+cpupower frequency-info 
+cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_driver
+pupower frequency-info
+cpupower frequency-info
+sudo dmesg | grep pstate
+ls /sys/devices/system/cpu/amd_pstate
+cat /sys/devices/system/cpu/amd-pstate/status
+sudo -i
+cpupower frequency-info
+htop 
+yay
+just gen
+dk
+just gen
+just build
+git add .
+git commit -m "WIP: Fix grammar, package components with initializtation"
+git push origin master 
+just gen
+git add .
+git commit -m "WIP: Fix grammar, package components with initializtation"
+git push origin master 
+just gen
+git add .
+git commit -m "WIP: Fix grammar, package components with initializtation"
+git push origin master 
+just gen
+cd
+NVIM_APPNAME=nvim_test nvim invoices.templ 
+rm -rf .local/share/nvim_test/
+vim .config/nvim_test/init.lua 
+cd Dev/
+git@github.com:vighd/tree-sitter-templ.git
+git clone git@github.com:vighd/tree-sitter-templ.git
+cd tree-sitter-templ/
+npm install
+just gen
+git status
+git diff grammar.js
+vim
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+vim
+yay
+pacman -S vscode
+pacman -S code
+vimrc
+pacman -Rsncu code
+git status
+git diff
+git status
+git checkout -b refactor-to-components
+git add .
+git commit -m "WIP: Refactor to components"
+git push origin refactor-to-components 
+uptime 
+way-displays -s DISABLED 'InfoVision Optoelectronics (Kunshan) Co.,Ltd China 0x0536'
+git status
+vim
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+yay
+yay moba
+yay diablo
+diablorl 
+pacman -Rsncu diablorl-bin 
+rm -rf .diablorl/
+pacman -S steam
+yay
+iconv -t utf16le | openssl md4 -provider legacy
+iconv -t utf16le | openssl md4 -provider legacy | "asaada"
+iconv -t utf16le | openssl md4 -provider legacy < "asd"
+echo "asdasd" | iconv -t utf16le | openssl md4 -provider legacy
+sudo dmesg -w
+journalctl iwd
+journalctl -u iwd
+journalctl -f -u iwd
+cd /var/lib/iwd/
+sudo -i
+cd Dev/
+cd tree-sitter-templ/
+git status
+git reset --hard
+cd ..
+rm tree-sitter-templ/
+rm -rf tree-sitter-templ/
+vim
+vim asd.templ
+just gen
+just build
+mv lua/ asd
+mv asd/ lua
+cat Makefile 
+just test
+NVIM_APPNAME=nvim_test nvim invoices.templ 
+cd .local/share/nvim_test/lazy/
+vim tree-sitter-templ/
+cd tree-sitter-templ/
+git checkout master 
+git pull origin master 
+cd ..
+cd .
+cd ..
+rm -rf nvim_test/
+vim ~/.config/nvim_test/init.lua 
+cd nvim_test/lazy/tree-sitter-templ/
+pacman -S just
+just generate
+just gen
+pnpm install
+just gen
+vim grammar.js 
+just gen
+just build 
+vim grammar.js 
+git checkout grammar.js
+just build 
+vim grammar.js 
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+vim
+vimrc
+journalctl -f -u iwd.service
+dmesg -T | grep -i iwd
+sudo dmesg -T | grep -i iwd
+pacman -Rsncu nautilus 
+yay nemo
+conn2mon 
+conn2mon 
+yay
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+vim
+startlatestdb 
+make api
+vim
+rm -rf ~/.local/share/nvim
+vim
+git status
+git checkout pages/bank_settings_form.templ
+vim
+make web
+yay
+pass generate Others/barnusugyfelkapu
+pass edit Others/barnusugyfelkapu
+pass git push 
+pass Logins/ugyfelkapu.gov.hu 
+pacman -S networkmanager
+pacman -Rsncu iwd
+systemctl disable iwd
+nmtui
+reboot 
+systemctl enable NetworkManager
+systemctl start NetworkManager
+nmtui
+vim .config/river/init 
+reboot 
+yay
+reboot 
+htop 
+vimrc
+yay
+vim
+make web
+templ --help
+templ generate --help
+templ generate --help | clear
+templ generate --help | grep clear
+templ generate --help
+templ generate -watch --help
+ls components/
+make web
+find . -type f -name "*_templ.go"
+find . -type f -name "*_templ.go" | xargs rm
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+;5;501~
+make api
+vim .config/nvim_test/init.lua 
+cd Dev/
+cd
+rm -rf .local/share/nvim_test/
+NVIM_APPNAME=nvim_test nvim invoices.templ 
+vim
+cp go/src/gitlab.digital.co.hu/pm-treasury/pages/invoices.templ .
+git clone git@github.com:vighd/tree-sitter-templ.git
+cd tree-sitter-templ/
+npm install
+just gen
+just build
+git add .
+git commit -m "WIP: Trying to fix unhandled component initialization expression"
+git push origin master 
+just gen
+just build
+git add .
+git commit -m "WIP: Trying to fix unhandled component initialization expression"
+git push origin master 
+src
+cd api-server/
+git fetch 
+git checkout dev
+git checkout development 
+git pull origin development 
+git merge 335-weekly-glp 
+git checkout 335-weekly-glp 
+git pull origin 335-weekly-glp 
+git checkout development 
+git checkout 335-weekly-glp 
+git log --pretty=oneline 
+git checkout dev
+git checkout development 
+git merge 335-weekly-glp 
+git push origin dev
+git push origin development 
+vim package.json 
+git add .
+git commit -m "Bump version to 1.35.6"
+cat package.json 
+git push origin development 
+git tag -a v1.35.6 -m "Bump version to 1.35.6"
+giit push --tags
+git push --tags
+conn2prod 
+conn2prod 
+dvpn
+yay
+nmtui
+yay
+nvim 
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+vim
+yay
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+go mod tidy
+go get -u github.com/a-h/templ
+vim
+make web
+go install github.com/a-h/templ/cmd/templ@latest
+make web
+git status
+go get -u github.com/a-h/templ
+vim go.mod 
+go mod tidy
+go get ./...
+make web
+cat go.sum 
+templ --help
+templ version
+go install github.com/a-h/templ/cmd/templ@latest
+go --help
+go clean
+go install --help
+go get templ@none
+templ version
+go get --help
+go help get
+go get -u github.com/a-h/templ
+rm -rf ../../../bin/templ 
+templ
+go install github.com/a-h/templ/cmd/templ@latest
+templ
+templ version
+go install github.com/a-h/templ/cmd/templ@v0.2.697
+templ version
+make web
+systemctl start docker
+startlatestdb 
+make dev
+make api
+yay
+fwupd update
+sudo dmidecode 
+sudo gnome-firmware 
+mount
+mount | grep boot
+sudo fwupdmgr --help
+sudo fwupdmgr upgrade
+vim
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+yay
+conn2db 
+htop 
+dumps
+startdb 
+restoredb ecdms_2022_08_15_00_00.dump ecdms_production
+src
+cd api-server/
+cat .env
+conn2prod 
+find . -type f | xargs zgrep "REAPPEAR25"
+find . -type f | xargs zgrep "REAPPEAR25" | jq .
+find . -type f | xargs zgrep "REAPPEAR25" | grep Delete
+find . -type f | xargs zgrep "REAPPEAR25" | grep Delete | jq .
+find . -type f | xargs zgrep "REAPPEAR27" | grep Delete | jq .
+find . -type f | xargs zgrep "REAPPEAR27" | grep Delete
+find . -type f | xargs zgrep "REAPPEAR39" | grep Delete
+find . -type f | xargs zgrep "REAPPEAR40" | grep Delete
+cd
+conn2prod 
+dumps
+restoredb ecdms_2022_08_16_00_00.dump ecdms_production
+restoredb ecdms_2022_08_17_00_00.dump ecdms_production
+vimsql 
+vim log.js
+vim log.json
+cat log.json | jq .
+vim log.json 
+cat log.json | jq .
+cat log.json | jq . > log_formatted.json
+dvpn
+whereis cargo
+sh source
+useradd --help
+htop 
+yay
+htop 
+vim
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+cd components/
+cd ..
+cd layout/
+templ fmt navbar.templ 
+vim
+git status
+make web
+find . -type f -name "*_templ.go" | xargs rm
+find . -type f -name "*_templ.txt" | xargs rm
+
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+stopdb 
+startlatestdb 
+make api
+netstat -tlnp
+make api
+yayay
+yay
+cd .local/share/nvim
+cd lazy/
+cd nvim-treesitter/
+cd ..
+cd nvim/lazy/nvim-treesitter/parser
+cd ..
+cd parser
+rm templ.so 
+ls ../queries/
+vifm
+git clone https://github.com/vrischmann/tree-sitter-templ.git
+cd tree-sitter-templ/
+git fetch 
+git pull origin master 
+cd ..
+rm -rf tree-sitter-templ/
+git clone https://github.com/vrischmann/tree-sitter-templ.git
+cd tree-sitter-templ/
+git checkout fix-import-expression-brace 
+npm install
+just gen
+just build
+vim
+vimrc
+virc
+vimrc
+yay
+vim
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+yay
+startlatestdb 
+make api
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+vim
+rm -rf ~/.local/share/nvim
+vim
+vimrc
+cd .local/share/nvim/lazy/tree-sitter-templ/
+npm install
+just build
+yay
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+ssh root@172.104.151.151
+rm pm_treasury_dump.sql 
+scp root@172.104.151.151:~/pm_treasury_dump.sql .
+docker cp pm_treasury_dump.sql postgres:/var/lib/postgresql/
+vimrc
+vim ~/.bashrc 
+vimrc
+rm /home/vighd/.local/state/nvim/lsp.log
+conn2fw 
+conn2prod 
+conn2db 
+dvpn
+docker container exec -it postgres sh
+vimrc
+vimrc
+cd
+rm -rf .local/share/nvim
+nvim
+vim
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+vim
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+stopdb 
+htop 
+yay
+sudo systemd-analyze blame
+sudo systemctl disable mandoc
+sudo systemctl disable mandoc.timer
+sudo efibootmgr 
+sudo pacman -Rsncu linux
+sudoedit /etc/mkinitcpio.conf
+sudo mkinitcpio -p linux
+sudo mkinitcpio -P
+reboot 
+sudo efibootmgr -v
+sudo efibootmgr -u
+sudo -ii
+sudo systemd-analyze blame
+sudo -i
+sudo dmesg | grep Load
+sudo dmesg | grep Starting Load
+sudo dmesg | grep "Starting Load"
+pacman -S linux-lts
+sudo vim /etc/modules-load.d/
+sudo vim /etc/modprobe.d/nobeep.conf 
+pacman -S gvfs-mtp
+vim .vifm/vifmrc 
+vim index.html
+vim
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+go install github.com/a-h/templ/cmd/templ@v0.2.697
+go install github.com/a-h/templ/cmd/templ@latest
+go get -u github.com/a-h/templ
+startlatestdb 
+make api
+make web
+yay
+startlatestdb 
+vim
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+make api
+make web
+sudo systemctl disable mandoc.timer
+way-displays -s DISABLED 'InfoVision Optoelectronics (Kunshan) Co.,Ltd China 0x0536'

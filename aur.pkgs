@@ -10,7 +10,7 @@ nvm
 openvpn-update-systemd-resolved
 pam-gnupg
 postman-bin
-river-git
+proton-ge-custom-bin
 rivercarro
 sway-audio-idle-inhibit-git
 swaylock-fprintd-git
@@ -18,8 +18,6 @@ vifm-devicons-git
 way-displays
 wdisplays
 wlopm
-wlr-randr
-woeusb
 xerox-phaser-3020
 yay
 yay-debug

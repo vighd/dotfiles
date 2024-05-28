@@ -6,11 +6,14 @@ return {
     'hrsh7th/cmp-nvim-lsp',
     'SirVer/ultisnips',
     'quangnguyen30192/cmp-nvim-ultisnips',
+    'garyhurtz/cmp_bulma.nvim',
   },
   config = function()
     local cmp = require 'cmp'
 
     cmp.setup({
+      preselect = cmp.PreselectMode.None,
+      completion = { completeopt = "menu,menuone,noselect" },
       snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
@@ -22,11 +25,20 @@ return {
         ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<CR>'] = cmp.mapping.confirm({ select = false }),
         ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
         ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
       },
       sources = cmp.config.sources({
+        {
+          name = "bulma",
+          option = {
+            filetypes = {
+              "html",
+              "templ",
+            },
+          }
+        },
         { name = 'nvim_lsp' },
         { name = 'ultisnips' },
       }, {

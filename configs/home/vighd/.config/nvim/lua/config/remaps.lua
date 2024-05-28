@@ -26,6 +26,9 @@ vim.keymap.set('n', '<S-TAB>', ':bprev<CR>', options)
 -- Autoformat with <F4>
 vim.keymap.set('n', '<F4>', '<cmd>lua require("conform").format({async = true, lsp_fallback = "always"})<CR>', options)
 
+-- Rerun @q macro on visual select
+vim.keymap.set('v', '<S-Q>', ':normal @q<CR>', options)
+
 -- LSP keybindings
 vim.keymap.set('n', '<leader>gr', '<cmd>lua vim.lsp.buf.references()<CR>', options)
 vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', options)
@@ -37,3 +40,4 @@ vim.keymap.set('n', '<leader>gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', o
 vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', options)
 vim.keymap.set('n', '<leader>p', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>n', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>lr', '<cmd>LspRestart<CR>', options)

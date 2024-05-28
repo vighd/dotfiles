@@ -1,0 +1,1000 @@
+river -V
+pacman -Si river
+chromium 
+pacman -Rsncu river
+pacman -S river
+pacman -S firefox
+rm -rf .config/chromium
+rm -rf .cache/chromium/
+yay -S river-git
+vim .bash_profile 
+chromium 
+vim .config/chromium-flags.conf 
+chromium 
+vim .config/chromium-flags.conf 
+pacman -S pinentry-bemenu
+vim ~/.gnupg/gpg-agent.conf
+cat /etc/makepkg.conf
+q
+ls /etc/modprobe.d/
+whereis pinentry-bemenu 
+gpg-connect-agent reloadagent /bye
+rivercfg 
+source $HOME/.config/bemenu/config; pinentry-bemenu
+vim pinentry-bemenu-configured
+chmod +x pinentry-bemenu-configured
+pwd
+vim pinentry-bemenu-configured
+gpg-connect-agent reloadagent /bye
+pinentry --help
+whereis pinentry-gnome3
+gpg-connect-agent reloadagent /bye
+cd Dev/dotfiles/
+vim dotfiles 
+git status
+vim dotfiles 
+./dots get
+git status
+git add .
+git commit -m "Update configs"
+git push origin master 
+htop 
+anydesk 
+yay
+htop 
+ps ax | grep xwa
+river
+GDK_BACKEND=x11 anydesk
+WAYLAND_DISPLAY="" anydesk
+river --help
+strace anydesk 
+anydesk 
+vim .bashrc 
+docker container exec -it postgres sh
+vim
+docker container exec -it postgres sh
+cd szamlazz/
+cat szamlabe
+cat szamlabe.xml 
+cat szamla.xml 
+cat szamla.xsd 
+pacman -S steam
+pacman -Rsncu steam
+pacman -S steam-native-runtime:
+pacman -S steam-native-runtime
+pacman -S steam
+steam
+htop 
+docker container exec -it postgres sh
+systemctl start cups
+docker container exec -it postgres sh
+vimsql 
+vim
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+vim .bash_profile 
+riverctl rule-add -title "asd" float 
+man riverctl 
+pacman -S river
+pacman -Syy
+pacman -S river
+rivercfg 
+pacman -Syy
+pacman -Syu
+pacman -S river
+yay
+cd g
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+docker container exec -it postgres psql -c "select raw_data from invoices where id = '91f5b6f2-c4fb-11ee-a1d7-9b49bbd63afe'"
+docker container exec -it postgres psql -U postgres -c "select raw_data from invoices where id = '91f5b6f2-c4fb-11ee-a1d7-9b49bbd63afe'"
+docker container exec -it postgres psql -U postgres -c "select raw_data from invoices where id = '91f5b6f2-c4fb-11ee-a1d7-9b49bbd63afe'" -d pm_treasury
+docker container exec -it postgres psql -U postgres -c "select raw_data from invoices where id = '91f5b6f2-c4fb-11ee-a1d7-9b49bbd63afe'" -d pm_treasury > asd
+cat asd 
+rm asd 
+docker container exec -it postgres psql -U postgres -c "select raw_data from invoices where id = '91f5b6f2-c4fb-11ee-a1d7-9b49bbd63afe'" -d pm_treasury
+vim parkolojegy.xml
+docker container exec -it postgres sh
+yay
+pacman -S river
+cd g;5;501~
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+o get -u ./…
+go get -u ./…
+go get -u ./...
+go mod tidy
+cat README.md 
+export POSTGRESQL_URL='postgres://postgres:Asd..123@localhost:5432/pm_treasury?sslmode=disable
+'
+migrate -database ${POSTGRESQL_URL} -path db/migrations up 1
+migrate -database ${POSTGRESQL_URL} -path db/migrations down 1
+migrate -database ${POSTGRESQL_URL} -path db/migrations up 1
+migrate -database ${POSTGRESQL_URL} -path db/migrations up
+make api
+migrate -database ${POSTGRESQL_URL} -path db/migrations up
+make api
+migrate -database ${POSTGRESQL_URL} -path db/migrations up
+make api
+vim
+vim ~/modositasok
+cat ~/modositasok 
+make web
+make api
+make web
+vim
+git diff
+git status
+cat README.md 
+migrate create -ext sql -dir db/migrations -seq add_invoice_calculations
+vim
+git diff
+vim .env
+vim .env.example 
+vim
+git diff
+git status
+git add .
+git commit
+git log --pretty=oneline 
+git push origin development 
+cat /home/vighd/.local/share/db_ui/pm_treasury/query
+docker container exec -it postgres sh
+vimsql 
+cat /home/vighd/.local/share/db_ui/pm_treasury/query
+ssh root@172.104.151.151
+ssh root@172.104.151.151
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+cat .env
+pass Work/aws.amazon.com 
+ssh root@172.104.151.151
+sudo tlp-stat -b
+htop 
+way-displays -s DISABLED 'InfoVision Optoelectronics (Kunshan) Co.,Ltd China 0x0536'
+pacman -Rsncu dxvk-bin
+pacman -Rsncu wine-staging winetricks 
+yay wkill
+ps ax
+pkilll -f nineparch
+pkill -f nineparch
+river --help
+man river
+vim .bash_profile 
+yay
+yay
+vim
+ls /var/lib/docker/
+sudo ls /var/lib/docker/
+cd g
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+lsmod | grep dock
+lsmod
+startlatestdb 
+journalctl -xeu docker.service
+sudoedit /etc/docker/daemon.json
+lsmod | grep grap
+man rivertile 
+man rivercarro
+ssh root@172.104.151.151
+docker container exec -it postgres sh
+rm pm_treasury_dump.sql 
+scp root@172.104.151.151:~/pm_treasury_dump.sql .
+ls -lah
+docker cp pm_treasury_dump.sql postgres:/var/lib/postgresql/
+htop 
+riverctl rule-add -title "Open File" float
+riverctl rule-add -title "Save File" float
+riverctl rule-add -title "Save As" float
+riverctl rule-add -title "Open Folder" float
+riverctl rule-add -title "Open As" float
+rivercfg 
+vim
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+yay
+yay pdf2text
+yay pdf to text
+yay poppler
+pacman -S poppler
+vim .config/foot/foot.ini 
+go get -t github.com/otiai10/gosseract/v2
+yay tesseract
+pacman -S tesseract-data-eng
+go run main.go 
+cd go/src/gitlab.digital.co.hu
+mkdir gosseract
+cd gosseract/
+go mod init
+go mod tidy
+touch main.go
+vim main.go 
+cd 
+cd Pictures/
+tesseract 20240419_09h34m55s_grim.png out -l eng+hun
+cat out.txt 
+rm 20240419_09h34m55s_grim.png 
+lls
+rm out.txt 
+convert /home/vighd/MOUSER_Receipt_78331616.pdf mouser.png
+pkgfile convert
+pacman -S imagemagick
+convert /home/vighd/MOUSER_Receipt_78331616.pdf mouser.png
+tesseract mouser.png out -l eng+hun
+cat out.txt 
+rm mouser.png 
+pdftoppm -png ~/MOUSER_Receipt_78331616.pdf > mouser.png
+tesseract mouser.png out -l eng+hun
+cat out.txt 
+rm mouser.png out.txt 
+pdftoppm -png ~/40-242891-000_40-2891458_2512711_20240320.pdf > ingram.png
+tesseract ingram.png out -l eng+hun
+cat out.txt 
+tesseract --help
+tesseract --help-extra
+tesseract ingram.png out -l eng+hun --oem 1
+pdftoppm -png ~/40-242891-000_40-2891458_2512711_20240320.pdf > ingram.png
+tesseract ingram.png out -l eng+hun --oem 1
+cat out.txt 
+tesseract --help-extra
+yay lios
+lios --help
+lios ~/40-242891-000_40-2891458_2512711_20240320.pdf 
+pacman -S gtk3
+pacman -S gtk4
+lios ~/40-242891-000_40-2891458_2512711_20240320.pdf 
+yay atk
+pacman -Rsnuc gtk4 
+lios ~/40-242891-000_40-2891458_2512711_20240320.pdf 
+pacman -S gtk4
+pacman -S nautilus
+pacman -Rnscu lios-git 
+cat hun.traineddata 
+vim userwords.txt
+yay
+tesseract --help-extra
+tesseract Pictures/ingram.png out -l eng+hun --oem 1 /home/vighd/data/
+tesseract Pictures/ingram.png out -l eng+hun --oem 1 --tessdata-dir/home/vighd/data/
+tesseract Pictures/ingram.png out -l eng+hun --oem 1 --tessdata-dir /home/vighd/data/
+cat out.txt 
+tesseract Pictures/ingram.png out -l eng+hun --oem 0 --tessdata-dir /home/vighd/data/
+cat out.txt 
+tesseract Pictures/ingram.png out -l eng+hun --oem 2 --tessdata-dir /home/vighd/data/
+cat out.txt 
+tesseract Pictures/ingram.png out -l eng+hun --oem 3 --tessdata-dir /home/vighd/data/
+cat out.txt 
+tesseract Pictures/ingram.png out -l eng+hun --tessdata-dir /home/vighd/data/
+cat out.txt 
+tesseract --help
+tesseract --help-extra
+tesseract Pictures/ingram.png out -l eng+hun --tessdata-dir /home/vighd/data/ --psm 3
+cat out.txt 
+tesseract Pictures/ingram.png out -l eng+hun
+cat out.txt 
+rm out.txt 
+tesseract Pictures/ingram.png out -l eng+hun --tessdata-dir /home/vighd/data/ --psm 3
+cat out.txt 
+tesseract Pictures/ingram.png out -l eng+hun
+cat out.txt 
+rm out.txt 
+tesseract --help-extra
+tesseract Pictures/ingram.png out -l eng+hun --user-words userwords.txt 
+cat out.txt 
+make web
+vim
+cd g
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+git checkout Makefile
+make api
+yay
+sudo fwupd --help
+fwupdmgr --help
+fwupdmgr get-updates
+sudo tlp-stat -b
+pass generate Work/app.parsio.io
+yay
+rivercfg 
+vim .config/gtk-3.0/gtk.css
+mkdir .config/gtk-4.0/
+vim .config/gtk-4.0/gtk.css
+vim .config/gtk-4.0/settings.ini
+vim .config/gtk-3.0/settings.ini
+yay
+vim
+pass Work/aws.amazon.com 
+echo $WAYLAND_DISPLAY
+src
+cd api-server/
+git fetch 
+src
+cd web-client/
+git fetch 
+git checkout development
+git pull origin development 
+git reset --hard
+git pull origin development 
+cd Pictures/
+tesseract 20240422_15h17m25s_grim.png out -l eng+hun
+cat out.txt 
+rm *grim.png
+rm out.txt 
+tesseract 20240422_15h23m26s_grim.png out -l eng+hun
+cat out.txt 
+yay
+yay invoice
+yay parse pdf
+yay pdf to txt
+cd Számlák/
+pdftotext -enc UTF-8 40-104541-000_40-2894877_3195211_20240415.pdf 
+cat 40-104541-000_40-2894877_3195211_20240415.txt
+pdftotext --help
+pdftotext -enc UTF-8 -raw 40-104541-000_40-2894877_3195211_20240415.pdf
+cat 40-104541-000_40-2894877_3195211_20240415.txt
+pdftotext -enc UTF-8 -tsv 40-104541-000_40-2894877_3195211_20240415.pdf
+
+rm *.txt
+pdftotext --help
+pdftotext -enc UTF-8 -html 40-104541-000_40-2894877_3195211_20240415.pdf
+pdftotext -enc UTF-8 -htmlmeta 40-104541-000_40-2894877_3195211_20240415.pdf
+rm *.html
+pdftotext -enc UTF-8 -htmlmeta -bbox-laayout 40-104541-000_40-2894877_3195211_20240415.pdf
+pdftotext -enc UTF-8 -bbox-laayout 40-104541-000_40-2894877_3195211_20240415.pdf
+pdftotext -enc UTF-8 -bbox-layout 40-104541-000_40-2894877_3195211_20240415.pdf
+touch peldak
+vim peldak
+make web
+startlatestdb 
+cd g
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+make api
+vim
+bluetoothctl 
+cd Számlák/
+rm 40-104541-000_40-2894877_3195211_20240415.html 
+pdftotext -enc UTF-8 40-104541-000_40-2894877_3195211_20240415.pdf && cat *.txt
+pdftotext -enc UTF-8 -bbox-layout 40-104541-000_40-2894877_3195211_20240415.pdf
+pdftotext -enc UTF-8 -bbox-layout Földgáz_101315210439_2024.04.12.PDF 
+rm *.html
+rm *.txt
+pdftotext -enc UTF-8 -bbox-layout 40-104541-000_40-2894877_3195211_20240415.pdf
+yay
+yay kodi
+sudo scanhosts 
+scanhosts 
+ssh root@172.104.151.151
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+vim
+git status
+git diff
+make web
+make api
+startlatestdb 
+make api
+git status
+git add .
+git commit -m "Fix invoice calculations"
+git push origin development 
+make api
+git status
+git add .
+git commit -m "Fix other bank costs in invoice calculations"
+git push origin development 
+yay
+pacman -S wine-staging wine-gecko wine-mono winetricks 
+yay dxvk-bin
+setup_dxvk install
+winecfg 
+wine launcher.exe 
+winetricks dotnet4.5
+winetricks dotnet45
+wine launcher.exe 
+winecfg 
+wine launcher.exe 
+cd ..
+rm -rf InfinityMU
+rm -rf InfinityMU-Season3-FULL-2023-November-27.zip 
+ks
+cd Interface/
+cd ..
+vim realmlist.wtf 
+wine WoW.exe 
+wdisplays 
+way-displays -s DISABLED 'InfoVision Optoelectronics (Kunshan) Co.,Ltd China 0x0536'
+wine WoW.exe 
+vim WTF/Config.wtf 
+wine WoW.exe 
+yay wine wayland
+htop 
+vim .bash_profile 
+man river
+cd WoW/
+wine WoW.exe 
+wine regedit
+regedit 
+vim waylandonly.reg
+regedit --help
+regedit waylandonly.reg 
+DISPLAY= wine WoW.exe 
+vim .bash_profile 
+regedit
+DISPLAY= wine WoW.exe 
+cd WoW/
+DISPLAY= wine WoW.exe 
+wine -v
+yay
+ssh root@172.104.151.151
+conn2db 
+dvpn
+sudo tlp-stat -b
+vim asd
+cat asd 
+ssh root@172.104.151.151
+ssh root@172.104.151.151
+ssh 94.237.86.6
+ssh root@94.237.86.6
+gpg list-keys
+gpg --help
+gpg -k
+gpg --edit-key AC05F99FA2BCB14EFE4D7EB307EFCDA8B4DF2BFC
+sudoedit /usr/local/bin/pass-bemenu 
+yay
+pass --help
+pass --help | grep clip
+yay pass clip
+sudo tlp-stat -b
+way-displays -s DISABLED 'InfoVision Optoelectronics (Kunshan) Co.,Ltd China 0x0536'
+yay
+pacman -S wlprop
+yay wlprop
+wlprop 
+pacman -Rsncu wlprop 
+dbus call   --session   --dest org.gnome.Shell   --object-path /org/gnome/Shell   --method org.gnome.Shell.Eval "      
+    global              
+      .get_window_actors()
+      .map(a=>a.meta_window)                                   
+      .map(w=>({class: w.get_wm_class(), title: w.get_title()}))"   | sed -E -e "s/^\(\S+, '//" -e "s/'\)$//"   | jq .
+gdbus call   --session   --dest org.gnome.Shell   --object-path /org/gnome/Shell   --method org.gnome.Shell.Eval "      
+    global              
+      .get_window_actors()
+      .map(a=>a.meta_window)                                   
+      .map(w=>({class: w.get_wm_class(), title: w.get_title()}))"   | sed -E -e "s/^\(\S+, '//" -e "s/'\)$//"   | jq .
+riverctl rule-add -title "World of Warcraft" float
+yay lswt
+2
+yay lswt
+yay wlprop
+man riverctl 
+riverctl 
+rivercfg 
+htop 
+cd WoW/
+wine VanillaFixes.exe 
+yay proton
+proton VanillaFixes.exe 
+cd Games/
+proton EVLauncher.exe 
+pkill -f wine
+pkill -f World of Warcraft
+pkill -f "World of Warcraft"
+pkill -f "wow.exe"
+pkill -f wow
+pkill -f proton
+pkill -f everlook
+pkill -f evla
+htop 
+wine EVLauncher.exe 
+way-displays 
+way-displays -s ENABLED 'InfoVision Optoelectronics (Kunshan) Co.,Ltd China 0x0536'
+way-displays -s ENABLE 'InfoVision Optoelectronics (Kunshan) Co.,Ltd China 0x0536'
+wdisplays 
+way-displays --help
+way-displays -s 'InfoVision Optoelectronics (Kunshan) Co.,Ltd China 0x0536'
+way-displays -s MODE 1920 1080 60 'InfoVision Optoelectronics (Kunshan) Co.,Ltd China 0x0536'
+way-displays -s MODE 'InfoVision Optoelectronics (Kunshan) Co.,Ltd China 0x0536' max
+way-displays -s MODE 'InfoVision Optoelectronics (Kunshan) Co.,Ltd China 0x0536' MAX
+pkill -f way-displays 
+way-displays 
+ssh root@94.237.86.6
+ssh root@172.104.151.151
+scp root@172.104.151.151:~/pm_treasury_dump.sql .
+docker cp pm_treasury_dump.sql postgres:/var/lib/postgresql/
+cat szamlazz/banktranz.x
+cat szamlazz/banktranz.xml 
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+migrate -database ${POSTGRESQL_URL} -path db/migrations up
+migrate -database ${POSTGRESQL_URL} -path db/migrations up 1
+cat README.md 
+export POSTGRESQL_URL='postgres://postgres:Asd..123@localhost:5432/pm_treasury?sslmode=disable'
+migrate -database ${POSTGRESQL_URL} -path db/migrations up 1
+migrate -database ${POSTGRESQL_URL} -path db/migrations down 1
+migrate -database ${POSTGRESQL_URL} -path db/migrations up 1
+migrate -database ${POSTGRESQL_URL} -path db/migrations down 1
+migrate -database ${POSTGRESQL_URL} -path db/migrations up 1
+migrate -database ${POSTGRESQL_URL} -path db/migrations down 1
+migrate -database ${POSTGRESQL_URL} -path db/migrations up 1
+make api
+make web
+git add .
+git commit
+git push origin development 
+vim
+cat README.md 
+migrate create -ext sql -dir db/migrations -seq add_triggers_and_invoice_columns
+vim
+git status
+git diff
+docker container exec -it postgres sh
+cat ~/.local/share/db_ui/pm_treasury/query
+ssh root@172.104.151.151
+ssh root@172.104.151.151
+vimsql 
+conn2prod 
+dvpn
+way-displays -s DISABLED 'InfoVision Optoelectronics (Kunshan) Co.,Ltd China 0x0536'
+way-displays &
+way-displays -s DISABLED 'InfoVision Optoelectronics (Kunshan) Co.,Ltd China 0x0536'
+wine ev.exe 
+cd ..
+cd Games/WoW/
+cd Interface/AddOns/
+git clone https://github.com/CosminPOP/TWThreat.git
+git clone https://github.com/Road-block/CallToArms.git
+git clone https://github.com/shagu/ShaguError.git
+git clone https://github.com/shagu/ShaguInventory.git
+git clone https://github.com/shagu/ShaguMount.git
+git clone https://github.com/shagu/ShaguNotify.git
+git clone https://github.com/shagu/ShaguScore.git
+git clone https://github.com/GryllsAddons/ShaguTweaks-mods.git
+git clone https://github.com/shagu/ShaguValue.git
+git clone https://github.com/shirsig/notoggle.git
+cd Games/WoW/
+wine VanillaFixes.exe 
+proton VanillaFixes.exe 
+yay
+vim
+cat .bash_profile 
+way-displays -s DISABLED 'InfoVision Optoelectronics (Kunshan) Co.,Ltd China 0x0536'
+cd Games/
+proton VanillaFixes.exe 
+yay
+vim .bash_profile 
+cd Games/
+lss
+cd WoW/
+proton VanillaFixes.exe 
+proton winecfg
+wine VanillaFixes.exe 
+vim .bash_profile 
+cd
+vim .bash_profile 
+cat .gnupg/gpg-agent.conf 
+way-displays -s DISABLED 'InfoVision Optoelectronics (Kunshan) Co.,Ltd China 0x0536'
+cd Games/WoW/
+proton VanillaFixes.exe 
+yay
+pacman -Syy
+yay
+pacman -Syyu
+pacman -Rsncu swaybg 
+pacman -S swaybg
+way-displays --help
+wdisplays 
+wlr-randr 
+way-displays -s ARRAGE_ALIGN top "LG Electronics LG ULTRAWIDE 0x00012B55"
+way-displays -s ARRANGE_ALIGN top "LG Electronics LG ULTRAWIDE 0x00012B55"
+way-displays -s ARRANGE_ALIGN top
+way-displays -s ARRANGE_ALIGN row top
+pacman -Rsncu way-displays 
+pkill -f way-displays 
+lsusb
+vimsql 
+pacman -S graphviz
+go tool pprof http://localhost:8080/debug/pprof/profile
+go tool pprof http://127.0.0.1:8080/debug/pprof/profile
+lsusb
+fwupd
+fwupdmgr --help
+lsusb | grep -qi mouse && synclient TouchpadOff=1
+pacman -S fwupd
+sudo dmesg | grep synap
+sudo dmesg | grep Synap
+fwupdmgr --help
+fwupdmgr get-updates
+sudo dmesg | grep Synap
+pacman -S gnome-firmware
+vim
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+go run main.go 
+make api
+go get -u github.com/wk8/go-ordered-map/v2
+make api
+go build .
+pprof -web pm-treasury profile.pb.gz
+s
+make api
+go get github.com/gin-contrib/pprof
+make api
+./pm-treasury 
+rm pm-treasury 
+cat Dockerfile 
+go build -o treasury
+./treasury 
+rm treasury 
+make api
+go mod tidy
+make api
+sudo dmidecode 
+sudo dmidecode | grep BIOS
+fwupdmgr get-updates
+fwupdmgr --help
+fwupdmgr get-upgrades
+fwupdmgr upgrade
+sudo fwupdmgr upgrade
+yay
+bluetoothctl 
+sudo -i
+ip a s
+vim
+git staus
+git status
+git diff
+git status
+git add .
+git commit -m
+git commit
+git push origin development 
+vim
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+make api
+yay
+vim
+vimrc
+vim
+cd
+vim
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+git checkout -b highlight
+vim .gitattributes
+git push origin highlight 
+git add .
+git commit -m "Add syntax highlighting for templ"
+git push origin highlight 
+git checkout -b development 
+git checkout development 
+git merge highlight 
+git push origin development 
+cat .gitattributes 
+git reset HEAD~1
+git status
+rm .gitattributes 
+git status
+git log --pretty=oneline 
+git checkout e85e165607c3b168b00c34efa34ad25e4e704e71
+git push -f origin development 
+git checkout development 
+git fetch 
+git pull origin development 
+git log --pretty=oneline 
+git branch -D highlight 
+git push origin :highlight 
+vimsql 
+cat .bashrc 
+yarn
+rm yarn.lock 
+yayrn global add babel-node
+yarn global add babel-node
+ls .yarn/bin/
+yarn --help
+yarn add --help
+yarn global add @babel-node
+yarn global add @babel/node
+vimrc
+cd
+src
+node -v
+cd api-server/
+sudo ./scripts/ecdms-tool install
+yarn global add db-migrate @babel/node
+yarn global add json-diff
+sudo ./scripts/ecdms-tool install
+ecdms-tool 
+cd ..
+cd formdef/
+cd pcn/
+cd pcn-x/
+ecdms-tool load pcn-x-v003.ecdms 
+yarn global add @babel/core
+ecdms-tool load pcn-x-v003.ecdms 
+pwd
+src
+cd formdef/
+ecdms-tool load pcn-x-v003.ecdms 
+cd pcn/pcn-x/
+ecdms-tool load pcn-x-v003.ecdms 
+sudo ecdms-tool uninstall
+ecdms-tool 
+sudo rm -rf ~/.config/ecdms-tool/
+ecdms-tool 
+ecdms-tool load pcn-x-v003.ecdms 
+src
+cd api-server/
+git checkout ecdms-tool-compile-fix 
+sudo ./scripts/ecdms-tool install
+make web
+vimsql 
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+vim
+yaya
+yaay
+rivercfg 
+yay
+vim
+vimrc
+templ fmt --help
+lss
+vim navbar.templ 
+rm navbar.templ 
+vim table.templ 
+templ fmt table.templ 
+vim table.templ 
+rivercfg 
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+cp layout/navbar.templ ~/
+cp components/table.templ ~/
+riverctl set-repeat               45 300
+vimrc
+cd
+vim
+vim
+yay eset linux
+yay eset
+yay nod32
+uptime 
+sudo dmidecode 
+sudo dmidecode | less
+lsusb
+sudo lsusb -s 004 -v|grep -i iserial
+sudo lsusb -s 003 -v|grep -i iserial
+sudo dmesg -w
+rm table.templ 
+yay
+vim
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+conn2fw 
+vim
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+make web
+conn2db 
+conn2prod 
+conn2fw 
+conn2prod 
+conn2applog 
+conn2stg 
+uuidgen -r
+vim Jelszavak
+conn2db 
+conn2stg 
+cat .bashrc 
+conn2db 
+conn2fw 
+ssh root@172.104.151.151
+conn2fw 
+ping 94.237.80.130/
+ping 94.237.80.130
+ssh root@172.104.151.151
+conn2fw 
+conn2stg 
+conn2prod 
+ping 94.237.80.130
+conn2stg 
+ssh vighd@94.237.99.104:2233
+cat .bashrc 
+ping registry.tm-centre.org 
+ssh vighd@94.237.99.104:2222
+ssh -p 2222 vighd@94.237.99.104
+ip a s
+ssh -p 2222 vighd@94.237.99.104
+conn2stg 
+conn2fw 
+conn2prod 
+ssh -p 2222 vighd@94.237.99.104
+ssh -p 2222 vighd@94.237.99.104
+conn2db 
+conn2prod 
+man ecryptfs
+man 7 ecryptfs
+man ecryptfs.7
+conn2prod 
+ssh -p 2222 vighd@94.237.99.104
+conn2db 
+ssh -p 2222 vighd@94.237.99.104
+conn2prod 
+conn2db 
+ssh root@94.237.86.6
+dvpn
+yay
+conn2db 
+conn2fw 
+cd handlers/
+cp put_bank_settings_form.go put_invoices.go
+vim
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+git diff
+yay
+aspődsjloé-asdléj-ajlsékljkd - 
+ÚP Ő
+vim
+startlatestdb 
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+make api
+make web
+yay
+vim
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+make web
+go install github.com/a-h/templ/cmd/templ@latest
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+vim
+yay
+vimsql 
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+vim
+make web
+go get -u github.com/a-h/templ
+make web
+vim
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+make api
+vimsql 
+conn2prod 
+conn2fw 
+conn2prod 
+dvpn
+conn2fw 
+conn2db 
+conn2db 
+conn2prod 
+conn2prod
+conn2fw 
+conn2prod 
+conn2fw 
+conn2db 
+vim table.templ 
+templ fmt table.templ 
+yay code
+vim table.templ 
+pacman -Rsncu code 
+vim table.templ 
+vimrc
+vim
+vimrc
+vim
+yay
+vimsql 
+ssh root@94.237.86.6
+ssh root@172.104.151.151
+scp root@172.104.151.151:~/pm_treasury_dump.sql .
+rm pm_treasury_dump.sql 
+scp root@172.104.151.151:~/pm_treasury_dump.sql .
+docker cp pm_treasury_dump.sql postgres:/var/lib/postgresql/
+docker container exec -it postgres sh
+yay
+vim
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+make api
+go run main.go 
+startlatestdb 
+make api
+migrate -database ${POSTGRESQL_URL} -path db/migrations up 1
+cat README.md 
+export POSTGRESQL_URL='postgres://postgres:Asd..123@localhost:5432/pm_treasury?sslmode=disable'
+make api
+git checkout -b table_inplace_editor
+git status
+rm components/expanded_table_row*
+git status
+make api
+git status
+git add .
+git commit -m "WIP: Inplace editor in table"
+git push origin table_inplace_editor 
+make web
+conn2db 
+conn2db 
+dvpn
+cd g
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+journalctl -xeu docker.service
+reboot 
+yay
+make web
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+startlatestdb 
+make api
+git status
+cat README.md 
+export POSTGRESQL_URL='postgres://postgres:Asd..123@localhost:5432/pm_treasury?sslmode=disable'
+migrate create -ext sql -dir db/migrations -seq update_liquidity_calculations
+migrate -database ${POSTGRESQL_URL} -path db/migrations up 1
+migrate -database ${POSTGRESQL_URL} -path db/migrations down 1
+migrate -database ${POSTGRESQL_URL} -path db/migrations up 1
+migrate -database ${POSTGRESQL_URL} -path db/migrations down 1
+migrate -database ${POSTGRESQL_URL} -path db/migrations up 1
+migrate -database ${POSTGRESQL_URL} -path db/migrations down 1
+make api
+migrate -database ${POSTGRESQL_URL} -path db/migrations up 1
+make api
+git status
+git add .
+git commit -m "WIP: Fix liquidity calculations"
+git push origin t
+git push origin table_inplace_editor 
+vimsql 
+cat /home/vighd/.local/share/db_ui/pm_treasury/query
+docker container exec -it postgres sh
+cd go/src/gitlab.digital.co.hu/pm-treasury/
+vim
+vim
+git status
+git checkout development
+git checkout table_inplace_editor 
+git rebase -i development 
+git log --pretty=oneline 
+git rebase -i development 
+git push origin table_inplace_editor 
+git push -f origin table_inplace_editor 
+git log --pretty=oneline 
+make web
+make api
+git checkout development 
+git merge table_inplace_editor 
+git push origin development 
+git log --pretty=oneline 
+ssh root@172.104.151.151
+vim
+way-displays -s DISABLED 'InfoVision Optoelectronics (Kunshan) Co.,Ltd China 0x0536'
+pacman -Rsncu waylock tesseract tesseract-data-eng termshark radeontop remmina nitrogen 
+pacman -Qmq
+yay
+paacman -Rsncu python2-shibroken2
+pacman -Rsncu python2-shibroken2
+pacman -Rsncu python2
+cat /var/log/pacman.log 
+pacman -Rsncu $(pacman -Qdtq)
+pacman -Rsncu qt5
+pacman -Rsncu qt6
+pacman -Rsncu kdenlive 
+pacman -Syyu
+pacman -Syy
+pacman -Qe
+yay -Qe
+cd Dev/
+cd dotfiles/
+cat dots
+pacman -Rsncu woeusb

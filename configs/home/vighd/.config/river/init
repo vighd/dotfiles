@@ -20,7 +20,7 @@ riverctl map normal Alt+Shift   B                       spawn 'source $HOME/.con
 riverctl map normal Alt         I                       spawn 'source $HOME/.config/bemenu/config; pass-bemenu -p "PASSWORD"'
 riverctl map normal Alt         O                       spawn 'source $HOME/.config/bemenu/config; pass-bemenu --otp -p "OTP"'
 riverctl map normal Alt+Shift   Return                  spawn 'foot'
-riverctl map normal Alt+Shift   N                       spawn 'foot -e iwctl'
+riverctl map normal Alt+Shift   N                       spawn 'foot -e nmtui'
 riverctl map normal Alt+Shift   F                       spawn 'foot -e vifm'
 riverctl map normal Alt+Shift   S                       spawn 'foot -e pulsemixer'
 riverctl map normal Alt+Shift   W                       spawn 'chromium'
@@ -87,20 +87,19 @@ gsettings set org.gnome.desktop.interface       gtk-theme       "OneDarkCool"
 gsettings set org.gnome.desktop.interface       icon-theme      "Numix"
 gsettings set org.gnome.desktop.interface       cursor-theme    "X11-Default-Black"
 gsettings set org.gnome.desktop.interface       font-name       "Source Code Pro 10"
-gsettings set org.gnome.desktop.wm.preferences  button-layout   " "
+gsettings set org.gnome.desktop.wm.preferences  button-layout   ""
 
 #
 # Filters
 #
-# !!!float-filter will be deprecated in the future!!!
-#
-riverctl float-filter-add title "Open File"
-riverctl float-filter-add title "Save File"
-riverctl float-filter-add title "Save As"
-riverctl float-filter-add title "Open Folder"
-riverctl float-filter-add title "Open As"
-riverctl float-filter-add title "anydesk"
-riverctl float-filter-add title "AnyDesk"
+riverctl rule-add -title "Open File" float
+riverctl rule-add -title "Save File" float
+riverctl rule-add -title "Save As" float
+riverctl rule-add -title "Open Folder" float
+riverctl rule-add -title "Open As" float
+riverctl rule-add -title "anydesk" float
+riverctl rule-add -title "AnyDesk" float
+riverctl rule-add -title "World of Warcraft" float
 
 # Start layout generator(s)
 rivercarro -outer-gaps 0 -inner-gaps 0 &
