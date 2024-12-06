@@ -1,10 +1,9 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: Terminess Nerd Font;
-  min-height: 0;
+  font-family: Terminess Nerd Font Propo;
   font-size: 12px;
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
   transition: none; /* Disable predefined animations */
 }
 
@@ -103,4 +102,8 @@ label:focus {
 
 #custom-pacman {
   color: #89ddff;
+}
+
+#custom-cmus {
+  color: #f56042;
 }

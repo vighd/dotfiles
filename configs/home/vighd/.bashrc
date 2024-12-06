@@ -45,7 +45,7 @@ alias ip="ip -c"
 alias river="dbus-run-session river > .river.log 2>&1"
 alias r="dbus-run-session river > .river.log 2>&1"
 alias rivercfg="vim .config/river/init"
-
+alias conn2nas="ssh -p 2233 nas@192.168.50.2"
 ## Custom functions
 
 fd() { psql -AtU postgres -h localhost --port=5432 -d ecdms_production -c "SELECT form_data FROM forms WHERE display_id = '$1'"; }
@@ -122,7 +122,7 @@ fi
 
 export PATH="$HOME/.yarn/bin:$HOME/go/bin:$HOME/.local/bin:$PATH"
 
-#source /usr/share/nvm/init-nvm.sh
+source /usr/share/nvm/init-nvm.sh
 
 # pnpm
 case ":$PATH:" in

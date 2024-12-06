@@ -19,8 +19,7 @@ return {
         "lua_ls",
         "yamlls",
         "cssls",
-        "tsserver",
-        "sqls",
+        "ts_ls",
         "templ",
         "htmx",
         "html",
@@ -43,6 +42,11 @@ return {
             }
           }
         }
+      },
+      lspconfig.ts_ls.setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
+        filetypes = { "javascript", "javascriptreact", "typescriptreact", "typescript" },
       },
       lspconfig.lua_ls.setup {},
       lspconfig.yamlls.setup {

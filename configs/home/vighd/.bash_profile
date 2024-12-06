@@ -4,7 +4,7 @@
 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec dbus-run-session river > ~/.river.log 2>&1
-##  exec dbus-run-session river -no-xwayland > ~/.river.log 2>&1
+  #exec dbus-run-session river -no-xwayland > ~/.river.log 2>&1
 fi
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc

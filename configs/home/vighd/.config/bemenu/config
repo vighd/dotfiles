@@ -1,9 +1,9 @@
 #!/bin/bash
 
-bar_height=19
+bar_height=20
 horizontal_padding=7
 cursor_height=14
-font="Terminess Nerd Font 9"
+font="Terminess Nerd Font Propo 9"
 normbg="#242b38"
 normfg="#abb2bf"
 selbg="#4fa6ed"
