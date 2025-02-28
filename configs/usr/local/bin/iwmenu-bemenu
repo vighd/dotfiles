@@ -1,0 +1,3 @@
+#!/bin/bash
+
+source $HOME/.config/bemenu/config; iwmenu -s 2 -m custom --menu-command "bemenu -p '{prompt}'"

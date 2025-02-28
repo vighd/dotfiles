@@ -1,3 +1,7 @@
 [user]
 	email = vighd@digital.co.hu
 	name = Vígh Dániel
+[url "git@gitlab.digital.co.hu:"]
+	insteadOf = https://gitlab.digital.co.hu/
+[url "ssh://git@gitlab.digital.co.hu/"]
+	insteadOf = https://gitlab.digital.co.hu/

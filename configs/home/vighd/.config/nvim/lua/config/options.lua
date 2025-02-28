@@ -21,4 +21,5 @@ vim.opt.list = false
 vim.opt.swapfile = false
 vim.opt.cursorline = true
 vim.opt.hidden = true
-vim.filetype.add({ extension = { templ = "templ" } })
+vim.opt.laststatus = 3
+vim.filetype.add({ extension = { templ = "templ", tmpl = "html" } })

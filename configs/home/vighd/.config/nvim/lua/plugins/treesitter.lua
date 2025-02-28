@@ -3,12 +3,14 @@ return {
   config = function()
     require 'nvim-treesitter.configs'.setup {
       ensure_installed = {
+        "typescript",
         "javascript",
         "go",
         "lua",
         "vim",
         "yaml",
         "dockerfile",
+        "markdown",
         "cmake",
         "c",
         "bash",
@@ -17,7 +19,8 @@ return {
         "html",
         "tsx",
         "comment",
-        "templ"
+        "templ",
+        "astro",
       },
       highlight = {
         enable = true,

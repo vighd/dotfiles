@@ -19,12 +19,12 @@ return {
         "lua_ls",
         "yamlls",
         "cssls",
-        "tsserver",
-        "sqls",
+        "ts_ls",
         "templ",
         "htmx",
         "html",
         "emmet_language_server",
+        "eslint"
       },
     }
     require("mason-lspconfig").setup_handlers {
@@ -43,6 +43,31 @@ return {
             }
           }
         }
+      },
+      lspconfig.astro.setup{},
+      lspconfig.eslint.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+        on_attach = function(client, bufnr)
+          client.server_capabilities.documentFormattingProvider = true
+          if client.server_capabilities.documentFormattingProvider then
+            local au_lsp = vim.api.nvim_create_augroup("eslint_lsp", { clear = true })
+            vim.api.nvim_create_autocmd("BufWritePre", {
+              pattern = "*",
+              callback = function()
+                vim.lsp.buf.format({ async = true })
+              end,
+              group = au_lsp,
+            })
+          end
+        end,
+
+        filetypes = { "javascript", "javascriptreact" },
+      }),
+      lspconfig.ts_ls.setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
+        filetypes = { "javascript", "javascriptreact", "typescriptreact", "typescript" },
       },
       lspconfig.lua_ls.setup {},
       lspconfig.yamlls.setup {

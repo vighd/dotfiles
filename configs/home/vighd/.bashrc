@@ -7,7 +7,7 @@ shopt -s no_empty_cmd_completion                                        # No emp
 complete -cf sudo                                                       # Bash completion with sudo
 export EDITOR="vim"                                                     # Set default editor
 export TERM='xterm-256color'                                            # Set default term string
-export HISTSIZE=1000                                                    # bash history will save N commands
+export HISTSIZE=20000                                                   # bash history will save N commands
 export HISTFILESIZE=${HISTSIZE}                                         # bash will remember N commands
 export HISTCONTROL=ignoreboth                                           # ingore duplicates and spaces
 export HISTIGNORE='&:ls:exit:clear:history'                             # Ignore commands from history
@@ -22,6 +22,9 @@ export LESS_TERMCAP_se=$'\E[0m'                                         # end st
 export LESS_TERMCAP_so=$'\E[48;5;1m\E[38;5;15m'                         # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m'                                         # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m'                               # begin underline
+
+# AI API keys for avante.nvim
+
 alias ls='ls --color=auto'                                              # Autocoloring ls
 alias grep='grep --color=auto'                                          # Autocoloring grep
 alias dmesg="dmesg --color=always"                                      # Autolocoring dmesg
@@ -39,13 +42,10 @@ alias vim="nvim"
 alias vimsql="nvim +DBUIToggle"
 alias vimrc="cd $HOME/.config/nvim && nvim lua/config/options.lua"
 alias vimdiff="nvim -d"
-alias router="ssh skulltus@192.168.50.1"
 alias cat="bat --paging=never $@"
 alias ip="ip -c"
 alias river="dbus-run-session river > .river.log 2>&1"
-alias r="dbus-run-session river > .river.log 2>&1"
 alias rivercfg="vim .config/river/init"
-
 ## Custom functions
 
 fd() { psql -AtU postgres -h localhost --port=5432 -d ecdms_production -c "SELECT form_data FROM forms WHERE display_id = '$1'"; }
@@ -122,7 +122,7 @@ fi
 
 export PATH="$HOME/.yarn/bin:$HOME/go/bin:$HOME/.local/bin:$PATH"
 
-#source /usr/share/nvm/init-nvm.sh
+source /usr/share/nvm/init-nvm.sh
 
 # pnpm
 case ":$PATH:" in

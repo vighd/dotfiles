@@ -13,7 +13,15 @@ return {
 
     cmp.setup({
       preselect = cmp.PreselectMode.None,
-      completion = { completeopt = "menu,menuone,noselect" },
+      completion = {
+        completeopt = "menu,menuone,noselect",
+        keyword_length = 3,
+      },
+      matching = {
+        disallow_partial_matching = true,
+        disallow_fuzzy_matching = true,
+        disallow_prefix_unmatching = true,
+      },
       snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
@@ -39,7 +47,7 @@ return {
             },
           }
         },
-        { name = 'nvim_lsp' },
+        { name = 'nvim_lsp', keyword_length = 3 },
         { name = 'ultisnips' },
       }, {
         { name = 'buffer' },

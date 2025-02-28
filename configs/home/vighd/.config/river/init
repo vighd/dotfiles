@@ -20,7 +20,7 @@ riverctl map normal Alt+Shift   B                       spawn 'source $HOME/.con
 riverctl map normal Alt         I                       spawn 'source $HOME/.config/bemenu/config; pass-bemenu -p "PASSWORD"'
 riverctl map normal Alt         O                       spawn 'source $HOME/.config/bemenu/config; pass-bemenu --otp -p "OTP"'
 riverctl map normal Alt+Shift   Return                  spawn 'foot'
-riverctl map normal Alt+Shift   N                       spawn 'foot -e nmtui'
+riverctl map normal Alt+Shift   N                       spawn '/usr/local/bin/iwmenu-bemenu'
 riverctl map normal Alt+Shift   F                       spawn 'foot -e vifm'
 riverctl map normal Alt+Shift   S                       spawn 'foot -e pulsemixer'
 riverctl map normal Alt+Shift   W                       spawn 'chromium'
@@ -83,10 +83,14 @@ riverctl border-color-unfocused 0x3e4452
 riverctl border-width     1
 riverctl default-layout   rivercarro
 riverctl xcursor-theme    "X11-Default-Black"
-gsettings set org.gnome.desktop.interface       gtk-theme       "OneDarkCool"
-gsettings set org.gnome.desktop.interface       icon-theme      "Numix"
-gsettings set org.gnome.desktop.interface       cursor-theme    "X11-Default-Black"
-gsettings set org.gnome.desktop.interface       font-name       "Source Code Pro 10"
+gsettings set org.gnome.desktop.interface       gtk-theme           "OneDarkCool"
+gsettings set org.gnome.desktop.interface       icon-theme          "Numix"
+gsettings set org.gnome.desktop.interface       cursor-theme        "X11-Default-Black"
+gsettings set org.gnome.desktop.interface       document-font-name  "Ubuntu 11"
+gsettings set org.gnome.desktop.interface       font-name           "Ubuntu 11"
+gsettings set org.gnome.desktop.interface       monospace-font-name 'Ubuntu Mono 13'
+gsettings set org.gnome.desktop.interface       font-antialiasing   "grayscale"
+gsettings set org.gnome.desktop.interface       font-hinting        "slight"
 gsettings set org.gnome.desktop.wm.preferences  button-layout   ""
 
 #

@@ -1,11 +1,11 @@
 SCALING: off
 ORDER:
-    - 'InfoVision Optoelectronics (Kunshan) Co.,Ltd China 0x0536'
+    - 'Lenovo Group Limited 0x4094 (eDP-1)'
     - 'LG Electronics LG ULTRAWIDE 0x00002B55'
     - 'Acer Technologies EK240Y TJEEE0053W01'
 
 MODE:
-    - NAME_DESC: 'InfoVision Optoelectronics (Kunshan) Co.,Ltd China 0x0536'
+    - NAME_DESC: 'Lenovo Group Limited 0x4094 (eDP-1)'
       WIDTH: 1920
       HEIGHT: 1080
       HZ: 60

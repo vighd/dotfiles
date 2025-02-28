@@ -1,14 +1,9 @@
 anydesk-bin
-downgrade
-dxvk-bin
-geteltorito
-hdsentinel
-mailhog-bin
+iwmenu-git
 numix-gtk-theme-git
 numix-icon-theme-git
 nvm
 openvpn-update-systemd-resolved
-pam-gnupg
 postman-bin
 proton-ge-custom-bin
 rivercarro
@@ -17,7 +12,6 @@ swaylock-fprintd-git
 vifm-devicons-git
 way-displays
 wdisplays
-wlopm
 xerox-phaser-3020
 yay
 yay-debug

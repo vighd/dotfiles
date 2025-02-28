@@ -27,3 +27,4 @@
 /etc/pipewire
 /usr/local/bin/pass-bemenu
 /usr/local/bin/bemenu-bluetooth
+/usr/local/bin/iwmenu-bemenu

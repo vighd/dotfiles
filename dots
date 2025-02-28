@@ -36,7 +36,8 @@ function get() {
 
   # Removing sensitive data from bashrc
   [ -f "configs/home/$USER/.bashrc" ] && \
-    sed -i '/vighd/d' "configs/home/$USER/.bashrc"
+    sed -i '/"ssh/d' "configs/home/$USER/.bashrc" && \
+    sed -i '/API_KEY/d' "configs/home/$USER/.bashrc"
 
   # Copy sudoers
   sudo cp /etc/sudoers configs/etc/sudoers
@@ -74,7 +75,7 @@ Commands:
 Options:
   -h, --help                show this help
   -v, --version             show version and exit
-Author: Daniel Vigh, Digital KFT 2020
+Author: Daniel Vigh 2020
 EOF
 exit 0
 }

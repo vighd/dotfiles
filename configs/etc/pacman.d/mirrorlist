@@ -8,7 +8,6 @@
 # Retrieved:  2024-03-21 07:33:14 UTC
 # Last Check: 2024-03-21 07:31:40 UTC
 
-Server = https://ftp.ek-cer.hu/pub/mirrors/ftp.archlinux.org/$repo/os/$arch
 Server = http://archmirror.hbit.sztaki.hu/archlinux/$repo/os/$arch
 Server = http://nova.quantum-mirror.hu/mirrors/pub/archlinux/$repo/os/$arch
 Server = http://quantum-mirror.hu/mirrors/pub/archlinux/$repo/os/$arch
@@ -19,3 +18,4 @@ Server = https://super.quantum-mirror.hu/mirrors/pub/archlinux/$repo/os/$arch
 Server = rsync://nova.quantum-mirror.hu/archlinux/$repo/os/$arch
 Server = rsync://quantum-mirror.hu/archlinux/$repo/os/$arch
 Server = rsync://super.quantum-mirror.hu/archlinux/$repo/os/$arch
+Server = https://ftp.ek-cer.hu/pub/mirrors/ftp.archlinux.org/$repo/os/$arch
