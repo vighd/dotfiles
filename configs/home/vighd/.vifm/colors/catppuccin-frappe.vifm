@@ -32,10 +32,10 @@ highlight Win cterm=none ctermfg=253 ctermbg=none gui=none guifg=#c6d0f5 guibg=#
 highlight Directory cterm=bold ctermfg=111 ctermbg=none gui=bold guifg=#8caaee guibg=default
 
 " Selected items
-highlight Selected cterm=bold ctermfg=236 ctermbg=111 gui=bold guifg=#303446 guibg=#8caaee
+highlight Selected cterm=bold ctermfg=210 ctermbg=none gui=bold guifg=#303446 guibg=none
 
 " Current cursor position
-highlight CurrLine cterm=bold,reverse ctermfg=default ctermbg=default gui=bold,reverse guifg=default guibg=default
+highlight CurrLine cterm=bold,reverse ctermfg=default ctermbg=default gui=bold
 
 " Line at the top
 highlight TopLine cterm=none ctermfg=146 ctermbg=none gui=none guifg=#a5adce guibg=#292c3c
@@ -82,7 +82,6 @@ highlight /^.*\.(gitignore|gitconfig)$/ ctermfg=103 guifg=#737994
 
 " Other UI elements
 highlight OtherLine cterm=none ctermfg=default ctermbg=default gui=none guifg=default guibg=default
-highlight SuggestBox cterm=none ctermfg=253 ctermbg=236 gui=none guifg=#c6d0f5 guibg=#303446
 highlight CmpMismatch cterm=bold ctermfg=white ctermbg=210 gui=bold guifg=white guibg=#e78284
 highlight AuxWin cterm=none ctermfg=default ctermbg=default gui=none guifg=default guibg=default
 highlight TabLine cterm=none ctermfg=146 ctermbg=103 gui=none guifg=#a5adce guibg=#737994

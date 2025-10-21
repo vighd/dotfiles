@@ -30,6 +30,3 @@ vim.opt.lazyredraw = true -- Improve performance for macros and regex
 -- Window management
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-
--- Disable builtin syntax highlighting to use Treesitter
-vim.g.syntax_on = false
