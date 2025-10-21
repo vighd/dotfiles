@@ -121,19 +121,28 @@ startlatestdb() {
 [[ -f "$HOME/.dircolors_256" ]] && eval "$(dircolors -b "$HOME/.dircolors_256")"
 [[ -f /etc/profile.d/grc.sh ]] && source /etc/profile.d/grc.sh
 [[ -f "$HOME/.local/bin/mise" ]] && eval "$(~/.local/bin/mise activate bash)"
+[[ -f "/usr/share/nvm/init-nvm.sh" ]] && source "/usr/share/nvm/init-nvm.sh"
 
 # ============================================================================
 # Node Version Manager (Lazy Loading)
 # ============================================================================
-nvm() {
-  unset -f nvm node npm npx pnpm yarn
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/share/nvm/nvm.sh" ] && source "/usr/share/nvm/nvm.sh"
-  [ -s "/usr/share/nvm/bash_completion" ] && source "/usr/share/nvm/bash_completion"
-  nvm "$@"
-}
+#nvm() {
+#  unset -f nvm node npm npx pnpm yarn
+#  export NVM_DIR="$HOME/.nvm"
+#  [ -s "/usr/share/nvm/nvm.sh" ] && source "/usr/share/nvm/nvm.sh"
+#  [ -s "/usr/share/nvm/bash_completion" ] && source "/usr/share/nvm/bash_completion"
+#  nvm "$@"
+#}
 
 # ============================================================================
 # PATH Configuration
 # ============================================================================
 export PATH="$HOME/.yarn/bin:$HOME/go/bin:$HOME/.local/bin:$HOME/.local/share/pnpm/:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/vighd/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

@@ -6,6 +6,8 @@ vim.keymap.set('n', '<Tab>', ':bnext<CR>', { desc = 'Next tab', silent = true })
 
 -- Other useful keys
 vim.keymap.set('n', '<leader>h', '<cmd>nohlsearch<cr>', { desc = 'No Highlight' })
+-- Jump to the start of the line
+vim.keymap.set('n', '<C-a>', '^', { desc = 'Jump to start of line' })
 
 -- Window navigation
 vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Window left' })

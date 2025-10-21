@@ -27,7 +27,7 @@ return {
         },
       },
       mapping = cmp.mapping.preset.insert({
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<CR>'] = cmp.mapping.confirm({ select = false }),
         ['<C-j>'] = cmp.mapping.scroll_docs(4),
         ['<C-k>'] = cmp.mapping.scroll_docs(-4),
       }),
