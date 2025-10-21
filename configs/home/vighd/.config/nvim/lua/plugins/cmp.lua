@@ -19,8 +19,17 @@ return {
           luasnip.lsp_expand(args.body)
         end,
       },
+      window = {
+        -- Dokumentációs ablak konfigurálása (opcionális)
+        documentation = {
+          max_height = 15,
+          max_width = 60,
+        },
+      },
       mapping = cmp.mapping.preset.insert({
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<C-j>'] = cmp.mapping.scroll_docs(4),
+        ['<C-k>'] = cmp.mapping.scroll_docs(-4),
       }),
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
