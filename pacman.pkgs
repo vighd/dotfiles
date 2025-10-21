@@ -1,9 +1,7 @@
 7zip
-acpilight
 alsa-plugins
 alsa-utils
 amd-ucode
-amdvlk
 android-tools
 android-udev
 arch-install-scripts
@@ -19,6 +17,7 @@ bat
 bc
 bemenu
 bind
+binwalk
 bluez
 bluez-libs
 bluez-utils
@@ -44,10 +43,12 @@ dosfstools
 dunst
 ecryptfs-utils
 efibootmgr
+espeak-ng
 ethtool
 exfat-utils
 f2fs-tools
 faad2
+fastfetch
 foot
 fprintd
 freerdp
@@ -58,9 +59,8 @@ geoclue
 gimp
 git
 gnu-free-fonts
-gnu-netcat
 go
-gping
+gopls
 graphviz
 grc
 grim
@@ -87,7 +87,9 @@ lib32-alsa-plugins
 lib32-fontconfig
 lib32-gamemode
 lib32-giflib
+lib32-glu
 lib32-gnutls
+lib32-gtk2
 lib32-libglvnd
 lib32-libpulse
 lib32-libudev0-shim
@@ -99,7 +101,10 @@ lib32-mpg123
 lib32-ocl-icd
 lib32-openal
 lib32-openssl-1.1
+lib32-pipewire
+lib32-pipewire-jack
 lib32-procps-ng
+lib32-sdl12-compat
 lib32-v4l-utils
 lib32-vkd3d
 lib32-vulkan-icd-loader
@@ -115,7 +120,6 @@ libvdpau-va-gl
 libvoikko
 libvpx1.3
 linux-firmware
-linux-headers
 linux-zen
 linux-zen-headers
 llvm
@@ -135,16 +139,19 @@ mtd-utils
 nemo
 neovim
 net-tools
+nfs-utils
 nmap
 noto-fonts-emoji
 npm
 ntfs-3g
 nuspell
+nvm
 ocl-icd
 openal
 openssh
 openssl-1.1
 openvpn
+otf-monaspace-nerd
 pacman-contrib
 pacutils
 pass
@@ -194,7 +201,6 @@ tk
 tlp
 traceroute
 transmission-gtk
-tree-sitter-cli
 ttf-droid
 ttf-nerd-fonts-symbols
 ttf-terminus-nerd
@@ -205,6 +211,7 @@ unrar
 unzip
 upx
 usbutils
+uv
 vdpauinfo
 vi
 vifm
@@ -217,6 +224,7 @@ vulkan-validation-layers
 wavpack
 waybar
 wayland
+wayland-utils
 wev
 wf-recorder
 wget
@@ -231,6 +239,5 @@ wlr-randr
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
 xdg-user-dirs
-yarn
 ydotool
 zip

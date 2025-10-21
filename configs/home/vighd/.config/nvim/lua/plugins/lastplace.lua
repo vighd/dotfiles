@@ -1,6 +1,6 @@
+-- lastplace.lua - Remember last cursor position
+
 return {
   'ethanholz/nvim-lastplace',
-  config = function()
-    require 'nvim-lastplace'.setup {}
-  end
+  config = true, -- Use default configuration
 }

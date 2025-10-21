@@ -1,12 +1,31 @@
 #!/bin/bash
+bh=42                   # Height of the menu bar
+hp=10                   # Horizontal padding
+ch=20                   # Height of the cursor
+fn="MonaspiceRn NF 10"  # Font and size
+ab="#303446"            # Active background
+af="#c6d0f5"            # Active foreground
+fb="#303446"            # Focused background
+ff="#c6d0f5"            # Focused foreground
+hb="#8CAAEE"            # Highlighted background
+hf="#303446"            # Highlighted foreground
+nb="#303446"            # Normal background
+nf="#c6d0f5"            # Normal foreground
+tb="#303446"            # Title background
+tf="#e78284"            # Title foreground
 
-bar_height=20
-horizontal_padding=7
-cursor_height=14
-font="Terminess Nerd Font Propo 9"
-normbg="#242b38"
-normfg="#abb2bf"
-selbg="#4fa6ed"
-selfg="#242b38"
-
-export BEMENU_OPTS="-H $bar_height --fn '$font' --nb $normbg --fb $normbg --cb $normbg --ab $normbg --tb $normbg --nf $normfg --ff $normfg --cf $normfg --af $normfg --tf $normfg --hb $selbg --hf $selfg --hp $horizontal_padding"
+export BEMENU_OPTS="
+  -H $bh
+  --fn '$fn'
+  --ab $ab
+  --af $af
+  --fb $fb
+  --ff $ff
+  --hb $hb
+  --hf $hf
+  --nb $nb
+  --nf $nf
+  --tb $tb
+  --tf $tf
+  --hp $hp
+  --ch $ch"

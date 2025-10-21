@@ -24,8 +24,9 @@ riverctl map normal Alt+Shift   N                       spawn '/usr/local/bin/iw
 riverctl map normal Alt+Shift   F                       spawn 'foot -e vifm'
 riverctl map normal Alt+Shift   S                       spawn 'foot -e pulsemixer'
 riverctl map normal Alt+Shift   W                       spawn 'chromium'
-riverctl map normal Super       L                       spawn 'swaylock -p -c 000000'
+riverctl map normal Super       L                       spawn 'swaylock -p -C ~/.config/swaylock/frappe.conf --font "MonaspiceRn NF" --font-size 13'
 riverctl map normal Super       G                       spawn 'grep performance /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor > /dev/null && sudo tlp bat || sudo tlp ac'
+riverctl map normal Super       P                       spawn 'way-displays -d DISABLED "eDP-1" | grep -o "No config changes" && way-displays -s DISABLED "eDP-1"'
 riverctl map normal None        Print                   spawn 'grim -g "$(slurp)"'
 riverctl map normal None        XF86AudioMute           spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'
 riverctl map normal None        XF86AudioLowerVolume    spawn 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- -l 1.2'
@@ -73,9 +74,9 @@ riverctl map-pointer normal Alt+Shift   BTN_MIDDLE send-to-output next
 #
 # Colors
 #
-riverctl background-color       0x242b38
-riverctl border-color-focused   0x425b80
-riverctl border-color-unfocused 0x3e4452
+riverctl background-color       0x303446
+riverctl border-color-focused   0x8caaee
+riverctl border-color-unfocused 0x414559
 
 #
 # Ui
@@ -83,9 +84,9 @@ riverctl border-color-unfocused 0x3e4452
 riverctl border-width     1
 riverctl default-layout   rivercarro
 riverctl xcursor-theme    "X11-Default-Black"
-gsettings set org.gnome.desktop.interface       gtk-theme           "OneDarkCool"
-gsettings set org.gnome.desktop.interface       icon-theme          "Numix"
-gsettings set org.gnome.desktop.interface       cursor-theme        "X11-Default-Black"
+gsettings set org.gnome.desktop.interface       gtk-theme           "catppuccin-frappe-blue-standard+default"
+gsettings set org.gnome.desktop.interface       icon-theme          "Tela-circle-Dark"
+gsettings set org.gnome.desktop.interface       cursor-theme        "Frappé-cursors"
 gsettings set org.gnome.desktop.interface       document-font-name  "Ubuntu 11"
 gsettings set org.gnome.desktop.interface       font-name           "Ubuntu 11"
 gsettings set org.gnome.desktop.interface       monospace-font-name 'Ubuntu Mono 13'
@@ -104,6 +105,8 @@ riverctl rule-add -title "Open As" float
 riverctl rule-add -title "anydesk" float
 riverctl rule-add -title "AnyDesk" float
 riverctl rule-add -title "World of Warcraft" float
+riverctl rule-add -title "Libre Office*" float
+riverctl rule-add -title "Text Import*" float
 
 # Start layout generator(s)
 rivercarro -outer-gaps 0 -inner-gaps 0 &
@@ -116,7 +119,7 @@ way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1 &
 
 # Ilde manager
 sway-audio-idle-inhibit &
-swayidle -w timeout 600 'swaylock -p -c 000000' &
+swayidle -w timeout 600 'swaylock -p -C ~/.config/swaylock/frappe.conf --font "MonaspiceRn NF" --font-size 13' &
 
 # Set wallpaper
 swaybg -i /home/vighd/Pictures/wp.png &
@@ -126,6 +129,11 @@ systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP PATH
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
 /usr/lib/xdg-desktop-portal-gtk &
 /usr/lib/xdg-desktop-portal-wlr &
+
+# Add support to clipboard for Xwayland
+wl-paste -t text -w xclip -selection clipboard &
+
+nekemerrenincsidom -deviceName "RAPOO Rapoo 2.4G Wireless Device Consumer Control" -mp3 /home/vighd/Documents/nekem_erre_nincs_idom.mp3,/home/vighd/Documents/mindig_egyutt.mp3,/home/vighd/Documents/dadadada.mp3,/home/vighd/Documents/baszkiah.mp3 &
 
 # Mount daemon
 udiskie -q &

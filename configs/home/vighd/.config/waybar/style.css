@@ -1,109 +1,115 @@
+@import "catppuccin-frappe.css";
+
 * {
-  /* `otf-font-awesome` is required to be installed for icons */
-  font-family: Terminess Nerd Font Propo;
-  font-size: 12px;
+  font-family: MonaspiceRn NF;
+  font-size: 13px;
   padding: 0px;
   margin: 0px;
-  transition: none; /* Disable predefined animations */
+  transition: none;
+  font-weight: bold;
 }
 
 window#waybar {
-  background-color: #242b38;
-  color: #ABB2BF;
+  background-color: @base;
+  color: @text;
+  border-radius: 0px;
+  margin: 4px;
 }
 
-#workspaces button:hover {
-  border-color: transparent;
-  background: transparent;
+/* Tags styling with focus and occupied indicators */
+#tags {
+  margin-left: 10px;
+  padding: 3px 6px;
+  background-color: @surface0;
+  border-radius: 12px;
+  margin: 5px;
 }
 
-/* Sway */
-#workspaces button {
-  color: #ABB2BF;
-  border: none;
-}
-
-#workspaces button.focused {
-  background-color: #62AEEF;
-  color: #242b38;
-}
-
-#workspaces button.urgent {
-  color: #eb4d4b;
-}
-
-/* River */
 #tags button {
-  color: #ABB2BF;
   border: none;
+  min-width: 22px;
+  min-height: 22px;
+  padding: 0px 5px;
+  margin: 2px;
+  background-color: transparent;
+  color: @overlay0;
 }
 
+/* Active tag styling */
 #tags button.focused {
-  background-color: #62AEEF;
-  color: #242b38;
+  background-color: @rosewater;
+  border-radius: 12px;
 }
 
+/* Occupied tag styling */
 #tags button.occupied {
-  box-shadow: inset 0 -2px #bf68d9;
+  color: @mauve;
 }
 
 #tags button.urgent {
-  box-shadow: inset 0 -2px #eb4d4b;
+  color: @red;
 }
 
-#window, #layout {
-  color: #bf68d9;
+#window {
+  color: @text;
+  padding: 0px 10px;
+  margin: 5px;
+  background-color: @surface0;
+  border-radius: 12px;
 }
 
-#mode {
-  color: #eb4d4b;
-}
-
+/* Center clock module */
 #clock {
-  color: #55B6C2;
-  margin-right: 3px;
+  color: @base;
+  padding: 0px 15px;
+  margin: 5px;
+  background-color: @blue;
+  border-radius: 12px;
 }
 
-#battery, #custom-governor {
-  color: #C678DD;
-}
-
-label:focus {
-  background-color: #000000;
-}
-
-#cpu {
-  color: #98C379;
-}
-
-#memory {
-  color: #E5C07A;
-}
-
-#disk {
-  color: #FE8019;
-}
-
-#network, #custom-vpn, #custom-latency {
-  color: #F9266A;
-}
-
+/* Metrics styling */
+#custom-pacman,
+#cpu,
+#memory,
+#temperature,
+#battery,
+#custom-governor,
+#network,
+#custom-latency,
+#disk,
 #pulseaudio {
-  color: #B8BB26;
+  background-color: @surface0;
+  padding: 0px 5px;
 }
 
-#wireplumber {
-  color: #B8BB26;
-}
-
-#temperature {
-  color: #62AEEF;
-}
-
+/* First module in metrics */
 #custom-pacman {
-  color: #89ddff;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  margin: 5px 0px 5px 5px;
+  padding-left: 10px;
 }
 
-#custom-cmus {
-  color: #f56042;
+/* Last module in metrics */
+#pulseaudio {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  margin: 5px 5px 5px 0px;
+  padding-right: 10px;
 }
+
+/* Middle modules in metrics */
+#cpu, #memory, #temperature, #battery, #custom-governor, #custom-latency, #network, #disk {
+  margin: 5px 0px;
+}
+
+/* Color the text for each module */
+#custom-pacman { color: @lavender; }
+#cpu { color: @green; }
+#memory { color: @yellow; }
+#temperature { color: @teal; }
+#battery { color: @mauve; }
+#custom-governor { color: @mauve; }
+#network, #custom-latency { color: @red; }
+#disk { color: @peach; }
+#pulseaudio { color: @text; }

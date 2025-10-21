@@ -1,3 +1,4 @@
+source ~/.catppuccin-frappe-prompt.sh
 shopt -s cdspell                                                        # Correct cd typos
 shopt -s checkwinsize                                                   # Update windows size on command
 shopt -s histappend                                                     # Append History instead of overwriting file
@@ -23,18 +24,16 @@ export LESS_TERMCAP_so=$'\E[48;5;1m\E[38;5;15m'                         # begin 
 export LESS_TERMCAP_ue=$'\E[0m'                                         # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m'                               # begin underline
 
-# AI API keys for avante.nvim
-
 alias ls='ls --color=auto'                                              # Autocoloring ls
 alias grep='grep --color=auto'                                          # Autocoloring grep
 alias dmesg="dmesg --color=always"                                      # Autolocoring dmesg
 alias jq="jq -C"                                                        # Autocoloring jq
-alias src="cd $HOME/Digital/ecdms/src"
+alias src="cd $HOME/Digital/src"
 alias dumps="cd $HOME/Digital/ecdms/dumps"
 alias startcups="sudo systemctl start org.cups.cupsd.service"
 alias pacman="sudo pacman $@"
 alias rm="rm -I"
-alias dvpn="sudo openvpn ~/Digital/digital.ovpn"
+alias dvpn="sudo openvpn ~/Digital/vpn/digital.ovpn"
 alias fonts="fc-list : family | sort"
 alias scanhosts="sudo arp-scan --interface=wlan0 --localnet"
 alias dblogs="docker container logs postgres"
@@ -83,50 +82,17 @@ dropddb() {
 }
 
 [[ -f "$HOME/.dircolors_256" ]] && eval "$(dircolors -b "$HOME/.dircolors_256")"
-
-B='\[\e[1;38;5;33m\]'
-LB='\[\e[1;38;5;81m\]'
-GY='\[\e[1;38;5;242m\]'
-P='\[\e[1;38;5;161m\]'
-Y='\[\e[1;38;5;214m\]'
-W='\[\e[0m\]'
-
 [[ -f /etc/profile.d/grc.sh ]] && source /etc/profile.d/grc.sh
-
-osc7_cwd() {
-    local strlen=${#PWD}
-    local encoded=""
-    local pos c o
-    for (( pos=0; pos<strlen; pos++ )); do
-        c=${PWD:$pos:1}
-        case "$c" in
-            [-/:_.!\'\(\)~[:alnum:]] ) o="${c}" ;;
-            * ) printf -v o '%%%02X' "'${c}" ;;
-        esac
-        encoded+="${o}"
-    done
-    printf '\e]7;file://%s%s\e\\' "${HOSTNAME}" "${encoded}"
-}
-PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }osc7_cwd
-
-if [[ $PS1 && -f /usr/share/git/git-prompt.sh ]]; then
-  source /usr/share/git/completion/git-completion.bash
-  source /usr/share/git/git-prompt.sh
-  export GIT_PS1_SHOWDIRTYSTATE=1
-  export GIT_PS1_SHOWSTASHSTATE=1
-  export GIT_PS1_SHOWUNTRACKEDFILES=0
-  export PS1="$GY$Y\u$GY@$P\h$GY:$B\W\$(__git_ps1 \"$GY|$LB%s\")$GY$W "
-else
-  export PS1="$GY$Y\u$GY@$P\h$GY:$B\W$GY$W "
-fi
 
 export PATH="$HOME/.yarn/bin:$HOME/go/bin:$HOME/.local/bin:$PATH"
 
 source /usr/share/nvm/init-nvm.sh
 
 # pnpm
+export PNPM_HOME="/home/vighd/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+eval "$(~/.local/bin/mise activate bash)"

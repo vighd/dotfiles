@@ -1,25 +1,33 @@
--- Globals
-vim.g.mapleader = ","
+-- options.lua - Basic Neovim settings
 
--- Options
-vim.opt.completeopt = 'menu,menuone,noselect'
-vim.opt.guicursor = ''
-vim.opt.lazyredraw = true
-vim.opt.writebackup = false
-vim.opt.encoding = 'utf-8'
+-- Basic settings
+vim.g.mapleader = ','
+vim.g.maplocalleader = ','
+
+-- Appearance settings
+vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = 'yes'
-vim.opt.smartindent = true
-vim.opt.updatetime = 300
-vim.opt.shiftwidth = 2
+vim.opt.termguicolors = true
+vim.opt.guicursor = ""  -- Block cursor in all modes
+vim.opt.showtabline = 2 -- Always show tab line
+
+-- Editing settings
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 vim.opt.tabstop = 2
-vim.opt.showtabline = 1
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
-vim.opt.swapfile = true
-vim.opt.mouse = ''
-vim.opt.list = false
-vim.opt.swapfile = false
-vim.opt.cursorline = true
-vim.opt.hidden = true
-vim.opt.laststatus = 3
-vim.filetype.add({ extension = { templ = "templ", tmpl = "html" } })
+vim.opt.wrap = false
+vim.opt.breakindent = true
+vim.opt.clipboard = 'unnamedplus'
+
+-- Performance and response time
+vim.opt.updatetime = 250
+
+-- Window management
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
+-- Disable builtin syntax highlighting to use Treesitter
+vim.g.syntax_on = false

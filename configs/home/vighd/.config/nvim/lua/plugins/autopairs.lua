@@ -1,6 +1,7 @@
+-- autopairs.lua - Automatic brackets
+
 return {
   'windwp/nvim-autopairs',
-  config = function()
-    require('nvim-autopairs').setup {}
-  end
+  event = "InsertEnter",
+  config = true, -- Use default configuration
 }

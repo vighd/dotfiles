@@ -1,12 +1,14 @@
 {
-  "height": 20, // Waybar height (to be removed for auto height)
-  "spacing": 8, // Gaps between modules (4px)
+  "height": 42,
+  "spacing": 0,
   "modules-left": [
     "river/tags",
     "river/window"
   ],
+  "modules-center": [
+    "clock"
+  ],
   "modules-right": [
-    "custom/cmus",
     "custom/pacman",
     "cpu",
     "memory",
@@ -15,65 +17,78 @@
     "custom/governor",
     "network",
     "custom/latency",
-    "custom/vpn",
     "disk",
-    "pulseaudio",
-    "clock"
+    "pulseaudio"
   ],
   "river/window": {
-    "max-length": 70
+    "max-length": 30,
+    "format": "{}"
   },
   "river/tags": {
-    "num-tags": 6
+    "num-tags": 6,
+    "tag-labels": ["●", "●", "●", "●", "●", "●"]
   },
   "clock": {
     "timezone": "Europe/Budapest",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "󱑏 {:%a %d %b %H:%M}"
+    "calendar": {
+      "format": {
+        "today": "<span color='#8caaee'><b>{}</b></span>"
+      }
+    },
+    "format": "󱑏 {:%H:%M %b %d}",
+    "format-alt": "󱑏 {:%Y-%m-%d}"
   },
   "cpu": {
     "interval": 5,
-    "format": "󰻠 {usage}%",
+    "format": " {usage}%",
     "tooltip": true
   },
   "custom/governor": {
     "format": "{}",
-    "exec": "grep -q performance /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor && echo '󰓅' || echo '󰾆'",
+    "exec": "grep -q performance /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor && echo '󰓅 Performance' || echo '󰾆 Powersave'",
     "interval": 5
   },
   "memory": {
     "interval": 5,
-    "format": " {used:.1f}Gi/{total:.1f}Gi"
+    "format": " {used:0.1f}G"
   },
   "temperature": {
+    "interval": 5,
     "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 80,
-    "format": " {temperatureC}°C"
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": [ "" ]
   },
   "battery": {
     "interval": 5,
     "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
+    "format-charging": "{icon} {capacity}%",
+    "format-plugged": "{icon} {capacity}%",
     "format-icons": [
       "󰂎",
-      "󰁺",
       "󰁻",
-      "󰁼",
       "󰁽",
-      "󰁾",
-      "󰁿",
       "󰂀",
-      "󰂁",
-      "󰂂",
       "󰁹"
-    ]
+    ],
+    "states": {
+      "warning": 30,
+      "critical": 15
+    }
   },
   "network": {
-    "format-wifi": " {essid} ({signalStrength}%) {ipaddr}",
-    "format-ethernet": " {ipaddr}",
-    "tooltip-format": "{ifname} via {gwaddr}",
-    "format-disconnected": " NO CONNECTION"
+    "format-wifi": "{icon} {essid}",
+    "format-ethernet": "󰈀 {ipaddr}",
+    "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+    "format-disconnected": "Offline",
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ]
   },
   "custom/latency": {
     "format": "- {}",
@@ -82,44 +97,27 @@
   },
   "disk": {
     "interval": 30,
-    "format": " {free}",
+    "format": " {free}",
     "path": "/"
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-muted": "󰖁 OFF",
-    "format-bluetooth": " {desc} {volume}%",
-    "format-bluetooth-muted": " {desc} OFF",
+    "format-muted": "󰖁 Muted",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "format-icons": {
       "default": [
-        "",
-        "",
-        ""
+        "󰕿",
+        "󰖀",
+        "󰕾"
       ]
     }
   },
   "custom/pacman": {
-    "format": " {}",
+    "format": "󰚰 {}",
     "interval": 3600,
-    "exec": "checkupdates | wc -l", // # of updates
-    "exec-if": "exit 0", // always run; consider advanced run conditions
+    "exec": "checkupdates | wc -l",
+    "exec-if": "exit 0",
     "on-click": "checkupdates | wc -l",
     "signal": 8
-  },
-  "custom/vpn": {
-    "format": " VPN",
-    "exec": "echo '{\"class\": \"connected\"}'",
-    "exec-if": "test -d /proc/sys/net/ipv4/conf/tun0",
-    "return-type": "json",
-    "interval": 5
-  },
-  "custom/cmus": {
-	  "format": " {}",
-	  //"max-length": 15,
-	  "interval": 10,
-	  "exec": "cmus-remote -C \"format_print '%a - %t'\"", // artist - title
-	  "exec-if": "pgrep cmus",
-	  "on-click": "cmus-remote -u",                        //toggle pause
-	  "escape": true                                       //handle markup entities
   }
 }

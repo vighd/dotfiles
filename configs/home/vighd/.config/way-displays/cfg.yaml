@@ -1,21 +1,26 @@
 SCALING: off
 ORDER:
     - 'Lenovo Group Limited 0x4094 (eDP-1)'
-    - 'LG Electronics LG ULTRAWIDE 0x00002B55'
-    - 'Acer Technologies EK240Y TJEEE0053W01'
+    - 'Acer Technologies EK240Y TJEEE0053W01 (HDMI-A-1)'
 
 MODE:
     - NAME_DESC: 'Lenovo Group Limited 0x4094 (eDP-1)'
       WIDTH: 1920
       HEIGHT: 1080
       HZ: 60
+      SCALE: 2
     - NAME_DESC: 'LG Electronics LG ULTRAWIDE 0x00002B55'
       WIDTH: 2560
       HEIGHT: 1080
-    - NAME_DESC: 'Acer Technologies EK240Y TJEEE0053W01'
+    - NAME_DESC: 'Acer Technologies EK240Y TJEEE0053W01 (HDMI-A-1)'
       WIDTH: 1920
       HEIGHT: 1080
       HZ: 75
+ARRAGE_ALIGN: row left
+
+VRR_OFF:
+  - eDP-1
+  - HDMI-A-1
 
 # One of: ERROR, WARNING, INFO (default), DEBUG
 LOG_THRESHOLD: INFO
