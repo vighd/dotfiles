@@ -1,5 +1,8 @@
 configs/home/vighd/.vifm/vifminfo.json
 configs/home/vighd/.vifm/vifminfo.json*
+configs/home/vighd/.vifm/session.vifm
+configs/home/vighd/.vifm/session.vifm*
+configs/home/vighd/.vifm/Trash/
 configs/home/vighd/.moc/softmixer
 configs/home/vighd/.moc/playlist.m3u
 configs/home/vighd/.moc/last_directory
