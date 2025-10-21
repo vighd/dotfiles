@@ -13,6 +13,10 @@ vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Window down' })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Window up' })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Window right' })
 
+-- Fast scrolling
+vim.keymap.set('n', '<C-j>', '5jzz', { desc = 'Move down 5 line' })
+vim.keymap.set('n', '<C-k>', '5kzz', { desc = 'Move up 5 line' })
+
 -- Diagnostic navigation
 vim.keymap.set('n', '<leader>p', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
 vim.keymap.set('n', '<leader>n', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })

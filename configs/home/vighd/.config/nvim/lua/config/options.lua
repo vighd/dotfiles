@@ -21,9 +21,11 @@ vim.opt.expandtab = true
 vim.opt.wrap = false
 vim.opt.breakindent = true
 vim.opt.clipboard = 'unnamedplus'
+vim.opt.mouse = ''
 
 -- Performance and response time
-vim.opt.updatetime = 250
+vim.opt.updatetime = 300  -- Faster completion
+vim.opt.lazyredraw = true -- Improve performance for macros and regex
 
 -- Window management
 vim.opt.splitright = true
