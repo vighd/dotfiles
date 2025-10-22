@@ -1,7 +1,12 @@
 #!/bin/bash
-bh=42                   # Height of the menu bar
+bh=10                   # Height of the menu bar
 hp=10                   # Horizontal padding
 ch=20                   # Height of the cursor
+list_items=20           # Number of list items to show
+width_factor=0.5        # Width factor relative to the screen width
+border_px=1             # Border size
+border_radius=10        # Border radius
+margin_px=40            # Margin size
 fn="MonaspiceRn NF 10"  # Font and size
 ab="#303446"            # Active background
 af="#c6d0f5"            # Active foreground
@@ -13,8 +18,22 @@ nb="#303446"            # Normal background
 nf="#c6d0f5"            # Normal foreground
 tb="#303446"            # Title background
 tf="#e78284"            # Title foreground
+bdr="#8CAAEE"           # Border color
+scb="#303446"           # Scrollbar background
+scf="#C6D0F5"           # Scrollbar foreground
 
 export BEMENU_OPTS="
+  --scrollbar always
+  --counter always
+  --list $list_items
+  --center
+  --no-cursor
+  --no-touch
+  --border $border_px
+  --border-radius $border_radius
+  --margin $margin_px
+  --width-factor $width_factor
+  --fixed-height
   -H $bh
   --fn '$fn'
   --ab $ab
@@ -28,4 +47,7 @@ export BEMENU_OPTS="
   --tb $tb
   --tf $tf
   --hp $hp
-  --ch $ch"
+  --ch $ch
+  --bdr $bdr
+  --scb $scb
+  --scf $scf"

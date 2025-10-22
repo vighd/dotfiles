@@ -54,6 +54,7 @@ freerdp
 fuse-zip
 fwupd
 gamemode
+gcr
 geoclue
 gimp
 git
@@ -155,7 +156,6 @@ pacman-contrib
 pacutils
 pass
 pass-otp
-pinentry-bemenu
 pipewire
 pipewire-alsa
 pipewire-jack
@@ -235,6 +235,7 @@ wireshark-cli
 wireshark-qt
 wl-clipboard
 wlr-randr
+wtype
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
 xdg-user-dirs
