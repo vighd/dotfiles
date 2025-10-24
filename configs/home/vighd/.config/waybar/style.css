@@ -10,19 +10,17 @@
 }
 
 window#waybar {
-  background-color: @base;
+  background-color: rgba(0, 0, 0, 0);
   color: @text;
-  border-radius: 0px;
-  margin: 4px;
 }
 
 /* Tags styling with focus and occupied indicators */
 #tags {
   margin-left: 10px;
-  padding: 3px 6px;
+  margin-top: 10px;
+  padding: 3px;
   background-color: @surface0;
   border-radius: 12px;
-  margin: 5px;
 }
 
 #tags button {
@@ -53,7 +51,8 @@ window#waybar {
 #window {
   color: @text;
   padding: 0px 10px;
-  margin: 5px;
+  margin-top: 10px;
+  margin-left: 10px;
   background-color: @surface0;
   border-radius: 12px;
 }
@@ -62,31 +61,32 @@ window#waybar {
 #clock {
   color: @base;
   padding: 0px 15px;
-  margin: 5px;
+  margin-top: 10px;
   background-color: @blue;
   border-radius: 12px;
 }
 
 /* Metrics styling */
-#custom-pacman,
-#cpu,
-#memory,
-#temperature,
 #battery,
+#cpu,
 #custom-governor,
-#network,
 #custom-latency,
+#custom-pacman,
+#custom-vpn,
 #disk,
-#pulseaudio {
+#memory,
+#network,
+#pulseaudio,
+#temperature {
   background-color: @surface0;
   padding: 0px 5px;
+  margin-top: 10px;
 }
 
 /* First module in metrics */
-#custom-pacman {
+#cpu {
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
-  margin: 5px 0px 5px 5px;
   padding-left: 10px;
 }
 
@@ -94,13 +94,8 @@ window#waybar {
 #pulseaudio {
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
-  margin: 5px 5px 5px 0px;
   padding-right: 10px;
-}
-
-/* Middle modules in metrics */
-#cpu, #memory, #temperature, #battery, #custom-governor, #custom-latency, #network, #disk {
-  margin: 5px 0px;
+  margin-right: 10px;
 }
 
 /* Color the text for each module */
@@ -110,6 +105,6 @@ window#waybar {
 #temperature { color: @teal; }
 #battery { color: @mauve; }
 #custom-governor { color: @mauve; }
-#network, #custom-latency { color: @red; }
+#network, #custom-latency, #custom-vpn { color: @red; }
 #disk { color: @peach; }
-#pulseaudio { color: @text; }
+#pulseaudio { color: @blue; }

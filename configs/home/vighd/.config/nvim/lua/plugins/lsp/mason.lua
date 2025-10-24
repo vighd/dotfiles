@@ -14,7 +14,7 @@ return {
     config = function()
       require('mason-lspconfig').setup({
         ensure_installed = {
-          'gopls', 'solargraph', 'lua_ls', 'templ', 'html',
+          'gopls', 'lua_ls', 'templ', 'html',
         },
       })
     end,

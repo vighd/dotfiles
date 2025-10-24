@@ -15,7 +15,27 @@ return {
       -- Filetypes and server configurations
       local servers = {
         gopls = { filetypes = { "go", "gomod", "gowork", "gotmpl" } },
-        solargraph = { filetypes = { "ruby" } },
+        solargraph = {
+          filetypes = { "ruby" },
+          settings = {
+            solargraph = {
+              diagnostics = true,
+              formatting = false,
+              useBundler = true,
+            }
+          },
+          init_options = {
+            enablePages = true,
+            completion = true,
+            diagnostic = true,
+            formatting = false,
+            folding = true,
+            hover = true,
+            references = true,
+            rename = true,
+            symbols = true,
+          }
+        },
         lua_ls = {
           filetypes = { "lua" },
           settings = {

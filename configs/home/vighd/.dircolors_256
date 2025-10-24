@@ -25,6 +25,7 @@ TERM terminator
 TERM tmux*
 TERM vt100
 TERM xterm*
+TERM foot
 
 # Catppuccin Frappé colors (256-color codes)
 # Base: #303446 (background)

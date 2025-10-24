@@ -11,6 +11,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.termguicolors = true
 vim.opt.guicursor = ""  -- Block cursor in all modes
 vim.opt.showtabline = 2 -- Always show tab line
+vim.opt.cursorline = true
 
 -- Editing settings
 vim.opt.ignorecase = true

@@ -50,8 +50,10 @@ riverctl map normal Alt         G         toggle-fullscreen
 riverctl map normal Alt         F         toggle-float
 riverctl map normal Alt         H         send-layout-cmd rivercarro "main-ratio -0.05"
 riverctl map normal Alt         L         send-layout-cmd rivercarro "main-ratio +0.05"
-riverctl map normal Alt         S         send-layout-cmd rivercarro "main-location left"
-riverctl map normal Alt         T         send-layout-cmd rivercarro "main-location bottom"
+riverctl map normal Alt         W         send-layout-cmd rivercarro "main-location top"
+riverctl map normal Alt         S         send-layout-cmd rivercarro "main-location bottom"
+riverctl map normal Alt         A         send-layout-cmd rivercarro "main-location left"
+riverctl map normal Alt         D         send-layout-cmd rivercarro "main-location right"
 riverctl map normal Alt         M         send-layout-cmd rivercarro "main-location monocle"
 riverctl map normal None        Caps_Lock None
 for i in $(seq 1 6)
@@ -75,7 +77,7 @@ riverctl map-pointer normal Alt+Shift   BTN_MIDDLE send-to-output next
 # Colors
 #
 riverctl background-color       0x303446
-riverctl border-color-focused   0x8caaee
+riverctl border-color-focused   0x546288
 riverctl border-color-unfocused 0x414559
 
 #
@@ -109,7 +111,7 @@ riverctl rule-add -title "Libre Office*" float
 riverctl rule-add -title "Text Import*" float
 
 # Start layout generator(s)
-rivercarro -outer-gaps 0 -inner-gaps 0 &
+rivercarro -outer-gaps 10 -inner-gaps 10 -no-smart-gaps &
 
 # Start Waybar
 waybar &
@@ -122,7 +124,7 @@ sway-audio-idle-inhibit &
 swayidle -w timeout 600 'swaylock -p -C ~/.config/swaylock/frappe.conf --font "MonaspiceRn NF" --font-size 13' &
 
 # Set wallpaper
-swaybg -i /home/vighd/Pictures/wp.png &
+swaybg -i /home/vighd/Pictures/wp2.jpg &
 
 # Fix interop
 systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP PATH

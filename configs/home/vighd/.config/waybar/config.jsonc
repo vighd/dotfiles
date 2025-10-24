@@ -9,14 +9,15 @@
     "clock"
   ],
   "modules-right": [
-    "custom/pacman",
     "cpu",
+    "custom/pacman",
     "memory",
     "temperature",
     "battery",
     "custom/governor",
     "network",
-    "custom/latency",
+//    "custom/latency",
+    "custom/vpn",
     "disk",
     "pulseaudio"
   ],
@@ -90,11 +91,12 @@
       "󰤨"
     ]
   },
-  "custom/latency": {
-    "format": "- {}",
-    "exec": "ping -c1 8.8.8.8 | grep -Po '(?<=time=)(\\d+\\.\\d+\\ ms)'",
-    "interval": 5
-  },
+//  "custom/latency": {
+//    "format": "- {}",
+//    "exec": "ping -c1 8.8.8.8 | grep -Po '(?<=time=)(\\d+\\.\\d+\\ ms)'",
+//    "interval": 5,
+//    "hide-empty-text": false
+//  },
   "disk": {
     "interval": 30,
     "format": " {free}",
@@ -103,6 +105,8 @@
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-muted": "󰖁 Muted",
+    "format-bluetooth": " {desc} {volume}%",
+    "format-bluetooth-muted": " {desc} Muted",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "format-icons": {
       "default": [
@@ -118,6 +122,14 @@
     "exec": "checkupdates | wc -l",
     "exec-if": "exit 0",
     "on-click": "checkupdates | wc -l",
-    "signal": 8
+    "signal": 8,
+    "hide-empty-text": false
+  },
+  "custom/vpn": {
+    "format": " VPN",
+    "exec": "echo '{\"class\": \"connected\"}'",
+    "exec-if": "test -d /proc/sys/net/ipv4/conf/tun0",
+    "return-type": "json",
+    "interval": 5
   }
 }
