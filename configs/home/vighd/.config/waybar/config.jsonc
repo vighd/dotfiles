@@ -93,8 +93,14 @@
   },
 //  "custom/latency": {
 //    "format": "- {}",
-//    "exec": "ping -c1 8.8.8.8 | grep -Po '(?<=time=)(\\d+\\.\\d+\\ ms)'",
+//    "exec": "",
 //    "interval": 5,
+//    "hide-empty-text": false
+//  },
+//  "custom/weather": {
+//    "format": "󰖐 {}",
+//    "exec": "curl -s wttr.in/Szeged?0TQndA | cut -c17- | head -3 | tr '\n' ' ' | tr -s ' '",
+//    "interval": 300,
 //    "hide-empty-text": false
 //  },
   "disk": {

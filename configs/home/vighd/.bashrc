@@ -14,6 +14,7 @@ shopt -s no_empty_cmd_completion   # Don't complete empty command lines
 complete -cf sudo                  # Enable completion for sudo
 export EDITOR=nvim
 export PAGER=bat
+export TERM=xterm-256color
 
 # ============================================================================
 # History Configuration

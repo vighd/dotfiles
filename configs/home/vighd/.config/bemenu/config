@@ -1,7 +1,7 @@
 #!/bin/bash
 bh=25                   # Height of the menu bar
 hp=10                   # Horizontal padding
-ch=20                   # Height of the cursor
+ch=15                   # Height of the cursor
 list_items=20           # Number of list items to show
 width_factor=0.5        # Width factor relative to the screen width
 border_px=1             # Border size
@@ -13,7 +13,7 @@ af="#c6d0f5"            # Active foreground
 fb="#303446"            # Focused background
 ff="#c6d0f5"            # Focused foreground
 hb="#546288"            # Highlighted background
-hf="#303446"            # Highlighted foreground
+hf="#c6d0f5"            # Highlighted foreground
 nb="#303446"            # Normal background
 nf="#c6d0f5"            # Normal foreground
 tb="#303446"            # Title background
