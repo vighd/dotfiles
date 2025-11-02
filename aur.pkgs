@@ -2,10 +2,14 @@ acpilight
 anydesk-bin
 catppuccin-gtk-theme-frappe
 downgrade
+gtk2
 iwmenu-git
+lib32-gtk2
+neovim-git
 openvpn-update-systemd-resolved
 postman-bin
-rivercarro
+quickemu-git
+rivercarro-git
 sway-audio-idle-inhibit-git
 swaylock-fprintd-git
 vifm-devicons-git

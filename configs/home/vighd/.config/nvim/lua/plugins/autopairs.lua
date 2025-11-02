@@ -1,7 +1,7 @@
--- autopairs.lua - Automatic brackets
+vim.pack.add({
+  "https://github.com/windwp/nvim-autopairs",
+  "https://github.com/windwp/nvim-ts-autotag"
+})
 
-return {
-  'windwp/nvim-autopairs',
-  event = "InsertEnter",
-  config = true, -- Use default configuration
-}
+require("nvim-autopairs").setup()
+require("nvim-ts-autotag").setup()

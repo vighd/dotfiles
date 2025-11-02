@@ -48,6 +48,8 @@ riverctl map normal Alt+Shift   Period    send-to-output next
 riverctl map normal Alt+Shift   Comma     send-to-output previous
 riverctl map normal Alt         G         toggle-fullscreen
 riverctl map normal Alt         F         toggle-float
+riverctl map normal Alt         E         send-layout-cmd rivercarro "main-count +1"
+riverctl map normal Alt         Q         send-layout-cmd rivercarro "main-count -1"
 riverctl map normal Alt         H         send-layout-cmd rivercarro "main-ratio -0.05"
 riverctl map normal Alt         L         send-layout-cmd rivercarro "main-ratio +0.05"
 riverctl map normal Alt         W         send-layout-cmd rivercarro "main-location top"
@@ -124,7 +126,7 @@ sway-audio-idle-inhibit &
 swayidle -w timeout 600 'swaylock -p -C ~/.config/swaylock/frappe.conf --font "MonaspiceRn NF" --font-size 13' &
 
 # Set wallpaper
-swaybg -i /home/vighd/Pictures/wp2.jpg &
+#swaybg -i /home/vighd/Pictures/wp2.jpg &
 
 # Fix interop
 systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP PATH

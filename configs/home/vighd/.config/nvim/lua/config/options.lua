@@ -9,9 +9,10 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = 'yes'
 vim.opt.termguicolors = true
-vim.opt.guicursor = ""  -- Block cursor in all modes
-vim.opt.showtabline = 2 -- Always show tab line
+vim.opt.guicursor = ""
+vim.opt.showtabline = 2
 vim.opt.cursorline = true
+vim.cmd.colorscheme "catppuccin-frappe"
 
 -- Editing settings
 vim.opt.ignorecase = true
@@ -23,11 +24,18 @@ vim.opt.wrap = false
 vim.opt.breakindent = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.mouse = ''
+vim.opt.completeopt = { 'menuone', 'noselect' }
 
 -- Performance and response time
-vim.opt.updatetime = 300  -- Faster completion
-vim.opt.lazyredraw = true -- Improve performance for macros and regex
+vim.opt.updatetime = 300
+vim.opt.lazyredraw = true
 
 -- Window management
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+
+-- Diagnostic settings
+vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config({
+  virtual_text = { current_line = true }
+})

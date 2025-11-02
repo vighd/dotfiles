@@ -31,6 +31,7 @@ cpio
 cpupower
 cups
 curlftpfs
+davfs2
 dbus-glib
 devtools
 dhclient
@@ -42,6 +43,7 @@ docker-compose
 dosfstools
 dunst
 ecryptfs-utils
+edk2-ovmf
 efibootmgr
 espeak-ng
 ethtool
@@ -64,8 +66,8 @@ gopls
 graphviz
 grc
 grim
-gtk2
 gtk4
+gvfs-dnssd
 gvfs-mtp
 hexedit
 hspell
@@ -89,7 +91,6 @@ lib32-gamemode
 lib32-giflib
 lib32-glu
 lib32-gnutls
-lib32-gtk2
 lib32-libglvnd
 lib32-libpulse
 lib32-libudev0-shim
@@ -119,12 +120,14 @@ libva-utils
 libvdpau-va-gl
 libvoikko
 libvpx1.3
+libxml2-legacy
 linux-firmware
 linux-zen
 linux-zen-headers
 llvm
 lostfiles
 lsof
+lua-language-server
 lzip
 maim
 mandoc
@@ -137,7 +140,6 @@ mpg123
 mpv
 mtd-utils
 nemo
-neovim
 net-tools
 nfs-utils
 nmap
@@ -169,6 +171,8 @@ pwgen
 python-capstone
 python-pip
 python-pynvim
+qemu-base
+qemu-desktop
 read-edid
 reflector
 remmina
@@ -185,6 +189,7 @@ shfmt
 sleuthkit
 slurp
 smbclient
+spice
 squashfs-tools
 sshfs
 strace
@@ -193,6 +198,7 @@ sudo
 swaks
 swaybg
 swayidle
+swtpm
 sysbench
 system-config-printer
 taglib
@@ -239,6 +245,7 @@ wtype
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
 xdg-user-dirs
+xorg-mkfontscale
 yarn
 ydotool
 zip

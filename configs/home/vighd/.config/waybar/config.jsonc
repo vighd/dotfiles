@@ -105,8 +105,9 @@
 //  },
   "disk": {
     "interval": 30,
-    "format": " {free}",
-    "path": "/"
+    "format": " {specific_free:0.0f}GB",
+    "path": "/",
+    "unit": "GB"
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",

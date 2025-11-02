@@ -1,8 +1,4 @@
--- telescope.lua - File finder
-
-return {
-  'nvim-telescope/telescope.nvim',
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-  }
-}
+vim.pack.add({
+  "https://github.com/nvim-telescope/telescope.nvim",
+  "https://github.com/nvim-lua/plenary.nvim",
+})

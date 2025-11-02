@@ -1,8 +1,4 @@
--- copilot.lua - GitHub Copilot
+vim.pack.add({ "https://github.com/github/copilot.vim" })
 
-return {
-  'github/copilot.vim',
-  config = function()
-    vim.g.copilot_no_tab_map = true
-  end,
-}
+-- Disable tab map
+vim.g.copilot_no_tab_map = true

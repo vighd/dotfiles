@@ -1,19 +1,20 @@
--- init.lua - Neovim v0.11.4 multi-file configuration main file
+-- Plugins
+require("plugins.catppuccin")
+require("plugins.treesitter")
+require("plugins.telescope")
+require("plugins.lualine")
+require("plugins.copilot")
+require("plugins.indent-blankline")
+require("plugins.gitsigns")
+require("plugins.dadbod")
+require("plugins.colorizer")
+require("plugins.autopairs")
 
--- Bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git", "clone", "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
+-- Base configs
+require("config.options")
+require("config.autocmds")
+require("config.keymaps")
+require("config.filetype")
 
--- Load plugins
-require('lazy').setup(require('plugins'))
-
--- Load basic settings
-require('config.options')
-require('config.keymaps')
-require('config.autocmds')
+-- LSP
+vim.lsp.enable({ "lua", "go", "ruby", "templ" })

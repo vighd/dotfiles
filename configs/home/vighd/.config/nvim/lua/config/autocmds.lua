@@ -1,22 +1,24 @@
 -- autocmds.lua - Automatic commands
 
--- Set colorscheme to catppuccin
-vim.cmd [[colorscheme catppuccin-frappe]]
+-- Enable built in autocompletion
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if client:supports_method('textDocument/completion') then
+      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+    end
+  end,
+})
 
--- Disable builtin syntax highlighting to use Treesitter
---vim.cmd [[syntax off]]
-
--- Show diagnostic popup on cursor hold
-vim.api.nvim_create_autocmd("CursorHold", {
-  callback = function()
-    local opts = {
-      focusable = false,
-      close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-      border = 'rounded',
-      source = 'always',
-      prefix = ' ',
-      scope = 'cursor',
-    }
-    vim.diagnostic.open_float(opts)
-  end
+-- Restore cursor to file position in previous editing session
+vim.api.nvim_create_autocmd("BufReadPost", {
+  callback = function(args)
+    local mark = vim.api.nvim_buf_get_mark(args.buf, '"')
+    local line_count = vim.api.nvim_buf_line_count(args.buf)
+    if mark[1] > 0 and mark[1] <= line_count then
+      vim.api.nvim_buf_call(args.buf, function()
+        vim.cmd('normal! g`"zz')
+      end)
+    end
+  end,
 })

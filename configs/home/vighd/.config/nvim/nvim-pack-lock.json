@@ -1,0 +1,69 @@
+{
+  "plugins": {
+    "copilot.vim": {
+      "rev": "da369d9",
+      "src": "https://github.com/github/copilot.vim"
+    },
+    "gitsigns.nvim": {
+      "rev": "20ad441",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
+    "indent-blankline.nvim": {
+      "rev": "005b560",
+      "src": "https://github.com/lukas-reineke/indent-blankline.nvim"
+    },
+    "lualine.nvim": {
+      "rev": "3946f01",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
+    },
+    "mini.pairs": {
+      "rev": "b9aada8",
+      "src": "https://github.com/nvim-mini/mini.pairs"
+    },
+    "nvim": {
+      "rev": "234fc04",
+      "src": "https://github.com/catppuccin/nvim"
+    },
+    "nvim-autopairs": {
+      "rev": "7a2c97c",
+      "src": "https://github.com/windwp/nvim-autopairs"
+    },
+    "nvim-colorizer.lua": {
+      "rev": "a065833",
+      "src": "https://github.com/norcalli/nvim-colorizer.lua"
+    },
+    "nvim-treesitter": {
+      "rev": "42fc28ba",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
+      "version": "'master'"
+    },
+    "nvim-ts-autotag": {
+      "rev": "c4ca798",
+      "src": "https://github.com/windwp/nvim-ts-autotag"
+    },
+    "nvim-web-devicons": {
+      "rev": "8dcb311",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "plenary.nvim": {
+      "rev": "b9fd522",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "telescope.nvim": {
+      "rev": "b4da76b",
+      "src": "https://github.com/nvim-telescope/telescope.nvim"
+    },
+    "vim-dadbod": {
+      "rev": "e95afed",
+      "src": "https://github.com/tpope/vim-dadbod"
+    },
+    "vim-dadbod-completion": {
+      "rev": "a8dac0b",
+      "src": "https://github.com/kristijanhusak/vim-dadbod-completion"
+    },
+    "vim-dadbod-ui": {
+      "rev": "236179f",
+      "src": "https://github.com/kristijanhusak/vim-dadbod-ui"
+    }
+  }
+}
