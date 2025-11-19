@@ -27,7 +27,6 @@ clang
 cloc
 cmake
 cmus
-code
 cpio
 cpupower
 cups
@@ -51,8 +50,6 @@ ethtool
 exfat-utils
 f2fs-tools
 faad2
-file-roller
-firefox
 foot
 fprintd
 freerdp
@@ -72,7 +69,6 @@ grim
 gtk4
 gvfs-dnssd
 gvfs-mtp
-helix
 hexedit
 hspell
 htop
@@ -249,5 +245,4 @@ xdg-user-dirs
 xorg-mkfontscale
 yarn
 ydotool
-zed
 zip
