@@ -12,7 +12,9 @@ vim.opt.termguicolors = true
 vim.opt.guicursor = ""
 vim.opt.showtabline = 2
 vim.opt.cursorline = true
-vim.cmd.colorscheme "catppuccin-frappe"
+vim.cmd "colorscheme catppuccin-frappe"
+vim.opt.list = true
+vim.opt.listchars = { tab = '│ ', leadmultispace = '│   ', trail = '·' }
 
 -- Editing settings
 vim.opt.ignorecase = true
@@ -24,10 +26,14 @@ vim.opt.wrap = false
 vim.opt.breakindent = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.mouse = ''
-vim.opt.completeopt = { 'menuone', 'noselect' }
+
+-- Enable completion with Ctrl-N and Ctrl-P
+vim.opt.complete:append({ 'o' })
+vim.opt.completeopt = 'menuone,noselect,popup'
 
 -- Performance and response time
 vim.opt.updatetime = 300
+vim.opt.timeoutlen = 500
 vim.opt.lazyredraw = true
 
 -- Window management
@@ -35,7 +41,4 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- Diagnostic settings
-vim.diagnostic.config({ virtual_text = true })
-vim.diagnostic.config({
-  virtual_text = { current_line = true }
-})
+vim.diagnostic.config({ virtual_text = { current_line = true } })

@@ -4,8 +4,6 @@
 vim.keymap.set('n', '<S-Tab>', ':bprev<CR>', { desc = 'Previous tab', silent = true })
 vim.keymap.set('n', '<Tab>', ':bnext<CR>', { desc = 'Next tab', silent = true })
 
--- Other useful keys
-vim.keymap.set('n', '<leader>h', '<cmd>nohlsearch<cr>', { desc = 'No Highlight' })
 -- Jump to the start of the line
 vim.keymap.set('n', '<C-a>', '^', { desc = 'Jump to start of line' })
 
@@ -26,6 +24,7 @@ vim.keymap.set('n', '<leader>n', vim.diagnostic.goto_next, { desc = 'Next diagno
 vim.keymap.set('n', '<leader>FF', '<cmd>Telescope git_status theme=ivy<cr>', { desc = 'Git files' })
 vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files theme=ivy<cr>', { desc = 'Find files' })
 vim.keymap.set('n', '<leader>rg', '<cmd>Telescope live_grep theme=ivy<cr>', { desc = 'Live grep' })
+vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags theme=ivy<cr>', { desc = 'Find in help' })
 
 -- LSP keybindings
 vim.keymap.set('n', '<F4>', function() vim.lsp.buf.format({ async = true }) end, { desc = 'Format file' })
@@ -35,3 +34,4 @@ vim.keymap.set('n', '<leader>db', ':DBUIToggle<CR>', { desc = 'Toggle DB UI' })
 
 -- Copilot keybindings
 vim.api.nvim_set_keymap('i', '<C-Enter>', 'copilot#Accept("<CR>")', { silent = true, expr = true })
+vim.api.nvim_set_keymap('i', '<C-L>', 'copilot#AcceptWord("<CR>")', { silent = true, expr = true })

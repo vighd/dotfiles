@@ -4,4 +4,7 @@ vim.filetype.add({
     templ = "templ",
     vifm = "vim",
   },
+  filename = {
+    ["docker-compose.yml"] = "yaml.docker-compose",
+  }
 })

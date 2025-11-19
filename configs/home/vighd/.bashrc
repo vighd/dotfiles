@@ -53,7 +53,7 @@ alias rm='rm -I'
 # ============================================================================
 alias src="cd $HOME/Digital/src"
 alias dumps="cd $HOME/Digital/ecdms/dumps"
-alias vimrc="cd $HOME/.config/nvim && nvim lua/config/options.lua"
+alias vimrc="cd $HOME/.config/nvim && nvim lua/core/options.lua"
 
 # ============================================================================
 # Aliases - Applications & Tools

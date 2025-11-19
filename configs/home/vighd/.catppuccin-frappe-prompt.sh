@@ -1,9 +1,5 @@
 #!/bin/bash
 # Catppuccin Frappé PS1 prompt with git support and OSC7 CWD support
-# Prints a blank line before every prompt EXCEPT the very first prompt after shell start.
-# Also avoids printing the blank line when using Ctrl+L (clear screen) because we
-# print the blank line from PROMPT_COMMAND (which is not run on Ctrl+L redraw).
-#
 # Install by sourcing this file from your ~/.bashrc (or paste its contents there).
 
 # Catppuccin Frappé colors
@@ -101,15 +97,13 @@ set_ps1() {
     # Time part
     local time_part="${FRAPPE_SURFACE2}[${FRAPPE_YELLOW}\t${FRAPPE_SURFACE2}]${RESET}"
 
-    # Build PS1 WITHOUT a leading newline. The wrapper PROMPT_COMMAND prints
-    # the blank line (except for the very first prompt).
+    # Build PS1
     PS1="${exit_status}${time_part} ${user_host} ${current_dir}${git_info}\n${prompt_char} "
 }
 
 # Install a PROMPT_COMMAND wrapper that:
 # - captures the previous command's exit code,
 # - preserves any existing PROMPT_COMMAND (runs it),
-# - prints one blank line before the prompt EXCEPT on the very first prompt,
 # - then calls set_ps1 with the captured exit code.
 if [[ $- == *i* ]]; then  # only for interactive shells
     if [[ -z "${__catppuccin_prompt_installed:-}" ]]; then
@@ -126,13 +120,6 @@ if [[ $- == *i* ]]; then  # only for interactive shells
             if [[ -n "${__catppuccin_saved:-}" ]]; then
                 # eval is used to execute the saved command string.
                 eval "${__catppuccin_saved}"
-            fi
-
-            # Print a blank line before the prompt except on the very first prompt
-            if [[ -n "${__catppuccin_first:-}" ]]; then
-                unset __catppuccin_first
-            else
-                printf '\n'
             fi
 
             # Now assemble PS1 using the saved exit code
