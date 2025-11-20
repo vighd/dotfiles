@@ -26,7 +26,6 @@
 /etc/pacman.d/mirrorlist
 /etc/sysctl.d/
 /etc/pipewire
-/etc/keyd/
 /usr/local/bin/pass-bemenu
 /usr/local/bin/bemenu-bluetooth
 /usr/local/bin/iwmenu-bemenu
