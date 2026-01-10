@@ -1,0 +1,4 @@
+configuration {
+  font: "MonaspiceRn NFM 10";
+}
+@theme "catppuccin-default"

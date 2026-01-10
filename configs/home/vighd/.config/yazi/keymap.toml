@@ -1,0 +1,9 @@
+[[mgr.prepend_keymap]]
+on   = [ "<C-d>" ] # Ctrl + d billentyűre fog indulni
+run  = '''shell 'ripdrag "$@" -x 2>/dev/null &' --confirm'''
+desc = "Drag and Drop (ripdrag)"
+
+[[mgr.prepend_keymap]]
+on   = [ "<esc>" ]
+run =  [ "escape --all", "unyank" ]
+desc = "Clears all selections"

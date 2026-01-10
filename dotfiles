@@ -5,13 +5,14 @@
 /home/vighd/.dircolors_256
 /home/vighd/.gitconfig
 /home/vighd/.inputrc
-/home/vighd/.vifm
 /home/vighd/.config/nvim
 /home/vighd/.config/waybar
 /home/vighd/.config/river
 /home/vighd/.config/way-displays
 /home/vighd/.config/foot
-/home/vighd/.config/bemenu
+/home/vighd/.config/yazi
+/home/vighd/.config/rofi
+/home/vighd/.config/rofi-pass
 /home/vighd/.config/swaylock
 /home/vighd/.icons/
 /home/vighd/.config/bat
@@ -26,7 +27,3 @@
 /etc/pacman.d/mirrorlist
 /etc/sysctl.d/
 /etc/pipewire
-/etc/keyd/
-/usr/local/bin/pass-bemenu
-/usr/local/bin/bemenu-bluetooth
-/usr/local/bin/iwmenu-bemenu

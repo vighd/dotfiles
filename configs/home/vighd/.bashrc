@@ -72,6 +72,34 @@ alias rivercfg="vim .config/river/init"
 # ============================================================================
 
 # ============================================================================
+# Aliases - Pacman aliases
+# ============================================================================
+alias listpkgs="pacman -Qet"
+
+# ============================================================================
+# Other functions
+# ============================================================================
+
+# List unrequired explicit packages with aligned descriptions and color
+explpkgs() {
+  pacman -Qeti | \
+  sed -n 's/^Name.*: //p;s/^Description.*: //p' | \
+  paste -d $'\t' - - | \
+  column -t -s $'\t' | \
+  sed "s/^\([^ ]*\)/\x1b[1;34m\1\x1b[0m/"
+}
+
+# Removes orphaned packages and explicitly installed optional dependencies
+cleanpkgs() {
+  pacman -Qdtq | xargs -r pacman -Rns
+  pacman -Sc --noconfirm
+  # Identify files not owned by any package (requires lostfiles from AUR)
+  if command -v lostfiles &> /dev/null; then
+    sudo lostfiles
+  fi
+}
+
+# ============================================================================
 # Database Functions
 # ============================================================================
 

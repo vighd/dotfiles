@@ -7,7 +7,12 @@ riverctl keyboard-layout          hu
 riverctl focus-follows-cursor     always
 riverctl set-repeat               45 300
 riverctl hide-cursor when-typing  enabled
-riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad events disabled
+#riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad events disabled
+riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad click-pointer-2-14-ETPS/2_Elantech_Touchpadmethod clickfinger
+riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad tap enabled
+riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad drag enabled
+riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad drag-lock enabled
+riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad disable-while-typing enabled
 riverctl input pointer-2-14-ETPS/2_Elantech_TrackPoint accel-profile none
 riverctl input pointer-2-14-ETPS/2_Elantech_TrackPoint pointer-accel -0.2
 
@@ -15,27 +20,27 @@ riverctl input pointer-2-14-ETPS/2_Elantech_TrackPoint pointer-accel -0.2
 # Key bindings
 #
 # Spawn things
-riverctl map normal Alt         P                       spawn 'source $HOME/.config/bemenu/config; bemenu-run -p "RUN"'
-riverctl map normal Alt+Shift   B                       spawn 'source $HOME/.config/bemenu/config; bemenu-bluetooth -p "BLUETOOTH"'
-riverctl map normal Alt         I                       spawn 'source $HOME/.config/bemenu/config; pass-bemenu -p "PASSWORD"'
-riverctl map normal Alt         O                       spawn 'source $HOME/.config/bemenu/config; pass-bemenu --otp -p "OTP"'
-riverctl map normal Alt+Shift   Return                  spawn 'foot'
-riverctl map normal Alt+Shift   N                       spawn '/usr/local/bin/iwmenu-bemenu'
-riverctl map normal Alt+Shift   F                       spawn 'foot -e vifm'
-riverctl map normal Alt+Shift   S                       spawn 'foot -e pulsemixer'
-riverctl map normal Alt+Shift   W                       spawn 'chromium'
-riverctl map normal Super       L                       spawn 'swaylock -p -C ~/.config/swaylock/frappe.conf --font "MonaspiceRn NF" --font-size 13'
-riverctl map normal Super       G                       spawn 'grep performance /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor > /dev/null && sudo tlp bat || sudo tlp ac'
-riverctl map normal Super       P                       spawn 'way-displays -d DISABLED "eDP-1" | grep -o "No config changes" && way-displays -s DISABLED "eDP-1"'
-riverctl map normal Super       M                       spawn 'wl-mirror eDP-1'
-riverctl map normal None        Print                   spawn 'grim -g "$(slurp)"'
+riverctl map normal Alt         P                       spawn 'rofi -show drun' # App launcher
+riverctl map normal Alt+Shift   B                       spawn 'rofi-bluetooth' # Bluetooth manager
+riverctl map normal Alt         I                       spawn 'rofi-pass' # Password manager
+riverctl map normal Alt+Shift   N                       spawn 'rofi -show "WIFI" -modi "WIFI:iwdrofimenu"' # Network manager
+riverctl map normal Alt+Shift   Return                  spawn 'foot' # Terminal
+riverctl map normal Alt+Shift   F                       spawn 'foot -e bash -ic yazi' # File manager
+riverctl map normal Alt+Shift   S                       spawn 'foot -e pulsemixer' # Audio mixer
+riverctl map normal Alt+Shift   W                       spawn 'chromium' # Web browser
+riverctl map normal Super       L                       spawn 'swaylock -p -C ~/.config/swaylock/frappe.conf --font "MonaspiceRn NF" --font-size 13' # Lock screen
+riverctl map normal Super       G                       spawn 'grep performance /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor > /dev/null && sudo tlp bat || sudo tlp ac' # Power profile toggle
+riverctl map normal Super       P                       spawn 'way-displays -d DISABLED "eDP-1" | grep -o "No config changes" && way-displays -s DISABLED "eDP-1"' # Disable/enable laptop screen
+riverctl map normal Alt+Shift   M                       spawn 'wl-mirror eDP-1' # Mirror laptop screen
+riverctl map normal None        Print                   spawn 'grim -g "$(slurp)"' # Screenshot
+riverctl map normal Super       Minus                   spawn 'dunstify "River keybindings" "$(grep "map normal" .config/river/init | grep "#" | grep -v "init" | awk '"'"'{match($0, /#\s*(.*)/, arr); print $4 "+" $5, "=>", arr[1]}'"'"' | sort)"'
+###### Laptop specific keys ######
 riverctl map normal None        XF86AudioMute           spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'
 riverctl map normal None        XF86AudioLowerVolume    spawn 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- -l 1.2'
 riverctl map normal None        XF86AudioRaiseVolume    spawn 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.2'
 riverctl map normal None        XF86AudioMicMute        spawn 'pactl set-source-mute @DEFAULT_SOURCE@ toggle'
 riverctl map normal None        XF86MonBrightnessDown   spawn 'brightnessctl set 5%-'
 riverctl map normal None        XF86MonBrightnessUp     spawn 'brightnessctl set 5%+'
-riverctl map normal None        XF86Display             spawn 'wlopm --toggle eDP-1'
 
 # Layout stuff
 riverctl map normal Alt+Shift   C         close
@@ -112,6 +117,7 @@ riverctl rule-add -title "AnyDesk" float
 riverctl rule-add -title "World of Warcraft" float
 riverctl rule-add -title "Libre Office*" float
 riverctl rule-add -title "Text Import*" float
+riverctl rule-add -title "Battle.net" float
 
 # Start layout generator(s)
 rivercarro -outer-gaps 10 -inner-gaps 10 -no-smart-gaps &

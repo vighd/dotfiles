@@ -1,0 +1,4 @@
+[mgr]
+mouse_events = []
+hovered = { bg = "#414559", bold = true }
+linemode = "size"
