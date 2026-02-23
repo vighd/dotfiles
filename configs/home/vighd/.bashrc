@@ -66,10 +66,8 @@ alias scanhosts="sudo arp-scan --interface=wlan0 --localnet"
 alias vimsql="nvim +DBUIToggle"
 alias river="dbus-run-session river > .river.log 2>&1"
 alias rivercfg="vim .config/river/init"
-
-# ============================================================================
-# Aliases - Connections
-# ============================================================================
+alias backupssh="pass insert -m Configs/ssh/config < ~/.ssh/config"
+alias restoressh="pass show Configs/ssh/config > ~/.ssh/config && chmod 0600 ~/.ssh/config"
 
 # ============================================================================
 # Aliases - Pacman aliases

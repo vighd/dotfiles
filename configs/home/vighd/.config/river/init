@@ -20,19 +20,19 @@ riverctl input pointer-2-14-ETPS/2_Elantech_TrackPoint pointer-accel -0.2
 # Key bindings
 #
 # Spawn things
-riverctl map normal Alt         P                       spawn 'rofi -show drun' # App launcher
+riverctl map normal Alt         P                       spawn 'rofi -show run' # App launcher
 riverctl map normal Alt+Shift   B                       spawn 'rofi-bluetooth' # Bluetooth manager
 riverctl map normal Alt         I                       spawn 'rofi-pass' # Password manager
 riverctl map normal Alt+Shift   N                       spawn 'rofi -show "WIFI" -modi "WIFI:iwdrofimenu"' # Network manager
 riverctl map normal Alt+Shift   Return                  spawn 'foot' # Terminal
-riverctl map normal Alt+Shift   F                       spawn 'foot -e bash -ic yazi' # File manager
+riverctl map normal Alt+Shift   F                       spawn 'foot -e yazi' # File manager
 riverctl map normal Alt+Shift   S                       spawn 'foot -e pulsemixer' # Audio mixer
 riverctl map normal Alt+Shift   W                       spawn 'chromium' # Web browser
 riverctl map normal Super       L                       spawn 'swaylock -p -C ~/.config/swaylock/frappe.conf --font "MonaspiceRn NF" --font-size 13' # Lock screen
 riverctl map normal Super       G                       spawn 'grep performance /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor > /dev/null && sudo tlp bat || sudo tlp ac' # Power profile toggle
 riverctl map normal Super       P                       spawn 'way-displays -d DISABLED "eDP-1" | grep -o "No config changes" && way-displays -s DISABLED "eDP-1"' # Disable/enable laptop screen
 riverctl map normal Alt+Shift   M                       spawn 'wl-mirror eDP-1' # Mirror laptop screen
-riverctl map normal None        Print                   spawn 'grim -g "$(slurp)"' # Screenshot
+riverctl map normal None        Print                   spawn 'grim -g "$(slurp)" - | tee "$HOME/Pictures/$(date +%Y-%m-%d_%H-%m-%S).png" | wl-copy -t image/png' # Screenshot
 riverctl map normal Super       Minus                   spawn 'dunstify "River keybindings" "$(grep "map normal" .config/river/init | grep "#" | grep -v "init" | awk '"'"'{match($0, /#\s*(.*)/, arr); print $4 "+" $5, "=>", arr[1]}'"'"' | sort)"'
 ###### Laptop specific keys ######
 riverctl map normal None        XF86AudioMute           spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'

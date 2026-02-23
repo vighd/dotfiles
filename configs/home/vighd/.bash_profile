@@ -8,7 +8,7 @@ export EDITOR="nvim"
 if [[ $- == *i* ]] && [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ] && [ -z "${SSH_CONNECTION}" ]; then
     # Ensure a Wayland session is not already running
     if [ -z "${WAYLAND_DISPLAY}" ]; then
-        exec dbus-run-session river -no-xwayland > ~/.river.log 2>&1
+        exec dbus-run-session river > ~/.river.log 2>&1
     fi
 fi
 

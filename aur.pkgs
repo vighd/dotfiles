@@ -1,4 +1,5 @@
 acpilight
+anydesk-bin
 catppuccin-gtk-theme-frappe
 debtap
 downgrade
@@ -6,8 +7,12 @@ dxvk-bin
 gtk2
 iwdrofimenu-git
 lib32-gtk2
+lib32-openssl-1.1
 libpng12
 lsfg-vk-bin
+mailhog
+openssl-1.1
+quickemu
 ripdrag
 rivercarro-git
 rofi-bluetooth-git
@@ -16,7 +21,6 @@ sway-audio-idle-inhibit-git
 swaylock-fprintd-git
 way-displays
 wchisp
-wdisplays
 xerox-phaser-3020
 yay
 yay-debug

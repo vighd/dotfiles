@@ -8,6 +8,7 @@ require("plugins.gitsigns")
 require("plugins.dadbod")
 require("plugins.colorizer")
 require("plugins.autopairs")
+require("plugins.render-markdown")
 
 -- Base configs
 require("core.options")
