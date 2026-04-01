@@ -1,4 +1,5 @@
 7zip
+adw-gtk-theme
 alsa-plugins
 alsa-utils
 amd-ucode
@@ -23,11 +24,9 @@ bluez-utils
 brightnessctl
 browserpass-chromium
 cfssl
-chromium
 clang
 cloc
 cmake
-cmus
 cpio
 cpupower
 cups
@@ -45,6 +44,7 @@ ecryptfs-utils
 edk2-ovmf
 efibootmgr
 espeak-ng
+esptool
 ethtool
 ex-vi-compat
 exfat-utils
@@ -161,6 +161,7 @@ pipewire-alsa
 pipewire-jack
 pipewire-pulse
 pkgfile
+platformio-core
 polkit
 postgresql-libs
 powertop
@@ -170,14 +171,13 @@ python-capstone
 python-pip
 python-pynvim
 python-pyusb
-qemu-base
 qmk
 read-edid
 reflector
 remmina
 resvg
 ripgrep
-river
+river-classic
 rofi
 rsync
 rust-musl
@@ -192,6 +192,7 @@ slurp
 smbclient
 squashfs-tools
 sshfs
+steam
 strace
 stress
 sudo
@@ -202,9 +203,12 @@ swtpm
 sysbench
 system-config-printer
 taglib
+tailscale
+termusic
 tk
 tlp
 traceroute
+translate-shell
 transmission-gtk
 ttf-dejavu
 ttf-droid
@@ -246,6 +250,7 @@ wtype
 xdg-desktop-portal-wlr
 xdg-user-dirs
 xorg-mkfontscale
+yarn
 yazi
 ydotool
 zbar

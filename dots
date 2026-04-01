@@ -36,7 +36,6 @@ function get() {
 
   # Removing sensitive data from bashrc
   [ -f "configs/home/$USER/.bashrc" ] && \
-    sed -i '/"ssh/d' "configs/home/$USER/.bashrc" && \
     sed -i '/API_KEY/d' "configs/home/$USER/.bashrc"
 
   # Copy sudoers

@@ -12,8 +12,8 @@ vim.keymap.set('n', '<C-j>', '5jzz', { desc = 'Move down 5 line' })
 vim.keymap.set('n', '<C-k>', '5kzz', { desc = 'Move up 5 line' })
 
 -- Diagnostic navigation
-vim.keymap.set('n', '<leader>p', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
-vim.keymap.set('n', '<leader>n', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
+vim.keymap.set('n', '<leader>p', function() vim.diagnostic.jump({ count = -1 }) end, { desc = 'Previous diagnostic' })
+vim.keymap.set('n', '<leader>n', function() vim.diagnostic.jump({ count = 1 }) end, { desc = 'Next diagnostic' })
 --grr in Normal mode maps to vim.lsp.buf.references()
 --gri in Normal mode maps to vim.lsp.buf.implementation()
 --gO in Normal mode maps to vim.lsp.buf.document_symbol() (this is analogous to the gO mappings in help buffers and :Man page buffers to show a “table of contents”)
@@ -33,5 +33,5 @@ vim.keymap.set('n', '<F4>', function() vim.lsp.buf.format({ async = true }) end,
 vim.keymap.set('n', '<leader>db', ':DBUIToggle<CR>', { desc = 'Toggle DB UI' })
 
 -- Copilot keybindings
-vim.api.nvim_set_keymap('i', '<C-Enter>', 'copilot#Accept("<CR>")', { silent = true, expr = true })
-vim.api.nvim_set_keymap('i', '<C-L>', 'copilot#AcceptWord("<CR>")', { silent = true, expr = true })
+vim.keymap.set('i', '<C-Enter>', 'copilot#Accept("<CR>")', { silent = true, expr = true, replace_keycodes = false, desc = 'Copilot accept' })
+vim.keymap.set('i', '<C-L>', 'copilot#AcceptWord("<CR>")', { silent = true, expr = true, replace_keycodes = false, desc = 'Copilot accept word' })

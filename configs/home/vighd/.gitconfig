@@ -6,4 +6,7 @@
 [url "ssh://git@gitlab.digital.co.hu/"]
 	insteadOf = https://gitlab.digital.co.hu/
 [merge]
-	tool = vimdiff
+	tool = nvim
+[mergetool "nvim"]
+	trustExitCode = true
+	cmd = 

@@ -28,7 +28,7 @@ riverctl map normal Alt+Shift   Return                  spawn 'foot' # Terminal
 riverctl map normal Alt+Shift   F                       spawn 'foot -e yazi' # File manager
 riverctl map normal Alt+Shift   S                       spawn 'foot -e pulsemixer' # Audio mixer
 riverctl map normal Alt+Shift   W                       spawn 'chromium' # Web browser
-riverctl map normal Super       L                       spawn 'swaylock -p -C ~/.config/swaylock/frappe.conf --font "MonaspiceRn NF" --font-size 13' # Lock screen
+riverctl map normal Super       L                       spawn 'swaylock -p -C ~/.config/swaylock/chclr.conf --font "MonaspiceRn NF" --font-size 13' # Lock screen
 riverctl map normal Super       G                       spawn 'grep performance /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor > /dev/null && sudo tlp bat || sudo tlp ac' # Power profile toggle
 riverctl map normal Super       P                       spawn 'way-displays -d DISABLED "eDP-1" | grep -o "No config changes" && way-displays -s DISABLED "eDP-1"' # Disable/enable laptop screen
 riverctl map normal Alt+Shift   M                       spawn 'wl-mirror eDP-1' # Mirror laptop screen
@@ -84,9 +84,9 @@ riverctl map-pointer normal Alt+Shift   BTN_MIDDLE send-to-output next
 #
 # Colors
 #
-riverctl background-color       0x303446
-riverctl border-color-focused   0x546288
-riverctl border-color-unfocused 0x414559
+riverctl background-color       0x282828
+riverctl border-color-focused   0xbdae93
+riverctl border-color-unfocused 0x504945
 
 #
 # Ui
@@ -94,7 +94,7 @@ riverctl border-color-unfocused 0x414559
 riverctl border-width     1
 riverctl default-layout   rivercarro
 riverctl xcursor-theme    "X11-Default-Black"
-gsettings set org.gnome.desktop.interface       gtk-theme           "catppuccin-frappe-blue-standard+default"
+gsettings set org.gnome.desktop.interface       gtk-theme           "adw-gtk3-dark"
 gsettings set org.gnome.desktop.interface       icon-theme          "Tela-circle-Dark"
 gsettings set org.gnome.desktop.interface       cursor-theme        "Frappé-cursors"
 gsettings set org.gnome.desktop.interface       document-font-name  "Ubuntu 11"
@@ -130,7 +130,7 @@ way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1 &
 
 # Ilde manager
 sway-audio-idle-inhibit &
-swayidle -w timeout 600 'swaylock -p -C ~/.config/swaylock/frappe.conf --font "MonaspiceRn NF" --font-size 13' &
+swayidle -w timeout 600 'swaylock -p -C ~/.config/swaylock/chclr.conf --font "MonaspiceRn NF" --font-size 13' &
 
 # Set wallpaper
 #swaybg -i /home/vighd/Pictures/wp2.jpg &

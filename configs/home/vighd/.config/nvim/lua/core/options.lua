@@ -9,10 +9,10 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = 'yes'
 vim.opt.termguicolors = true
-vim.opt.guicursor = ""
+vim.opt.guicursor = ''
 vim.opt.showtabline = 2
 vim.opt.cursorline = true
-vim.cmd "colorscheme catppuccin-frappe"
+vim.cmd "colorscheme gruvbox"
 vim.opt.list = true
 vim.opt.listchars = { tab = '│ ', leadmultispace = '│   ', trail = '·' }
 
@@ -29,7 +29,10 @@ vim.opt.mouse = ''
 
 -- Enable completion with Ctrl-N and Ctrl-P
 vim.opt.complete:append({ 'o' })
-vim.opt.completeopt = 'menuone,noselect,popup'
+vim.opt.completeopt = 'menuone,noselect,popup,nearest'
+vim.opt.pumborder = 'single'
+vim.opt.autocomplete = true
+vim.opt.winborder = 'single'
 
 -- Performance and response time
 vim.opt.updatetime = 300

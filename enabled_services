@@ -2,3 +2,4 @@ bluetooth.service
 iwd.service
 systemd-resolved.service
 systemd-timesyncd.service
+tailscaled.service

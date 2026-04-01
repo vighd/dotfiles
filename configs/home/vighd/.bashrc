@@ -68,6 +68,7 @@ alias river="dbus-run-session river > .river.log 2>&1"
 alias rivercfg="vim .config/river/init"
 alias backupssh="pass insert -m Configs/ssh/config < ~/.ssh/config"
 alias restoressh="pass show Configs/ssh/config > ~/.ssh/config && chmod 0600 ~/.ssh/config"
+alias vpn="sudo openvpn $1"
 
 # ============================================================================
 # Aliases - Pacman aliases
@@ -95,6 +96,12 @@ cleanpkgs() {
   if command -v lostfiles &> /dev/null; then
     sudo lostfiles
   fi
+}
+
+# Init nvm instead of the "factory" method, sourcing at start is slow as hell
+nvm() {
+  source /usr/share/nvm/init-nvm.sh
+  nvm $1
 }
 
 # ============================================================================
@@ -144,27 +151,10 @@ startlatestdb() {
 # ============================================================================
 # External Configuration Files
 # ============================================================================
-[[ -f "$HOME/.catppuccin-frappe-prompt.sh" ]] && source ~/.catppuccin-frappe-prompt.sh
+[[ -f "$HOME/.chclr-prompt.sh" ]] && source ~/.chclr-prompt.sh
 [[ -f "$HOME/.dircolors_256" ]] && eval "$(dircolors -b "$HOME/.dircolors_256")"
 [[ -f /etc/profile.d/grc.sh ]] && source /etc/profile.d/grc.sh
 [[ -f "$HOME/.local/bin/mise" ]] && eval "$(~/.local/bin/mise activate bash)"
-[[ -f "/usr/share/nvm/init-nvm.sh" ]] && source "/usr/share/nvm/init-nvm.sh"
-
-# ============================================================================
-# Node Version Manager (Lazy Loading)
-# ============================================================================
-#nvm() {
-#  unset -f nvm node npm npx pnpm yarn
-#  export NVM_DIR="$HOME/.nvm"
-#  [ -s "/usr/share/nvm/nvm.sh" ] && source "/usr/share/nvm/nvm.sh"
-#  [ -s "/usr/share/nvm/bash_completion" ] && source "/usr/share/nvm/bash_completion"
-#  nvm "$@"
-#}
-
-# ============================================================================
-# PATH Configuration
-# ============================================================================
-export PATH="$HOME/.yarn/bin:$HOME/go/bin:$HOME/.local/bin:$HOME/.local/share/pnpm/:$PATH"
 
 # pnpm
 export PNPM_HOME="/home/vighd/.local/share/pnpm"
@@ -173,3 +163,13 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+#
+# ============================================================================
+# SSH Configuration
+# ============================================================================
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+# ============================================================================
+# PATH Configuration
+# ============================================================================
+export PATH="$HOME/.yarn/bin:$HOME/go/bin:$HOME/.local/bin:$HOME/.local/share/pnpm/:$PATH"

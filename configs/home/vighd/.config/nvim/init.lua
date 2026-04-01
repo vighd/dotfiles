@@ -1,14 +1,15 @@
 -- Plugins
 require("plugins.lsp-config")
-require("plugins.catppuccin")
+--require("plugins.catppuccin")
+require("plugins.gruvbox")
 require("plugins.treesitter")
 require("plugins.telescope")
 require("plugins.lualine")
 require("plugins.gitsigns")
 require("plugins.dadbod")
-require("plugins.colorizer")
 require("plugins.autopairs")
 require("plugins.render-markdown")
+require("plugins.git-conflict")
 
 -- Base configs
 require("core.options")

@@ -1,5 +1,13 @@
 -- autocmds.lua - Automatic commands
 
+-- Disable inline autocomplete in Telescope
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "TelescopePrompt",
+  callback = function()
+    vim.bo.autocomplete = false
+  end,
+})
+
 -- Restore cursor to file position in previous editing session
 vim.api.nvim_create_autocmd("BufReadPost", {
   callback = function(args)
@@ -11,4 +19,16 @@ vim.api.nvim_create_autocmd("BufReadPost", {
       end)
     end
   end,
+})
+
+-- Allow git conflict recognition
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'GitConflictDetected',
+  callback = function()
+    vim.notify('Conflict detected in '..vim.fn.expand('<afile>'))
+    vim.keymap.set('n', 'cww', function()
+      engage.conflict_buster()
+      create_buffer_local_mappings()
+    end)
+  end
 })
