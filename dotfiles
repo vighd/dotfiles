@@ -15,10 +15,8 @@
 /home/vighd/.config/rofi-pass
 /home/vighd/.config/swaylock
 /home/vighd/.icons/
+/home/vighd/.chclr-prompt.sh
 /home/vighd/.config/bat
-/home/vighd/.gnupg/gpg-agent.conf
-/home/vighd/.catppuccin-frappe-prompt.sh
-/etc/tlp.conf
 /etc/iwd/main.conf
 /etc/makepkg.conf
 /etc/mkinitcpio.conf

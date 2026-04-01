@@ -2,13 +2,13 @@ SCALING: off
 AUTO_SCALE_MAX: 1.3
 
 ORDER:
-    - 'Lenovo Group Limited 0x4094 (eDP-1)'
+    - 'eDP-1'
     - 'Acer Technologies EK240Y TJEEE0053W01 (HDMI-A-1)'
 
 MODE:
-    - NAME_DESC: 'Lenovo Group Limited 0x4094 (eDP-1)'
+    - NAME_DESC: 'eDP-1'
       WIDTH: 1920
-      HEIGHT: 1080
+      HEIGHT: 1200
       HZ: 60
       SCALE: 2
     - NAME_DESC: 'LG Electronics LG ULTRAWIDE 0x00002B55'

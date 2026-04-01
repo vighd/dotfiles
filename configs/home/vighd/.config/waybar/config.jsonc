@@ -45,11 +45,6 @@
     "format": " {usage}%",
     "tooltip": true
   },
-  "custom/governor": {
-    "format": "{}",
-    "exec": "grep -q performance /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor && echo '󰓅 Performance' || echo '󰾆 Powersave'",
-    "interval": 5
-  },
   "memory": {
     "interval": 5,
     "format": " {percentage}%"
