@@ -2,6 +2,7 @@
 adw-gtk-theme
 alsa-plugins
 alsa-utils
+amd-debug-tools
 amd-ucode
 android-tools
 android-udev
@@ -52,6 +53,7 @@ fd
 foot
 freerdp
 fuse-zip
+fwupd
 gamemode
 gcr
 geoclue
@@ -159,11 +161,13 @@ pipewire-jack
 pipewire-pulse
 pkgfile
 polkit
+polkit-gnome
 postgresql-libs
 pulsemixer
 pwgen
 python-capstone
 python-pip
+python-pipx
 python-pynvim
 python-pyusb
 read-edid
@@ -185,6 +189,7 @@ slurp
 smbclient
 squashfs-tools
 sshfs
+steam
 strace
 stress
 sudo

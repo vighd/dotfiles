@@ -1,2 +1,3 @@
 cpupower.service
 iwd.service
+systemd-resolved.service

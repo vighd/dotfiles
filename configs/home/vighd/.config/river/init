@@ -7,14 +7,11 @@ riverctl keyboard-layout          hu
 riverctl focus-follows-cursor     always
 riverctl set-repeat               45 300
 riverctl hide-cursor when-typing  enabled
-#riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad events disabled
-riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad click-pointer-2-14-ETPS/2_Elantech_Touchpadmethod clickfinger
-riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad tap enabled
-riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad drag enabled
-riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad drag-lock enabled
-riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad disable-while-typing enabled
-riverctl input pointer-2-14-ETPS/2_Elantech_TrackPoint accel-profile none
-riverctl input pointer-2-14-ETPS/2_Elantech_TrackPoint pointer-accel -0.2
+#riverctl input pointer-1267-13044-ELAN0134:00_04F3:32F4_Touchpad events disabled
+riverctl input pointer-1267-13044-ELAN0134:00_04F3:32F4_Touchpad tap enabled
+riverctl input pointer-1267-13044-ELAN0134:00_04F3:32F4_Touchpad drag enabled
+riverctl input pointer-1267-13044-ELAN0134:00_04F3:32F4_Touchpad drag-lock enabled
+riverctl input pointer-1267-13044-ELAN0134:00_04F3:32F4_Touchpad disable-while-typing enabled
 
 #
 # Key bindings
@@ -143,6 +140,9 @@ dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
 # Add support to clipboard for Xwayland
 wl-paste -t text -w xclip -selection clipboard &
+
+# Start polkit agent
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 nekemerrenincsidom -deviceName "RAPOO Rapoo 2.4G Wireless Device Consumer Control" -mp3 /home/vighd/Documents/nekem_erre_nincs_idom.mp3,/home/vighd/Documents/mindig_egyutt.mp3,/home/vighd/Documents/dadadada.mp3,/home/vighd/Documents/baszkiah.mp3 &
 
