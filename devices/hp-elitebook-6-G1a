@@ -1,0 +1,1 @@
+gpiolib_acpi.ignore_wake=AMDI0030:00@24 gpiolib_acpi.ignore_interrupt=AMDI0030:00@24 i8042.reset=1
