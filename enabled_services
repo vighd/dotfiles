@@ -1,3 +1,5 @@
+bluetooth.service
 cpupower.service
+cups.service
 iwd.service
 systemd-resolved.service

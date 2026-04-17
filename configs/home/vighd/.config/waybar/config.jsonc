@@ -14,7 +14,7 @@
     "memory",
     "temperature",
     "battery",
-    "custom/governor",
+//    "custom/governor",
     "network",
 //    "custom/latency",
     "custom/vpn",
@@ -59,8 +59,8 @@
   "battery": {
     "interval": 5,
     "format": "{icon} {capacity}%",
-    "format-charging": "{icon} {capacity}%",
-    "format-plugged": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
     "format-icons": [
       "󰂎",
       "󰁻",

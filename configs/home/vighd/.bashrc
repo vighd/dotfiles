@@ -69,6 +69,7 @@ alias rivercfg="vim .config/river/init"
 alias backupssh="pass insert -m Configs/ssh/config < ~/.ssh/config"
 alias restoressh="pass show Configs/ssh/config > ~/.ssh/config && chmod 0600 ~/.ssh/config"
 alias vpn="sudo openvpn $1"
+#alias amount="gio mount -li | awk -F= '{if(index($2,"mtp") == 1)system("gio mount "$2)}'"
 
 # ============================================================================
 # Aliases - Pacman aliases

@@ -1,6 +1,7 @@
 7zip
 adw-gtk-theme
 alsa-plugins
+alsa-tools
 alsa-utils
 amd-debug-tools
 amd-ucode
@@ -12,6 +13,7 @@ arp-scan
 aspell
 atool
 aws-cli
+azcopy
 base
 base-devel
 bash-completion
@@ -67,7 +69,7 @@ grc
 grim
 gtk4
 gvfs-dnssd
-gvfs-google
+gvfs-mtp
 gvfs-smb
 hexedit
 hspell
@@ -136,7 +138,6 @@ mpg123
 mpv
 mtd-utils
 mupdf
-nemo
 neovim
 net-tools
 nfs-utils
@@ -166,6 +167,7 @@ postgresql-libs
 pulsemixer
 pwgen
 python-capstone
+python-pdftotext
 python-pip
 python-pipx
 python-pynvim
@@ -201,17 +203,19 @@ sysbench
 system-config-printer
 taglib
 tailscale
+thunar
+thunar-volman
 tk
 traceroute
 translate-shell
 transmission-gtk
+tree-sitter-cli
 ttf-dejavu
 ttf-droid
 ttf-terminus-nerd
 ttf-ubuntu-font-family
 ttyper
 udftools
-udiskie
 unrar
 unzip
 upx

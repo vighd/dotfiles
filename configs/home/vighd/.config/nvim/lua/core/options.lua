@@ -29,7 +29,7 @@ vim.opt.mouse = ''
 
 -- Enable completion with Ctrl-N and Ctrl-P
 vim.opt.complete:append({ 'o' })
-vim.opt.completeopt = 'menuone,noselect,popup,nearest'
+vim.opt.completeopt = 'menu,menuone,noselect'
 vim.opt.pumborder = 'single'
 vim.opt.autocomplete = true
 vim.opt.winborder = 'single'
